@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Projet1_5B6.Forms_Admin
 {
-    public partial class FrmAccueilAdmin : BaseAdmin
+    public partial class BaseAdmin : Form
     {
-        public FrmAccueilAdmin()
+        public BaseAdmin()
         {
             InitializeComponent();
+        }
+
+        private void gestionAssistantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

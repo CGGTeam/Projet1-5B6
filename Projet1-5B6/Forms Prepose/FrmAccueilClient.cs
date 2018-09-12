@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projet1_5B6.Forms_Admin
+namespace Projet1_5B6.Forms_Client
 {
-    public partial class FrmAccueilAdmin : BaseAdmin
+    public partial class FrmAccueilClient : BasePrepose
     {
-        public FrmAccueilAdmin()
+        public FrmAccueilClient()
         {
             InitializeComponent();
         }

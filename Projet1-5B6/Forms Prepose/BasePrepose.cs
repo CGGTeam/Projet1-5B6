@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet1_5B6.Forms_Client
 {
-    public partial class FrmAccueilClient : Form
+    public partial class BasePrepose : Form
     {
-        public FrmAccueilClient()
+        public BasePrepose()
         {
             InitializeComponent();
         }
