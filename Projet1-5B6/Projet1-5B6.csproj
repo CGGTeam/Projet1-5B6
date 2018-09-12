@@ -45,16 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms Admin\BaseAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Admin\BaseAdmin.Designer.cs">
+      <DependentUpon>BaseAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Admin\FrmAccueilAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms Admin\FrmAccueilAdmin.Designer.cs">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Client\FrmAccueilClient.cs">
+    <Compile Include="Forms Prepose\BasePrepose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Client\FrmAccueilClient.Designer.cs">
+    <Compile Include="Forms Prepose\BasePrepose.Designer.cs">
+      <DependentUpon>BasePrepose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Prepose\FrmAccueilClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Prepose\FrmAccueilClient.Designer.cs">
       <DependentUpon>FrmAccueilClient.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConnexion.cs">
@@ -65,10 +77,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms Admin\BaseAdmin.resx">
+      <DependentUpon>BaseAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\FrmAccueilAdmin.resx">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Client\FrmAccueilClient.resx">
+    <EmbeddedResource Include="Forms Prepose\BasePrepose.resx">
+      <DependentUpon>BasePrepose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Prepose\FrmAccueilClient.resx">
       <DependentUpon>FrmAccueilClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
