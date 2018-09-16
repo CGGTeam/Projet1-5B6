@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms Admin\BaseAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +106,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.xsc">
+      <DependentUpon>BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD5B6TP1_ConstantinBrassardLaheyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.xss">
+      <DependentUpon>BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
