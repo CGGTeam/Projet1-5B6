@@ -66,7 +66,7 @@ CREATE TABLE Client
     Pays VARCHAR(25) NOT NULL,
     Adresse VARCHAR(25),
     CodePostal VARCHAR(25),
-    Description VARCHAR(25) NOT NULL,
+    DateInscription DATE NOT NULL,
 	CONSTRAINT CK_NoClient CHECK(NoClient%10 = 0) 
 )
 CREATE UNIQUE INDEX Client_NoCliet_uindex ON Client (NoClient)
