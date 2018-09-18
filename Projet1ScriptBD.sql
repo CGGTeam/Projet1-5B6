@@ -2,7 +2,6 @@
 Name : Projet1ScriptBD.sql
 Vincent Contantin - Antoine Brassard Lahey
 */
-
 use BD5B6TP1_ConstantinBrassardLahey;
 
 /*
