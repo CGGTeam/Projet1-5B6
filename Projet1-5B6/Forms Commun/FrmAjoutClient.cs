@@ -39,16 +39,16 @@ namespace Projet1_5B6.Forms_Commun
 
         private int TrouverNoClient()
         {
-            int plusGrandID = int.MinValue;
+            int plusGrandId = 10;
 
             foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Client.Rows)
             {
                 int id = Convert.ToInt32(rangee["NoClient"]);
-                if (id > plusGrandID)
-                    plusGrandID = id;
+                if (id > plusGrandId)
+                    plusGrandId = id;
             }
 
-            return plusGrandID + 10;
+            return plusGrandId + 10;
         }
 
         private bool Valider()
