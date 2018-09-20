@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projet1_5B6.Forms_Commun;
 
 namespace Projet1_5B6.Forms_Client
 {
@@ -15,6 +9,13 @@ namespace Projet1_5B6.Forms_Client
         public BasePrepose()
         {
             InitializeComponent();
+        }
+
+        private void gestionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientsInvites fClientsInvites = new FrmClientsInvites();
+            Hide();
+            fClientsInvites.Show();
         }
     }
 }

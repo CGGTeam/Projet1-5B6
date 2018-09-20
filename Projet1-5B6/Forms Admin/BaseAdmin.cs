@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projet1_5B6.Forms_Commun;
 
 namespace Projet1_5B6.Forms_Admin
 {
@@ -20,6 +21,13 @@ namespace Projet1_5B6.Forms_Admin
         private void gestionAssistantsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gestionClientsEtInvitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientsInvites fClients = new FrmClientsInvites();
+            Hide();
+            fClients.Show();
         }
     }
 }

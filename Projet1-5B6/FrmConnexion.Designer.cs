@@ -38,7 +38,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 62);
+            this.textBox1.Location = new System.Drawing.Point(245, 62);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 26);
             this.textBox1.TabIndex = 0;
@@ -65,14 +65,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 94);
+            this.textBox2.Location = new System.Drawing.Point(245, 94);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(223, 26);
             this.textBox2.TabIndex = 2;
             // 
             // btnConnexion
             // 
-            this.btnConnexion.Location = new System.Drawing.Point(236, 136);
+            this.btnConnexion.Location = new System.Drawing.Point(245, 136);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(223, 57);
             this.btnConnexion.TabIndex = 4;
