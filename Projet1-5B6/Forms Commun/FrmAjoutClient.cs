@@ -39,7 +39,7 @@ namespace Projet1_5B6.Forms_Commun
 
         private int TrouverNoClient()
         {
-            int plusGrandId = 10;
+            int plusGrandId = 0;
 
             foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Client.Rows)
             {
