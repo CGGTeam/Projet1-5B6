@@ -154,13 +154,13 @@
             this.lblTitreAjout.Name = "lblTitreAjout";
             this.lblTitreAjout.Size = new System.Drawing.Size(339, 71);
             this.lblTitreAjout.TabIndex = 12;
-            this.lblTitreAjout.Text = "Client Ajouter";
+            this.lblTitreAjout.Text = "Ajouter Client";
             this.lblTitreAjout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAjout
             // 
             this.btnAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAjout.Location = new System.Drawing.Point(177, 302);
+            this.btnAjout.Location = new System.Drawing.Point(176, 302);
             this.btnAjout.Name = "btnAjout";
             this.btnAjout.Size = new System.Drawing.Size(175, 33);
             this.btnAjout.TabIndex = 13;

@@ -311,7 +311,7 @@
             this.inviteDataGridView.Location = new System.Drawing.Point(518, 86);
             this.inviteDataGridView.Name = "inviteDataGridView";
             this.inviteDataGridView.RowTemplate.Height = 28;
-            this.inviteDataGridView.Size = new System.Drawing.Size(653, 373);
+            this.inviteDataGridView.Size = new System.Drawing.Size(653, 313);
             this.inviteDataGridView.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn1
@@ -359,9 +359,9 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(25, 405);
+            this.btnSauvegarder.Location = new System.Drawing.Point(310, 443);
             this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(146, 54);
+            this.btnSauvegarder.Size = new System.Drawing.Size(180, 54);
             this.btnSauvegarder.TabIndex = 25;
             this.btnSauvegarder.Text = "Sauvegarder";
             this.btnSauvegarder.UseVisualStyleBackColor = true;
@@ -369,9 +369,9 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(310, 405);
+            this.btnAnnuler.Location = new System.Drawing.Point(579, 443);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(146, 54);
+            this.btnAnnuler.Size = new System.Drawing.Size(180, 54);
             this.btnAnnuler.TabIndex = 26;
             this.btnAnnuler.Text = "Annuler Modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -380,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 509);
+            this.ClientSize = new System.Drawing.Size(1192, 524);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
             this.Controls.Add(dateInscriptionLabel1);
