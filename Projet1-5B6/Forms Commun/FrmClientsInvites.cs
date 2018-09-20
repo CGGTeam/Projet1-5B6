@@ -35,13 +35,6 @@ namespace Projet1_5B6.Forms_Commun
 
         }
 
-
-        private void clientBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void btnAjoutCli_Click(object sender, EventArgs e)
         {
             var nouveauClient = bD5B6TP1_ConstantinBrassardLaheyDataSet.Client.NewClientRow();

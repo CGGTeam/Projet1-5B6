@@ -219,7 +219,7 @@
             this.Controls.Add(this.tbNom);
             this.Controls.Add(this.lblNom);
             this.Name = "FrmAjoutClient";
-            this.Text = "FrmAjoutClient";
+            this.Text = "Ajouter un client";
             this.Load += new System.EventHandler(this.FrmAjoutClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();

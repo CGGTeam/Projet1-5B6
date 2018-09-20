@@ -407,7 +407,7 @@
             this.Controls.Add(codePostalLabel);
             this.Controls.Add(this.tbCodePostalCli);
             this.Name = "FrmClientsInvites";
-            this.Text = "FormClientsInvites";
+            this.Text = "Gestion des clients et des invités";
             this.Load += new System.EventHandler(this.FormClientsInvites_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
