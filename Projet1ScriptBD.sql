@@ -2,7 +2,6 @@
 Name : Projet1ScriptBD.sql
 Vincent Contantin - Antoine Brassard Lahey
 */
-
 use BD5B6TP1_ConstantinBrassardLahey;
 
 /*
@@ -10,11 +9,12 @@ use BD5B6TP1_ConstantinBrassardLahey;
  */
 CREATE TABLE TypeSoin
 (
-    NoTypeSoin INT NOT NULL,
+    NoTypeSoin INT PRIMARY KEY NOT NULL,
     Description VARCHAR(75) NOT NULL,
-	CONSTRAINT PK_TypeSoin PRIMARY KEY (NoTypeSoin,Description)
 )
-CREATE UNIQUE INDEX TypeSoin_NoTypeSoin_uindex ON TypeSoin (NoTypeSoin)
+
+INSERT INTO TypeSoin ( NoTypeSoin, Description )
+VALUES (0, 'Beauté'), (1, 'Santé');
 
 /*
 | Creation de la table Soin
@@ -65,7 +65,7 @@ CREATE TABLE Client
     Pays VARCHAR(25) NOT NULL,
     Adresse VARCHAR(25),
     CodePostal VARCHAR(25),
-    Description VARCHAR(25) NOT NULL,
+    DateInscription DATE NOT NULL,
 	CONSTRAINT CK_NoClient CHECK(NoClient%10 = 0) 
 )
 CREATE UNIQUE INDEX Client_NoCliet_uindex ON Client (NoClient)
@@ -141,4 +141,30 @@ CREATE TABLE PlanifSoin
 	CONSTRAINT PlanifSoin_Invite_NoPersonne_fk FOREIGN KEY (NoPersonne) REFERENCES Invite (NoInvite),
     CONSTRAINT PlanifSoin_Client_NoPersonne_fk FOREIGN KEY (NoPersonne) REFERENCES Client (NoClient)
 )
+/*
+| Création de la table typeUtilisateur
+*/
+CREATE TABLE TypeUtilisateur
+(
+	NoTypeUtilisateur INT PRIMARY KEY NOT NULL,
+	Identifiaction VARCHAR(25) NOT NULL,
+)
+INSERT INTO TypeUtilisateur ( NoTypeUtilisateur, Identifiaction )
+VALUES (0, 'Admin'), (1, 'Préposé');
 
+/*
+| Utilisateur
+*/
+CREATE TABLE Utilisateur
+(
+	NoUtilisateur INT PRIMARY KEY NOT NULL,
+	Nom VARCHAR(25) NOT NULL,
+	MotDePasse VARCHAR(25) NOT NULL,
+	NoTypeUtilisateur INT NOT NULL,
+	CONSTRAINT Utilisateur_NoTypeUtilisateur_fk FOREIGN KEY (NoTypeUtilisateur) REFERENCES TypeUtilisateur (NoTypeUtilisateur),
+)
+CREATE UNIQUE INDEX Utilisateur_Nom_uindex ON Utilisateur (Nom)
+/*ajout d'un admin */
+INSERT INTO Utilisateur VALUES (0,'admin', 'Password1', 0);
+/*ajout d'un préposé */
+INSERT INTO Utilisateur VALUES (1,'Prepose', 'Password1', 1);
