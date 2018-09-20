@@ -59,7 +59,7 @@ namespace Projet1_5B6.Forms_Commun
         {
             clientBindingSource.MoveNext();
         }
-
+        
         private void btnClientPrecedent_Click(object sender, EventArgs e)
         {
             clientBindingSource.MovePrevious();
@@ -78,6 +78,88 @@ namespace Projet1_5B6.Forms_Commun
         {
             //TODO:unstubify
             return true;
+        }
+
+        private void inviteDataGridView_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            int noInvite = DeterminerNoNouvelInvite();
+
+            ((DataRowView) inviteBindingSource.Current)["NoInvite"] = noInvite;
+
+            VerifierNbInvites();
+        }
+
+        private int DeterminerNoNouvelInvite()
+        {
+            int plusPetitNoLibre = IdClientCourant + 1;
+
+            IEnumerable<DataRowView> listeInvites = inviteBindingSource.List.Cast<DataRowView>();
+
+            foreach (DataRowView invite in listeInvites.Where(IdNonNull).OrderBy(SortParId))
+            {
+                var noInvite = invite["NoInvite"];
+
+                if (plusPetitNoLibre == Convert.ToInt32(noInvite))
+                {
+                    plusPetitNoLibre++;
+                }
+            }
+
+            return plusPetitNoLibre;
+        }
+
+        private bool IdNonNull(DataRowView invite)
+        {
+            return !(invite["NoInvite"] is DBNull);
+        }
+
+        private int SortParId(DataRowView invite)
+        {
+            return Convert.ToInt32(invite["NoInvite"]);
+        }
+
+        private int IdClientCourant
+        {
+            get
+            {
+                DataRowView clientCourant = (DataRowView)clientBindingSource.Current;
+
+                int idClientCourant = Convert.ToInt32(clientCourant["NoClient"]);
+
+                return idClientCourant;
+            }
+        }
+
+        private void VerifierNbInvites()
+        {
+            bool nbInvitesEnDessousDeLimite = inviteBindingSource.List.Count < 9;
+            inviteBindingSource.AllowNew = nbInvitesEnDessousDeLimite;
+        }
+
+        private void inviteDataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            VerifierNbInvites();
+        }
+
+        private void inviteDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            var cellule = inviteDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            if (cellule.Value.ToString().Trim() == "")
+            {
+                e.Cancel = true;
+                cellule.ErrorText = "Cette cellule doit être remplie";
+            }
+        }
+
+        private void inviteDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            e.Cancel = InviteAUnSoinPlanifie();
+        }
+
+        private bool InviteAUnSoinPlanifie()
+        {
+            return false;
         }
     }
 }

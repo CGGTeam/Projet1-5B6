@@ -756,7 +756,7 @@ namespace Projet1_5B6 {
             
             private global::System.Data.DataColumn columnSpecialites;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnRemarques;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -825,9 +825,9 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn RemarquesColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnRemarques;
                 }
             }
             
@@ -868,14 +868,14 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AssistantRow AddAssistantRow(int NoAssistant, string Prenom, string Nom, string Specialites, string Description) {
+            public AssistantRow AddAssistantRow(int NoAssistant, string Prenom, string Nom, string Specialites, string Remarques) {
                 AssistantRow rowAssistantRow = ((AssistantRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoAssistant,
                         Prenom,
                         Nom,
                         Specialites,
-                        Description};
+                        Remarques};
                 rowAssistantRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssistantRow);
                 return rowAssistantRow;
@@ -909,7 +909,7 @@ namespace Projet1_5B6 {
                 this.columnPrenom = base.Columns["Prenom"];
                 this.columnNom = base.Columns["Nom"];
                 this.columnSpecialites = base.Columns["Specialites"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnRemarques = base.Columns["Remarques"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -923,8 +923,8 @@ namespace Projet1_5B6 {
                 base.Columns.Add(this.columnNom);
                 this.columnSpecialites = new global::System.Data.DataColumn("Specialites", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSpecialites);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnRemarques = new global::System.Data.DataColumn("Remarques", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRemarques);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNoAssistant}, true));
                 this.columnNoAssistant.AllowDBNull = false;
@@ -934,7 +934,7 @@ namespace Projet1_5B6 {
                 this.columnNom.AllowDBNull = false;
                 this.columnNom.MaxLength = 25;
                 this.columnSpecialites.MaxLength = 20;
-                this.columnDescription.MaxLength = 75;
+                this.columnRemarques.MaxLength = 75;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4525,17 +4525,17 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Description {
+            public string Remarques {
                 get {
                     try {
-                        return ((string)(this[this.tableAssistant.DescriptionColumn]));
+                        return ((string)(this[this.tableAssistant.RemarquesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'Assistant\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Remarques\' in table \'Assistant\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAssistant.DescriptionColumn] = value;
+                    this[this.tableAssistant.RemarquesColumn] = value;
                 }
             }
             
@@ -4553,14 +4553,14 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableAssistant.DescriptionColumn);
+            public bool IsRemarquesNull() {
+                return this.IsNull(this.tableAssistant.RemarquesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableAssistant.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetRemarquesNull() {
+                this[this.tableAssistant.RemarquesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6127,46 +6127,48 @@ namespace Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Prenom", "Prenom");
             tableMapping.ColumnMappings.Add("Nom", "Nom");
             tableMapping.ColumnMappings.Add("Specialites", "Specialites");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Remarques", "Remarques");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Assistant] WHERE (([NoAssistant] = @Original_NoAssistant) AND ([Prenom] = @Original_Prenom) AND ([Nom] = @Original_Nom) AND ((@IsNull_Specialites = 1 AND [Specialites] IS NULL) OR ([Specialites] = @Original_Specialites)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Assistant] WHERE (([NoAssistant] = @Original_NoAssistant) AND ([Prenom] = @Original_Prenom) AND ([Nom] = @Original_Nom) AND ((@IsNull_Specialites = 1 AND [Specialites] IS NULL) OR ([Specialites] = @Original_Specialites)) AND ((@IsNull_Remarques = 1 AND [Remarques] IS NULL) OR ([Remarques] = @Original_Remarques)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoAssistant", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoAssistant", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Specialites", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialites", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Specialites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialites", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remarques", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarques", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Remarques", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarques", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Assistant] ([NoAssistant], [Prenom], [Nom], [Specialites], [Description]) VALUES (@NoAssistant, @Prenom, @Nom, @Specialites, @Description);
-SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (NoAssistant = @NoAssistant)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Assistant] ([NoAssistant], [Prenom], [Nom], [Specialites], [Remarque" +
+                "s]) VALUES (@NoAssistant, @Prenom, @Nom, @Specialites, @Remarques);\r\nSELECT NoAs" +
+                "sistant, Prenom, Nom, Specialites, Remarques FROM Assistant WHERE (NoAssistant =" +
+                " @NoAssistant)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoAssistant", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoAssistant", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Specialites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialites", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarques", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarques", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Assistant] SET [NoAssistant] = @NoAssistant, [Prenom] = @Prenom, [Nom] = @Nom, [Specialites] = @Specialites, [Description] = @Description WHERE (([NoAssistant] = @Original_NoAssistant) AND ([Prenom] = @Original_Prenom) AND ([Nom] = @Original_Nom) AND ((@IsNull_Specialites = 1 AND [Specialites] IS NULL) OR ([Specialites] = @Original_Specialites)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)));
-SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (NoAssistant = @NoAssistant)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Assistant] SET [NoAssistant] = @NoAssistant, [Prenom] = @Prenom, [Nom] = @Nom, [Specialites] = @Specialites, [Remarques] = @Remarques WHERE (([NoAssistant] = @Original_NoAssistant) AND ([Prenom] = @Original_Prenom) AND ([Nom] = @Original_Nom) AND ((@IsNull_Specialites = 1 AND [Specialites] IS NULL) OR ([Specialites] = @Original_Specialites)) AND ((@IsNull_Remarques = 1 AND [Remarques] IS NULL) OR ([Remarques] = @Original_Remarques)));
+SELECT NoAssistant, Prenom, Nom, Specialites, Remarques FROM Assistant WHERE (NoAssistant = @NoAssistant)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoAssistant", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoAssistant", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prenom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Specialites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialites", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remarques", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarques", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoAssistant", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoAssistant", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prenom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prenom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Specialites", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialites", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Specialites", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialites", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remarques", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarques", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Remarques", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remarques", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6182,7 +6184,7 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM dbo.Assistant";
+            this._commandCollection[0].CommandText = "SELECT NoAssistant, Prenom, Nom, Specialites, Remarques FROM Assistant";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6243,7 +6245,7 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_NoAssistant, string Original_Prenom, string Original_Nom, string Original_Specialites, string Original_Description) {
+        public virtual int Delete(int Original_NoAssistant, string Original_Prenom, string Original_Nom, string Original_Specialites, string Original_Remarques) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_NoAssistant));
             if ((Original_Prenom == null)) {
                 throw new global::System.ArgumentNullException("Original_Prenom");
@@ -6265,13 +6267,13 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Specialites));
             }
-            if ((Original_Description == null)) {
+            if ((Original_Remarques == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Description));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Remarques));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6293,7 +6295,7 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int NoAssistant, string Prenom, string Nom, string Specialites, string Description) {
+        public virtual int Insert(int NoAssistant, string Prenom, string Nom, string Specialites, string Remarques) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(NoAssistant));
             if ((Prenom == null)) {
                 throw new global::System.ArgumentNullException("Prenom");
@@ -6313,11 +6315,11 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Specialites));
             }
-            if ((Description == null)) {
+            if ((Remarques == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Description));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Remarques));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6339,7 +6341,7 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NoAssistant, string Prenom, string Nom, string Specialites, string Description, int Original_NoAssistant, string Original_Prenom, string Original_Nom, string Original_Specialites, string Original_Description) {
+        public virtual int Update(int NoAssistant, string Prenom, string Nom, string Specialites, string Remarques, int Original_NoAssistant, string Original_Prenom, string Original_Nom, string Original_Specialites, string Original_Remarques) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NoAssistant));
             if ((Prenom == null)) {
                 throw new global::System.ArgumentNullException("Prenom");
@@ -6359,11 +6361,11 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Specialites));
             }
-            if ((Description == null)) {
+            if ((Remarques == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Description));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Remarques));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_NoAssistant));
             if ((Original_Prenom == null)) {
@@ -6386,13 +6388,13 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Specialites));
             }
-            if ((Original_Description == null)) {
+            if ((Original_Remarques == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Description));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Remarques));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6414,8 +6416,8 @@ SELECT NoAssistant, Prenom, Nom, Specialites, Description FROM Assistant WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Prenom, string Nom, string Specialites, string Description, int Original_NoAssistant, string Original_Prenom, string Original_Nom, string Original_Specialites, string Original_Description) {
-            return this.Update(Original_NoAssistant, Prenom, Nom, Specialites, Description, Original_NoAssistant, Original_Prenom, Original_Nom, Original_Specialites, Original_Description);
+        public virtual int Update(string Prenom, string Nom, string Specialites, string Remarques, int Original_NoAssistant, string Original_Prenom, string Original_Nom, string Original_Specialites, string Original_Remarques) {
+            return this.Update(Original_NoAssistant, Prenom, Nom, Specialites, Remarques, Original_NoAssistant, Original_Prenom, Original_Nom, Original_Specialites, Original_Remarques);
         }
     }
     

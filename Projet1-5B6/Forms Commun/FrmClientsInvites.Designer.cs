@@ -254,7 +254,7 @@
             // 
             // btnClientSuivant
             // 
-            this.btnClientSuivant.Location = new System.Drawing.Point(412, 86);
+            this.btnClientSuivant.Location = new System.Drawing.Point(412, 88);
             this.btnClientSuivant.Name = "btnClientSuivant";
             this.btnClientSuivant.Size = new System.Drawing.Size(44, 252);
             this.btnClientSuivant.TabIndex = 18;
@@ -313,12 +313,17 @@
             this.inviteDataGridView.RowTemplate.Height = 28;
             this.inviteDataGridView.Size = new System.Drawing.Size(653, 313);
             this.inviteDataGridView.TabIndex = 22;
+            this.inviteDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.inviteDataGridView_CellValidating);
+            this.inviteDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.inviteDataGridView_UserAddedRow);
+            this.inviteDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.inviteDataGridView_UserDeletedRow);
+            this.inviteDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.inviteDataGridView_UserDeletingRow);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoInvite";
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -337,6 +342,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NoClient";
             this.dataGridViewTextBoxColumn4.HeaderText = "No client";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // label1
             // 
@@ -359,7 +365,7 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(310, 443);
+            this.btnSauvegarder.Location = new System.Drawing.Point(142, 434);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(180, 54);
             this.btnSauvegarder.TabIndex = 25;
@@ -369,7 +375,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(579, 443);
+            this.btnAnnuler.Location = new System.Drawing.Point(751, 434);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(180, 54);
             this.btnAnnuler.TabIndex = 26;
@@ -440,12 +446,12 @@
         private System.Windows.Forms.BindingSource inviteBindingSource;
         private System.Windows.Forms.DataGridView inviteDataGridView;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbDateInscriptionCli;
+        private System.Windows.Forms.Button btnSauvegarder;
+        private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.TextBox tbDateInscriptionCli;
-        private System.Windows.Forms.Button btnSauvegarder;
-        private System.Windows.Forms.Button btnAnnuler;
     }
 }

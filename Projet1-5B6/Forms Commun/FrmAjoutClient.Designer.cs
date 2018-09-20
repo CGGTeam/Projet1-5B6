@@ -66,6 +66,7 @@
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(197, 26);
             this.tbNom.TabIndex = 1;
+            this.tbNom.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
             // lblPrenom
             // 
@@ -118,6 +119,7 @@
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(197, 26);
             this.tbPrenom.TabIndex = 7;
+            this.tbPrenom.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
             // tbVille
             // 
@@ -125,6 +127,7 @@
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(197, 26);
             this.tbVille.TabIndex = 8;
+            this.tbVille.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
             // tbPays
             // 
@@ -132,6 +135,7 @@
             this.tbPays.Name = "tbPays";
             this.tbPays.Size = new System.Drawing.Size(197, 26);
             this.tbPays.TabIndex = 9;
+            this.tbPays.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
             // tbAdresse
             // 
@@ -139,6 +143,7 @@
             this.tbAdresse.Name = "tbAdresse";
             this.tbAdresse.Size = new System.Drawing.Size(197, 26);
             this.tbAdresse.TabIndex = 10;
+            this.tbAdresse.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
             // tbCodePostal
             // 
@@ -146,6 +151,7 @@
             this.tbCodePostal.Name = "tbCodePostal";
             this.tbCodePostal.Size = new System.Drawing.Size(197, 26);
             this.tbCodePostal.TabIndex = 11;
+            this.tbCodePostal.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
             // lblTitreAjout
             // 
@@ -159,6 +165,7 @@
             // 
             // btnAjout
             // 
+            this.btnAjout.Enabled = false;
             this.btnAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAjout.Location = new System.Drawing.Point(176, 302);
             this.btnAjout.Name = "btnAjout";

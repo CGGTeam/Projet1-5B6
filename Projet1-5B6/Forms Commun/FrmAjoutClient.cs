@@ -12,10 +12,20 @@ namespace Projet1_5B6.Forms_Commun
 {
     public partial class FrmAjoutClient : Form
     {
+        private readonly Control[] controlesAValider;
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client;
 
         public FrmAjoutClient(BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client)
         {
+            controlesAValider = new Control[]
+            {
+                tbPrenom,
+                tbAdresse,
+                tbCodePostal,
+                tbNom,
+                tbPays,
+                tbVille,
+            };
             InitializeComponent();
             this.client = client;
         }
@@ -69,6 +79,22 @@ namespace Projet1_5B6.Forms_Commun
         {
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
+        }
+
+        private void ValiderFormulaireRempli(object sender, EventArgs e)
+        {
+            bool formulaireComplet = true;
+
+            foreach (Control ctrl in controlesAValider)
+            {
+                if (ctrl.Text.Trim() == "")
+                {
+                    formulaireComplet = false;
+                    break;
+                }
+            }
+
+            btnAjout.Enabled = formulaireComplet;
         }
     }
 }
