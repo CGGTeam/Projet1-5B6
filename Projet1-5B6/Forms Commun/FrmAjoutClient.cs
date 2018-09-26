@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projet1_5B6.Forms_Commun
@@ -67,14 +62,6 @@ namespace Projet1_5B6.Forms_Commun
             return true;
         }
 
-        private void clientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clientBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-
-        }
-
         private void FrmAjoutClient_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
@@ -83,18 +70,14 @@ namespace Projet1_5B6.Forms_Commun
 
         private void ValiderFormulaireRempli(object sender, EventArgs e)
         {
-            bool formulaireComplet = true;
-
-            foreach (Control ctrl in controlesAValider)
-            {
-                if (ctrl.Text.Trim() == "")
-                {
-                    formulaireComplet = false;
-                    break;
-                }
-            }
+            bool formulaireComplet = controlesAValider.All(ControleNonVide);
 
             btnAjout.Enabled = formulaireComplet;
+        }
+
+        private bool ControleNonVide(Control ctrl)
+        {
+            return ctrl.Text.Trim() != "";
         }
     }
 }

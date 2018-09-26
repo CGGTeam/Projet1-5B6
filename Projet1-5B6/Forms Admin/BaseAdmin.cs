@@ -29,5 +29,11 @@ namespace Projet1_5B6.Forms_Admin
             Hide();
             fClients.Show();
         }
+
+        private void gestionSoinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FrmGestionSoins().Show();
+        }
     }
 }

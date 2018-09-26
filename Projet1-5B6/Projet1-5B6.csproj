@@ -68,11 +68,23 @@
     <Compile Include="Forms Commun\FrmAjoutClient.Designer.cs">
       <DependentUpon>FrmAjoutClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Commun\FrmAjoutSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\FrmAjoutSoin.Designer.cs">
+      <DependentUpon>FrmAjoutSoin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Commun\FrmClientsInvites.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms Commun\FrmClientsInvites.Designer.cs">
       <DependentUpon>FrmClientsInvites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Commun\FrmGestionSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\FrmGestionSoins.Designer.cs">
+      <DependentUpon>FrmGestionSoins.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Prepose\BasePrepose.cs">
       <SubType>Form</SubType>
@@ -103,8 +115,14 @@
     <EmbeddedResource Include="Forms Commun\FrmAjoutClient.resx">
       <DependentUpon>FrmAjoutClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\FrmAjoutSoin.resx">
+      <DependentUpon>FrmAjoutSoin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\FrmClientsInvites.resx">
       <DependentUpon>FrmClientsInvites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\FrmGestionSoins.resx">
+      <DependentUpon>FrmGestionSoins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Prepose\BasePrepose.resx">
       <DependentUpon>BasePrepose.cs</DependentUpon>

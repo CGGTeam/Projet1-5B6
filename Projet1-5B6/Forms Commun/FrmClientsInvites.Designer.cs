@@ -381,6 +381,7 @@
             this.btnAnnuler.TabIndex = 26;
             this.btnAnnuler.Text = "Annuler Modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // FrmClientsInvites
             // 

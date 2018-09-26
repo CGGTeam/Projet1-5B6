@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projet1_5B6.Forms_Commun
@@ -15,13 +11,6 @@ namespace Projet1_5B6.Forms_Commun
         public FrmClientsInvites()
         {
             InitializeComponent();
-        }
-
-        private void clientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clientBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
         }
 
         private void FormClientsInvites_Load(object sender, EventArgs e)
@@ -160,6 +149,12 @@ namespace Projet1_5B6.Forms_Commun
         private bool InviteAUnSoinPlanifie()
         {
             return false;
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
+            clientBindingSource.ResetBindings(false);
         }
     }
 }
