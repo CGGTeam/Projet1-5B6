@@ -62,6 +62,18 @@
     <Compile Include="Forms Admin\FrmAccueilAdmin.Designer.cs">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.Designer.cs">
+      <DependentUpon>FrmAddAssistant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.Designer.cs">
+      <DependentUpon>FrmGestionAssistants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Commun\FrmAjoutClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\FrmAccueilAdmin.resx">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.resx">
+      <DependentUpon>FrmAddAssistant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.resx">
+      <DependentUpon>FrmGestionAssistants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\FrmAjoutClient.resx">
       <DependentUpon>FrmAjoutClient.cs</DependentUpon>

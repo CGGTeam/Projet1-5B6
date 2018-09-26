@@ -729,6 +729,26 @@ SELECT NoUtilisateur, Nom, MotDePasse, NoTypeUtilisateur FROM Utilisateur WHERE 
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AssistanSoinDescriptionTableAdapter" GeneratorDataComponentClassName="AssistanSoinDescriptionTableAdapter" Name="AssistanSoinDescription" UserDataComponentName="AssistanSoinDescriptionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AssistantSoin.NoSoin, Soin.Description
+FROM            Assistant INNER JOIN
+                         AssistantSoin ON Assistant.NoAssistant = AssistantSoin.NoAssistant INNER JOIN
+                         Soin ON AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NoSoin" DataSetColumn="NoSoin" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -979,6 +999,20 @@ SELECT NoUtilisateur, Nom, MotDePasse, NoTypeUtilisateur FROM Utilisateur WHERE 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="AssistanSoinDescription" msprop:Generator_TableClassName="AssistanSoinDescriptionDataTable" msprop:Generator_TableVarName="tableAssistanSoinDescription" msprop:Generator_TablePropName="AssistanSoinDescription" msprop:Generator_RowDeletingName="AssistanSoinDescriptionRowDeleting" msprop:Generator_RowChangingName="AssistanSoinDescriptionRowChanging" msprop:Generator_RowEvHandlerName="AssistanSoinDescriptionRowChangeEventHandler" msprop:Generator_RowDeletedName="AssistanSoinDescriptionRowDeleted" msprop:Generator_UserTableName="AssistanSoinDescription" msprop:Generator_RowChangedName="AssistanSoinDescriptionRowChanged" msprop:Generator_RowEvArgName="AssistanSoinDescriptionRowChangeEvent" msprop:Generator_RowClassName="AssistanSoinDescriptionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NoSoin" msprop:Generator_ColumnVarNameInTable="columnNoSoin" msprop:Generator_ColumnPropNameInRow="NoSoin" msprop:Generator_ColumnPropNameInTable="NoSoinColumn" msprop:Generator_UserColumnName="NoSoin" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1050,6 +1084,7 @@ SELECT NoUtilisateur, Nom, MotDePasse, NoTypeUtilisateur FROM Utilisateur WHERE 
       <msdata:Relationship name="ReservationChambre_Client_NoCliet_fk" msdata:parent="Client" msdata:child="ReservationChambre" msdata:parentkey="NoClient" msdata:childkey="NoClient" msprop:Generator_UserChildTable="ReservationChambre" msprop:Generator_ChildPropName="GetReservationChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Client_NoCliet_fk" msprop:Generator_RelationVarName="relationReservationChambre_Client_NoCliet_fk" msprop:Generator_UserParentTable="Client" msprop:Generator_ParentPropName="ClientRow" />
       <msdata:Relationship name="FK__Soin__NoTypeSoin__75A278F5" msdata:parent="TypeSoin" msdata:child="Soin" msdata:parentkey="NoTypeSoin" msdata:childkey="NoTypeSoin" msprop:Generator_UserChildTable="Soin" msprop:Generator_ChildPropName="GetSoinRows" msprop:Generator_UserRelationName="FK__Soin__NoTypeSoin__75A278F5" msprop:Generator_ParentPropName="TypeSoinRow" msprop:Generator_RelationVarName="relationFK__Soin__NoTypeSoin__75A278F5" msprop:Generator_UserParentTable="TypeSoin" />
       <msdata:Relationship name="Utilisateur_NoTypeUtilisateur_fk" msdata:parent="TypeUtilisateur" msdata:child="Utilisateur" msdata:parentkey="NoTypeUtilisateur" msdata:childkey="NoTypeUtilisateur" msprop:Generator_UserChildTable="Utilisateur" msprop:Generator_ChildPropName="GetUtilisateurRows" msprop:Generator_UserRelationName="Utilisateur_NoTypeUtilisateur_fk" msprop:Generator_ParentPropName="TypeUtilisateurRow" msprop:Generator_RelationVarName="relationUtilisateur_NoTypeUtilisateur_fk" msprop:Generator_UserParentTable="TypeUtilisateur" />
+      <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk1" msdata:parent="Soin" msdata:child="AssistanSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistanSoinDescription" msprop:Generator_ChildPropName="GetAssistanSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk1" msprop:Generator_ParentPropName="SoinRow" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk1" msprop:Generator_UserParentTable="Soin" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
