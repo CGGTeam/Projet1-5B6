@@ -59,11 +59,7 @@ namespace Projet1_5B6.Forms_Commun
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            DataRowView selection = (DataRowView)soinBindingSource.Current;
-
-            if (!EstSupprimable(selection)) return;
-
-            selection.Delete();
+            ADOUtils.SupprimerSelection(soinBindingSource, EstSupprimable);
         }
 
         private bool EstSupprimable(DataRowView selection)

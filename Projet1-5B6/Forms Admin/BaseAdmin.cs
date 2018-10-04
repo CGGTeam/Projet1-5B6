@@ -20,22 +20,30 @@ namespace Projet1_5B6.Forms_Admin
 
         private void gestionAssistantsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmGestionAssistants frmGestionAssistants = new FrmGestionAssistants();
             Hide();
-            frmGestionAssistants.Show();
+            new FrmGestionAssistants().Show();
+            Close();
         }
 
         private void gestionClientsEtInvitésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmClientsInvites fClients = new FrmClientsInvites();
             Hide();
-            fClients.Show();
+            new FrmClientsInvites().Show();
+            Close();
         }
 
         private void gestionSoinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             new FrmGestionSoins().Show();
+            Close();
+        }
+
+        private void gestionChambresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FrmGestionChambresEtTypes().Show();
+            Close();
         }
     }
 }

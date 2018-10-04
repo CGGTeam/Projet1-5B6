@@ -92,6 +92,7 @@
             this.gestionChambresToolStripMenuItem.Name = "gestionChambresToolStripMenuItem";
             this.gestionChambresToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
             this.gestionChambresToolStripMenuItem.Text = "Gestion Chambres";
+            this.gestionChambresToolStripMenuItem.Click += new System.EventHandler(this.gestionChambresToolStripMenuItem_Click);
             // 
             // gestionUtilisateursToolStripMenuItem
             // 
