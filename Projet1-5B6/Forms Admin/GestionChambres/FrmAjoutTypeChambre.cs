@@ -12,27 +12,14 @@ namespace Projet1_5B6.Forms_Admin
 {
     public partial class FrmAjoutTypeChambre : Form
     {
-        private BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre;
+        private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre;
 
         public FrmAjoutTypeChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre)
         {
             InitializeComponent();
             this.nouveauTypeChambre = nouveauTypeChambre;
-        }
 
-        private void typeChambreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.typeChambreBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-
-        }
-
-        private void FrmAjoutTypeChambre_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre' table. You can move, or remove it, as needed.
-            this.typeChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
-
+            tbNoType.Text = nouveauTypeChambre.NoTypeChambre.ToString();
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)

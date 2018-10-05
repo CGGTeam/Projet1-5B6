@@ -108,6 +108,7 @@
             this.typeChambreDataGridView.Location = new System.Drawing.Point(0, 111);
             this.typeChambreDataGridView.Name = "typeChambreDataGridView";
             this.typeChambreDataGridView.RowTemplate.Height = 28;
+            this.typeChambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.typeChambreDataGridView.Size = new System.Drawing.Size(684, 236);
             this.typeChambreDataGridView.TabIndex = 1;
             // 
@@ -167,6 +168,7 @@
             this.chambreDataGridView.Location = new System.Drawing.Point(705, 111);
             this.chambreDataGridView.Name = "chambreDataGridView";
             this.chambreDataGridView.RowTemplate.Height = 28;
+            this.chambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chambreDataGridView.Size = new System.Drawing.Size(533, 236);
             this.chambreDataGridView.TabIndex = 2;
             // 
@@ -224,6 +226,7 @@
             this.btnAjouterChambre.TabIndex = 7;
             this.btnAjouterChambre.Text = "Ajouter chambre";
             this.btnAjouterChambre.UseVisualStyleBackColor = true;
+            this.btnAjouterChambre.Click += new System.EventHandler(this.btnAjouterChambre_Click);
             // 
             // btnAnnuler
             // 
@@ -233,6 +236,7 @@
             this.btnAnnuler.TabIndex = 10;
             this.btnAnnuler.Text = "Annuler modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnSauvegarder
             // 
@@ -242,6 +246,7 @@
             this.btnSauvegarder.TabIndex = 9;
             this.btnSauvegarder.Text = "Sauvegarder modifications";
             this.btnSauvegarder.UseVisualStyleBackColor = true;
+            this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
             // 
             // lblEnteteTypeChambre
             // 

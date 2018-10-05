@@ -57,22 +57,28 @@
     <Compile Include="Forms Admin\BaseAdmin.Designer.cs">
       <DependentUpon>BaseAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Admin\GestionChambres\FrmAjoutChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Admin\GestionChambres\FrmAjoutChambre.Designer.cs">
+      <DependentUpon>FrmAjoutChambre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Admin\FrmAccueilAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms Admin\FrmAccueilAdmin.Designer.cs">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\FrmAjoutTypeChambre.cs">
+    <Compile Include="Forms Admin\GestionChambres\FrmAjoutTypeChambre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\FrmAjoutTypeChambre.Designer.cs">
+    <Compile Include="Forms Admin\GestionChambres\FrmAjoutTypeChambre.Designer.cs">
       <DependentUpon>FrmAjoutTypeChambre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\FrmGestionChambresEtTypes.cs">
+    <Compile Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\FrmGestionChambresEtTypes.Designer.cs">
+    <Compile Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.Designer.cs">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.cs">
@@ -137,10 +143,13 @@
     <EmbeddedResource Include="Forms Admin\FrmAccueilAdmin.resx">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\FrmAjoutTypeChambre.resx">
+    <EmbeddedResource Include="Forms Admin\GestionChambres\FrmAjoutChambre.resx">
+      <DependentUpon>FrmAjoutChambre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Admin\GestionChambres\FrmAjoutTypeChambre.resx">
       <DependentUpon>FrmAjoutTypeChambre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\FrmGestionChambresEtTypes.resx">
+    <EmbeddedResource Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.resx">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.resx">

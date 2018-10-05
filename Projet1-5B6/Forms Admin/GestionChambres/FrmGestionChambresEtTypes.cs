@@ -48,7 +48,6 @@ namespace Projet1_5B6.Forms_Admin
             nouveauType.NoTypeChambre = TrouverNoTypeChambre();
 
             FrmAjoutTypeChambre frmAjout = new FrmAjoutTypeChambre(nouveauType);
-            frmAjout.ShowDialog();
 
             DialogResult resultat = frmAjout.ShowDialog();
 
@@ -56,6 +55,58 @@ namespace Projet1_5B6.Forms_Admin
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre.AddTypeChambreRow(nouveauType);
             typeChambreBindingSource.MoveLast();
+        }
+
+        private void btnAjouterChambre_Click(object sender, EventArgs e)
+        {
+            var nouvelleChambre = bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.NewChambreRow();
+            DataRowView typeChambreSelectionnee = (DataRowView) typeChambreBindingSource.Current;
+            
+            nouvelleChambre.NoChambre = TrouverNoChambre();
+            nouvelleChambre.NoTypeChambre = (int)typeChambreSelectionnee["NoTypeChambre"];
+
+            FrmAjoutChambre frmAjout = new FrmAjoutChambre(nouvelleChambre);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) return;
+
+            int indexTypeNouvelleChambre =
+                typeChambreBindingSource.Find("NoTypeChambre", nouvelleChambre.NoTypeChambre);
+            typeChambreBindingSource.Position = indexTypeNouvelleChambre;
+
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.AddChambreRow(nouvelleChambre);
+            chambreBindingSource.MoveLast();
+        }
+
+        private int TrouverNoChambre()
+        {
+            int plusGrandID = 0;
+
+            foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.Rows)
+            {
+                if ((int)rangee["NoChambre"] > plusGrandID)
+                {
+                    plusGrandID = (int) rangee["NoChambre"];
+                }
+            }
+
+            return plusGrandID + 1;
+        }
+
+        private void btnSauvegarder_Click(object sender, EventArgs e)
+        {
+            Validate();
+            chambreBindingSource.EndEdit();
+            typeChambreBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
+            chambreBindingSource.ResetBindings(false);
+            typeChambreBindingSource.ResetBindings(false);
         }
     }
 }

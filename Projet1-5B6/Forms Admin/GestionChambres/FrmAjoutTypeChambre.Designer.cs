@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label noTypeChambreLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label prixHautLabel;
             System.Windows.Forms.Label prixBasLabel;
             System.Windows.Forms.Label prixMoyenLabel;
-            this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
-            this.typeChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeChambreTableAdapter();
-            this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.tbNoType = new System.Windows.Forms.TextBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tbPrixHaut = new System.Windows.Forms.TextBox();
@@ -50,40 +45,7 @@
             prixHautLabel = new System.Windows.Forms.Label();
             prixBasLabel = new System.Windows.Forms.Label();
             prixMoyenLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bD5B6TP1_ConstantinBrassardLaheyDataSet
-            // 
-            this.bD5B6TP1_ConstantinBrassardLaheyDataSet.DataSetName = "BD5B6TP1_ConstantinBrassardLaheyDataSet";
-            this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // typeChambreBindingSource
-            // 
-            this.typeChambreBindingSource.DataMember = "TypeChambre";
-            this.typeChambreBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // typeChambreTableAdapter
-            // 
-            this.typeChambreTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AssistantSoinTableAdapter = null;
-            this.tableAdapterManager.AssistantTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChambreTableAdapter = null;
-            this.tableAdapterManager.ClientTableAdapter = null;
-            this.tableAdapterManager.InviteTableAdapter = null;
-            this.tableAdapterManager.PlanifSoinTableAdapter = null;
-            this.tableAdapterManager.ReservationChambreTableAdapter = null;
-            this.tableAdapterManager.SoinTableAdapter = null;
-            this.tableAdapterManager.TypeChambreTableAdapter = this.typeChambreTableAdapter;
-            this.tableAdapterManager.TypeSoinTableAdapter = null;
-            this.tableAdapterManager.TypeUtilisateurTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
             // noTypeChambreLabel
             // 
@@ -94,15 +56,6 @@
             noTypeChambreLabel.TabIndex = 1;
             noTypeChambreLabel.Text = "No:";
             // 
-            // tbNoType
-            // 
-            this.tbNoType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "NoTypeChambre", true));
-            this.tbNoType.Location = new System.Drawing.Point(158, 91);
-            this.tbNoType.Name = "tbNoType";
-            this.tbNoType.ReadOnly = true;
-            this.tbNoType.Size = new System.Drawing.Size(207, 26);
-            this.tbNoType.TabIndex = 2;
-            // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
@@ -111,14 +64,6 @@
             descriptionLabel.Size = new System.Drawing.Size(93, 20);
             descriptionLabel.TabIndex = 3;
             descriptionLabel.Text = "Description:";
-            // 
-            // tbDescription
-            // 
-            this.tbDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "Description", true));
-            this.tbDescription.Location = new System.Drawing.Point(158, 123);
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(207, 26);
-            this.tbDescription.TabIndex = 4;
             // 
             // prixHautLabel
             // 
@@ -129,14 +74,6 @@
             prixHautLabel.TabIndex = 5;
             prixHautLabel.Text = "Prix Haut:";
             // 
-            // tbPrixHaut
-            // 
-            this.tbPrixHaut.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "PrixHaut", true));
-            this.tbPrixHaut.Location = new System.Drawing.Point(158, 155);
-            this.tbPrixHaut.Name = "tbPrixHaut";
-            this.tbPrixHaut.Size = new System.Drawing.Size(207, 26);
-            this.tbPrixHaut.TabIndex = 6;
-            // 
             // prixBasLabel
             // 
             prixBasLabel.AutoSize = true;
@@ -145,14 +82,6 @@
             prixBasLabel.Size = new System.Drawing.Size(70, 20);
             prixBasLabel.TabIndex = 7;
             prixBasLabel.Text = "Prix Bas:";
-            // 
-            // tbPrixBas
-            // 
-            this.tbPrixBas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "PrixBas", true));
-            this.tbPrixBas.Location = new System.Drawing.Point(158, 187);
-            this.tbPrixBas.Name = "tbPrixBas";
-            this.tbPrixBas.Size = new System.Drawing.Size(207, 26);
-            this.tbPrixBas.TabIndex = 8;
             // 
             // prixMoyenLabel
             // 
@@ -163,9 +92,37 @@
             prixMoyenLabel.TabIndex = 9;
             prixMoyenLabel.Text = "Prix Moyen:";
             // 
+            // tbNoType
+            // 
+            this.tbNoType.Location = new System.Drawing.Point(158, 91);
+            this.tbNoType.Name = "tbNoType";
+            this.tbNoType.ReadOnly = true;
+            this.tbNoType.Size = new System.Drawing.Size(207, 26);
+            this.tbNoType.TabIndex = 2;
+            // 
+            // tbDescription
+            // 
+            this.tbDescription.Location = new System.Drawing.Point(158, 123);
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(207, 26);
+            this.tbDescription.TabIndex = 4;
+            // 
+            // tbPrixHaut
+            // 
+            this.tbPrixHaut.Location = new System.Drawing.Point(158, 155);
+            this.tbPrixHaut.Name = "tbPrixHaut";
+            this.tbPrixHaut.Size = new System.Drawing.Size(207, 26);
+            this.tbPrixHaut.TabIndex = 6;
+            // 
+            // tbPrixBas
+            // 
+            this.tbPrixBas.Location = new System.Drawing.Point(158, 187);
+            this.tbPrixBas.Name = "tbPrixBas";
+            this.tbPrixBas.Size = new System.Drawing.Size(207, 26);
+            this.tbPrixBas.TabIndex = 8;
+            // 
             // tbPrixMoyen
             // 
-            this.tbPrixMoyen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "PrixMoyen", true));
             this.tbPrixMoyen.Location = new System.Drawing.Point(158, 219);
             this.tbPrixMoyen.Name = "tbPrixMoyen";
             this.tbPrixMoyen.Size = new System.Drawing.Size(207, 26);
@@ -210,20 +167,12 @@
             this.Controls.Add(this.tbPrixMoyen);
             this.Name = "FrmAjoutTypeChambre";
             this.Text = "FrmAjoutTypeChambre";
-            this.Load += new System.EventHandler(this.FrmAjoutTypeChambre_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private BD5B6TP1_ConstantinBrassardLaheyDataSet bD5B6TP1_ConstantinBrassardLaheyDataSet;
-        private System.Windows.Forms.BindingSource typeChambreBindingSource;
-        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeChambreTableAdapter typeChambreTableAdapter;
-        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox tbNoType;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.TextBox tbPrixHaut;
