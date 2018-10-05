@@ -85,12 +85,14 @@
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
             this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
             this.déconnexionToolStripMenuItem.Text = "Déconnexion";
+            this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
             this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // BasePrepose
             // 

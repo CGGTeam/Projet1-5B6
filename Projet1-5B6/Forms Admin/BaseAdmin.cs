@@ -45,5 +45,17 @@ namespace Projet1_5B6.Forms_Admin
             new FrmGestionChambresEtTypes().Show();
             Close();
         }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void déconnexionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FrmConnexion().Show();
+            Close();
+        }
     }
 }

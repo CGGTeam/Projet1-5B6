@@ -17,5 +17,15 @@ namespace Projet1_5B6.Forms_Client
             Hide();
             fClientsInvites.Show();
         }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void déconnexionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmConnexion().Show();
+        }
     }
 }
