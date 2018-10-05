@@ -79,6 +79,7 @@
             this.planificationSOinsToolStripMenuItem.Name = "planificationSOinsToolStripMenuItem";
             this.planificationSOinsToolStripMenuItem.Size = new System.Drawing.Size(294, 30);
             this.planificationSOinsToolStripMenuItem.Text = "Planification soins";
+            this.planificationSOinsToolStripMenuItem.Click += new System.EventHandler(this.planificationSOinsToolStripMenuItem_Click);
             // 
             // gestionAssistantsToolStripMenuItem
             // 

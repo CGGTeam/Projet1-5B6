@@ -166,7 +166,7 @@
             this.Controls.Add(prixMoyenLabel);
             this.Controls.Add(this.tbPrixMoyen);
             this.Name = "FrmAjoutTypeChambre";
-            this.Text = "FrmAjoutTypeChambre";
+            this.Text = "Ajout type de chambre";
             this.ResumeLayout(false);
             this.PerformLayout();
 

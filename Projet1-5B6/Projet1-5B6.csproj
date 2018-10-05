@@ -93,29 +93,35 @@
     <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.Designer.cs">
       <DependentUpon>FrmGestionAssistants.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\FrmAjoutClient.cs">
+    <Compile Include="Forms Commun\Forms Gestion Clients\FrmAjoutClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\FrmAjoutClient.Designer.cs">
+    <Compile Include="Forms Commun\Forms Gestion Clients\FrmAjoutClient.Designer.cs">
       <DependentUpon>FrmAjoutClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\FrmAjoutSoin.cs">
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmAjoutSoin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\FrmAjoutSoin.Designer.cs">
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmAjoutSoin.Designer.cs">
       <DependentUpon>FrmAjoutSoin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\FrmClientsInvites.cs">
+    <Compile Include="Forms Commun\Forms Gestion Clients\FrmClientsInvites.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\FrmClientsInvites.Designer.cs">
+    <Compile Include="Forms Commun\Forms Gestion Clients\FrmClientsInvites.Designer.cs">
       <DependentUpon>FrmClientsInvites.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\FrmGestionSoins.cs">
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmGestionSoins.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\FrmGestionSoins.Designer.cs">
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmGestionSoins.Designer.cs">
       <DependentUpon>FrmGestionSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.Designer.cs">
+      <DependentUpon>FrmPlanificationSoins.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Prepose\BasePrepose.cs">
       <SubType>Form</SubType>
@@ -158,17 +164,20 @@
     <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.resx">
       <DependentUpon>FrmGestionAssistants.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\FrmAjoutClient.resx">
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmAjoutClient.resx">
       <DependentUpon>FrmAjoutClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\FrmAjoutSoin.resx">
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmAjoutSoin.resx">
       <DependentUpon>FrmAjoutSoin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\FrmClientsInvites.resx">
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmClientsInvites.resx">
       <DependentUpon>FrmClientsInvites.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\FrmGestionSoins.resx">
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmGestionSoins.resx">
       <DependentUpon>FrmGestionSoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.resx">
+      <DependentUpon>FrmPlanificationSoins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Prepose\BasePrepose.resx">
       <DependentUpon>BasePrepose.cs</DependentUpon>

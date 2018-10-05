@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Projet1_5B6.Forms_Commun;
+using Projet1_5B6.Forms_Commun.Forms_Gestion_Soins;
 
 namespace Projet1_5B6.Forms_Client
 {
@@ -31,7 +32,8 @@ namespace Projet1_5B6.Forms_Client
 
         private void planificationSoinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            new FrmPlanificationSoins();
         }
     }
 }

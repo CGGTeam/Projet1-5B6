@@ -214,7 +214,7 @@
             this.Controls.Add(prixLabel);
             this.Controls.Add(this.tbPrix);
             this.Name = "FrmAjoutSoin";
-            this.Text = "FrmAjoutSoin";
+            this.Text = "Ajouter un soin";
             this.Load += new System.EventHandler(this.FrmAjoutSoin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource)).EndInit();
