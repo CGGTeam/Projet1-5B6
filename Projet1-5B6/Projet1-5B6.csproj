@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.cs">
+      <DependentUpon>BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -33,7 +33,7 @@ namespace Projet1_5B6.Forms_Client
         private void planificationSoinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            new FrmPlanificationSoins();
+            new FrmPlanificationSoins().Show();
         }
     }
 }
