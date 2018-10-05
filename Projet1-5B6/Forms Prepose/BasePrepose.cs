@@ -25,7 +25,13 @@ namespace Projet1_5B6.Forms_Client
 
         private void déconnexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Hide();
             new FrmConnexion().Show();
+        }
+
+        private void planificationSoinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

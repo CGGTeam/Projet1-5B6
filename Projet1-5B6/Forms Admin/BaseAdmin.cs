@@ -22,28 +22,24 @@ namespace Projet1_5B6.Forms_Admin
         {
             Hide();
             new FrmGestionAssistants().Show();
-            Close();
         }
 
         private void gestionClientsEtInvitésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             new FrmClientsInvites().Show();
-            Close();
         }
 
         private void gestionSoinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             new FrmGestionSoins().Show();
-            Close();
         }
 
         private void gestionChambresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             new FrmGestionChambresEtTypes().Show();
-            Close();
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,7 +51,6 @@ namespace Projet1_5B6.Forms_Admin
         {
             Hide();
             new FrmConnexion().Show();
-            Close();
         }
     }
 }

@@ -73,6 +73,7 @@
             this.planificationSoinToolStripMenuItem.Name = "planificationSoinToolStripMenuItem";
             this.planificationSoinToolStripMenuItem.Size = new System.Drawing.Size(285, 30);
             this.planificationSoinToolStripMenuItem.Text = "Planification soin";
+            this.planificationSoinToolStripMenuItem.Click += new System.EventHandler(this.planificationSoinToolStripMenuItem_Click);
             // 
             // réservationChambresToolStripMenuItem
             // 
