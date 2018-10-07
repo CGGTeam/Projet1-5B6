@@ -14,7 +14,7 @@ CREATE TABLE TypeSoin
 )
 
 INSERT INTO TypeSoin ( NoTypeSoin, Description )
-VALUES (0, 'Beauté'), (1, 'Santé');
+VALUES (0, 'Beautï¿½'), (1, 'Santï¿½');
 
 /*
 | Creation de la table Soin
@@ -129,6 +129,7 @@ CREATE TABLE ReservationChambre
 /*
 | Creation de la table PlanifSoin
  */
+
 CREATE TABLE PlanifSoin
 (
     NoPersonne INT NOT NULL,
@@ -138,11 +139,11 @@ CREATE TABLE PlanifSoin
 	CONSTRAINT PK_PlanifSoin PRIMARY KEY (NoPersonne,NoAssistant,DateHeure),
     CONSTRAINT PlanifSoin_Soin_NoSoin_fk FOREIGN KEY (NoSoin) REFERENCES Soin (NoSoin),
     CONSTRAINT PlanifSoin_Assistant_NoAssistant_fk FOREIGN KEY (NoAssistant) REFERENCES Assistant (NoAssistant),
-	CONSTRAINT PlanifSoin_Invite_NoPersonne_fk FOREIGN KEY (NoPersonne) REFERENCES Invite (NoInvite),
-    CONSTRAINT PlanifSoin_Client_NoPersonne_fk FOREIGN KEY (NoPersonne) REFERENCES Client (NoClient)
+--	CONSTRAINT PlanifSoin_Invite_NoPersonne_fk FOREIGN KEY (NoPersonne) REFERENCES Invite (NoInvite),
+--  CONSTRAINT PlanifSoin_Client_NoPersonne_fk FOREIGN KEY (NoPersonne) REFERENCES Client (NoClient)
 )
 /*
-| Création de la table typeUtilisateur
+| Crï¿½ation de la table typeUtilisateur
 */
 CREATE TABLE TypeUtilisateur
 (
@@ -150,7 +151,7 @@ CREATE TABLE TypeUtilisateur
 	Identifiaction VARCHAR(25) NOT NULL,
 )
 INSERT INTO TypeUtilisateur ( NoTypeUtilisateur, Identifiaction )
-VALUES (0, 'Admin'), (1, 'Préposé');
+VALUES (0, 'Admin'), (1, 'Prï¿½posï¿½');
 
 /*
 | Utilisateur
@@ -166,5 +167,5 @@ CREATE TABLE Utilisateur
 CREATE UNIQUE INDEX Utilisateur_Nom_uindex ON Utilisateur (Nom)
 /*ajout d'un admin */
 INSERT INTO Utilisateur VALUES (0,'admin', 'Password1', 0);
-/*ajout d'un préposé */
+/*ajout d'un prï¿½posï¿½ */
 INSERT INTO Utilisateur VALUES (1,'Prepose', 'Password1', 1);
