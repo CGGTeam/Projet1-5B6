@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun
 {
-    public partial class FrmClientsInvites : Form
+    public partial class FrmGestionClientsInvites : BaseFormGestion
     {
-        public FrmClientsInvites()
+        public FrmGestionClientsInvites(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
         }

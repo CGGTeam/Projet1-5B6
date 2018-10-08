@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projet1_5B6;
 
-namespace Projet1_5B6.Forms_Client
+namespace Projet1_5B6.Forms_Prepose
 {
-    public partial class FrmAccueilClient : BasePrepose
+    public partial class FrmAccueilPrepose : BaseFormGestion
     {
-        public FrmAccueilClient()
+        public FrmAccueilPrepose(MenuStrip menu) : base(menu)
         {
             InitializeComponent();
         }

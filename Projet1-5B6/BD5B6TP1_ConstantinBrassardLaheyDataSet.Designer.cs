@@ -92,9 +92,9 @@ namespace Projet1_5B6 {
         
         private global::System.Data.DataRelation relationPlanifSoin_Soin_NoSoin_fk1;
         
-        private global::System.Data.DataRelation relationAssistantSoin_Assistant_NoAssistant_fk1;
-        
         private global::System.Data.DataRelation relationPlanifSoin_Assistant_NoAssistant_fk1;
+        
+        private global::System.Data.DataRelation relationAssistantSoin_Assistant_NoAssistant_fk1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -612,8 +612,8 @@ namespace Projet1_5B6 {
             this.relationReservationChambre_Client_NoCliet_fk1 = this.Relations["ReservationChambre_Client_NoCliet_fk1"];
             this.relationAssistantSoin_Soin_NoSoin_fk2 = this.Relations["AssistantSoin_Soin_NoSoin_fk2"];
             this.relationPlanifSoin_Soin_NoSoin_fk1 = this.Relations["PlanifSoin_Soin_NoSoin_fk1"];
-            this.relationAssistantSoin_Assistant_NoAssistant_fk1 = this.Relations["AssistantSoin_Assistant_NoAssistant_fk1"];
             this.relationPlanifSoin_Assistant_NoAssistant_fk1 = this.Relations["PlanifSoin_Assistant_NoAssistant_fk1"];
+            this.relationAssistantSoin_Assistant_NoAssistant_fk1 = this.Relations["AssistantSoin_Assistant_NoAssistant_fk1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -728,14 +728,14 @@ namespace Projet1_5B6 {
                         this.tableNoEtDescriptionSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
                         this.tablePlanifSoin.NoSoinColumn}, false);
             this.Relations.Add(this.relationPlanifSoin_Soin_NoSoin_fk1);
-            this.relationAssistantSoin_Assistant_NoAssistant_fk1 = new global::System.Data.DataRelation("AssistantSoin_Assistant_NoAssistant_fk1", new global::System.Data.DataColumn[] {
-                        this.tableNoEtNomsAssistants.NoAssistantColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAssistantSoin.NoAssistantColumn}, false);
-            this.Relations.Add(this.relationAssistantSoin_Assistant_NoAssistant_fk1);
             this.relationPlanifSoin_Assistant_NoAssistant_fk1 = new global::System.Data.DataRelation("PlanifSoin_Assistant_NoAssistant_fk1", new global::System.Data.DataColumn[] {
                         this.tableNoEtNomsAssistants.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tablePlanifSoin.NoAssistantColumn}, false);
             this.Relations.Add(this.relationPlanifSoin_Assistant_NoAssistant_fk1);
+            this.relationAssistantSoin_Assistant_NoAssistant_fk1 = new global::System.Data.DataRelation("AssistantSoin_Assistant_NoAssistant_fk1", new global::System.Data.DataColumn[] {
+                        this.tableNoEtNomsAssistants.NoAssistantColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAssistantSoin.NoAssistantColumn}, false);
+            this.Relations.Add(this.relationAssistantSoin_Assistant_NoAssistant_fk1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5284,7 +5284,7 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public NoEtDescriptionSoinRow AddNoEtDescriptionSoinRow(int NoSoin, int NoEtDescription) {
+            public NoEtDescriptionSoinRow AddNoEtDescriptionSoinRow(int NoSoin, string NoEtDescription) {
                 NoEtDescriptionSoinRow rowNoEtDescriptionSoinRow = ((NoEtDescriptionSoinRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoSoin,
@@ -5327,7 +5327,7 @@ namespace Projet1_5B6 {
             private void InitClass() {
                 this.columnNoSoin = new global::System.Data.DataColumn("NoSoin", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoSoin);
-                this.columnNoEtDescription = new global::System.Data.DataColumn("NoEtDescription", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnNoEtDescription = new global::System.Data.DataColumn("NoEtDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoEtDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNoSoin}, true));
@@ -5335,6 +5335,7 @@ namespace Projet1_5B6 {
                 this.columnNoSoin.Unique = true;
                 this.columnNoEtDescription.ReadOnly = true;
                 this.columnNoEtDescription.Caption = "Column1";
+                this.columnNoEtDescription.MaxLength = 108;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7150,10 +7151,10 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int NoEtDescription {
+            public string NoEtDescription {
                 get {
                     try {
-                        return ((int)(this[this.tableNoEtDescriptionSoin.NoEtDescriptionColumn]));
+                        return ((string)(this[this.tableNoEtDescriptionSoin.NoEtDescriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NoEtDescription\' in table \'NoEtDescriptionSoin\' is DBNull.", e);
@@ -7254,23 +7255,23 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AssistantSoinRow[] GetAssistantSoinRows() {
-                if ((this.Table.ChildRelations["AssistantSoin_Assistant_NoAssistant_fk1"] == null)) {
-                    return new AssistantSoinRow[0];
-                }
-                else {
-                    return ((AssistantSoinRow[])(base.GetChildRows(this.Table.ChildRelations["AssistantSoin_Assistant_NoAssistant_fk1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PlanifSoinRow[] GetPlanifSoinRows() {
                 if ((this.Table.ChildRelations["PlanifSoin_Assistant_NoAssistant_fk1"] == null)) {
                     return new PlanifSoinRow[0];
                 }
                 else {
                     return ((PlanifSoinRow[])(base.GetChildRows(this.Table.ChildRelations["PlanifSoin_Assistant_NoAssistant_fk1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AssistantSoinRow[] GetAssistantSoinRows() {
+                if ((this.Table.ChildRelations["AssistantSoin_Assistant_NoAssistant_fk1"] == null)) {
+                    return new AssistantSoinRow[0];
+                }
+                else {
+                    return ((AssistantSoinRow[])(base.GetChildRows(this.Table.ChildRelations["AssistantSoin_Assistant_NoAssistant_fk1"])));
                 }
             }
         }
@@ -12613,8 +12614,8 @@ FROM            Assistant INNER JOIN
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Soin] SET [NoSoin] = @NoSoin WHERE (([NoSoin] = @Original_NoSoin));\r\nSELE" +
-                "CT NoSoin, \'(\' + NoSoin + \') \' + Description AS Expr1 FROM Soin WHERE (NoSoin = " +
-                "@NoSoin)";
+                "CT NoSoin, \'(\' + CAST(NoSoin AS VARCHAR) + \') \' + Description AS Expr1 FROM Soin" +
+                " WHERE (NoSoin = @NoSoin)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -12633,7 +12634,7 @@ FROM            Assistant INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NoSoin, \'(\' + NoSoin + \') \' + Description FROM Soin";
+            this._commandCollection[0].CommandText = "SELECT NoSoin, \'(\' + CAST(NoSoin AS VARCHAR) + \') \' + Description FROM Soin";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

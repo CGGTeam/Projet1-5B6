@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projet1_5B6.Forms_Commun;
+using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Admin
 {
-    public partial class FrmGestionChambresEtTypes : BaseAdmin
+    public partial class FrmGestionChambresEtTypes : BaseFormGestion
     {
-        public FrmGestionChambresEtTypes()
+        public FrmGestionChambresEtTypes(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
         }

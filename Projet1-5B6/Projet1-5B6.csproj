@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseFormGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFormGestion.Designer.cs">
+      <DependentUpon>BaseFormGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="BD5B6TP1_ConstantinBrassardLaheyDataSet.cs">
       <DependentUpon>BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd</DependentUpon>
     </Compile>
@@ -54,12 +60,7 @@
       <DependentUpon>BD5B6TP1_ConstantinBrassardLaheyDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ADOUtils.cs" />
-    <Compile Include="Forms Admin\BaseAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms Admin\BaseAdmin.Designer.cs">
-      <DependentUpon>BaseAdmin.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Ext WinForms\DatePickerCell.cs" />
     <Compile Include="Forms Admin\GestionChambres\FrmAjoutChambre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +109,11 @@
     <Compile Include="Forms Commun\Forms Gestion Soins\FrmAjoutSoin.Designer.cs">
       <DependentUpon>FrmAjoutSoin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Clients\FrmClientsInvites.cs">
+    <Compile Include="Forms Commun\Forms Gestion Clients\FrmGestionClientsInvites.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Clients\FrmClientsInvites.Designer.cs">
-      <DependentUpon>FrmClientsInvites.cs</DependentUpon>
+    <Compile Include="Forms Commun\Forms Gestion Clients\FrmGestionClientsInvites.Designer.cs">
+      <DependentUpon>FrmGestionClientsInvites.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Commun\Forms Gestion Soins\FrmGestionSoins.cs">
       <SubType>Form</SubType>
@@ -126,17 +127,17 @@
     <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.Designer.cs">
       <DependentUpon>FrmPlanificationSoins.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Prepose\BasePrepose.cs">
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Prepose\BasePrepose.Designer.cs">
-      <DependentUpon>BasePrepose.cs</DependentUpon>
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.Designer.cs">
+      <DependentUpon>FrmPlanifierSoin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Prepose\FrmAccueilClient.cs">
+    <Compile Include="Forms Prepose\FrmAccueilPrepose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Prepose\FrmAccueilClient.Designer.cs">
-      <DependentUpon>FrmAccueilClient.cs</DependentUpon>
+    <Compile Include="Forms Prepose\FrmAccueilPrepose.Designer.cs">
+      <DependentUpon>FrmAccueilPrepose.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
@@ -144,10 +145,21 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionForms.cs" />
+    <Compile Include="Models\MenuAdmin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\MenuPrepose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\MenuUtilisateur.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms Admin\BaseAdmin.resx">
-      <DependentUpon>BaseAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="BaseFormGestion.resx">
+      <DependentUpon>BaseFormGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\FrmAccueilAdmin.resx">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
@@ -173,8 +185,8 @@
     <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmAjoutSoin.resx">
       <DependentUpon>FrmAjoutSoin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmClientsInvites.resx">
-      <DependentUpon>FrmClientsInvites.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmGestionClientsInvites.resx">
+      <DependentUpon>FrmGestionClientsInvites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmGestionSoins.resx">
       <DependentUpon>FrmGestionSoins.cs</DependentUpon>
@@ -182,14 +194,20 @@
     <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.resx">
       <DependentUpon>FrmPlanificationSoins.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Prepose\BasePrepose.resx">
-      <DependentUpon>BasePrepose.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.resx">
+      <DependentUpon>FrmPlanifierSoin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Prepose\FrmAccueilClient.resx">
-      <DependentUpon>FrmAccueilClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Prepose\FrmAccueilPrepose.resx">
+      <DependentUpon>FrmAccueilPrepose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\MenuPrepose.resx">
+      <DependentUpon>MenuPrepose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

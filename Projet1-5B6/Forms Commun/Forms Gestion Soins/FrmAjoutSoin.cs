@@ -58,7 +58,7 @@ namespace Projet1_5B6.Forms_Commun
             {
                 Convert.ToDecimal(tbPrix.Text);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 e.Cancel = true;
             }

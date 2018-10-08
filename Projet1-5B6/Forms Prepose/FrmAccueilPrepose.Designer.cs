@@ -1,6 +1,6 @@
-﻿namespace Projet1_5B6.Forms_Client
+﻿namespace Projet1_5B6.Forms_Prepose
 {
-    partial class FrmAccueilClient
+    partial class FrmAccueilPrepose
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // FrmAccueilClient
+            // FrmAccueilPrepose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmAccueilClient";
+            this.Name = "FrmAccueilPrepose";
             this.Text = "Accueil Client";
             this.ResumeLayout(false);
 

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun
 {
-    public partial class FrmGestionSoins : Form
+    public partial class FrmGestionSoins : BaseFormGestion
     {
-        public FrmGestionSoins()
+        public FrmGestionSoins(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
         }

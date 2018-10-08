@@ -82,6 +82,8 @@
             this.tableAdapterManager.ChambreTableAdapter = null;
             this.tableAdapterManager.ClientTableAdapter = null;
             this.tableAdapterManager.InviteTableAdapter = null;
+            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
+            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = null;
             this.tableAdapterManager.PlanifSoinTableAdapter = null;
             this.tableAdapterManager.ReservationChambreTableAdapter = null;
             this.tableAdapterManager.SoinTableAdapter = null;
@@ -105,7 +107,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.typeChambreDataGridView.DataSource = this.typeChambreBindingSource;
-            this.typeChambreDataGridView.Location = new System.Drawing.Point(0, 111);
+            this.typeChambreDataGridView.Location = new System.Drawing.Point(12, 111);
             this.typeChambreDataGridView.Name = "typeChambreDataGridView";
             this.typeChambreDataGridView.RowTemplate.Height = 28;
             this.typeChambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -165,7 +167,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.chambreDataGridView.DataSource = this.chambreBindingSource;
-            this.chambreDataGridView.Location = new System.Drawing.Point(705, 111);
+            this.chambreDataGridView.Location = new System.Drawing.Point(717, 111);
             this.chambreDataGridView.Name = "chambreDataGridView";
             this.chambreDataGridView.RowTemplate.Height = 28;
             this.chambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -192,7 +194,7 @@
             // 
             // btnSupprimerType
             // 
-            this.btnSupprimerType.Location = new System.Drawing.Point(337, 380);
+            this.btnSupprimerType.Location = new System.Drawing.Point(349, 380);
             this.btnSupprimerType.Name = "btnSupprimerType";
             this.btnSupprimerType.Size = new System.Drawing.Size(213, 32);
             this.btnSupprimerType.TabIndex = 6;
@@ -201,7 +203,7 @@
             // 
             // btnAjouterType
             // 
-            this.btnAjouterType.Location = new System.Drawing.Point(94, 380);
+            this.btnAjouterType.Location = new System.Drawing.Point(106, 380);
             this.btnAjouterType.Name = "btnAjouterType";
             this.btnAjouterType.Size = new System.Drawing.Size(213, 32);
             this.btnAjouterType.TabIndex = 5;
@@ -211,7 +213,7 @@
             // 
             // btnSupprimerChambre
             // 
-            this.btnSupprimerChambre.Location = new System.Drawing.Point(991, 380);
+            this.btnSupprimerChambre.Location = new System.Drawing.Point(1003, 380);
             this.btnSupprimerChambre.Name = "btnSupprimerChambre";
             this.btnSupprimerChambre.Size = new System.Drawing.Size(213, 32);
             this.btnSupprimerChambre.TabIndex = 8;
@@ -220,7 +222,7 @@
             // 
             // btnAjouterChambre
             // 
-            this.btnAjouterChambre.Location = new System.Drawing.Point(748, 380);
+            this.btnAjouterChambre.Location = new System.Drawing.Point(760, 380);
             this.btnAjouterChambre.Name = "btnAjouterChambre";
             this.btnAjouterChambre.Size = new System.Drawing.Size(213, 32);
             this.btnAjouterChambre.TabIndex = 7;
@@ -230,7 +232,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(648, 446);
+            this.btnAnnuler.Location = new System.Drawing.Point(660, 446);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(213, 32);
             this.btnAnnuler.TabIndex = 10;
@@ -240,7 +242,7 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(405, 446);
+            this.btnSauvegarder.Location = new System.Drawing.Point(417, 446);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(213, 32);
             this.btnSauvegarder.TabIndex = 9;
@@ -251,7 +253,7 @@
             // lblEnteteTypeChambre
             // 
             this.lblEnteteTypeChambre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnteteTypeChambre.Location = new System.Drawing.Point(0, 33);
+            this.lblEnteteTypeChambre.Location = new System.Drawing.Point(12, 33);
             this.lblEnteteTypeChambre.Name = "lblEnteteTypeChambre";
             this.lblEnteteTypeChambre.Size = new System.Drawing.Size(684, 75);
             this.lblEnteteTypeChambre.TabIndex = 11;
@@ -261,7 +263,7 @@
             // lblEnteteTypeDeChambre
             // 
             this.lblEnteteTypeDeChambre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnteteTypeDeChambre.Location = new System.Drawing.Point(705, 33);
+            this.lblEnteteTypeDeChambre.Location = new System.Drawing.Point(717, 33);
             this.lblEnteteTypeDeChambre.Name = "lblEnteteTypeDeChambre";
             this.lblEnteteTypeDeChambre.Size = new System.Drawing.Size(533, 75);
             this.lblEnteteTypeDeChambre.TabIndex = 12;

@@ -34,18 +34,18 @@
             this.soinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.dgSoins = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.typeSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAjouterSoin = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnSauvegarder = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.typeSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeSoinTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSoins)).BeginInit();
@@ -74,6 +74,8 @@
             this.tableAdapterManager.ChambreTableAdapter = null;
             this.tableAdapterManager.ClientTableAdapter = null;
             this.tableAdapterManager.InviteTableAdapter = null;
+            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
+            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = null;
             this.tableAdapterManager.PlanifSoinTableAdapter = null;
             this.tableAdapterManager.ReservationChambreTableAdapter = null;
             this.tableAdapterManager.SoinTableAdapter = this.soinTableAdapter;
@@ -97,71 +99,12 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgSoins.DataSource = this.soinBindingSource;
-            this.dgSoins.Location = new System.Drawing.Point(12, 72);
+            this.dgSoins.Location = new System.Drawing.Point(12, 96);
             this.dgSoins.Name = "dgSoins";
             this.dgSoins.RowTemplate.Height = 28;
             this.dgSoins.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSoins.Size = new System.Drawing.Size(680, 233);
             this.dgSoins.TabIndex = 1;
-            // 
-            // typeSoinBindingSource
-            // 
-            this.typeSoinBindingSource.DataMember = "TypeSoin";
-            this.typeSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(680, 60);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Gestion des soins";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAjouterSoin
-            // 
-            this.btnAjouterSoin.Location = new System.Drawing.Point(141, 320);
-            this.btnAjouterSoin.Name = "btnAjouterSoin";
-            this.btnAjouterSoin.Size = new System.Drawing.Size(213, 32);
-            this.btnAjouterSoin.TabIndex = 3;
-            this.btnAjouterSoin.Text = "Ajouter soin";
-            this.btnAjouterSoin.UseVisualStyleBackColor = true;
-            this.btnAjouterSoin.Click += new System.EventHandler(this.btnAjouterSoin_Click);
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.Location = new System.Drawing.Point(384, 320);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(213, 32);
-            this.btnSupprimer.TabIndex = 4;
-            this.btnSupprimer.Text = "Supprimer soin";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
-            // btnSauvegarder
-            // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(141, 372);
-            this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(213, 32);
-            this.btnSauvegarder.TabIndex = 5;
-            this.btnSauvegarder.Text = "Sauvegarder modifications";
-            this.btnSauvegarder.UseVisualStyleBackColor = true;
-            this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
-            // 
-            // btnAnnuler
-            // 
-            this.btnAnnuler.Location = new System.Drawing.Point(384, 372);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(213, 32);
-            this.btnAnnuler.TabIndex = 6;
-            this.btnAnnuler.Text = "Annuler modifications";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
-            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
-            // 
-            // typeSoinTableAdapter
-            // 
-            this.typeSoinTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -195,11 +138,70 @@
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.ValueMember = "NoTypeSoin";
             // 
+            // typeSoinBindingSource
+            // 
+            this.typeSoinBindingSource.DataMember = "TypeSoin";
+            this.typeSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Prix";
             this.dataGridViewTextBoxColumn5.HeaderText = "Prix";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(680, 60);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Gestion des soins";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAjouterSoin
+            // 
+            this.btnAjouterSoin.Location = new System.Drawing.Point(141, 344);
+            this.btnAjouterSoin.Name = "btnAjouterSoin";
+            this.btnAjouterSoin.Size = new System.Drawing.Size(213, 32);
+            this.btnAjouterSoin.TabIndex = 3;
+            this.btnAjouterSoin.Text = "Ajouter soin";
+            this.btnAjouterSoin.UseVisualStyleBackColor = true;
+            this.btnAjouterSoin.Click += new System.EventHandler(this.btnAjouterSoin_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(384, 344);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(213, 32);
+            this.btnSupprimer.TabIndex = 4;
+            this.btnSupprimer.Text = "Supprimer soin";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnSauvegarder
+            // 
+            this.btnSauvegarder.Location = new System.Drawing.Point(141, 396);
+            this.btnSauvegarder.Name = "btnSauvegarder";
+            this.btnSauvegarder.Size = new System.Drawing.Size(213, 32);
+            this.btnSauvegarder.TabIndex = 5;
+            this.btnSauvegarder.Text = "Sauvegarder modifications";
+            this.btnSauvegarder.UseVisualStyleBackColor = true;
+            this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Location = new System.Drawing.Point(384, 396);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(213, 32);
+            this.btnAnnuler.TabIndex = 6;
+            this.btnAnnuler.Text = "Annuler modifications";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // typeSoinTableAdapter
+            // 
+            this.typeSoinTableAdapter.ClearBeforeFill = true;
             // 
             // FrmGestionSoins
             // 
@@ -215,11 +217,18 @@
             this.Name = "FrmGestionSoins";
             this.Text = "Gestion des soins";
             this.Load += new System.EventHandler(this.FrmGestionSoins_Load);
+            this.Controls.SetChildIndex(this.dgSoins, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.btnAjouterSoin, 0);
+            this.Controls.SetChildIndex(this.btnSupprimer, 0);
+            this.Controls.SetChildIndex(this.btnSauvegarder, 0);
+            this.Controls.SetChildIndex(this.btnAnnuler, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

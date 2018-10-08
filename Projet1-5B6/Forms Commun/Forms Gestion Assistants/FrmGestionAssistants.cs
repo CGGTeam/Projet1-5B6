@@ -9,22 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Admin
 {
-    public partial class FrmGestionAssistants : Form
+    public partial class FrmGestionAssistants : BaseFormGestion
     {
-        public FrmGestionAssistants()
+        public FrmGestionAssistants(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
-        }
-
-        private void assistantBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.assistantBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-
         }
 
         private void FrmGestionAssistants_Load(object sender, EventArgs e)
