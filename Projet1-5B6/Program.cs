@@ -16,7 +16,9 @@ namespace Projet1_5B6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConnexion());
+
+            GestionForms gf = new GestionForms();
+            gf.Demarrer();
         }
     }
 }

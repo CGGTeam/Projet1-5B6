@@ -34,12 +34,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAjouterAssistant = new System.Windows.Forms.Button();
             this.assistantDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnModifierAssistant = new System.Windows.Forms.Button();
-            this.btnSupprimerAssistant = new System.Windows.Forms.Button();
-            this.btnAjouterSoin = new System.Windows.Forms.Button();
-            this.btnSupprimerSoin = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +41,12 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnModifierAssistant = new System.Windows.Forms.Button();
+            this.btnSupprimerAssistant = new System.Windows.Forms.Button();
+            this.btnAjouterSoin = new System.Windows.Forms.Button();
+            this.btnSupprimerSoin = new System.Windows.Forms.Button();
             this.assistantTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.assistantSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,9 +79,10 @@
             // 
             // btnAjouterAssistant
             // 
-            this.btnAjouterAssistant.Location = new System.Drawing.Point(22, 395);
+            this.btnAjouterAssistant.Location = new System.Drawing.Point(33, 644);
+            this.btnAjouterAssistant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAjouterAssistant.Name = "btnAjouterAssistant";
-            this.btnAjouterAssistant.Size = new System.Drawing.Size(135, 30);
+            this.btnAjouterAssistant.Size = new System.Drawing.Size(202, 46);
             this.btnAjouterAssistant.TabIndex = 3;
             this.btnAjouterAssistant.Text = "Ajouter un assistant";
             this.btnAjouterAssistant.UseVisualStyleBackColor = true;
@@ -99,71 +100,12 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn8});
             this.assistantDataGridView.DataSource = this.assistantBindingSource;
-            this.assistantDataGridView.Location = new System.Drawing.Point(22, 47);
+            this.assistantDataGridView.Location = new System.Drawing.Point(33, 108);
+            this.assistantDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.assistantDataGridView.Name = "assistantDataGridView";
             this.assistantDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.assistantDataGridView.Size = new System.Drawing.Size(538, 330);
+            this.assistantDataGridView.Size = new System.Drawing.Size(807, 508);
             this.assistantDataGridView.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 39);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "LISTE DES ASSISTANTS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(638, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(320, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "liste des soins offerts par cet assistant";
-            // 
-            // btnModifierAssistant
-            // 
-            this.btnModifierAssistant.Location = new System.Drawing.Point(232, 395);
-            this.btnModifierAssistant.Name = "btnModifierAssistant";
-            this.btnModifierAssistant.Size = new System.Drawing.Size(135, 30);
-            this.btnModifierAssistant.TabIndex = 6;
-            this.btnModifierAssistant.Text = "Modifier un assistant";
-            this.btnModifierAssistant.UseVisualStyleBackColor = true;
-            this.btnModifierAssistant.Click += new System.EventHandler(this.btnModifierAssistant_Click);
-            // 
-            // btnSupprimerAssistant
-            // 
-            this.btnSupprimerAssistant.Location = new System.Drawing.Point(425, 395);
-            this.btnSupprimerAssistant.Name = "btnSupprimerAssistant";
-            this.btnSupprimerAssistant.Size = new System.Drawing.Size(135, 30);
-            this.btnSupprimerAssistant.TabIndex = 7;
-            this.btnSupprimerAssistant.Text = "Supprimer un assistant";
-            this.btnSupprimerAssistant.UseVisualStyleBackColor = true;
-            this.btnSupprimerAssistant.Click += new System.EventHandler(this.btnSupprimerAssistant_Click);
-            // 
-            // btnAjouterSoin
-            // 
-            this.btnAjouterSoin.Location = new System.Drawing.Point(679, 395);
-            this.btnAjouterSoin.Name = "btnAjouterSoin";
-            this.btnAjouterSoin.Size = new System.Drawing.Size(107, 30);
-            this.btnAjouterSoin.TabIndex = 8;
-            this.btnAjouterSoin.Text = "Ajouter un soin";
-            this.btnAjouterSoin.UseVisualStyleBackColor = true;
-            this.btnAjouterSoin.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnSupprimerSoin
-            // 
-            this.btnSupprimerSoin.Location = new System.Drawing.Point(814, 395);
-            this.btnSupprimerSoin.Name = "btnSupprimerSoin";
-            this.btnSupprimerSoin.Size = new System.Drawing.Size(107, 30);
-            this.btnSupprimerSoin.TabIndex = 9;
-            this.btnSupprimerSoin.Text = "Supprimer un soin";
-            this.btnSupprimerSoin.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -206,6 +148,72 @@
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet.DataSetName = "BD5B6TP1_ConstantinBrassardLaheyDataSet";
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(57, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(656, 61);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "LISTE DES ASSISTANTS";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(957, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(457, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "liste des soins offerts par cet assistant";
+            // 
+            // btnModifierAssistant
+            // 
+            this.btnModifierAssistant.Location = new System.Drawing.Point(348, 644);
+            this.btnModifierAssistant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModifierAssistant.Name = "btnModifierAssistant";
+            this.btnModifierAssistant.Size = new System.Drawing.Size(202, 46);
+            this.btnModifierAssistant.TabIndex = 6;
+            this.btnModifierAssistant.Text = "Modifier un assistant";
+            this.btnModifierAssistant.UseVisualStyleBackColor = true;
+            this.btnModifierAssistant.Click += new System.EventHandler(this.btnModifierAssistant_Click);
+            // 
+            // btnSupprimerAssistant
+            // 
+            this.btnSupprimerAssistant.Location = new System.Drawing.Point(638, 644);
+            this.btnSupprimerAssistant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSupprimerAssistant.Name = "btnSupprimerAssistant";
+            this.btnSupprimerAssistant.Size = new System.Drawing.Size(202, 46);
+            this.btnSupprimerAssistant.TabIndex = 7;
+            this.btnSupprimerAssistant.Text = "Supprimer un assistant";
+            this.btnSupprimerAssistant.UseVisualStyleBackColor = true;
+            this.btnSupprimerAssistant.Click += new System.EventHandler(this.btnSupprimerAssistant_Click);
+            // 
+            // btnAjouterSoin
+            // 
+            this.btnAjouterSoin.Location = new System.Drawing.Point(1018, 644);
+            this.btnAjouterSoin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAjouterSoin.Name = "btnAjouterSoin";
+            this.btnAjouterSoin.Size = new System.Drawing.Size(160, 46);
+            this.btnAjouterSoin.TabIndex = 8;
+            this.btnAjouterSoin.Text = "Ajouter un soin";
+            this.btnAjouterSoin.UseVisualStyleBackColor = true;
+            this.btnAjouterSoin.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSupprimerSoin
+            // 
+            this.btnSupprimerSoin.Location = new System.Drawing.Point(1221, 644);
+            this.btnSupprimerSoin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSupprimerSoin.Name = "btnSupprimerSoin";
+            this.btnSupprimerSoin.Size = new System.Drawing.Size(160, 46);
+            this.btnSupprimerSoin.TabIndex = 9;
+            this.btnSupprimerSoin.Text = "Supprimer un soin";
+            this.btnSupprimerSoin.UseVisualStyleBackColor = true;
+            // 
             // assistantTableAdapter
             // 
             this.assistantTableAdapter.ClearBeforeFill = true;
@@ -218,6 +226,8 @@
             this.tableAdapterManager.ChambreTableAdapter = null;
             this.tableAdapterManager.ClientTableAdapter = null;
             this.tableAdapterManager.InviteTableAdapter = null;
+            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
+            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = null;
             this.tableAdapterManager.PlanifSoinTableAdapter = null;
             this.tableAdapterManager.ReservationChambreTableAdapter = null;
             this.tableAdapterManager.SoinTableAdapter = null;
@@ -254,9 +264,10 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.assistanSoinDescriptionDataGridView.DataSource = this.assistanSoinDescriptionBindingSource;
-            this.assistanSoinDescriptionDataGridView.Location = new System.Drawing.Point(642, 47);
+            this.assistanSoinDescriptionDataGridView.Location = new System.Drawing.Point(963, 108);
+            this.assistanSoinDescriptionDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.assistanSoinDescriptionDataGridView.Name = "assistanSoinDescriptionDataGridView";
-            this.assistanSoinDescriptionDataGridView.Size = new System.Drawing.Size(299, 330);
+            this.assistanSoinDescriptionDataGridView.Size = new System.Drawing.Size(448, 508);
             this.assistanSoinDescriptionDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn9
@@ -273,9 +284,9 @@
             // 
             // FrmGestionAssistants
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 448);
+            this.ClientSize = new System.Drawing.Size(1461, 719);
             this.Controls.Add(this.assistanSoinDescriptionDataGridView);
             this.Controls.Add(this.btnSupprimerSoin);
             this.Controls.Add(this.btnAjouterSoin);
@@ -285,9 +296,19 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.assistantDataGridView);
             this.Controls.Add(this.btnAjouterAssistant);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmGestionAssistants";
             this.Text = "FrmGestionAssistants";
             this.Load += new System.EventHandler(this.FrmGestionAssistants_Load);
+            this.Controls.SetChildIndex(this.btnAjouterAssistant, 0);
+            this.Controls.SetChildIndex(this.assistantDataGridView, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.btnModifierAssistant, 0);
+            this.Controls.SetChildIndex(this.btnSupprimerAssistant, 0);
+            this.Controls.SetChildIndex(this.btnAjouterSoin, 0);
+            this.Controls.SetChildIndex(this.btnSupprimerSoin, 0);
+            this.Controls.SetChildIndex(this.assistanSoinDescriptionDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).EndInit();

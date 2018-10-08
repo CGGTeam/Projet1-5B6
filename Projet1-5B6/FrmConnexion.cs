@@ -1,23 +1,24 @@
 ﻿using Projet1_5B6.Forms_Admin;
-using Projet1_5B6.Forms_Client;
+using Projet1_5B6.Forms_Prepose;
 using System;
 using System.Data.SqlClient;
 using System.Dynamic;
 using System.Windows.Forms;
+using Projet1_5B6.Models;
 
 namespace Projet1_5B6
 {
     public partial class FrmConnexion : Form
     {
         SqlConnection maConnexion = null;
-        private dynamic utilisateur = null;
+        private Utilisateur utilisateur = null;
 
         public FrmConnexion()
         {
             InitializeComponent();
 
             //connection a la BD
-            String maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
+            string maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
             maConnexion = new SqlConnection(maChaineConnexion);
             maConnexion.Open();
         }
@@ -26,30 +27,17 @@ namespace Projet1_5B6
         {
             if (!EstUtilisateurValide()) return;
 
-            if (EstAdmin())
-            {
-                Hide();
-                new FrmAccueilAdmin().Show();
-            }
-            else
-            {
-                Hide();
-                new FrmAccueilClient().Show();
-            }
-        }
-
-        private bool EstAdmin()
-        {  
-            return utilisateur.noTypeUtilisateur == 0 ? true : false;
+            Hide();
+            Connexion?.Invoke(this, utilisateur);
         }
 
         private bool EstUtilisateurValide()
         {
-            String strNomUilisateur = tbNomUtilisateur.Text;
-            String strMotDePasse = tbMotDePasse.Text;
+            string strNomUilisateur = tbNomUtilisateur.Text;
+            string strMotDePasse = tbMotDePasse.Text;
 
             //requete SQL
-            String maRequeteSQL = "SELECT * FROM Utilisateur WHERE Nom = @NomUtilisateur and MotDePasse = @MotDePasse";
+            string maRequeteSQL = "SELECT * FROM Utilisateur WHERE Nom = @NomUtilisateur and MotDePasse = @MotDePasse";
             SqlParameter paramNom = new SqlParameter("@NomUtilisateur", strNomUilisateur);
             SqlParameter paramMDP = new SqlParameter("@MotDePasse", strMotDePasse);
 
@@ -58,7 +46,7 @@ namespace Projet1_5B6
             maCommande.Parameters.Add(paramMDP);
 
             SqlDataReader monReader = maCommande.ExecuteReader();
-            if (monReader.HasRows == false)
+            if (!monReader.HasRows)
             {
                 monReader.Close();
                 lblErrorProvider.Text = "Nom d'utilisateur ou mot de passe incorrect";
@@ -66,17 +54,15 @@ namespace Projet1_5B6
             }
             else
             {
-                utilisateur = new ExpandoObject();
                 monReader.Read();
 
-                //remplir l'objet utilisateur
-                utilisateur.noUtilisateur = monReader[0];
-                utilisateur.nom = monReader[1];
-                utilisateur.noTypeUtilisateur = monReader[3];
-                
+                utilisateur = new Utilisateur((int)monReader[0], (string)monReader[1], (int)monReader[3]);
+
                 monReader.Close();
                 return true;
             }
         }
+
+        public event EventHandler<Utilisateur> Connexion;
     }
 }

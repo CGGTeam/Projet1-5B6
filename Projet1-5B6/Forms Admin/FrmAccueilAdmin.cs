@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet1_5B6.Forms_Admin
 {
-    public partial class FrmAccueilAdmin : BaseAdmin
+    public partial class FrmAccueilAdmin : BaseFormGestion
     {
-        public FrmAccueilAdmin()
+        public FrmAccueilAdmin(MenuStrip menu) : base(menu)
         {
             InitializeComponent();
         }

@@ -1,20 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Projet1_5B6.WinForms_ext;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
 {
-    public partial class FrmPlanificationSoins : Form
+    public partial class FrmPlanificationSoins : BaseFormGestion
     {
-        public FrmPlanificationSoins()
+        public FrmPlanificationSoins(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
+        }
+
+        private void FrmPlanificationSoins_Load(object sender, EventArgs e)
+        {
+            colDateHeure = new CalendarColumn();
+
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants' table. You can move, or remove it, as needed.
+            this.noEtNomsAssistantsTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants' table. You can move, or remove it, as needed.
+            this.noEtNomsAssistantsTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites' table. You can move, or remove it, as needed.
+            this.noEtNomsClientsInvitesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin' table. You can move, or remove it, as needed.
+            this.noEtDescriptionSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin' table. You can move, or remove it, as needed.
+            this.planifSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            ADOUtils.SupprimerSelection(planifSoinBindingSource, EstSupprimable);
+        }
+
+        private bool EstSupprimable(DataRowView planifSoin)
+        {
+            return true;
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            var nouveauSoinPlanifie = bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.NewPlanifSoinRow();
+            FrmPlanifierSoin frmAjout = new FrmPlanifierSoin(nouveauSoinPlanifie);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) return;
+
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.AddPlanifSoinRow(nouveauSoinPlanifie);
+            planifSoinBindingSource.MoveLast();
+        }
+
+        private void btnSauvegarder_Click(object sender, EventArgs e)
+        {
+            Validate();
+            planifSoinBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
+            planifSoinBindingSource.ResetBindings(false);
         }
     }
 }
