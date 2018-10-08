@@ -8,12 +8,14 @@ using Projet1_5B6.Forms_Admin;
 using Projet1_5B6.Forms_Admin.ReservationChambres;
 using Projet1_5B6.Forms_Commun;
 using Projet1_5B6.Forms_Commun.Forms_Gestion_Soins;
+using Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur;
 
 namespace Projet1_5B6.Models
 {
     class MenuAdmin: MenuUtilisateur
     {
         private ToolStripMenuItem itMenuAdmin;
+        private ToolStripMenuItem itGestionUtilisateur;
         private ToolStripMenuItem itGestionClientsInvs;
         private ToolStripMenuItem itGestSoins;
         private ToolStripMenuItem itGestAssistants;
@@ -27,7 +29,11 @@ namespace Projet1_5B6.Models
         {
             InitializeComponent();
         }
-
+        private void GestionUtilisateurs(object sender, EventArgs e)
+        {
+            FindForm()?.Hide();
+            new FrmGestionUtilisateurs(this).Show();
+        }
         private void GestionAssistants(object sender, EventArgs e)
         {
             FindForm()?.Hide();
@@ -86,6 +92,7 @@ namespace Projet1_5B6.Models
         {
             System.Windows.Forms.ToolStripMenuItem itPlanifSoins;
             this.itMenuAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.itGestionUtilisateur = new System.Windows.Forms.ToolStripMenuItem();
             this.itGestionClientsInvs = new System.Windows.Forms.ToolStripMenuItem();
             this.itGestSoins = new System.Windows.Forms.ToolStripMenuItem();
             this.itGestAssistants = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +107,7 @@ namespace Projet1_5B6.Models
             // itMenuAdmin
             // 
             this.itMenuAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itGestionUtilisateur,
             this.itGestionClientsInvs,
             this.itGestSoins,
             itPlanifSoins,
@@ -112,6 +120,13 @@ namespace Projet1_5B6.Models
             this.itMenuAdmin.Name = "itMenuAdmin";
             this.itMenuAdmin.Size = new System.Drawing.Size(124, 20);
             this.itMenuAdmin.Text = "Menu admin";
+            // 
+            // itGestionUtilisateur
+            // 
+            this.itGestionUtilisateur.Name = "itGestionUtilisateur";
+            this.itGestionUtilisateur.Size = new System.Drawing.Size(269, 30);
+            this.itGestionUtilisateur.Text = "Gestion utilisateurs";
+            this.itGestionUtilisateur.Click += GestionUtilisateurs;
             // 
             // itGestionClientsInvs
             // 

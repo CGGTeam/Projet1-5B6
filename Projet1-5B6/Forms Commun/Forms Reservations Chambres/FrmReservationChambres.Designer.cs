@@ -49,16 +49,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateFin = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericNbPersonne = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnSupprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomClientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericNbPersonne)).BeginInit();
             this.SuspendLayout();
             // 
             // listeClients
@@ -138,7 +139,10 @@
             this.dataGridViewTextBoxColumn6});
             this.chambreEtPrixDataGridView.DataSource = this.chambreEtPrixBindingSource;
             this.chambreEtPrixDataGridView.Location = new System.Drawing.Point(109, 110);
+            this.chambreEtPrixDataGridView.MultiSelect = false;
             this.chambreEtPrixDataGridView.Name = "chambreEtPrixDataGridView";
+            this.chambreEtPrixDataGridView.ReadOnly = true;
+            this.chambreEtPrixDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chambreEtPrixDataGridView.Size = new System.Drawing.Size(643, 174);
             this.chambreEtPrixDataGridView.TabIndex = 2;
             // 
@@ -147,36 +151,42 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoChambre";
             this.dataGridViewTextBoxColumn1.HeaderText = "NoChambre";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Emplacement";
             this.dataGridViewTextBoxColumn2.HeaderText = "Emplacement";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Decoration";
             this.dataGridViewTextBoxColumn3.HeaderText = "Decoration";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "PrixHaut";
             this.dataGridViewTextBoxColumn4.HeaderText = "PrixHaut";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "PrixBas";
             this.dataGridViewTextBoxColumn5.HeaderText = "PrixBas";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "PrixMoyen";
             this.dataGridViewTextBoxColumn6.HeaderText = "PrixMoyen";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // label2
             // 
@@ -222,23 +232,23 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "à";
             // 
-            // numericUpDown1
+            // numericNbPersonne
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(189, 338);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericNbPersonne.Location = new System.Drawing.Point(189, 338);
+            this.numericNbPersonne.Maximum = new decimal(new int[] {
             6,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericNbPersonne.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericNbPersonne.Name = "numericNbPersonne";
+            this.numericNbPersonne.Size = new System.Drawing.Size(120, 20);
+            this.numericNbPersonne.TabIndex = 8;
+            this.numericNbPersonne.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -277,22 +287,33 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(83, 19);
+            this.label6.Location = new System.Drawing.Point(83, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(248, 24);
             this.label6.TabIndex = 12;
             this.label6.Text = "Réservation de chambres";
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(569, 380);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(183, 32);
+            this.btnSupprimer.TabIndex = 13;
+            this.btnSupprimer.Text = "Supprimer une réservation antérieur";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // FrmReservationChambres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 444);
+            this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericNbPersonne);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateFin);
             this.Controls.Add(this.label3);
@@ -304,11 +325,25 @@
             this.Name = "FrmReservationChambres";
             this.Text = "Reservation des Chambres";
             this.Load += new System.EventHandler(this.FrmReservationChambres_Load);
+            this.Controls.SetChildIndex(this.listeClients, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.chambreEtPrixDataGridView, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.dateDebut, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.dateFin, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.numericNbPersonne, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.btnConfirmer, 0);
+            this.Controls.SetChildIndex(this.btnAnnuler, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.btnSupprimer, 0);
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomClientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericNbPersonne)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,10 +371,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateFin;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericNbPersonne;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnConfirmer;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSupprimer;
     }
 }

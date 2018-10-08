@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet1_5B6.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,12 @@ using System.Windows.Forms;
 
 namespace Projet1_5B6.Forms_Admin.ReservationChambres
 {
-    public partial class FrmReservationChambres : Form
+    public partial class FrmReservationChambres : BaseFormGestion
     {
-        private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambreRow nouvelleReservationChambre;
-
-        public FrmReservationChambres(BD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambreRow nouvelleReservationChambre)
+       
+        public FrmReservationChambres(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
-            this.nouvelleReservationChambre = nouvelleReservationChambre;
         }
 
         private void FrmReservationChambres_Load(object sender, EventArgs e)
@@ -33,13 +32,29 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
         {
             try
             {
-                nouvelleReservationChambre.NoClient = (int)listeClients.SelectedValue;
+                var nouvelleReservation = bD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambre.NewReservationChambreRow();
+                nouvelleReservation.NoClient = (int)listeClients.SelectedValue;
+                foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre.Rows)
+                {
+                    nouvelleReservation.NoChambre = Convert.ToInt32(rangee["NoChambre"]);
+                }
+                nouvelleReservation.DateArrivee = dateDebut.Value;
+                nouvelleReservation.DateDepart = dateFin.Value;
+                nouvelleReservation.NbPersonnes = (int)numericNbPersonne.Value;
+
+                tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception)
             {
                 this.DialogResult = DialogResult.Cancel;
             }
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            new FrmSupprimerReservation().Show();
         }
     }
 }

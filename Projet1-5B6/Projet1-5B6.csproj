@@ -85,16 +85,28 @@
     <Compile Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.Designer.cs">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\ReservationChambres\FrmReservationChambres.cs">
+    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmAjoutUtilisateur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\ReservationChambres\FrmReservationChambres.Designer.cs">
+    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmAjoutUtilisateur.Designer.cs">
+      <DependentUpon>FrmAjoutUtilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmGestionUtilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmGestionUtilisateurs.Designer.cs">
+      <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.Designer.cs">
       <DependentUpon>FrmReservationChambres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\ReservationChambres\FrmSupprimerReservation.cs">
+    <Compile Include="Forms Commun\Forms Reservations Chambres\FrmSupprimerReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\ReservationChambres\FrmSupprimerReservation.Designer.cs">
+    <Compile Include="Forms Commun\Forms Reservations Chambres\FrmSupprimerReservation.Designer.cs">
       <DependentUpon>FrmSupprimerReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.cs">
@@ -185,10 +197,16 @@
     <EmbeddedResource Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.resx">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\ReservationChambres\FrmReservationChambres.resx">
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Utilisateur\FrmAjoutUtilisateur.resx">
+      <DependentUpon>FrmAjoutUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Utilisateur\FrmGestionUtilisateurs.resx">
+      <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.resx">
       <DependentUpon>FrmReservationChambres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\ReservationChambres\FrmSupprimerReservation.resx">
+    <EmbeddedResource Include="Forms Commun\Forms Reservations Chambres\FrmSupprimerReservation.resx">
       <DependentUpon>FrmSupprimerReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.resx">
