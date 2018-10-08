@@ -56,6 +56,10 @@ namespace Projet1_5B6 {
         
         private NoEtNomsAssistantsDataTable tableNoEtNomsAssistants;
         
+        private ChambreEtPrixDataTable tableChambreEtPrix;
+        
+        private NoEtNomClientsDataTable tableNoEtNomClients;
+        
         private global::System.Data.DataRelation relationAssistantSoin_Assistant_NoAssistant_fk;
         
         private global::System.Data.DataRelation relationAssistantSoin_Soin_NoSoin_fk;
@@ -95,6 +99,12 @@ namespace Projet1_5B6 {
         private global::System.Data.DataRelation relationPlanifSoin_Assistant_NoAssistant_fk1;
         
         private global::System.Data.DataRelation relationAssistantSoin_Assistant_NoAssistant_fk1;
+        
+        private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk1;
+        
+        private global::System.Data.DataRelation relationInvite_Client_NoCliet_fk2;
+        
+        private global::System.Data.DataRelation relationReservationChambre_Client_NoCliet_fk2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -171,6 +181,12 @@ namespace Projet1_5B6 {
                 }
                 if ((ds.Tables["NoEtNomsAssistants"] != null)) {
                     base.Tables.Add(new NoEtNomsAssistantsDataTable(ds.Tables["NoEtNomsAssistants"]));
+                }
+                if ((ds.Tables["ChambreEtPrix"] != null)) {
+                    base.Tables.Add(new ChambreEtPrixDataTable(ds.Tables["ChambreEtPrix"]));
+                }
+                if ((ds.Tables["NoEtNomClients"] != null)) {
+                    base.Tables.Add(new NoEtNomClientsDataTable(ds.Tables["NoEtNomClients"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -352,6 +368,26 @@ namespace Projet1_5B6 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ChambreEtPrixDataTable ChambreEtPrix {
+            get {
+                return this.tableChambreEtPrix;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public NoEtNomClientsDataTable NoEtNomClients {
+            get {
+                return this.tableNoEtNomClients;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -464,6 +500,12 @@ namespace Projet1_5B6 {
                 }
                 if ((ds.Tables["NoEtNomsAssistants"] != null)) {
                     base.Tables.Add(new NoEtNomsAssistantsDataTable(ds.Tables["NoEtNomsAssistants"]));
+                }
+                if ((ds.Tables["ChambreEtPrix"] != null)) {
+                    base.Tables.Add(new ChambreEtPrixDataTable(ds.Tables["ChambreEtPrix"]));
+                }
+                if ((ds.Tables["NoEtNomClients"] != null)) {
+                    base.Tables.Add(new NoEtNomClientsDataTable(ds.Tables["NoEtNomClients"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -594,6 +636,18 @@ namespace Projet1_5B6 {
                     this.tableNoEtNomsAssistants.InitVars();
                 }
             }
+            this.tableChambreEtPrix = ((ChambreEtPrixDataTable)(base.Tables["ChambreEtPrix"]));
+            if ((initTable == true)) {
+                if ((this.tableChambreEtPrix != null)) {
+                    this.tableChambreEtPrix.InitVars();
+                }
+            }
+            this.tableNoEtNomClients = ((NoEtNomClientsDataTable)(base.Tables["NoEtNomClients"]));
+            if ((initTable == true)) {
+                if ((this.tableNoEtNomClients != null)) {
+                    this.tableNoEtNomClients.InitVars();
+                }
+            }
             this.relationAssistantSoin_Assistant_NoAssistant_fk = this.Relations["AssistantSoin_Assistant_NoAssistant_fk"];
             this.relationAssistantSoin_Soin_NoSoin_fk = this.Relations["AssistantSoin_Soin_NoSoin_fk"];
             this.relationChambre_TypeChambre_NoTypeChambre_fk = this.Relations["Chambre_TypeChambre_NoTypeChambre_fk"];
@@ -614,6 +668,9 @@ namespace Projet1_5B6 {
             this.relationPlanifSoin_Soin_NoSoin_fk1 = this.Relations["PlanifSoin_Soin_NoSoin_fk1"];
             this.relationPlanifSoin_Assistant_NoAssistant_fk1 = this.Relations["PlanifSoin_Assistant_NoAssistant_fk1"];
             this.relationAssistantSoin_Assistant_NoAssistant_fk1 = this.Relations["AssistantSoin_Assistant_NoAssistant_fk1"];
+            this.relationReservationChambre_Chambre_NoChambre_fk1 = this.Relations["ReservationChambre_Chambre_NoChambre_fk1"];
+            this.relationInvite_Client_NoCliet_fk2 = this.Relations["Invite_Client_NoCliet_fk2"];
+            this.relationReservationChambre_Client_NoCliet_fk2 = this.Relations["ReservationChambre_Client_NoCliet_fk2"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -656,6 +713,10 @@ namespace Projet1_5B6 {
             base.Tables.Add(this.tableNoEtDescriptionSoin);
             this.tableNoEtNomsAssistants = new NoEtNomsAssistantsDataTable();
             base.Tables.Add(this.tableNoEtNomsAssistants);
+            this.tableChambreEtPrix = new ChambreEtPrixDataTable();
+            base.Tables.Add(this.tableChambreEtPrix);
+            this.tableNoEtNomClients = new NoEtNomClientsDataTable();
+            base.Tables.Add(this.tableNoEtNomClients);
             this.relationAssistantSoin_Assistant_NoAssistant_fk = new global::System.Data.DataRelation("AssistantSoin_Assistant_NoAssistant_fk", new global::System.Data.DataColumn[] {
                         this.tableAssistant.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tableAssistantSoin.NoAssistantColumn}, false);
@@ -736,6 +797,18 @@ namespace Projet1_5B6 {
                         this.tableNoEtNomsAssistants.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tableAssistantSoin.NoAssistantColumn}, false);
             this.Relations.Add(this.relationAssistantSoin_Assistant_NoAssistant_fk1);
+            this.relationReservationChambre_Chambre_NoChambre_fk1 = new global::System.Data.DataRelation("ReservationChambre_Chambre_NoChambre_fk1", new global::System.Data.DataColumn[] {
+                        this.tableChambreEtPrix.NoChambreColumn}, new global::System.Data.DataColumn[] {
+                        this.tableReservationChambre.NoChambreColumn}, false);
+            this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk1);
+            this.relationInvite_Client_NoCliet_fk2 = new global::System.Data.DataRelation("Invite_Client_NoCliet_fk2", new global::System.Data.DataColumn[] {
+                        this.tableNoEtNomClients.NoClientColumn}, new global::System.Data.DataColumn[] {
+                        this.tableInvite.NoClientColumn}, false);
+            this.Relations.Add(this.relationInvite_Client_NoCliet_fk2);
+            this.relationReservationChambre_Client_NoCliet_fk2 = new global::System.Data.DataRelation("ReservationChambre_Client_NoCliet_fk2", new global::System.Data.DataColumn[] {
+                        this.tableNoEtNomClients.NoClientColumn}, new global::System.Data.DataColumn[] {
+                        this.tableReservationChambre.NoClientColumn}, false);
+            this.Relations.Add(this.relationReservationChambre_Client_NoCliet_fk2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -831,6 +904,18 @@ namespace Projet1_5B6 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeNoEtNomsAssistants() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeChambreEtPrix() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeNoEtNomClients() {
             return false;
         }
         
@@ -936,6 +1021,12 @@ namespace Projet1_5B6 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void NoEtNomsAssistantsRowChangeEventHandler(object sender, NoEtNomsAssistantsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void ChambreEtPrixRowChangeEventHandler(object sender, ChambreEtPrixRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void NoEtNomClientsRowChangeEventHandler(object sender, NoEtNomClientsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5738,6 +5829,614 @@ namespace Projet1_5B6 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ChambreEtPrixDataTable : global::System.Data.TypedTableBase<ChambreEtPrixRow> {
+            
+            private global::System.Data.DataColumn columnNoChambre;
+            
+            private global::System.Data.DataColumn columnEmplacement;
+            
+            private global::System.Data.DataColumn columnDecoration;
+            
+            private global::System.Data.DataColumn columnPrixHaut;
+            
+            private global::System.Data.DataColumn columnPrixBas;
+            
+            private global::System.Data.DataColumn columnPrixMoyen;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixDataTable() {
+                this.TableName = "ChambreEtPrix";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ChambreEtPrixDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected ChambreEtPrixDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn NoChambreColumn {
+                get {
+                    return this.columnNoChambre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmplacementColumn {
+                get {
+                    return this.columnEmplacement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DecorationColumn {
+                get {
+                    return this.columnDecoration;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PrixHautColumn {
+                get {
+                    return this.columnPrixHaut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PrixBasColumn {
+                get {
+                    return this.columnPrixBas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PrixMoyenColumn {
+                get {
+                    return this.columnPrixMoyen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRow this[int index] {
+                get {
+                    return ((ChambreEtPrixRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ChambreEtPrixRowChangeEventHandler ChambreEtPrixRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ChambreEtPrixRowChangeEventHandler ChambreEtPrixRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ChambreEtPrixRowChangeEventHandler ChambreEtPrixRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event ChambreEtPrixRowChangeEventHandler ChambreEtPrixRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddChambreEtPrixRow(ChambreEtPrixRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRow AddChambreEtPrixRow(int NoChambre, string Emplacement, string Decoration, decimal PrixHaut, decimal PrixBas, decimal PrixMoyen) {
+                ChambreEtPrixRow rowChambreEtPrixRow = ((ChambreEtPrixRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        NoChambre,
+                        Emplacement,
+                        Decoration,
+                        PrixHaut,
+                        PrixBas,
+                        PrixMoyen};
+                rowChambreEtPrixRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowChambreEtPrixRow);
+                return rowChambreEtPrixRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRow FindByNoChambre(int NoChambre) {
+                return ((ChambreEtPrixRow)(this.Rows.Find(new object[] {
+                            NoChambre})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ChambreEtPrixDataTable cln = ((ChambreEtPrixDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ChambreEtPrixDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnNoChambre = base.Columns["NoChambre"];
+                this.columnEmplacement = base.Columns["Emplacement"];
+                this.columnDecoration = base.Columns["Decoration"];
+                this.columnPrixHaut = base.Columns["PrixHaut"];
+                this.columnPrixBas = base.Columns["PrixBas"];
+                this.columnPrixMoyen = base.Columns["PrixMoyen"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnNoChambre = new global::System.Data.DataColumn("NoChambre", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNoChambre);
+                this.columnEmplacement = new global::System.Data.DataColumn("Emplacement", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmplacement);
+                this.columnDecoration = new global::System.Data.DataColumn("Decoration", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDecoration);
+                this.columnPrixHaut = new global::System.Data.DataColumn("PrixHaut", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrixHaut);
+                this.columnPrixBas = new global::System.Data.DataColumn("PrixBas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrixBas);
+                this.columnPrixMoyen = new global::System.Data.DataColumn("PrixMoyen", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrixMoyen);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnNoChambre}, true));
+                this.columnNoChambre.AllowDBNull = false;
+                this.columnNoChambre.Unique = true;
+                this.columnEmplacement.AllowDBNull = false;
+                this.columnEmplacement.MaxLength = 25;
+                this.columnDecoration.MaxLength = 25;
+                this.columnPrixHaut.AllowDBNull = false;
+                this.columnPrixBas.AllowDBNull = false;
+                this.columnPrixMoyen.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRow NewChambreEtPrixRow() {
+                return ((ChambreEtPrixRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ChambreEtPrixRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ChambreEtPrixRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ChambreEtPrixRowChanged != null)) {
+                    this.ChambreEtPrixRowChanged(this, new ChambreEtPrixRowChangeEvent(((ChambreEtPrixRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ChambreEtPrixRowChanging != null)) {
+                    this.ChambreEtPrixRowChanging(this, new ChambreEtPrixRowChangeEvent(((ChambreEtPrixRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ChambreEtPrixRowDeleted != null)) {
+                    this.ChambreEtPrixRowDeleted(this, new ChambreEtPrixRowChangeEvent(((ChambreEtPrixRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ChambreEtPrixRowDeleting != null)) {
+                    this.ChambreEtPrixRowDeleting(this, new ChambreEtPrixRowChangeEvent(((ChambreEtPrixRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveChambreEtPrixRow(ChambreEtPrixRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BD5B6TP1_ConstantinBrassardLaheyDataSet ds = new BD5B6TP1_ConstantinBrassardLaheyDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ChambreEtPrixDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class NoEtNomClientsDataTable : global::System.Data.TypedTableBase<NoEtNomClientsRow> {
+            
+            private global::System.Data.DataColumn columnclient;
+            
+            private global::System.Data.DataColumn columnNoClient;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsDataTable() {
+                this.TableName = "NoEtNomClients";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal NoEtNomClientsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected NoEtNomClientsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn clientColumn {
+                get {
+                    return this.columnclient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn NoClientColumn {
+                get {
+                    return this.columnNoClient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow this[int index] {
+                get {
+                    return ((NoEtNomClientsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event NoEtNomClientsRowChangeEventHandler NoEtNomClientsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event NoEtNomClientsRowChangeEventHandler NoEtNomClientsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event NoEtNomClientsRowChangeEventHandler NoEtNomClientsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event NoEtNomClientsRowChangeEventHandler NoEtNomClientsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddNoEtNomClientsRow(NoEtNomClientsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow AddNoEtNomClientsRow(string client, int NoClient) {
+                NoEtNomClientsRow rowNoEtNomClientsRow = ((NoEtNomClientsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        client,
+                        NoClient};
+                rowNoEtNomClientsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowNoEtNomClientsRow);
+                return rowNoEtNomClientsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow FindByNoClient(int NoClient) {
+                return ((NoEtNomClientsRow)(this.Rows.Find(new object[] {
+                            NoClient})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                NoEtNomClientsDataTable cln = ((NoEtNomClientsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new NoEtNomClientsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnclient = base.Columns["client"];
+                this.columnNoClient = base.Columns["NoClient"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnclient = new global::System.Data.DataColumn("client", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclient);
+                this.columnNoClient = new global::System.Data.DataColumn("NoClient", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNoClient);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnNoClient}, true));
+                this.columnclient.ReadOnly = true;
+                this.columnclient.MaxLength = 37;
+                this.columnNoClient.AllowDBNull = false;
+                this.columnNoClient.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow NewNoEtNomClientsRow() {
+                return ((NoEtNomClientsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new NoEtNomClientsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(NoEtNomClientsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.NoEtNomClientsRowChanged != null)) {
+                    this.NoEtNomClientsRowChanged(this, new NoEtNomClientsRowChangeEvent(((NoEtNomClientsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.NoEtNomClientsRowChanging != null)) {
+                    this.NoEtNomClientsRowChanging(this, new NoEtNomClientsRowChangeEvent(((NoEtNomClientsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.NoEtNomClientsRowDeleted != null)) {
+                    this.NoEtNomClientsRowDeleted(this, new NoEtNomClientsRowChangeEvent(((NoEtNomClientsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.NoEtNomClientsRowDeleting != null)) {
+                    this.NoEtNomClientsRowDeleting(this, new NoEtNomClientsRowChangeEvent(((NoEtNomClientsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveNoEtNomClientsRow(NoEtNomClientsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BD5B6TP1_ConstantinBrassardLaheyDataSet ds = new BD5B6TP1_ConstantinBrassardLaheyDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "NoEtNomClientsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AssistantRow : global::System.Data.DataRow {
@@ -6299,6 +6998,17 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow NoEtNomClientsRow {
+                get {
+                    return ((NoEtNomClientsRow)(this.GetParentRow(this.Table.ParentRelations["Invite_Client_NoCliet_fk2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Invite_Client_NoCliet_fk2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNoClientNull() {
                 return this.IsNull(this.tableInvite.NoClientColumn);
             }
@@ -6556,6 +7266,28 @@ namespace Projet1_5B6 {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["ReservationChambre_Client_NoCliet_fk1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRow ChambreEtPrixRow {
+                get {
+                    return ((ChambreEtPrixRow)(this.GetParentRow(this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow NoEtNomClientsRow {
+                get {
+                    return ((NoEtNomClientsRow)(this.GetParentRow(this.Table.ParentRelations["ReservationChambre_Client_NoCliet_fk2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ReservationChambre_Client_NoCliet_fk2"]);
                 }
             }
         }
@@ -7277,6 +8009,191 @@ namespace Projet1_5B6 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ChambreEtPrixRow : global::System.Data.DataRow {
+            
+            private ChambreEtPrixDataTable tableChambreEtPrix;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal ChambreEtPrixRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableChambreEtPrix = ((ChambreEtPrixDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int NoChambre {
+                get {
+                    return ((int)(this[this.tableChambreEtPrix.NoChambreColumn]));
+                }
+                set {
+                    this[this.tableChambreEtPrix.NoChambreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Emplacement {
+                get {
+                    return ((string)(this[this.tableChambreEtPrix.EmplacementColumn]));
+                }
+                set {
+                    this[this.tableChambreEtPrix.EmplacementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Decoration {
+                get {
+                    try {
+                        return ((string)(this[this.tableChambreEtPrix.DecorationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Decoration\' in table \'ChambreEtPrix\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChambreEtPrix.DecorationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal PrixHaut {
+                get {
+                    return ((decimal)(this[this.tableChambreEtPrix.PrixHautColumn]));
+                }
+                set {
+                    this[this.tableChambreEtPrix.PrixHautColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal PrixBas {
+                get {
+                    return ((decimal)(this[this.tableChambreEtPrix.PrixBasColumn]));
+                }
+                set {
+                    this[this.tableChambreEtPrix.PrixBasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal PrixMoyen {
+                get {
+                    return ((decimal)(this[this.tableChambreEtPrix.PrixMoyenColumn]));
+                }
+                set {
+                    this[this.tableChambreEtPrix.PrixMoyenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDecorationNull() {
+                return this.IsNull(this.tableChambreEtPrix.DecorationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDecorationNull() {
+                this[this.tableChambreEtPrix.DecorationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ReservationChambreRow[] GetReservationChambreRows() {
+                if ((this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk1"] == null)) {
+                    return new ReservationChambreRow[0];
+                }
+                else {
+                    return ((ReservationChambreRow[])(base.GetChildRows(this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk1"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class NoEtNomClientsRow : global::System.Data.DataRow {
+            
+            private NoEtNomClientsDataTable tableNoEtNomClients;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal NoEtNomClientsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableNoEtNomClients = ((NoEtNomClientsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string client {
+                get {
+                    try {
+                        return ((string)(this[this.tableNoEtNomClients.clientColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'client\' in table \'NoEtNomClients\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNoEtNomClients.clientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int NoClient {
+                get {
+                    return ((int)(this[this.tableNoEtNomClients.NoClientColumn]));
+                }
+                set {
+                    this[this.tableNoEtNomClients.NoClientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsclientNull() {
+                return this.IsNull(this.tableNoEtNomClients.clientColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetclientNull() {
+                this[this.tableNoEtNomClients.clientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public InviteRow[] GetInviteRows() {
+                if ((this.Table.ChildRelations["Invite_Client_NoCliet_fk2"] == null)) {
+                    return new InviteRow[0];
+                }
+                else {
+                    return ((InviteRow[])(base.GetChildRows(this.Table.ChildRelations["Invite_Client_NoCliet_fk2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ReservationChambreRow[] GetReservationChambreRows() {
+                if ((this.Table.ChildRelations["ReservationChambre_Client_NoCliet_fk2"] == null)) {
+                    return new ReservationChambreRow[0];
+                }
+                else {
+                    return ((ReservationChambreRow[])(base.GetChildRows(this.Table.ChildRelations["ReservationChambre_Client_NoCliet_fk2"])));
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -7806,6 +8723,74 @@ namespace Projet1_5B6 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NoEtNomsAssistantsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class ChambreEtPrixRowChangeEvent : global::System.EventArgs {
+            
+            private ChambreEtPrixRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRowChangeEvent(ChambreEtPrixRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreEtPrixRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class NoEtNomClientsRowChangeEvent : global::System.EventArgs {
+            
+            private NoEtNomClientsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRowChangeEvent(NoEtNomClientsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public NoEtNomClientsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13011,6 +13996,350 @@ FROM            Assistant INNER JOIN
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ChambreEtPrixTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public ChambreEtPrixTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ChambreEtPrix";
+            tableMapping.ColumnMappings.Add("NoChambre", "NoChambre");
+            tableMapping.ColumnMappings.Add("Emplacement", "Emplacement");
+            tableMapping.ColumnMappings.Add("Decoration", "Decoration");
+            tableMapping.ColumnMappings.Add("PrixHaut", "PrixHaut");
+            tableMapping.ColumnMappings.Add("PrixBas", "PrixBas");
+            tableMapping.ColumnMappings.Add("PrixMoyen", "PrixMoyen");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Projet1_5B6.Properties.Settings.Default.BD5B6TP1_ConstantinBrassardLaheyConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        Chambre.NoChambre, Chambre.Emplacement, Chambre.Decoration, TypeChambre.PrixHaut, TypeChambre.PrixBas, TypeChambre.PrixMoyen
+FROM            Chambre INNER JOIN
+                         TypeChambre ON Chambre.NoTypeChambre = TypeChambre.NoTypeChambre
+ORDER BY Chambre.NoChambre";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreEtPrixDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreEtPrixDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreEtPrixDataTable dataTable = new BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreEtPrixDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class NoEtNomClientsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public NoEtNomClientsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "NoEtNomClients";
+            tableMapping.ColumnMappings.Add("client", "client");
+            tableMapping.ColumnMappings.Add("NoClient", "NoClient");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Projet1_5B6.Properties.Settings.Default.BD5B6TP1_ConstantinBrassardLaheyConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        NoClient, \'( \' + CONVERT(varchar(10), NoClient) + \') \' + Nom AS cli" +
+                "ent\r\nFROM            Client\r\nORDER BY NoClient";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomClientsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomClientsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomClientsDataTable dataTable = new BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomClientsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13402,15 +14731,6 @@ FROM            Assistant INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(BD5B6TP1_ConstantinBrassardLaheyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._clientTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._clientTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._typeChambreTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TypeChambre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -13429,21 +14749,12 @@ FROM            Assistant INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._assistantTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Assistant.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._clientTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._assistantTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._chambreTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._chambreTableAdapter.Update(updatedRows));
+                    result = (result + this._clientTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13462,6 +14773,15 @@ FROM            Assistant INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._soinTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._chambreTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._chambreTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13492,12 +14812,12 @@ FROM            Assistant INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._assistantSoinTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._assistantTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Assistant.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._assistantSoinTableAdapter.Update(updatedRows));
+                    result = (result + this._assistantTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13528,6 +14848,15 @@ FROM            Assistant INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._assistantSoinTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._assistantSoinTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -13538,14 +14867,6 @@ FROM            Assistant INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(BD5B6TP1_ConstantinBrassardLaheyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._clientTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._clientTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._typeChambreTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TypeChambre.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -13562,19 +14883,11 @@ FROM            Assistant INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._assistantTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Assistant.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._clientTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._assistantTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._chambreTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._chambreTableAdapter.Update(addedRows));
+                    result = (result + this._clientTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13591,6 +14904,14 @@ FROM            Assistant INNER JOIN
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._soinTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._chambreTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._chambreTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13618,11 +14939,11 @@ FROM            Assistant INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._assistantSoinTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._assistantTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Assistant.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._assistantSoinTableAdapter.Update(addedRows));
+                    result = (result + this._assistantTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13650,6 +14971,14 @@ FROM            Assistant INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._assistantSoinTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._assistantSoinTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -13660,6 +14989,14 @@ FROM            Assistant INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(BD5B6TP1_ConstantinBrassardLaheyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._assistantSoinTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._assistantSoinTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._utilisateurTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -13684,11 +15021,11 @@ FROM            Assistant INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._assistantSoinTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._assistantTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Assistant.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._assistantSoinTableAdapter.Update(deletedRows));
+                    result = (result + this._assistantTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -13716,6 +15053,14 @@ FROM            Assistant INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._chambreTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._chambreTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._soinTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -13732,19 +15077,11 @@ FROM            Assistant INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._chambreTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._clientTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._chambreTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._assistantTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Assistant.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._assistantTableAdapter.Update(deletedRows));
+                    result = (result + this._clientTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -13761,14 +15098,6 @@ FROM            Assistant INNER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._typeChambreTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._clientTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._clientTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

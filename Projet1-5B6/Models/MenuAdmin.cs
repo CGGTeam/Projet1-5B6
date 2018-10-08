@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projet1_5B6.Forms_Admin;
+using Projet1_5B6.Forms_Admin.ReservationChambres;
 using Projet1_5B6.Forms_Commun;
 using Projet1_5B6.Forms_Commun.Forms_Gestion_Soins;
 
@@ -71,8 +72,8 @@ namespace Projet1_5B6.Models
 
         private void ReservationChambre(object sender, EventArgs e)
         {
-            //TODO: Implémenter (Vincent)
-            throw new NotImplementedException();
+            FindForm()?.Hide();
+            new FrmReservationChambres(this).Show();
         }
 
         private void VisualiserRapport(object sender, EventArgs e)
