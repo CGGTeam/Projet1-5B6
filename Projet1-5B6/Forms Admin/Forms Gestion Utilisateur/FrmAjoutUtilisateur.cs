@@ -14,11 +14,13 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
     {
         BD5B6TP1_ConstantinBrassardLaheyDataSet.UtilisateurRow user;
         private readonly Control[] controlesAValider;
+        private BindingSource utilisateurBindingSource;
 
-        public FrmAjoutUtilisateur(BD5B6TP1_ConstantinBrassardLaheyDataSet.UtilisateurRow user)
+        public FrmAjoutUtilisateur(BD5B6TP1_ConstantinBrassardLaheyDataSet.UtilisateurRow user, BindingSource utilisateurBindingSource)
         {
             InitializeComponent();
             this.user = user;
+            this.utilisateurBindingSource = utilisateurBindingSource;
 
             controlesAValider = new Control[]
             {
@@ -48,14 +50,22 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         {
             user.Nom = tbNom.Text;
 
-
-
-
+            foreach (DataRow row in bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.Rows) {
+                if ((string)row[1] == user.Nom)
+                {
+                    MessageBox.Show("Vous devez utiliser un nom unique!");
+                    return;
+                }
+                btnConfirmer.Text = (string)row[1];
+            }
+            btnConfirmer.Text = this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.Count().ToString();
+            /*
             user.MotDePasse = tbMotDePasse.Text;
             user.NoTypeUtilisateur = (int)listTypeUtilisateur.SelectedValue;
 
             DialogResult = DialogResult.OK;
             Close();
+            */
         }
     }
 }

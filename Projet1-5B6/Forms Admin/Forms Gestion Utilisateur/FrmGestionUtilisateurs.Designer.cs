@@ -155,6 +155,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoUtilisateur";
             this.dataGridViewTextBoxColumn1.HeaderText = "NoUtilisateur";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 70;
             // 
             // dataGridViewTextBoxColumn2
