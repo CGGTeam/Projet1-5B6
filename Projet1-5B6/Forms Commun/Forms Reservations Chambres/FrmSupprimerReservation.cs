@@ -39,22 +39,24 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
 
         private bool EstSupprimable(DataRowView selection)
         {
-            if((DateTime)selection["DateArrivee"] >= DateTime.Now && selection == null)
+            if(selection == null)
+                return false;
+            if ((DateTime)selection["DateArrivee"] >= DateTime.Now)
                 return false;
             return true;
         }
-
-        private void btnAnnuler_Click(object sender, EventArgs e)
-        {
-            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
-            reservationChambreBindingSource.ResetBindings(false);
-        }
-
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
             Validate();
             reservationChambreBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            Close();
+        }
+
+        private void btnAnnuler_Click_1(object sender, EventArgs e)
+        {
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
+            reservationChambreBindingSource.ResetBindings(false);
             Close();
         }
     }

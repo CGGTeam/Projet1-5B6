@@ -881,6 +881,71 @@ ORDER BY NoClient</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SoinsPersonnesTableAdapter" GeneratorDataComponentClassName="SoinsPersonnesTableAdapter" Name="SoinsPersonnes" UserDataComponentName="SoinsPersonnesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Soin.Description, PlanifSoin.DateHeure, Soin_1.Prix, Assistant.Prenom + Assistant.Nom AS [Nom assistant]
+FROM            Soin INNER JOIN
+                         PlanifSoin ON Soin.NoSoin = PlanifSoin.NoSoin INNER JOIN
+                         Soin AS Soin_1 ON PlanifSoin.NoSoin = Soin_1.NoSoin INNER JOIN
+                         AssistantSoin ON Soin.NoSoin = AssistantSoin.NoSoin AND Soin_1.NoSoin = AssistantSoin.NoSoin INNER JOIN
+                         Assistant ON PlanifSoin.NoAssistant = Assistant.NoAssistant AND AssistantSoin.NoAssistant = Assistant.NoAssistant
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DateHeure" DataSetColumn="DateHeure" />
+              <Mapping SourceColumn="Prix" DataSetColumn="Prix" />
+              <Mapping SourceColumn="Nom assistant" DataSetColumn="Nom assistant" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NoEtEmplacementChambreTableAdapter" GeneratorDataComponentClassName="NoEtEmplacementChambreTableAdapter" Name="NoEtEmplacementChambre" UserDataComponentName="NoEtEmplacementChambreTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectName="BD5B6TP1_ConstantinBrassardLahey.dbo.Chambre" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT NoChambre, '(' + CAST (NoChambre AS VARCHAR) + ') ' + Emplacement FROM Chambre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NoChambre" DataSetColumn="NoChambre" />
+              <Mapping SourceColumn="Column1" DataSetColumn="NoEtEmplacement" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RapportChambreTableAdapter" GeneratorDataComponentClassName="RapportChambreTableAdapter" Name="RapportChambre" UserDataComponentName="RapportChambreTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectName="BD5B6TP1_ConstantinBrassardLahey.dbo.ReservationChambre" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Client.Nom + ',  Client.Prenom' AS NomClient, ReservationChambre.DateArrivee, ReservationChambre.DateDepart, ReservationChambre.NbPersonnes, ReservationChambre.NoChambre
+FROM            Chambre INNER JOIN
+                         ReservationChambre ON Chambre.NoChambre = ReservationChambre.NoChambre INNER JOIN
+                         Client ON ReservationChambre.NoClient = Client.NoClient</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NomClient" DataSetColumn="NomClient" />
+              <Mapping SourceColumn="DateArrivee" DataSetColumn="DateArrivee" />
+              <Mapping SourceColumn="DateDepart" DataSetColumn="DateDepart" />
+              <Mapping SourceColumn="NbPersonnes" DataSetColumn="NbPersonnes" />
+              <Mapping SourceColumn="NoChambre" DataSetColumn="NoChambre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1225,6 +1290,59 @@ ORDER BY NoClient</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SoinsPersonnes" msprop:Generator_TableClassName="SoinsPersonnesDataTable" msprop:Generator_TableVarName="tableSoinsPersonnes" msprop:Generator_RowChangedName="SoinsPersonnesRowChanged" msprop:Generator_TablePropName="SoinsPersonnes" msprop:Generator_RowDeletingName="SoinsPersonnesRowDeleting" msprop:Generator_RowChangingName="SoinsPersonnesRowChanging" msprop:Generator_RowEvHandlerName="SoinsPersonnesRowChangeEventHandler" msprop:Generator_RowDeletedName="SoinsPersonnesRowDeleted" msprop:Generator_RowClassName="SoinsPersonnesRow" msprop:Generator_UserTableName="SoinsPersonnes" msprop:Generator_RowEvArgName="SoinsPersonnesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateHeure" msprop:Generator_ColumnVarNameInTable="columnDateHeure" msprop:Generator_ColumnPropNameInRow="DateHeure" msprop:Generator_ColumnPropNameInTable="DateHeureColumn" msprop:Generator_UserColumnName="DateHeure" type="xs:dateTime" />
+              <xs:element name="Prix" msprop:Generator_ColumnVarNameInTable="columnPrix" msprop:Generator_ColumnPropNameInRow="Prix" msprop:Generator_ColumnPropNameInTable="PrixColumn" msprop:Generator_UserColumnName="Prix" type="xs:decimal" />
+              <xs:element name="Nom_x0020_assistant" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNom_assistant" msprop:Generator_ColumnPropNameInRow="Nom_assistant" msprop:Generator_ColumnPropNameInTable="Nom_assistantColumn" msprop:Generator_UserColumnName="Nom assistant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NoEtEmplacementChambre" msprop:Generator_TableClassName="NoEtEmplacementChambreDataTable" msprop:Generator_TableVarName="tableNoEtEmplacementChambre" msprop:Generator_TablePropName="NoEtEmplacementChambre" msprop:Generator_RowDeletingName="NoEtEmplacementChambreRowDeleting" msprop:Generator_RowChangingName="NoEtEmplacementChambreRowChanging" msprop:Generator_RowEvHandlerName="NoEtEmplacementChambreRowChangeEventHandler" msprop:Generator_RowDeletedName="NoEtEmplacementChambreRowDeleted" msprop:Generator_UserTableName="NoEtEmplacementChambre" msprop:Generator_RowChangedName="NoEtEmplacementChambreRowChanged" msprop:Generator_RowEvArgName="NoEtEmplacementChambreRowChangeEvent" msprop:Generator_RowClassName="NoEtEmplacementChambreRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NoChambre" msprop:Generator_ColumnVarNameInTable="columnNoChambre" msprop:Generator_ColumnPropNameInRow="NoChambre" msprop:Generator_ColumnPropNameInTable="NoChambreColumn" msprop:Generator_UserColumnName="NoChambre" type="xs:int" />
+              <xs:element name="NoEtEmplacement" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNoEtEmplacement" msprop:Generator_ColumnPropNameInRow="NoEtEmplacement" msprop:Generator_ColumnPropNameInTable="NoEtEmplacementColumn" msprop:Generator_UserColumnName="NoEtEmplacement" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="58" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RapportChambre" msprop:Generator_TableClassName="RapportChambreDataTable" msprop:Generator_TableVarName="tableRapportChambre" msprop:Generator_TablePropName="RapportChambre" msprop:Generator_RowDeletingName="RapportChambreRowDeleting" msprop:Generator_RowChangingName="RapportChambreRowChanging" msprop:Generator_RowEvHandlerName="RapportChambreRowChangeEventHandler" msprop:Generator_RowDeletedName="RapportChambreRowDeleted" msprop:Generator_UserTableName="RapportChambre" msprop:Generator_RowChangedName="RapportChambreRowChanged" msprop:Generator_RowEvArgName="RapportChambreRowChangeEvent" msprop:Generator_RowClassName="RapportChambreRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NomClient" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNomClient" msprop:Generator_ColumnPropNameInRow="NomClient" msprop:Generator_ColumnPropNameInTable="NomClientColumn" msprop:Generator_UserColumnName="NomClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateArrivee" msprop:Generator_ColumnVarNameInTable="columnDateArrivee" msprop:Generator_ColumnPropNameInRow="DateArrivee" msprop:Generator_ColumnPropNameInTable="DateArriveeColumn" msprop:Generator_UserColumnName="DateArrivee" type="xs:dateTime" />
+              <xs:element name="DateDepart" msprop:Generator_ColumnVarNameInTable="columnDateDepart" msprop:Generator_ColumnPropNameInRow="DateDepart" msprop:Generator_ColumnPropNameInTable="DateDepartColumn" msprop:Generator_UserColumnName="DateDepart" type="xs:dateTime" />
+              <xs:element name="NbPersonnes" msprop:Generator_ColumnVarNameInTable="columnNbPersonnes" msprop:Generator_ColumnPropNameInRow="NbPersonnes" msprop:Generator_ColumnPropNameInTable="NbPersonnesColumn" msprop:Generator_UserColumnName="NbPersonnes" type="xs:int" />
+              <xs:element name="NoChambre" msprop:Generator_ColumnVarNameInTable="columnNoChambre" msprop:Generator_ColumnPropNameInRow="NoChambre" msprop:Generator_ColumnPropNameInTable="NoChambreColumn" msprop:Generator_UserColumnName="NoChambre" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1297,6 +1415,10 @@ ORDER BY NoClient</CommandText>
       <xs:selector xpath=".//mstns:NoEtNomClients" />
       <xs:field xpath="mstns:NoClient" />
     </xs:unique>
+    <xs:unique name="NoEtEmplacementChambre_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:NoEtEmplacementChambre" />
+      <xs:field xpath="mstns:NoChambre" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -1323,6 +1445,9 @@ ORDER BY NoClient</CommandText>
       <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk1" msdata:parent="ChambreEtPrix" msdata:child="ReservationChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="ReservationChambre" msprop:Generator_ChildPropName="GetReservationChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk1" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk1" msprop:Generator_UserParentTable="ChambreEtPrix" msprop:Generator_ParentPropName="ChambreEtPrixRow" />
       <msdata:Relationship name="Invite_Client_NoCliet_fk2" msdata:parent="NoEtNomClients" msdata:child="Invite" msdata:parentkey="NoClient" msdata:childkey="NoClient" msprop:Generator_UserChildTable="Invite" msprop:Generator_ChildPropName="GetInviteRows" msprop:Generator_UserRelationName="Invite_Client_NoCliet_fk2" msprop:Generator_RelationVarName="relationInvite_Client_NoCliet_fk2" msprop:Generator_UserParentTable="NoEtNomClients" msprop:Generator_ParentPropName="NoEtNomClientsRow" />
       <msdata:Relationship name="ReservationChambre_Client_NoCliet_fk2" msdata:parent="NoEtNomClients" msdata:child="ReservationChambre" msdata:parentkey="NoClient" msdata:childkey="NoClient" msprop:Generator_UserChildTable="ReservationChambre" msprop:Generator_ChildPropName="GetReservationChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Client_NoCliet_fk2" msprop:Generator_RelationVarName="relationReservationChambre_Client_NoCliet_fk2" msprop:Generator_UserParentTable="NoEtNomClients" msprop:Generator_ParentPropName="NoEtNomClientsRow" />
+      <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk2" msdata:parent="NoEtEmplacementChambre" msdata:child="ReservationChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="ReservationChambre" msprop:Generator_ChildPropName="GetReservationChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk2" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk2" msprop:Generator_UserParentTable="NoEtEmplacementChambre" msprop:Generator_ParentPropName="NoEtEmplacementChambreRow" />
+      <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk3" msdata:parent="Chambre" msdata:child="RapportChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="RapportChambre" msprop:Generator_ChildPropName="GetRapportChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk3" msprop:Generator_ParentPropName="ChambreRow" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk3" msprop:Generator_UserParentTable="Chambre" />
+      <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk4" msdata:parent="NoEtEmplacementChambre" msdata:child="RapportChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="RapportChambre" msprop:Generator_ChildPropName="GetRapportChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk4" msprop:Generator_ParentPropName="NoEtEmplacementChambreRow" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk4" msprop:Generator_UserParentTable="NoEtEmplacementChambre" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
