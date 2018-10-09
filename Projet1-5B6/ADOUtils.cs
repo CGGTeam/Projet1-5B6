@@ -16,12 +16,12 @@ namespace Projet1_5B6
             if (!estSupprimable(selection)) return;
             var confirmResult = MessageBox.Show("Êtes-vous sure de vouloir supprimer cet élément?",
                                     "Confirmation",
-                                     MessageBoxButtons.YesNo);
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Warning);
             if (confirmResult == DialogResult.Yes)
             {
                 selection.Delete();
             }
-
         }
     }
 }
