@@ -155,7 +155,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoUtilisateur";
             this.dataGridViewTextBoxColumn1.HeaderText = "NoUtilisateur";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 212;
+            this.dataGridViewTextBoxColumn1.Width = 70;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -169,6 +169,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "MotDePasse";
             this.dataGridViewTextBoxColumn3.HeaderText = "MotDePasse";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
             // 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projet1_5B6.Forms_Admin;
+using Projet1_5B6.Forms_Admin.Fomrs_Rapports;
 using Projet1_5B6.Forms_Admin.ReservationChambres;
 using Projet1_5B6.Forms_Commun;
 using Projet1_5B6.Forms_Commun.Forms_Gestion_Soins;
@@ -24,6 +25,9 @@ namespace Projet1_5B6.Models
         private ToolStripMenuItem itVisualiserRapp;
         private ToolStripMenuItem itDeconnect;
         private ToolStripMenuItem itQuit;
+        private ToolStripMenuItem itRappSoinsClients;
+        private ToolStripMenuItem itRappReservChambres;
+        private ToolStripMenuItem itRappSoinsAssist;
 
         public MenuAdmin()
         {
@@ -81,10 +85,19 @@ namespace Projet1_5B6.Models
             FindForm()?.Hide();
             new FrmReservationChambres(this).Show();
         }
-
-        private void VisualiserRapport(object sender, EventArgs e)
+        private void RappSoinsClients(object sender, EventArgs e)
         {
-            //TODO: Implémenter (Vincent)
+            FindForm()?.Hide();
+            new FrmSoinsClients(this).Show();
+        }
+
+        private void RappReservChambres(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RappSoinsAssist(object sender, EventArgs e)
+        {
             throw new NotImplementedException();
         }
 
@@ -99,9 +112,13 @@ namespace Projet1_5B6.Models
             this.itGestChambres = new System.Windows.Forms.ToolStripMenuItem();
             this.itReservChambres = new System.Windows.Forms.ToolStripMenuItem();
             this.itVisualiserRapp = new System.Windows.Forms.ToolStripMenuItem();
+            this.itRappSoinsClients = new System.Windows.Forms.ToolStripMenuItem();
+            this.itRappReservChambres = new System.Windows.Forms.ToolStripMenuItem();
+            this.itRappSoinsAssist = new System.Windows.Forms.ToolStripMenuItem();
             this.itDeconnect = new System.Windows.Forms.ToolStripMenuItem();
             this.itQuit = new System.Windows.Forms.ToolStripMenuItem();
             itPlanifSoins = new System.Windows.Forms.ToolStripMenuItem();
+
             this.SuspendLayout();
             // 
             // itMenuAdmin
@@ -175,7 +192,33 @@ namespace Projet1_5B6.Models
             this.itVisualiserRapp.Name = "itVisualiserRapp";
             this.itVisualiserRapp.Size = new System.Drawing.Size(269, 30);
             this.itVisualiserRapp.Text = "Visualiser Rapports";
-            this.itVisualiserRapp.Click += VisualiserRapport;
+            this.itVisualiserRapp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
+            {
+                this.itRappSoinsClients,
+                this.itRappReservChambres,
+                this.itRappSoinsAssist
+            });
+                // 
+                // itRappSoinsClients
+                // 
+                this.itRappSoinsClients.Name = "itRappSoinsClients";
+                this.itRappSoinsClients.Size = new System.Drawing.Size(269, 30);
+                this.itRappSoinsClients.Text = "Rapport des soins offerts aux clients et aux invités";
+                this.itRappSoinsClients.Click += RappSoinsClients;
+                // 
+                // itRappReservChambres
+                // 
+                this.itRappReservChambres.Name = "itRappReservChambres";
+                this.itRappReservChambres.Size = new System.Drawing.Size(269, 30);
+                this.itRappReservChambres.Text = "Rapport des réservations de chambres";
+                this.itRappReservChambres.Click += RappReservChambres;
+                // 
+                // itRappSoinsAssist
+                // 
+                this.itRappSoinsAssist.Name = "itRappSoinsAssist";
+                this.itRappSoinsAssist.Size = new System.Drawing.Size(269, 30);
+                this.itRappSoinsAssist.Text = "Rapport des soins journaliers des assistants";
+                this.itRappSoinsAssist.Click += RappSoinsAssist;
             // 
             // itDeconnect
             // 
@@ -197,6 +240,7 @@ namespace Projet1_5B6.Models
             this.itMenuAdmin});
             this.Text = "Menu Admin";
             this.ResumeLayout(false);
+
         }
 
         public override event EventHandler Deconnexion;

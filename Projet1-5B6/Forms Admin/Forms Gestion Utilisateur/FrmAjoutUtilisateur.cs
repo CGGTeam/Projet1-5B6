@@ -47,6 +47,10 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
             user.Nom = tbNom.Text;
+
+
+
+
             user.MotDePasse = tbMotDePasse.Text;
             user.NoTypeUtilisateur = (int)listTypeUtilisateur.SelectedValue;
 

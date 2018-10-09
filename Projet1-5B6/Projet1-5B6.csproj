@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="ADOUtils.cs" />
     <Compile Include="Ext WinForms\DatePickerCell.cs" />
+    <Compile Include="Forms Admin\Fomrs Rapports\FrmSoinsClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Admin\Fomrs Rapports\FrmSoinsClients.Designer.cs">
+      <DependentUpon>FrmSoinsClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Admin\GestionChambres\FrmAjoutChambre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,16 +91,16 @@
     <Compile Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.Designer.cs">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmAjoutUtilisateur.cs">
+    <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmAjoutUtilisateur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmAjoutUtilisateur.Designer.cs">
+    <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmAjoutUtilisateur.Designer.cs">
       <DependentUpon>FrmAjoutUtilisateur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmGestionUtilisateurs.cs">
+    <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Utilisateur\FrmGestionUtilisateurs.Designer.cs">
+    <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.Designer.cs">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.cs">
@@ -185,6 +191,9 @@
     <EmbeddedResource Include="BaseFormGestion.resx">
       <DependentUpon>BaseFormGestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Admin\Fomrs Rapports\FrmSoinsClients.resx">
+      <DependentUpon>FrmSoinsClients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\FrmAccueilAdmin.resx">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,10 +206,10 @@
     <EmbeddedResource Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.resx">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\Forms Gestion Utilisateur\FrmAjoutUtilisateur.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Gestion Utilisateur\FrmAjoutUtilisateur.resx">
       <DependentUpon>FrmAjoutUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\Forms Gestion Utilisateur\FrmGestionUtilisateurs.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.resx">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.resx">
