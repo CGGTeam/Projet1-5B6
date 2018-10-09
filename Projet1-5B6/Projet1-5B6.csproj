@@ -61,28 +61,28 @@
     </Compile>
     <Compile Include="ADOUtils.cs" />
     <Compile Include="Ext WinForms\DatePickerCell.cs" />
-    <Compile Include="Forms Admin\Fomrs Rapports\FrmReservChambres.cs">
+    <Compile Include="Forms Admin\Forms Rapports\FrmReservChambres.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\Fomrs Rapports\FrmReservChambres.Designer.cs">
+    <Compile Include="Forms Admin\Forms Rapports\FrmReservChambres.Designer.cs">
       <DependentUpon>FrmReservChambres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\Fomrs Rapports\FrmSoinsAssistants.cs">
+    <Compile Include="Forms Admin\Forms Rapports\FrmSoinsAssistants.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\Fomrs Rapports\FrmSoinsAssistants.Designer.cs">
+    <Compile Include="Forms Admin\Forms Rapports\FrmSoinsAssistants.Designer.cs">
       <DependentUpon>FrmSoinsAssistants.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\Fomrs Rapports\FrmSoinsClients.cs">
+    <Compile Include="Forms Admin\Forms Rapports\FrmSoinsClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\Fomrs Rapports\FrmSoinsClients.Designer.cs">
+    <Compile Include="Forms Admin\Forms Rapports\FrmSoinsClients.Designer.cs">
       <DependentUpon>FrmSoinsClients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\GestionChambres\FrmAjoutChambre.cs">
+    <Compile Include="Forms Admin\Forms Gestion Chambres\FrmAjoutChambre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\GestionChambres\FrmAjoutChambre.Designer.cs">
+    <Compile Include="Forms Admin\Forms Gestion Chambres\FrmAjoutChambre.Designer.cs">
       <DependentUpon>FrmAjoutChambre.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Admin\FrmAccueilAdmin.cs">
@@ -91,16 +91,16 @@
     <Compile Include="Forms Admin\FrmAccueilAdmin.Designer.cs">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\GestionChambres\FrmAjoutTypeChambre.cs">
+    <Compile Include="Forms Admin\Forms Gestion Chambres\FrmAjoutTypeChambre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\GestionChambres\FrmAjoutTypeChambre.Designer.cs">
+    <Compile Include="Forms Admin\Forms Gestion Chambres\FrmAjoutTypeChambre.Designer.cs">
       <DependentUpon>FrmAjoutTypeChambre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.cs">
+    <Compile Include="Forms Admin\Forms Gestion Chambres\FrmGestionChambresEtTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.Designer.cs">
+    <Compile Include="Forms Admin\Forms Gestion Chambres\FrmGestionChambresEtTypes.Designer.cs">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmAjoutUtilisateur.cs">
@@ -114,6 +114,12 @@
     </Compile>
     <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.Designer.cs">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAjoutSoinsAssistants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAjoutSoinsAssistants.Designer.cs">
+      <DependentUpon>FrmAjoutSoinsAssistants.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.cs">
       <SubType>Form</SubType>
@@ -203,25 +209,25 @@
     <EmbeddedResource Include="BaseFormGestion.resx">
       <DependentUpon>BaseFormGestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\Fomrs Rapports\FrmReservChambres.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Rapports\FrmReservChambres.resx">
       <DependentUpon>FrmReservChambres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\Fomrs Rapports\FrmSoinsAssistants.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Rapports\FrmSoinsAssistants.resx">
       <DependentUpon>FrmSoinsAssistants.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\Fomrs Rapports\FrmSoinsClients.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Rapports\FrmSoinsClients.resx">
       <DependentUpon>FrmSoinsClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\FrmAccueilAdmin.resx">
       <DependentUpon>FrmAccueilAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\GestionChambres\FrmAjoutChambre.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Gestion Chambres\FrmAjoutChambre.resx">
       <DependentUpon>FrmAjoutChambre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\GestionChambres\FrmAjoutTypeChambre.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Gestion Chambres\FrmAjoutTypeChambre.resx">
       <DependentUpon>FrmAjoutTypeChambre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Admin\GestionChambres\FrmGestionChambresEtTypes.resx">
+    <EmbeddedResource Include="Forms Admin\Forms Gestion Chambres\FrmGestionChambresEtTypes.resx">
       <DependentUpon>FrmGestionChambresEtTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\Forms Gestion Utilisateur\FrmAjoutUtilisateur.resx">

@@ -15,5 +15,10 @@ namespace Projet1_5B6.Models
         }
 
         public virtual event EventHandler Deconnexion;
+
+        public static implicit operator MainMenu(MenuUtilisateur v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

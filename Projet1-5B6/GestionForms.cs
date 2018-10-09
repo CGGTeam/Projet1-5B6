@@ -12,7 +12,7 @@ namespace Projet1_5B6
 {
     class GestionForms
     {
-        private Utilisateur utilisateurConnecte;
+        public static Utilisateur utilisateurConnecte;
         private MenuUtilisateur menuUtilisateur;
 
         public void Demarrer()

@@ -31,6 +31,14 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur' table. You can move, or remove it, as needed.
             this.utilisateurTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur);
 
+            foreach(DataGridViewRow row in utilisateurDataGridView.Rows)
+            {
+                if (Convert.ToInt32(row.Cells[0].Value).Equals(GestionForms.utilisateurConnecte.NoUtilisateur))
+                {
+                    row.ReadOnly = true;
+                    row.DefaultCellStyle.BackColor = Color.LightGray;
+                }
+            }
         }
         private int TrouverNoUtilisateur()
         {
@@ -60,7 +68,12 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
 
         private bool EstSupprimable(DataRowView selection)
         {
-            //TODO: validation n'est pas l'utilisateur courant
+            if (Convert.ToInt32(selection[0]).Equals(GestionForms.utilisateurConnecte.NoUtilisateur))
+            {
+                MessageBox.Show("Vous ne pouvez pas supprimer votre propre utilisateur!");
+                return false;
+            }
+
             return true;
         }
         private void btnAnnuler_Click(object sender, EventArgs e)
@@ -72,7 +85,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var nouveauUtilisateur = bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.NewUtilisateurRow();
-            FrmAjoutUtilisateur frmAjout = new FrmAjoutUtilisateur(nouveauUtilisateur);
+            FrmAjoutUtilisateur frmAjout = new FrmAjoutUtilisateur(nouveauUtilisateur, utilisateurBindingSource);
 
             nouveauUtilisateur.NoUtilisateur = TrouverNoUtilisateur();
 
