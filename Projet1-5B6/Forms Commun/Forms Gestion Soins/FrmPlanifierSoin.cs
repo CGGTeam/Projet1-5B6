@@ -28,6 +28,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.noEtNomsAssistantsTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites' table. You can move, or remove it, as needed.
             this.noEtNomsClientsInvitesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites);
+            dtpDateHeure.Validating += Validation.ValiderDateHeureReservation(errorProvider);
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)

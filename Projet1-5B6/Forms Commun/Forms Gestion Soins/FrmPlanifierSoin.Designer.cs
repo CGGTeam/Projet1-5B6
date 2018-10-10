@@ -46,6 +46,7 @@
             this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
             this.lblEntete = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             noPersonneLabel = new System.Windows.Forms.Label();
             noAssistantLabel = new System.Windows.Forms.Label();
             dateHeureLabel = new System.Windows.Forms.Label();
@@ -54,12 +55,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsAssistantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtDescriptionSoinBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // noPersonneLabel
             // 
             noPersonneLabel.AutoSize = true;
-            noPersonneLabel.Location = new System.Drawing.Point(12, 73);
+            noPersonneLabel.Location = new System.Drawing.Point(45, 73);
             noPersonneLabel.Name = "noPersonneLabel";
             noPersonneLabel.Size = new System.Drawing.Size(67, 20);
             noPersonneLabel.TabIndex = 1;
@@ -68,7 +70,7 @@
             // noAssistantLabel
             // 
             noAssistantLabel.AutoSize = true;
-            noAssistantLabel.Location = new System.Drawing.Point(12, 105);
+            noAssistantLabel.Location = new System.Drawing.Point(45, 105);
             noAssistantLabel.Name = "noAssistantLabel";
             noAssistantLabel.Size = new System.Drawing.Size(79, 20);
             noAssistantLabel.TabIndex = 3;
@@ -77,7 +79,7 @@
             // dateHeureLabel
             // 
             dateHeureLabel.AutoSize = true;
-            dateHeureLabel.Location = new System.Drawing.Point(12, 138);
+            dateHeureLabel.Location = new System.Drawing.Point(45, 138);
             dateHeureLabel.Name = "dateHeureLabel";
             dateHeureLabel.Size = new System.Drawing.Size(96, 20);
             dateHeureLabel.TabIndex = 5;
@@ -86,7 +88,7 @@
             // noSoinLabel
             // 
             noSoinLabel.AutoSize = true;
-            noSoinLabel.Location = new System.Drawing.Point(12, 169);
+            noSoinLabel.Location = new System.Drawing.Point(45, 169);
             noSoinLabel.Name = "noSoinLabel";
             noSoinLabel.Size = new System.Drawing.Size(45, 20);
             noSoinLabel.TabIndex = 7;
@@ -96,7 +98,7 @@
             // 
             this.dtpDateHeure.CustomFormat = "yyyy-MM-dd hh:mm:ss";
             this.dtpDateHeure.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateHeure.Location = new System.Drawing.Point(123, 134);
+            this.dtpDateHeure.Location = new System.Drawing.Point(156, 134);
             this.dtpDateHeure.MinDate = new System.DateTime(2018, 10, 6, 0, 0, 0, 0);
             this.dtpDateHeure.Name = "dtpDateHeure";
             this.dtpDateHeure.Size = new System.Drawing.Size(231, 26);
@@ -108,7 +110,7 @@
             this.cboPatient.DataSource = this.noEtNomsClientsInvitesBindingSource;
             this.cboPatient.DisplayMember = "NoEtNom";
             this.cboPatient.FormattingEnabled = true;
-            this.cboPatient.Location = new System.Drawing.Point(123, 70);
+            this.cboPatient.Location = new System.Drawing.Point(156, 70);
             this.cboPatient.Name = "cboPatient";
             this.cboPatient.Size = new System.Drawing.Size(231, 28);
             this.cboPatient.TabIndex = 8;
@@ -129,7 +131,7 @@
             this.cboAssistant.DataSource = this.noEtNomsAssistantsBindingSource;
             this.cboAssistant.DisplayMember = "NoEtNom";
             this.cboAssistant.FormattingEnabled = true;
-            this.cboAssistant.Location = new System.Drawing.Point(123, 102);
+            this.cboAssistant.Location = new System.Drawing.Point(156, 102);
             this.cboAssistant.Name = "cboAssistant";
             this.cboAssistant.Size = new System.Drawing.Size(231, 28);
             this.cboAssistant.TabIndex = 9;
@@ -145,7 +147,7 @@
             this.cboSoin.DataSource = this.noEtDescriptionSoinBindingSource;
             this.cboSoin.DisplayMember = "NoEtDescription";
             this.cboSoin.FormattingEnabled = true;
-            this.cboSoin.Location = new System.Drawing.Point(123, 166);
+            this.cboSoin.Location = new System.Drawing.Point(156, 166);
             this.cboSoin.Name = "cboSoin";
             this.cboSoin.Size = new System.Drawing.Size(231, 28);
             this.cboSoin.TabIndex = 10;
@@ -171,16 +173,16 @@
             // lblEntete
             // 
             this.lblEntete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntete.Location = new System.Drawing.Point(16, 9);
+            this.lblEntete.Location = new System.Drawing.Point(49, 9);
             this.lblEntete.Name = "lblEntete";
-            this.lblEntete.Size = new System.Drawing.Size(307, 58);
+            this.lblEntete.Size = new System.Drawing.Size(338, 58);
             this.lblEntete.TabIndex = 11;
             this.lblEntete.Text = "Planifier un soin";
             this.lblEntete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(104, 221);
+            this.btnConfirmer.Location = new System.Drawing.Point(119, 223);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(165, 47);
             this.btnConfirmer.TabIndex = 12;
@@ -188,11 +190,15 @@
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FrmPlanifierSoin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 306);
+            this.ClientSize = new System.Drawing.Size(457, 306);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblEntete);
             this.Controls.Add(this.cboSoin);
@@ -210,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsAssistantsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtDescriptionSoinBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +236,6 @@
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter noEtDescriptionSoinTableAdapter;
         private System.Windows.Forms.Label lblEntete;
         private System.Windows.Forms.Button btnConfirmer;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

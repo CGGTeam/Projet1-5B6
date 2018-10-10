@@ -27,6 +27,9 @@ namespace Projet1_5B6.Forms_Admin
 
             tbNoChambre.Text = nouvelleChambre.NoChambre.ToString();
             cboTypeChambre.SelectedValue = nouvelleChambre.NoTypeChambre;
+
+            tbDecoration.Validating += Validation.ValiderNonVide(errorProvider);
+            tbEmplacement.Validating += Validation.ValiderNonVide(errorProvider);
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)

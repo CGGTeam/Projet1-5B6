@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label noTypeChambreLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label prixHautLabel;
@@ -40,17 +41,19 @@
             this.tbPrixMoyen = new System.Windows.Forms.TextBox();
             this.lblEntete = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             noTypeChambreLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             prixHautLabel = new System.Windows.Forms.Label();
             prixBasLabel = new System.Windows.Forms.Label();
             prixMoyenLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // noTypeChambreLabel
             // 
             noTypeChambreLabel.AutoSize = true;
-            noTypeChambreLabel.Location = new System.Drawing.Point(12, 94);
+            noTypeChambreLabel.Location = new System.Drawing.Point(27, 94);
             noTypeChambreLabel.Name = "noTypeChambreLabel";
             noTypeChambreLabel.Size = new System.Drawing.Size(33, 20);
             noTypeChambreLabel.TabIndex = 1;
@@ -59,7 +62,7 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(12, 126);
+            descriptionLabel.Location = new System.Drawing.Point(27, 126);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(93, 20);
             descriptionLabel.TabIndex = 3;
@@ -68,7 +71,7 @@
             // prixHautLabel
             // 
             prixHautLabel.AutoSize = true;
-            prixHautLabel.Location = new System.Drawing.Point(12, 158);
+            prixHautLabel.Location = new System.Drawing.Point(27, 158);
             prixHautLabel.Name = "prixHautLabel";
             prixHautLabel.Size = new System.Drawing.Size(77, 20);
             prixHautLabel.TabIndex = 5;
@@ -77,7 +80,7 @@
             // prixBasLabel
             // 
             prixBasLabel.AutoSize = true;
-            prixBasLabel.Location = new System.Drawing.Point(12, 190);
+            prixBasLabel.Location = new System.Drawing.Point(27, 190);
             prixBasLabel.Name = "prixBasLabel";
             prixBasLabel.Size = new System.Drawing.Size(70, 20);
             prixBasLabel.TabIndex = 7;
@@ -86,7 +89,7 @@
             // prixMoyenLabel
             // 
             prixMoyenLabel.AutoSize = true;
-            prixMoyenLabel.Location = new System.Drawing.Point(12, 222);
+            prixMoyenLabel.Location = new System.Drawing.Point(27, 222);
             prixMoyenLabel.Name = "prixMoyenLabel";
             prixMoyenLabel.Size = new System.Drawing.Size(89, 20);
             prixMoyenLabel.TabIndex = 9;
@@ -94,7 +97,7 @@
             // 
             // tbNoType
             // 
-            this.tbNoType.Location = new System.Drawing.Point(158, 91);
+            this.tbNoType.Location = new System.Drawing.Point(173, 91);
             this.tbNoType.Name = "tbNoType";
             this.tbNoType.ReadOnly = true;
             this.tbNoType.Size = new System.Drawing.Size(207, 26);
@@ -102,28 +105,28 @@
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(158, 123);
+            this.tbDescription.Location = new System.Drawing.Point(173, 123);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(207, 26);
             this.tbDescription.TabIndex = 4;
             // 
             // tbPrixHaut
             // 
-            this.tbPrixHaut.Location = new System.Drawing.Point(158, 155);
+            this.tbPrixHaut.Location = new System.Drawing.Point(173, 155);
             this.tbPrixHaut.Name = "tbPrixHaut";
             this.tbPrixHaut.Size = new System.Drawing.Size(207, 26);
             this.tbPrixHaut.TabIndex = 6;
             // 
             // tbPrixBas
             // 
-            this.tbPrixBas.Location = new System.Drawing.Point(158, 187);
+            this.tbPrixBas.Location = new System.Drawing.Point(173, 187);
             this.tbPrixBas.Name = "tbPrixBas";
             this.tbPrixBas.Size = new System.Drawing.Size(207, 26);
             this.tbPrixBas.TabIndex = 8;
             // 
             // tbPrixMoyen
             // 
-            this.tbPrixMoyen.Location = new System.Drawing.Point(158, 219);
+            this.tbPrixMoyen.Location = new System.Drawing.Point(173, 219);
             this.tbPrixMoyen.Name = "tbPrixMoyen";
             this.tbPrixMoyen.Size = new System.Drawing.Size(207, 26);
             this.tbPrixMoyen.TabIndex = 10;
@@ -131,7 +134,7 @@
             // lblEntete
             // 
             this.lblEntete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntete.Location = new System.Drawing.Point(16, 9);
+            this.lblEntete.Location = new System.Drawing.Point(31, 9);
             this.lblEntete.Name = "lblEntete";
             this.lblEntete.Size = new System.Drawing.Size(349, 79);
             this.lblEntete.TabIndex = 11;
@@ -140,7 +143,7 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(106, 268);
+            this.btnConfirmer.Location = new System.Drawing.Point(121, 268);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(167, 41);
             this.btnConfirmer.TabIndex = 12;
@@ -148,11 +151,15 @@
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FrmAjoutTypeChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 342);
+            this.ClientSize = new System.Drawing.Size(431, 342);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblEntete);
             this.Controls.Add(noTypeChambreLabel);
@@ -167,6 +174,8 @@
             this.Controls.Add(this.tbPrixMoyen);
             this.Name = "FrmAjoutTypeChambre";
             this.Text = "Ajout type de chambre";
+            this.Load += new System.EventHandler(this.FrmAjoutTypeChambre_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +189,6 @@
         private System.Windows.Forms.TextBox tbPrixMoyen;
         private System.Windows.Forms.Label lblEntete;
         private System.Windows.Forms.Button btnConfirmer;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

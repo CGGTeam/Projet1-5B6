@@ -35,25 +35,63 @@
             System.Windows.Forms.Label noTypeChambreLabel;
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
+            this.typeChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeChambreTableAdapter();
             this.tbNoChambre = new System.Windows.Forms.TextBox();
             this.tbEmplacement = new System.Windows.Forms.TextBox();
             this.tbDecoration = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.cboTypeChambre = new System.Windows.Forms.ComboBox();
+            this.typeChambreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeChambreTableAdapter();
-            this.typeChambreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             noChambreLabel = new System.Windows.Forms.Label();
             emplacementLabel = new System.Windows.Forms.Label();
             decorationLabel = new System.Windows.Forms.Label();
             noTypeChambreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
+            // 
+            // noChambreLabel
+            // 
+            noChambreLabel.AutoSize = true;
+            noChambreLabel.Location = new System.Drawing.Point(38, 88);
+            noChambreLabel.Name = "noChambreLabel";
+            noChambreLabel.Size = new System.Drawing.Size(102, 20);
+            noChambreLabel.TabIndex = 1;
+            noChambreLabel.Text = "No Chambre:";
+            // 
+            // emplacementLabel
+            // 
+            emplacementLabel.AutoSize = true;
+            emplacementLabel.Location = new System.Drawing.Point(38, 120);
+            emplacementLabel.Name = "emplacementLabel";
+            emplacementLabel.Size = new System.Drawing.Size(111, 20);
+            emplacementLabel.TabIndex = 3;
+            emplacementLabel.Text = "Emplacement:";
+            // 
+            // decorationLabel
+            // 
+            decorationLabel.AutoSize = true;
+            decorationLabel.Location = new System.Drawing.Point(38, 152);
+            decorationLabel.Name = "decorationLabel";
+            decorationLabel.Size = new System.Drawing.Size(91, 20);
+            decorationLabel.TabIndex = 5;
+            decorationLabel.Text = "Decoration:";
+            // 
+            // noTypeChambreLabel
+            // 
+            noTypeChambreLabel.AutoSize = true;
+            noTypeChambreLabel.Location = new System.Drawing.Point(38, 184);
+            noTypeChambreLabel.Name = "noTypeChambreLabel";
+            noTypeChambreLabel.Size = new System.Drawing.Size(140, 20);
+            noTypeChambreLabel.TabIndex = 7;
+            noTypeChambreLabel.Text = "No Type Chambre:";
             // 
             // bD5B6TP1_ConstantinBrassardLaheyDataSet
             // 
@@ -68,6 +106,8 @@
             this.tableAdapterManager.ChambreTableAdapter = null;
             this.tableAdapterManager.ClientTableAdapter = null;
             this.tableAdapterManager.InviteTableAdapter = null;
+            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
+            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = null;
             this.tableAdapterManager.PlanifSoinTableAdapter = null;
             this.tableAdapterManager.ReservationChambreTableAdapter = null;
             this.tableAdapterManager.SoinTableAdapter = null;
@@ -77,68 +117,36 @@
             this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
-            // noChambreLabel
+            // typeChambreTableAdapter
             // 
-            noChambreLabel.AutoSize = true;
-            noChambreLabel.Location = new System.Drawing.Point(12, 88);
-            noChambreLabel.Name = "noChambreLabel";
-            noChambreLabel.Size = new System.Drawing.Size(102, 20);
-            noChambreLabel.TabIndex = 1;
-            noChambreLabel.Text = "No Chambre:";
+            this.typeChambreTableAdapter.ClearBeforeFill = true;
             // 
             // tbNoChambre
             // 
-            this.tbNoChambre.Location = new System.Drawing.Point(158, 85);
+            this.tbNoChambre.Location = new System.Drawing.Point(184, 85);
             this.tbNoChambre.Name = "tbNoChambre";
             this.tbNoChambre.ReadOnly = true;
             this.tbNoChambre.Size = new System.Drawing.Size(199, 26);
             this.tbNoChambre.TabIndex = 2;
             // 
-            // emplacementLabel
-            // 
-            emplacementLabel.AutoSize = true;
-            emplacementLabel.Location = new System.Drawing.Point(12, 120);
-            emplacementLabel.Name = "emplacementLabel";
-            emplacementLabel.Size = new System.Drawing.Size(111, 20);
-            emplacementLabel.TabIndex = 3;
-            emplacementLabel.Text = "Emplacement:";
-            // 
             // tbEmplacement
             // 
-            this.tbEmplacement.Location = new System.Drawing.Point(158, 117);
+            this.tbEmplacement.Location = new System.Drawing.Point(184, 117);
             this.tbEmplacement.Name = "tbEmplacement";
             this.tbEmplacement.Size = new System.Drawing.Size(199, 26);
             this.tbEmplacement.TabIndex = 4;
             // 
-            // decorationLabel
-            // 
-            decorationLabel.AutoSize = true;
-            decorationLabel.Location = new System.Drawing.Point(12, 152);
-            decorationLabel.Name = "decorationLabel";
-            decorationLabel.Size = new System.Drawing.Size(91, 20);
-            decorationLabel.TabIndex = 5;
-            decorationLabel.Text = "Decoration:";
-            // 
             // tbDecoration
             // 
-            this.tbDecoration.Location = new System.Drawing.Point(158, 149);
+            this.tbDecoration.Location = new System.Drawing.Point(184, 149);
             this.tbDecoration.Name = "tbDecoration";
             this.tbDecoration.Size = new System.Drawing.Size(199, 26);
             this.tbDecoration.TabIndex = 6;
             // 
-            // noTypeChambreLabel
-            // 
-            noTypeChambreLabel.AutoSize = true;
-            noTypeChambreLabel.Location = new System.Drawing.Point(12, 184);
-            noTypeChambreLabel.Name = "noTypeChambreLabel";
-            noTypeChambreLabel.Size = new System.Drawing.Size(140, 20);
-            noTypeChambreLabel.TabIndex = 7;
-            noTypeChambreLabel.Text = "No Type Chambre:";
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(38, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(345, 73);
             this.label1.TabIndex = 9;
@@ -147,7 +155,7 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(77, 231);
+            this.btnConfirmer.Location = new System.Drawing.Point(103, 231);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(198, 39);
             this.btnConfirmer.TabIndex = 10;
@@ -160,11 +168,16 @@
             this.cboTypeChambre.DataSource = this.typeChambreBindingSource1;
             this.cboTypeChambre.DisplayMember = "Description";
             this.cboTypeChambre.FormattingEnabled = true;
-            this.cboTypeChambre.Location = new System.Drawing.Point(158, 181);
+            this.cboTypeChambre.Location = new System.Drawing.Point(184, 181);
             this.cboTypeChambre.Name = "cboTypeChambre";
             this.cboTypeChambre.Size = new System.Drawing.Size(199, 28);
             this.cboTypeChambre.TabIndex = 11;
             this.cboTypeChambre.ValueMember = "NoTypeChambre";
+            // 
+            // typeChambreBindingSource1
+            // 
+            this.typeChambreBindingSource1.DataMember = "TypeChambre";
+            this.typeChambreBindingSource1.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
             // bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource
             // 
@@ -176,20 +189,15 @@
             this.typeChambreBindingSource.DataMember = "TypeChambre";
             this.typeChambreBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
-            // typeChambreTableAdapter
+            // errorProvider
             // 
-            this.typeChambreTableAdapter.ClearBeforeFill = true;
-            // 
-            // typeChambreBindingSource1
-            // 
-            this.typeChambreBindingSource1.DataMember = "TypeChambre";
-            this.typeChambreBindingSource1.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            this.errorProvider.ContainerControl = this;
             // 
             // FrmAjoutChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 282);
+            this.ClientSize = new System.Drawing.Size(435, 282);
             this.Controls.Add(this.cboTypeChambre);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.label1);
@@ -204,9 +212,10 @@
             this.Text = "Ajout d\'une chambre";
             this.Load += new System.EventHandler(this.FrmAjoutChambre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeChambreBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +235,6 @@
         private System.Windows.Forms.BindingSource bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource;
         private System.Windows.Forms.BindingSource typeChambreBindingSource;
         private System.Windows.Forms.BindingSource typeChambreBindingSource1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
