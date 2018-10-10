@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
+using Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters;
 using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun
@@ -19,6 +21,12 @@ namespace Projet1_5B6.Forms_Commun
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin' table. You can move, or remove it, as needed.
             this.soinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin);
 
+            soinBindingSource.CurrentChanged += VerifierSiSupprimable;
+        }
+
+        private void VerifierSiSupprimable(object sender, EventArgs e)
+        {
+            btnSupprimer.Enabled = EstSupprimable((DataRowView)soinBindingSource.Current);
         }
 
         private void btnAjouterSoin_Click(object sender, EventArgs e)
@@ -65,8 +73,41 @@ namespace Projet1_5B6.Forms_Commun
 
         private bool EstSupprimable(DataRowView selection)
         {
-            //TODO: validation
-            return true;
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoinDataTable assistantSoinTable =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin;
+            int idSoinSelectionne = (int)((DataRowView)soinBindingSource.Current)["NoSoin"];
+
+            AssistantSoinTableAdapter assistantSoinTableAdapter = new AssistantSoinTableAdapter();
+            assistantSoinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
+
+            bool peutEtreSupprime = true;
+            string texteTooltip = "Le soin sélectionné ne peut pas être supprimé car:";
+            ttpSupprimer.SetToolTip(btnSupprimer, "");
+
+            if (assistantSoinTable.Any(assistantSoin => assistantSoin.NoSoin == idSoinSelectionne))
+            {
+                texteTooltip += "\n\t- Il est assigné à un assistant";
+                peutEtreSupprime =  false;
+            }
+
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinDataTable planifSoinTable =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin;
+
+            PlanifSoinTableAdapter planifSoinTableAdapter = new PlanifSoinTableAdapter();
+            planifSoinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
+
+            if (planifSoinTable.Any(planifSoin => planifSoin.NoSoin == idSoinSelectionne))
+            {
+                texteTooltip += "\n\t- Un soin de ce type est planifié";
+                peutEtreSupprime = false;
+            }
+
+            if (!peutEtreSupprime)
+            {
+                ttpSupprimer.Show(texteTooltip, btnSupprimer, 3000);
+            }
+
+            return peutEtreSupprime;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

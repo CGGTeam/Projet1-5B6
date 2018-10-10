@@ -29,29 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label noClientLabel;
-            System.Windows.Forms.Label nomLabel;
-            System.Windows.Forms.Label prenomLabel;
-            System.Windows.Forms.Label villeLabel;
-            System.Windows.Forms.Label paysLabel;
-            System.Windows.Forms.Label adresseLabel;
-            System.Windows.Forms.Label codePostalLabel;
-            System.Windows.Forms.Label dateInscriptionLabel1;
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ClientTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.inviteTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.InviteTableAdapter();
-            this.tbNoCli = new System.Windows.Forms.TextBox();
-            this.bNomCli = new System.Windows.Forms.TextBox();
-            this.tbPrenomCli = new System.Windows.Forms.TextBox();
-            this.tbVilleCli = new System.Windows.Forms.TextBox();
-            this.tbPaysCli = new System.Windows.Forms.TextBox();
-            this.tbAdresseCli = new System.Windows.Forms.TextBox();
-            this.tbCodePostalCli = new System.Windows.Forms.TextBox();
             this.lblTitreClient = new System.Windows.Forms.Label();
-            this.btnClientSuivant = new System.Windows.Forms.Button();
-            this.btnClientPrecedent = new System.Windows.Forms.Button();
             this.btnSupprimerCli = new System.Windows.Forms.Button();
             this.btnAjoutCli = new System.Windows.Forms.Button();
             this.inviteBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,94 +44,26 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbDateInscriptionCli = new System.Windows.Forms.TextBox();
             this.btnSauvegarder = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
-            noClientLabel = new System.Windows.Forms.Label();
-            nomLabel = new System.Windows.Forms.Label();
-            prenomLabel = new System.Windows.Forms.Label();
-            villeLabel = new System.Windows.Forms.Label();
-            paysLabel = new System.Windows.Forms.Label();
-            adresseLabel = new System.Windows.Forms.Label();
-            codePostalLabel = new System.Windows.Forms.Label();
-            dateInscriptionLabel1 = new System.Windows.Forms.Label();
+            this.ttpSupprimer = new System.Windows.Forms.ToolTip(this.components);
+            this.clientDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // noClientLabel
-            // 
-            noClientLabel.AutoSize = true;
-            noClientLabel.Location = new System.Drawing.Point(70, 124);
-            noClientLabel.Name = "noClientLabel";
-            noClientLabel.Size = new System.Drawing.Size(37, 20);
-            noClientLabel.TabIndex = 1;
-            noClientLabel.Text = "No :";
-            // 
-            // nomLabel
-            // 
-            nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(70, 156);
-            nomLabel.Name = "nomLabel";
-            nomLabel.Size = new System.Drawing.Size(46, 20);
-            nomLabel.TabIndex = 3;
-            nomLabel.Text = "Nom:";
-            // 
-            // prenomLabel
-            // 
-            prenomLabel.AutoSize = true;
-            prenomLabel.Location = new System.Drawing.Point(70, 188);
-            prenomLabel.Name = "prenomLabel";
-            prenomLabel.Size = new System.Drawing.Size(68, 20);
-            prenomLabel.TabIndex = 5;
-            prenomLabel.Text = "Prenom:";
-            // 
-            // villeLabel
-            // 
-            villeLabel.AutoSize = true;
-            villeLabel.Location = new System.Drawing.Point(70, 220);
-            villeLabel.Name = "villeLabel";
-            villeLabel.Size = new System.Drawing.Size(42, 20);
-            villeLabel.TabIndex = 7;
-            villeLabel.Text = "Ville:";
-            // 
-            // paysLabel
-            // 
-            paysLabel.AutoSize = true;
-            paysLabel.Location = new System.Drawing.Point(70, 252);
-            paysLabel.Name = "paysLabel";
-            paysLabel.Size = new System.Drawing.Size(47, 20);
-            paysLabel.TabIndex = 9;
-            paysLabel.Text = "Pays:";
-            // 
-            // adresseLabel
-            // 
-            adresseLabel.AutoSize = true;
-            adresseLabel.Location = new System.Drawing.Point(70, 284);
-            adresseLabel.Name = "adresseLabel";
-            adresseLabel.Size = new System.Drawing.Size(72, 20);
-            adresseLabel.TabIndex = 11;
-            adresseLabel.Text = "Adresse:";
-            // 
-            // codePostalLabel
-            // 
-            codePostalLabel.AutoSize = true;
-            codePostalLabel.Location = new System.Drawing.Point(70, 316);
-            codePostalLabel.Name = "codePostalLabel";
-            codePostalLabel.Size = new System.Drawing.Size(99, 20);
-            codePostalLabel.TabIndex = 13;
-            codePostalLabel.Text = "Code Postal:";
-            // 
-            // dateInscriptionLabel1
-            // 
-            dateInscriptionLabel1.AutoSize = true;
-            dateInscriptionLabel1.Location = new System.Drawing.Point(70, 349);
-            dateInscriptionLabel1.Name = "dateInscriptionLabel1";
-            dateInscriptionLabel1.Size = new System.Drawing.Size(125, 20);
-            dateInscriptionLabel1.TabIndex = 23;
-            dateInscriptionLabel1.Text = "Date Inscription:";
             // 
             // bD5B6TP1_ConstantinBrassardLaheyDataSet
             // 
@@ -187,96 +102,19 @@
             // 
             this.inviteTableAdapter.ClearBeforeFill = true;
             // 
-            // tbNoCli
-            // 
-            this.tbNoCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "NoClient", true));
-            this.tbNoCli.Location = new System.Drawing.Point(201, 121);
-            this.tbNoCli.Name = "tbNoCli";
-            this.tbNoCli.ReadOnly = true;
-            this.tbNoCli.Size = new System.Drawing.Size(200, 26);
-            this.tbNoCli.TabIndex = 2;
-            // 
-            // bNomCli
-            // 
-            this.bNomCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Nom", true));
-            this.bNomCli.Location = new System.Drawing.Point(201, 153);
-            this.bNomCli.Name = "bNomCli";
-            this.bNomCli.Size = new System.Drawing.Size(200, 26);
-            this.bNomCli.TabIndex = 4;
-            // 
-            // tbPrenomCli
-            // 
-            this.tbPrenomCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Prenom", true));
-            this.tbPrenomCli.Location = new System.Drawing.Point(201, 185);
-            this.tbPrenomCli.Name = "tbPrenomCli";
-            this.tbPrenomCli.Size = new System.Drawing.Size(200, 26);
-            this.tbPrenomCli.TabIndex = 6;
-            // 
-            // tbVilleCli
-            // 
-            this.tbVilleCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Ville", true));
-            this.tbVilleCli.Location = new System.Drawing.Point(201, 217);
-            this.tbVilleCli.Name = "tbVilleCli";
-            this.tbVilleCli.Size = new System.Drawing.Size(200, 26);
-            this.tbVilleCli.TabIndex = 8;
-            // 
-            // tbPaysCli
-            // 
-            this.tbPaysCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Pays", true));
-            this.tbPaysCli.Location = new System.Drawing.Point(201, 249);
-            this.tbPaysCli.Name = "tbPaysCli";
-            this.tbPaysCli.Size = new System.Drawing.Size(200, 26);
-            this.tbPaysCli.TabIndex = 10;
-            // 
-            // tbAdresseCli
-            // 
-            this.tbAdresseCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Adresse", true));
-            this.tbAdresseCli.Location = new System.Drawing.Point(201, 281);
-            this.tbAdresseCli.Name = "tbAdresseCli";
-            this.tbAdresseCli.Size = new System.Drawing.Size(200, 26);
-            this.tbAdresseCli.TabIndex = 12;
-            // 
-            // tbCodePostalCli
-            // 
-            this.tbCodePostalCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "CodePostal", true));
-            this.tbCodePostalCli.Location = new System.Drawing.Point(201, 313);
-            this.tbCodePostalCli.Name = "tbCodePostalCli";
-            this.tbCodePostalCli.Size = new System.Drawing.Size(200, 26);
-            this.tbCodePostalCli.TabIndex = 14;
-            // 
             // lblTitreClient
             // 
             this.lblTitreClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitreClient.Location = new System.Drawing.Point(20, 42);
             this.lblTitreClient.Name = "lblTitreClient";
-            this.lblTitreClient.Size = new System.Drawing.Size(431, 76);
+            this.lblTitreClient.Size = new System.Drawing.Size(1351, 76);
             this.lblTitreClient.TabIndex = 17;
             this.lblTitreClient.Text = "Client";
             this.lblTitreClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnClientSuivant
-            // 
-            this.btnClientSuivant.Location = new System.Drawing.Point(407, 121);
-            this.btnClientSuivant.Name = "btnClientSuivant";
-            this.btnClientSuivant.Size = new System.Drawing.Size(44, 252);
-            this.btnClientSuivant.TabIndex = 18;
-            this.btnClientSuivant.Text = ">";
-            this.btnClientSuivant.UseVisualStyleBackColor = true;
-            this.btnClientSuivant.Click += new System.EventHandler(this.btnClientSuivant_Click);
-            // 
-            // btnClientPrecedent
-            // 
-            this.btnClientPrecedent.Location = new System.Drawing.Point(25, 86);
-            this.btnClientPrecedent.Name = "btnClientPrecedent";
-            this.btnClientPrecedent.Size = new System.Drawing.Size(44, 252);
-            this.btnClientPrecedent.TabIndex = 19;
-            this.btnClientPrecedent.Text = "<";
-            this.btnClientPrecedent.UseVisualStyleBackColor = true;
-            this.btnClientPrecedent.Click += new System.EventHandler(this.btnClientPrecedent_Click);
-            // 
             // btnSupprimerCli
             // 
-            this.btnSupprimerCli.Location = new System.Drawing.Point(305, 392);
+            this.btnSupprimerCli.Location = new System.Drawing.Point(738, 466);
             this.btnSupprimerCli.Name = "btnSupprimerCli";
             this.btnSupprimerCli.Size = new System.Drawing.Size(146, 40);
             this.btnSupprimerCli.TabIndex = 21;
@@ -286,7 +124,7 @@
             // 
             // btnAjoutCli
             // 
-            this.btnAjoutCli.Location = new System.Drawing.Point(20, 392);
+            this.btnAjoutCli.Location = new System.Drawing.Point(274, 466);
             this.btnAjoutCli.Name = "btnAjoutCli";
             this.btnAjoutCli.Size = new System.Drawing.Size(146, 40);
             this.btnAjoutCli.TabIndex = 22;
@@ -310,7 +148,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.inviteDataGridView.DataSource = this.inviteBindingSource;
-            this.inviteDataGridView.Location = new System.Drawing.Point(513, 119);
+            this.inviteDataGridView.Location = new System.Drawing.Point(1377, 119);
             this.inviteDataGridView.Name = "inviteDataGridView";
             this.inviteDataGridView.RowTemplate.Height = 28;
             this.inviteDataGridView.Size = new System.Drawing.Size(653, 313);
@@ -349,25 +187,16 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(513, 42);
+            this.label1.Location = new System.Drawing.Point(1377, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(653, 76);
             this.label1.TabIndex = 23;
             this.label1.Text = "Invités du client";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tbDateInscriptionCli
-            // 
-            this.tbDateInscriptionCli.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "DateInscription", true));
-            this.tbDateInscriptionCli.Location = new System.Drawing.Point(201, 345);
-            this.tbDateInscriptionCli.Name = "tbDateInscriptionCli";
-            this.tbDateInscriptionCli.ReadOnly = true;
-            this.tbDateInscriptionCli.Size = new System.Drawing.Size(200, 26);
-            this.tbDateInscriptionCli.TabIndex = 24;
-            // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(137, 467);
+            this.btnSauvegarder.Location = new System.Drawing.Point(492, 533);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(180, 54);
             this.btnSauvegarder.TabIndex = 25;
@@ -377,7 +206,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(746, 467);
+            this.btnAnnuler.Location = new System.Drawing.Point(1286, 533);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(180, 54);
             this.btnAnnuler.TabIndex = 26;
@@ -385,68 +214,128 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
+            // clientDataGridView
+            // 
+            this.clientDataGridView.AutoGenerateColumns = false;
+            this.clientDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.clientDataGridView.DataSource = this.clientBindingSource;
+            this.clientDataGridView.Location = new System.Drawing.Point(12, 119);
+            this.clientDataGridView.Name = "clientDataGridView";
+            this.clientDataGridView.RowTemplate.Height = 28;
+            this.clientDataGridView.Size = new System.Drawing.Size(1359, 313);
+            this.clientDataGridView.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NoClient";
+            this.dataGridViewTextBoxColumn5.HeaderText = "No";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Nom";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nom";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Prenom";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Prenom";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Ville";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Ville";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Pays";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Pays";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Adresse";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Adresse";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "CodePostal";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Code postal";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "DateInscription";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Date inscription";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(1502, 466);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(147, 40);
+            this.btnAjouter.TabIndex = 27;
+            this.btnAjouter.Text = "Ajouter Invité";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(1788, 466);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(144, 40);
+            this.btnSupprimer.TabIndex = 28;
+            this.btnSupprimer.Text = "Supprimer invité";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            // 
             // FrmGestionClientsInvites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 536);
+            this.ClientSize = new System.Drawing.Size(2042, 631);
+            this.Controls.Add(this.btnSupprimer);
+            this.Controls.Add(this.btnAjouter);
+            this.Controls.Add(this.clientDataGridView);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
-            this.Controls.Add(dateInscriptionLabel1);
-            this.Controls.Add(this.tbDateInscriptionCli);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inviteDataGridView);
             this.Controls.Add(this.btnAjoutCli);
             this.Controls.Add(this.btnSupprimerCli);
-            this.Controls.Add(this.btnClientPrecedent);
-            this.Controls.Add(this.btnClientSuivant);
             this.Controls.Add(this.lblTitreClient);
-            this.Controls.Add(noClientLabel);
-            this.Controls.Add(this.tbNoCli);
-            this.Controls.Add(nomLabel);
-            this.Controls.Add(this.bNomCli);
-            this.Controls.Add(prenomLabel);
-            this.Controls.Add(this.tbPrenomCli);
-            this.Controls.Add(villeLabel);
-            this.Controls.Add(this.tbVilleCli);
-            this.Controls.Add(paysLabel);
-            this.Controls.Add(this.tbPaysCli);
-            this.Controls.Add(adresseLabel);
-            this.Controls.Add(this.tbAdresseCli);
-            this.Controls.Add(codePostalLabel);
-            this.Controls.Add(this.tbCodePostalCli);
             this.Name = "FrmGestionClientsInvites";
             this.Text = "Gestion des clients et des invités";
             this.Load += new System.EventHandler(this.FormClientsInvites_Load);
-            this.Controls.SetChildIndex(this.tbCodePostalCli, 0);
-            this.Controls.SetChildIndex(codePostalLabel, 0);
-            this.Controls.SetChildIndex(this.tbAdresseCli, 0);
-            this.Controls.SetChildIndex(adresseLabel, 0);
-            this.Controls.SetChildIndex(this.tbPaysCli, 0);
-            this.Controls.SetChildIndex(paysLabel, 0);
-            this.Controls.SetChildIndex(this.tbVilleCli, 0);
-            this.Controls.SetChildIndex(villeLabel, 0);
-            this.Controls.SetChildIndex(this.tbPrenomCli, 0);
-            this.Controls.SetChildIndex(prenomLabel, 0);
-            this.Controls.SetChildIndex(this.bNomCli, 0);
-            this.Controls.SetChildIndex(nomLabel, 0);
-            this.Controls.SetChildIndex(this.tbNoCli, 0);
-            this.Controls.SetChildIndex(noClientLabel, 0);
             this.Controls.SetChildIndex(this.lblTitreClient, 0);
-            this.Controls.SetChildIndex(this.btnClientSuivant, 0);
-            this.Controls.SetChildIndex(this.btnClientPrecedent, 0);
             this.Controls.SetChildIndex(this.btnSupprimerCli, 0);
             this.Controls.SetChildIndex(this.btnAjoutCli, 0);
             this.Controls.SetChildIndex(this.inviteDataGridView, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.tbDateInscriptionCli, 0);
-            this.Controls.SetChildIndex(dateInscriptionLabel1, 0);
             this.Controls.SetChildIndex(this.btnSauvegarder, 0);
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
+            this.Controls.SetChildIndex(this.clientDataGridView, 0);
+            this.Controls.SetChildIndex(this.btnAjouter, 0);
+            this.Controls.SetChildIndex(this.btnSupprimer, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,28 +347,30 @@
         private System.Windows.Forms.BindingSource clientBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ClientTableAdapter clientTableAdapter;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox tbNoCli;
-        private System.Windows.Forms.TextBox bNomCli;
-        private System.Windows.Forms.TextBox tbPrenomCli;
-        private System.Windows.Forms.TextBox tbVilleCli;
-        private System.Windows.Forms.TextBox tbPaysCli;
-        private System.Windows.Forms.TextBox tbAdresseCli;
-        private System.Windows.Forms.TextBox tbCodePostalCli;
         private System.Windows.Forms.Label lblTitreClient;
-        private System.Windows.Forms.Button btnClientSuivant;
-        private System.Windows.Forms.Button btnClientPrecedent;
         private System.Windows.Forms.Button btnSupprimerCli;
         private System.Windows.Forms.Button btnAjoutCli;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.InviteTableAdapter inviteTableAdapter;
         private System.Windows.Forms.BindingSource inviteBindingSource;
         private System.Windows.Forms.DataGridView inviteDataGridView;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbDateInscriptionCli;
         private System.Windows.Forms.Button btnSauvegarder;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ToolTip ttpSupprimer;
+        private System.Windows.Forms.DataGridView clientDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnSupprimer;
     }
 }

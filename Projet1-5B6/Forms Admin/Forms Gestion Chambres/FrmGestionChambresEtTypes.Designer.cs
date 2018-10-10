@@ -45,6 +45,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoTypeChambre = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.btnSupprimerType = new System.Windows.Forms.Button();
             this.btnAjouterType = new System.Windows.Forms.Button();
             this.btnSupprimerChambre = new System.Windows.Forms.Button();
@@ -165,7 +166,8 @@
             this.chambreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewTextBoxColumn8,
+            this.NoTypeChambre});
             this.chambreDataGridView.DataSource = this.chambreBindingSource;
             this.chambreDataGridView.Location = new System.Drawing.Point(717, 111);
             this.chambreDataGridView.Name = "chambreDataGridView";
@@ -191,6 +193,17 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Decoration";
             this.dataGridViewTextBoxColumn8.HeaderText = "Decoration";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // NoTypeChambre
+            // 
+            this.NoTypeChambre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NoTypeChambre.DataPropertyName = "NoTypeChambre";
+            this.NoTypeChambre.DataSource = this.typeChambreBindingSource;
+            this.NoTypeChambre.DisplayMember = "Description";
+            this.NoTypeChambre.HeaderText = "Type chambre";
+            this.NoTypeChambre.Name = "NoTypeChambre";
+            this.NoTypeChambre.ValueMember = "NoTypeChambre";
+            this.NoTypeChambre.Visible = false;
             // 
             // btnSupprimerType
             // 
@@ -318,9 +331,6 @@
         private System.Windows.Forms.BindingSource chambreBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ChambreTableAdapter chambreTableAdapter;
         private System.Windows.Forms.DataGridView chambreDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -334,5 +344,9 @@
         private System.Windows.Forms.Button btnSauvegarder;
         private System.Windows.Forms.Label lblEnteteTypeChambre;
         private System.Windows.Forms.Label lblEnteteTypeDeChambre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewComboBoxColumn NoTypeChambre;
     }
 }
