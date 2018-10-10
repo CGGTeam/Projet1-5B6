@@ -22,12 +22,10 @@ namespace Projet1_5B6.Forms_Admin
 
         private void FrmGestionAssistants_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
             this.noEtDescriptionSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin' table. You can move, or remove it, as needed.
             this.soinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin);
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
-            this.assistantSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
             this.assistantSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant' table. You can move, or remove it, as needed.
@@ -89,6 +87,9 @@ namespace Projet1_5B6.Forms_Admin
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             assistantBindingSource.ResetBindings(false);
             assistantSoinBindingSource.ResetBindings(false);
+
+            assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
         }
 
         private void btnSupprimerSoin_Click(object sender, EventArgs e)
@@ -97,7 +98,31 @@ namespace Projet1_5B6.Forms_Admin
         }
         private bool EstSupprimableSoin(DataRowView selection)
         {
-            //TODO: On ne peut supprimer un soin offert par un assistant si le soin est présent dans une planification.
+            var noSoin = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[1].Value);
+            var noAssistant = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value);
+
+            //connection a la BD
+            string maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
+            SqlConnection maConnexion = new SqlConnection(maChaineConnexion);
+            maConnexion.Open();
+
+            //requete SQL
+            string maRequeteSQL = "SELECT * FROM PlanifSoin WHERE NoAssistant = @NoAssistant AND NoSoin = @NoSoin";
+            SqlParameter paramNoAssistant = new SqlParameter("@NoAssistant", noAssistant);
+            SqlParameter paramNoSoin = new SqlParameter("@NoSoin", noSoin);
+
+            SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+            maCommande.Parameters.Add(paramNoAssistant);
+            maCommande.Parameters.Add(paramNoSoin);
+
+            SqlDataReader monReader = maCommande.ExecuteReader();
+            if (monReader.HasRows)
+            {
+                MessageBox.Show("Vous ne pouvez pas supprimer un soin si ce soin est présent dans une planif!", "Alerte", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                maConnexion.Close();
+                return false;
+            }
+            maConnexion.Close();
             return true;
         }
         private void btnAjouterSoin_Click(object sender, EventArgs e)
@@ -111,7 +136,7 @@ namespace Projet1_5B6.Forms_Admin
             {
                 if (!(bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.FindByNoAssistantNoSoin(nouveauSoinsAssistant.NoAssistant, nouveauSoinsAssistant.NoSoin).IsNull(1)))
                 {
-                    MessageBox.Show("Ce soin est déjà assigné à cet assistant");
+                    MessageBox.Show("Ce soin est déjà assigné à cet assistant", "Alerte", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
