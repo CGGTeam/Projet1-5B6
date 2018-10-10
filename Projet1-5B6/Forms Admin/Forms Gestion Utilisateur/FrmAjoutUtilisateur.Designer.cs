@@ -98,7 +98,6 @@
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AssistantSoinTableAdapter = null;
             this.tableAdapterManager.AssistantTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChambreTableAdapter = null;

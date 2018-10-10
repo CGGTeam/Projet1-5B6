@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,22 +51,32 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         {
             user.Nom = tbNom.Text;
 
-            foreach (DataRow row in bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.Rows) {
-                if ((string)row[1] == user.Nom)
-                {
-                    MessageBox.Show("Vous devez utiliser un nom unique!");
-                    return;
-                }
-                btnConfirmer.Text = (string)row[1];
+            //connection a la BD
+            string maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
+            SqlConnection maConnexion = new SqlConnection(maChaineConnexion);
+            maConnexion.Open();
+
+            //requete SQL
+            string maRequeteSQL = "SELECT * FROM Utilisateur WHERE Nom = @NomUtilisateur";
+            SqlParameter paramNom = new SqlParameter("@NomUtilisateur", user.Nom);
+
+            SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+            maCommande.Parameters.Add(paramNom);
+
+            SqlDataReader monReader = maCommande.ExecuteReader();
+            if (monReader.HasRows)
+            {
+                MessageBox.Show("Vous devez utiliser un nom unique!");
+                return;
             }
-            btnConfirmer.Text = this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.Count().ToString();
-            /*
+            maConnexion.Close();
+                
             user.MotDePasse = tbMotDePasse.Text;
             user.NoTypeUtilisateur = (int)listTypeUtilisateur.SelectedValue;
 
             DialogResult = DialogResult.OK;
             Close();
-            */
+            
         }
     }
 }

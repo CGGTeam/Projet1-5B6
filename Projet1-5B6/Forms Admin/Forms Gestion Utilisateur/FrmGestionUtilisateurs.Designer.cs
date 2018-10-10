@@ -39,13 +39,16 @@
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.utilisateurDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeUtilisateurTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeUtilisateurTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAnnuler
@@ -108,7 +111,6 @@
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AssistantSoinTableAdapter = null;
             this.tableAdapterManager.AssistantTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChambreTableAdapter = null;
@@ -150,6 +152,15 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Gestion des utilisateurs";
             // 
+            // typeUtilisateurBindingSource
+            // 
+            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
+            this.typeUtilisateurBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // typeUtilisateurTableAdapter
+            // 
+            this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoUtilisateur";
@@ -175,8 +186,13 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NoTypeUtilisateur";
+            this.dataGridViewTextBoxColumn4.DataSource = this.typeUtilisateurBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "Identifiaction";
             this.dataGridViewTextBoxColumn4.HeaderText = "NoTypeUtilisateur";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "NoTypeUtilisateur";
             // 
             // FrmGestionUtilisateurs
             // 
@@ -201,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,9 +235,11 @@
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView utilisateurDataGridView;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource typeUtilisateurBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeUtilisateurTableAdapter typeUtilisateurTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
     }
 }

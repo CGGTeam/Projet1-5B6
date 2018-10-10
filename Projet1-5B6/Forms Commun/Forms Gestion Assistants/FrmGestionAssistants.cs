@@ -22,10 +22,10 @@ namespace Projet1_5B6.Forms_Admin
 
         private void FrmGestionAssistants_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin' table. You can move, or remove it, as needed.
+            this.noEtDescriptionSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin' table. You can move, or remove it, as needed.
             this.soinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin);
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistanSoinDescription' table. You can move, or remove it, as needed.
-            this.assistanSoinDescriptionTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistanSoinDescription);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
             this.assistantSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
@@ -79,7 +79,9 @@ namespace Projet1_5B6.Forms_Admin
             Validate();
             assistantBindingSource.EndEdit();
             assistantSoinBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+
+            assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
@@ -104,10 +106,23 @@ namespace Projet1_5B6.Forms_Admin
 
             nouveauSoinsAssistant.NoAssistant = Convert.ToInt32(assistantDataGridView.CurrentRow.Cells[0].Value);
             nouveauSoinsAssistant.NoSoin = (int)listSoin.SelectedValue;
-            bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.AddAssistantSoinRow(nouveauSoinsAssistant);
-            assistantBindingSource.MoveLast();
 
-            this.assistanSoinDescriptionTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistanSoinDescription);
+            try
+            {
+                if (!(bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.FindByNoAssistantNoSoin(nouveauSoinsAssistant.NoAssistant, nouveauSoinsAssistant.NoSoin).IsNull(1)))
+                {
+                    MessageBox.Show("Ce soin est déjà assigné à cet assistant");
+                    return;
+                }
+            }
+            catch (Exception exep) { };
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.AddAssistantSoinRow(nouveauSoinsAssistant);
+            assistantSoinBindingSource.MoveLast();
+        }
+
+        private void assistantSoinDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

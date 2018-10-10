@@ -90,8 +90,6 @@ namespace Projet1_5B6 {
         
         private global::System.Data.DataRelation relationUtilisateur_NoTypeUtilisateur_fk;
         
-        private global::System.Data.DataRelation relationAssistantSoin_Soin_NoSoin_fk1;
-        
         private global::System.Data.DataRelation relationInvite_Client_NoCliet_fk1;
         
         private global::System.Data.DataRelation relationPlanifSoin_Client_NoPersonne_fk1;
@@ -117,6 +115,8 @@ namespace Projet1_5B6 {
         private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk3;
         
         private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk4;
+        
+        private global::System.Data.DataRelation relationAssistantSoin_Soin_NoSoin_fk1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -738,7 +738,6 @@ namespace Projet1_5B6 {
             this.relationReservationChambre_Client_NoCliet_fk = this.Relations["ReservationChambre_Client_NoCliet_fk"];
             this.relationFK__Soin__NoTypeSoin__75A278F5 = this.Relations["FK__Soin__NoTypeSoin__75A278F5"];
             this.relationUtilisateur_NoTypeUtilisateur_fk = this.Relations["Utilisateur_NoTypeUtilisateur_fk"];
-            this.relationAssistantSoin_Soin_NoSoin_fk1 = this.Relations["AssistantSoin_Soin_NoSoin_fk1"];
             this.relationInvite_Client_NoCliet_fk1 = this.Relations["Invite_Client_NoCliet_fk1"];
             this.relationPlanifSoin_Client_NoPersonne_fk1 = this.Relations["PlanifSoin_Client_NoPersonne_fk1"];
             this.relationReservationChambre_Client_NoCliet_fk1 = this.Relations["ReservationChambre_Client_NoCliet_fk1"];
@@ -752,6 +751,7 @@ namespace Projet1_5B6 {
             this.relationReservationChambre_Chambre_NoChambre_fk2 = this.Relations["ReservationChambre_Chambre_NoChambre_fk2"];
             this.relationReservationChambre_Chambre_NoChambre_fk3 = this.Relations["ReservationChambre_Chambre_NoChambre_fk3"];
             this.relationReservationChambre_Chambre_NoChambre_fk4 = this.Relations["ReservationChambre_Chambre_NoChambre_fk4"];
+            this.relationAssistantSoin_Soin_NoSoin_fk1 = this.Relations["AssistantSoin_Soin_NoSoin_fk1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -852,10 +852,6 @@ namespace Projet1_5B6 {
                         this.tableTypeUtilisateur.NoTypeUtilisateurColumn}, new global::System.Data.DataColumn[] {
                         this.tableUtilisateur.NoTypeUtilisateurColumn}, false);
             this.Relations.Add(this.relationUtilisateur_NoTypeUtilisateur_fk);
-            this.relationAssistantSoin_Soin_NoSoin_fk1 = new global::System.Data.DataRelation("AssistantSoin_Soin_NoSoin_fk1", new global::System.Data.DataColumn[] {
-                        this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAssistanSoinDescription.NoSoinColumn}, false);
-            this.Relations.Add(this.relationAssistantSoin_Soin_NoSoin_fk1);
             this.relationInvite_Client_NoCliet_fk1 = new global::System.Data.DataRelation("Invite_Client_NoCliet_fk1", new global::System.Data.DataColumn[] {
                         this.tableNoEtNomsClientsInvites.NoClientColumn}, new global::System.Data.DataColumn[] {
                         this.tableInvite.NoClientColumn}, false);
@@ -908,6 +904,10 @@ namespace Projet1_5B6 {
                         this.tableNoEtEmplacementChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
                         this.tableRapportChambre.NoChambreColumn}, false);
             this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk4);
+            this.relationAssistantSoin_Soin_NoSoin_fk1 = new global::System.Data.DataRelation("AssistantSoin_Soin_NoSoin_fk1", new global::System.Data.DataColumn[] {
+                        this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAssistanSoinDescription.NoSoinColumn}, false);
+            this.Relations.Add(this.relationAssistantSoin_Soin_NoSoin_fk1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10800,7 +10800,7 @@ SELECT NoAssistant, NoSoin FROM AssistantSoin WHERE (NoAssistant = @NoAssistant)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NoAssistant, NoSoin FROM dbo.AssistantSoin";
+            this._commandCollection[0].CommandText = "SELECT NoAssistant,NoSoin FROM dbo.AssistantSoin";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16722,6 +16722,15 @@ FROM            Chambre INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._soinTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._soinTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._inviteTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Invite.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16737,15 +16746,6 @@ FROM            Chambre INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._chambreTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._soinTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._soinTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16851,6 +16851,14 @@ FROM            Chambre INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._soinTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._soinTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._inviteTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Invite.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16864,14 +16872,6 @@ FROM            Chambre INNER JOIN
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._chambreTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._soinTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._soinTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16949,14 +16949,6 @@ FROM            Chambre INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._soinTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._soinTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._chambreTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Chambre.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16970,6 +16962,14 @@ FROM            Chambre INNER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._inviteTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._soinTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._soinTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

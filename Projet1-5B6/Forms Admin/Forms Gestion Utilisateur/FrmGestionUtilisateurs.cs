@@ -28,6 +28,8 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
 
         private void FrmGestionUtilisateurs_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeUtilisateur' table. You can move, or remove it, as needed.
+            this.typeUtilisateurTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeUtilisateur);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur' table. You can move, or remove it, as needed.
             this.utilisateurTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur);
 

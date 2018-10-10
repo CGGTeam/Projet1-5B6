@@ -52,23 +52,29 @@
             this.assistantSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assistantSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinTableAdapter();
             this.assistanSoinDescriptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.assistanSoinDescriptionTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistanSoinDescriptionTableAdapter();
             this.btnAnnuler = new System.Windows.Forms.Button();
-            this.assistanSoinDescriptionDataGridView = new System.Windows.Forms.DataGridView();
+            this.soinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.soinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter();
+            this.listSoin = new System.Windows.Forms.ComboBox();
+            this.noEtDescriptionSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
+            this.assistantSoinBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.assistantSoinBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.assistantSoinDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listSoin = new System.Windows.Forms.ListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.soinBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.soinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistanSoinDescriptionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assistanSoinDescriptionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noEtDescriptionSoinBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTextBoxColumn6
@@ -106,6 +112,7 @@
             this.dataGridViewTextBoxColumn8});
             this.assistantDataGridView.DataSource = this.assistantBindingSource;
             this.assistantDataGridView.Location = new System.Drawing.Point(22, 70);
+            this.assistantDataGridView.MultiSelect = false;
             this.assistantDataGridView.Name = "assistantDataGridView";
             this.assistantDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.assistantDataGridView.Size = new System.Drawing.Size(538, 330);
@@ -166,7 +173,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(638, 44);
+            this.label2.Location = new System.Drawing.Point(569, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(320, 20);
             this.label2.TabIndex = 5;
@@ -174,7 +181,7 @@
             // 
             // btnConfrimer
             // 
-            this.btnConfrimer.Location = new System.Drawing.Point(318, 470);
+            this.btnConfrimer.Location = new System.Drawing.Point(745, 297);
             this.btnConfrimer.Name = "btnConfrimer";
             this.btnConfrimer.Size = new System.Drawing.Size(155, 30);
             this.btnConfrimer.TabIndex = 6;
@@ -194,9 +201,9 @@
             // 
             // btnAjouterSoin
             // 
-            this.btnAjouterSoin.Location = new System.Drawing.Point(684, 447);
+            this.btnAjouterSoin.Location = new System.Drawing.Point(751, 110);
             this.btnAjouterSoin.Name = "btnAjouterSoin";
-            this.btnAjouterSoin.Size = new System.Drawing.Size(107, 30);
+            this.btnAjouterSoin.Size = new System.Drawing.Size(130, 30);
             this.btnAjouterSoin.TabIndex = 8;
             this.btnAjouterSoin.Text = "Ajouter un soin";
             this.btnAjouterSoin.UseVisualStyleBackColor = true;
@@ -204,9 +211,9 @@
             // 
             // btnSupprimerSoin
             // 
-            this.btnSupprimerSoin.Location = new System.Drawing.Point(820, 420);
+            this.btnSupprimerSoin.Location = new System.Drawing.Point(751, 146);
             this.btnSupprimerSoin.Name = "btnSupprimerSoin";
-            this.btnSupprimerSoin.Size = new System.Drawing.Size(107, 30);
+            this.btnSupprimerSoin.Size = new System.Drawing.Size(130, 30);
             this.btnSupprimerSoin.TabIndex = 9;
             this.btnSupprimerSoin.Text = "Supprimer un soin";
             this.btnSupprimerSoin.UseVisualStyleBackColor = true;
@@ -249,54 +256,19 @@
             this.assistanSoinDescriptionBindingSource.DataMember = "AssistanSoinDescription";
             this.assistanSoinDescriptionBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
-            // assistanSoinDescriptionTableAdapter
-            // 
-            this.assistanSoinDescriptionTableAdapter.ClearBeforeFill = true;
-            // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(504, 470);
+            this.btnAnnuler.Location = new System.Drawing.Point(745, 333);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(155, 30);
             this.btnAnnuler.TabIndex = 10;
             this.btnAnnuler.Text = "Annuler modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // assistanSoinDescriptionDataGridView
+            // soinBindingSource
             // 
-            this.assistanSoinDescriptionDataGridView.AutoGenerateColumns = false;
-            this.assistanSoinDescriptionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assistanSoinDescriptionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.assistanSoinDescriptionDataGridView.DataSource = this.assistanSoinDescriptionBindingSource;
-            this.assistanSoinDescriptionDataGridView.Location = new System.Drawing.Point(642, 70);
-            this.assistanSoinDescriptionDataGridView.Name = "assistanSoinDescriptionDataGridView";
-            this.assistanSoinDescriptionDataGridView.Size = new System.Drawing.Size(300, 330);
-            this.assistanSoinDescriptionDataGridView.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NoSoin";
-            this.dataGridViewTextBoxColumn9.HeaderText = "NoSoin";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // listSoin
-            // 
-            this.listSoin.DataSource = this.soinBindingSource;
-            this.listSoin.DisplayMember = "Description";
-            this.listSoin.FormattingEnabled = true;
-            this.listSoin.Location = new System.Drawing.Point(684, 420);
-            this.listSoin.Name = "listSoin";
-            this.listSoin.Size = new System.Drawing.Size(107, 30);
-            this.listSoin.TabIndex = 11;
-            this.listSoin.ValueMember = "NoSoin";
+            this.soinBindingSource.DataMember = "Soin";
+            this.soinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
             // checkedListBox1
             // 
@@ -306,23 +278,79 @@
             this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
             this.checkedListBox1.TabIndex = 12;
             // 
-            // soinBindingSource
-            // 
-            this.soinBindingSource.DataMember = "Soin";
-            this.soinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
             // soinTableAdapter
             // 
             this.soinTableAdapter.ClearBeforeFill = true;
+            // 
+            // listSoin
+            // 
+            this.listSoin.DataSource = this.noEtDescriptionSoinBindingSource;
+            this.listSoin.DisplayMember = "NoEtDescription";
+            this.listSoin.FormattingEnabled = true;
+            this.listSoin.Location = new System.Drawing.Point(751, 83);
+            this.listSoin.Name = "listSoin";
+            this.listSoin.Size = new System.Drawing.Size(130, 21);
+            this.listSoin.TabIndex = 13;
+            this.listSoin.ValueMember = "NoSoin";
+            // 
+            // noEtDescriptionSoinBindingSource
+            // 
+            this.noEtDescriptionSoinBindingSource.DataMember = "NoEtDescriptionSoin";
+            this.noEtDescriptionSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // noEtDescriptionSoinTableAdapter
+            // 
+            this.noEtDescriptionSoinTableAdapter.ClearBeforeFill = true;
+            // 
+            // assistantSoinBindingSource1
+            // 
+            this.assistantSoinBindingSource1.DataMember = "AssistantSoin_Assistant_NoAssistant_fk";
+            this.assistantSoinBindingSource1.DataSource = this.assistantBindingSource;
+            // 
+            // assistantSoinBindingSource2
+            // 
+            this.assistantSoinBindingSource2.DataMember = "AssistantSoin_Assistant_NoAssistant_fk";
+            this.assistantSoinBindingSource2.DataSource = this.assistantBindingSource;
+            // 
+            // assistantSoinDataGridView
+            // 
+            this.assistantSoinDataGridView.AutoGenerateColumns = false;
+            this.assistantSoinDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assistantSoinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.assistantSoinDataGridView.DataSource = this.assistantSoinBindingSource1;
+            this.assistantSoinDataGridView.Location = new System.Drawing.Point(591, 70);
+            this.assistantSoinDataGridView.MultiSelect = false;
+            this.assistantSoinDataGridView.Name = "assistantSoinDataGridView";
+            this.assistantSoinDataGridView.ReadOnly = true;
+            this.assistantSoinDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.assistantSoinDataGridView.Size = new System.Drawing.Size(141, 330);
+            this.assistantSoinDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NoAssistant";
+            this.dataGridViewTextBoxColumn9.HeaderText = "NoAssistant";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "NoSoin";
+            this.dataGridViewTextBoxColumn10.HeaderText = "NoSoin";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // FrmGestionAssistants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 520);
-            this.Controls.Add(this.checkedListBox1);
+            this.ClientSize = new System.Drawing.Size(912, 460);
+            this.Controls.Add(this.assistantSoinDataGridView);
             this.Controls.Add(this.listSoin);
-            this.Controls.Add(this.assistanSoinDescriptionDataGridView);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSupprimerSoin);
             this.Controls.Add(this.btnAjouterSoin);
@@ -345,17 +373,20 @@
             this.Controls.SetChildIndex(this.btnAjouterSoin, 0);
             this.Controls.SetChildIndex(this.btnSupprimerSoin, 0);
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
-            this.Controls.SetChildIndex(this.assistanSoinDescriptionDataGridView, 0);
-            this.Controls.SetChildIndex(this.listSoin, 0);
             this.Controls.SetChildIndex(this.checkedListBox1, 0);
+            this.Controls.SetChildIndex(this.listSoin, 0);
+            this.Controls.SetChildIndex(this.assistantSoinDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistanSoinDescriptionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assistanSoinDescriptionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noEtDescriptionSoinBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,14 +418,18 @@
         private System.Windows.Forms.BindingSource assistantSoinBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinTableAdapter assistantSoinTableAdapter;
         private System.Windows.Forms.BindingSource assistanSoinDescriptionBindingSource;
-        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistanSoinDescriptionTableAdapter assistanSoinDescriptionTableAdapter;
         private System.Windows.Forms.Button btnAnnuler;
-        private System.Windows.Forms.DataGridView assistanSoinDescriptionDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.ListBox listSoin;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.BindingSource soinBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter soinTableAdapter;
+        private System.Windows.Forms.ComboBox listSoin;
+        private System.Windows.Forms.BindingSource noEtDescriptionSoinBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter noEtDescriptionSoinTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource assistantSoinBindingSource1;
+        private System.Windows.Forms.BindingSource assistantSoinBindingSource2;
+        private System.Windows.Forms.DataGridView assistantSoinDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }
