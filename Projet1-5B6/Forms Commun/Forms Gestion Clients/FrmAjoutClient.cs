@@ -58,8 +58,7 @@ namespace Projet1_5B6.Forms_Commun
 
         private bool Valider()
         {
-            //TODO: unstubify
-            return true;
+            return controlesAValider.All(ControleNonVide);
         }
 
         private void FrmAjoutClient_Load(object sender, EventArgs e)
@@ -70,9 +69,7 @@ namespace Projet1_5B6.Forms_Commun
 
         private void ValiderFormulaireRempli(object sender, EventArgs e)
         {
-            bool formulaireComplet = controlesAValider.All(ControleNonVide);
-
-            btnAjout.Enabled = formulaireComplet;
+            btnAjout.Enabled = Valider();
         }
 
         private bool ControleNonVide(Control ctrl)

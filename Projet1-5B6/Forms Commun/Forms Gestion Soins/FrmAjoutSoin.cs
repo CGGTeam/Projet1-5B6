@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -28,6 +29,8 @@ namespace Projet1_5B6.Forms_Commun
             this.typeSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeSoin);
             tbNoSoin.Text = soin.NoSoin.ToString();
             tbDuree.Text = "60";
+            tbDescription.Validating += Validation.ValiderDescriptionSoin(errorProvider);
+            tbPrix.Validating += Validation.ValiderPrix(errorProvider);
         }
 
         private void ValiderFormulaire(object sender, EventArgs e)
@@ -50,18 +53,6 @@ namespace Projet1_5B6.Forms_Commun
 
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void tbPrix_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            try
-            {
-                Convert.ToDecimal(tbPrix.Text);
-            }
-            catch (Exception)
-            {
-                e.Cancel = true;
-            }
         }
     }
 }

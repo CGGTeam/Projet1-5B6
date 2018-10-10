@@ -37,5 +37,13 @@ namespace Projet1_5B6.Forms_Admin
                 this.DialogResult = DialogResult.Cancel;
             }
        }
+
+        private void FrmAjoutTypeChambre_Load(object sender, EventArgs e)
+        {
+            tbPrixHaut.Validating += Validation.ValiderPrix(errorProvider);
+            tbPrixBas.Validating += Validation.ValiderPrix(errorProvider);
+            tbPrixMoyen.Validating += Validation.ValiderPrix(errorProvider);
+            tbDescription.Validating += Validation.ValiderDescriptionTypeChambre(errorProvider);
+        }
     }
 }
