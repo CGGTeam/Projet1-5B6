@@ -946,6 +946,25 @@ FROM            Chambre INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AssistantSoinDescriptionTableAdapter" GeneratorDataComponentClassName="AssistantSoinDescriptionTableAdapter" Name="AssistantSoinDescription" UserDataComponentName="AssistantSoinDescriptionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AssistantSoin.NoAssistant,AssistantSoin.NoSoin, Soin.Description FROM dbo.AssistantSoin
+INNER JOIN Soin on AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NoAssistant" DataSetColumn="NoAssistant" />
+              <Mapping SourceColumn="NoSoin" DataSetColumn="NoSoin" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1329,6 +1348,21 @@ FROM            Chambre INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="AssistantSoinDescription" msprop:Generator_TableClassName="AssistantSoinDescriptionDataTable" msprop:Generator_TableVarName="tableAssistantSoinDescription" msprop:Generator_RowChangedName="AssistantSoinDescriptionRowChanged" msprop:Generator_TablePropName="AssistantSoinDescription" msprop:Generator_RowDeletingName="AssistantSoinDescriptionRowDeleting" msprop:Generator_RowChangingName="AssistantSoinDescriptionRowChanging" msprop:Generator_RowEvHandlerName="AssistantSoinDescriptionRowChangeEventHandler" msprop:Generator_RowDeletedName="AssistantSoinDescriptionRowDeleted" msprop:Generator_RowClassName="AssistantSoinDescriptionRow" msprop:Generator_UserTableName="AssistantSoinDescription" msprop:Generator_RowEvArgName="AssistantSoinDescriptionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NoAssistant" msprop:Generator_ColumnVarNameInTable="columnNoAssistant" msprop:Generator_ColumnPropNameInRow="NoAssistant" msprop:Generator_ColumnPropNameInTable="NoAssistantColumn" msprop:Generator_UserColumnName="NoAssistant" type="xs:int" />
+              <xs:element name="NoSoin" msprop:Generator_ColumnVarNameInTable="columnNoSoin" msprop:Generator_ColumnPropNameInRow="NoSoin" msprop:Generator_ColumnPropNameInTable="NoSoinColumn" msprop:Generator_UserColumnName="NoSoin" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="AssistanSoinDescription" msprop:Generator_TableClassName="AssistanSoinDescriptionDataTable" msprop:Generator_TableVarName="tableAssistanSoinDescription" msprop:Generator_RowChangedName="AssistanSoinDescriptionRowChanged" msprop:Generator_TablePropName="AssistanSoinDescription" msprop:Generator_RowDeletingName="AssistanSoinDescriptionRowDeleting" msprop:Generator_RowChangingName="AssistanSoinDescriptionRowChanging" msprop:Generator_RowEvHandlerName="AssistanSoinDescriptionRowChangeEventHandler" msprop:Generator_RowDeletedName="AssistanSoinDescriptionRowDeleted" msprop:Generator_RowClassName="AssistanSoinDescriptionRow" msprop:Generator_UserTableName="AssistanSoinDescription" msprop:Generator_RowEvArgName="AssistanSoinDescriptionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -1419,6 +1453,11 @@ FROM            Chambre INNER JOIN
       <xs:selector xpath=".//mstns:NoEtEmplacementChambre" />
       <xs:field xpath="mstns:NoChambre" />
     </xs:unique>
+    <xs:unique name="AssistantSoinDescription_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AssistantSoinDescription" />
+      <xs:field xpath="mstns:NoAssistant" />
+      <xs:field xpath="mstns:NoSoin" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -1447,6 +1486,10 @@ FROM            Chambre INNER JOIN
       <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk2" msdata:parent="NoEtEmplacementChambre" msdata:child="ReservationChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="ReservationChambre" msprop:Generator_ChildPropName="GetReservationChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk2" msprop:Generator_ParentPropName="NoEtEmplacementChambreRow" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk2" msprop:Generator_UserParentTable="NoEtEmplacementChambre" />
       <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk3" msdata:parent="Chambre" msdata:child="RapportChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="RapportChambre" msprop:Generator_ChildPropName="GetRapportChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk3" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk3" msprop:Generator_UserParentTable="Chambre" msprop:Generator_ParentPropName="ChambreRow" />
       <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk4" msdata:parent="NoEtEmplacementChambre" msdata:child="RapportChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="RapportChambre" msprop:Generator_ChildPropName="GetRapportChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk4" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk4" msprop:Generator_UserParentTable="NoEtEmplacementChambre" msprop:Generator_ParentPropName="NoEtEmplacementChambreRow" />
+      <msdata:Relationship name="AssistantSoin_Assistant_NoAssistant_fk2" msdata:parent="Assistant" msdata:child="AssistantSoinDescription" msdata:parentkey="NoAssistant" msdata:childkey="NoAssistant" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Assistant_NoAssistant_fk2" msprop:Generator_RelationVarName="relationAssistantSoin_Assistant_NoAssistant_fk2" msprop:Generator_UserParentTable="Assistant" msprop:Generator_ParentPropName="AssistantRow" />
+      <msdata:Relationship name="AssistantSoin_Assistant_NoAssistant_fk3" msdata:parent="NoEtNomsAssistants" msdata:child="AssistantSoinDescription" msdata:parentkey="NoAssistant" msdata:childkey="NoAssistant" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Assistant_NoAssistant_fk3" msprop:Generator_RelationVarName="relationAssistantSoin_Assistant_NoAssistant_fk3" msprop:Generator_UserParentTable="NoEtNomsAssistants" msprop:Generator_ParentPropName="NoEtNomsAssistantsRow" />
+      <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk3" msdata:parent="Soin" msdata:child="AssistantSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk3" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk3" msprop:Generator_UserParentTable="Soin" msprop:Generator_ParentPropName="SoinRow" />
+      <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk4" msdata:parent="NoEtDescriptionSoin" msdata:child="AssistantSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk4" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk4" msprop:Generator_UserParentTable="NoEtDescriptionSoin" msprop:Generator_ParentPropName="NoEtDescriptionSoinRow" />
       <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk1" msdata:parent="Soin" msdata:child="AssistanSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistanSoinDescription" msprop:Generator_ChildPropName="GetAssistanSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk1" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk1" msprop:Generator_UserParentTable="Soin" msprop:Generator_ParentPropName="SoinRow" />
     </xs:appinfo>
   </xs:annotation>

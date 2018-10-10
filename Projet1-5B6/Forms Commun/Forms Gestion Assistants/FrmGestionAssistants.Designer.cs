@@ -54,13 +54,14 @@
             this.assistanSoinDescriptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.soinBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.soinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter();
             this.listSoin = new System.Windows.Forms.ComboBox();
             this.noEtDescriptionSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
             this.assistantSoinBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.assistantSoinBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.assistantSoinDescriptionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.assistantSoinDescriptionTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinDescriptionTableAdapter();
             this.assistantSoinDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.noEtDescriptionSoinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +104,8 @@
             // assistantDataGridView
             // 
             this.assistantDataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.assistantDataGridView.AllowUserToAddRows = false;
+            this.assistantDataGridView.AllowUserToOrderColumns = true;
             this.assistantDataGridView.AutoGenerateColumns = false;
             this.assistantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assistantDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -124,6 +128,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "NoAssistant";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -145,6 +150,7 @@
             // 
             // dataGridViewTextBoxColumn8
             // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Remarques";
             this.dataGridViewTextBoxColumn8.HeaderText = "Remarques";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -181,9 +187,9 @@
             // 
             // btnConfrimer
             // 
-            this.btnConfrimer.Location = new System.Drawing.Point(745, 297);
+            this.btnConfrimer.Location = new System.Drawing.Point(751, 297);
             this.btnConfrimer.Name = "btnConfrimer";
-            this.btnConfrimer.Size = new System.Drawing.Size(155, 30);
+            this.btnConfrimer.Size = new System.Drawing.Size(130, 30);
             this.btnConfrimer.TabIndex = 6;
             this.btnConfrimer.Text = "Sauvegarder modifications";
             this.btnConfrimer.UseVisualStyleBackColor = true;
@@ -258,9 +264,9 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(745, 333);
+            this.btnAnnuler.Location = new System.Drawing.Point(751, 333);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(155, 30);
+            this.btnAnnuler.Size = new System.Drawing.Size(130, 30);
             this.btnAnnuler.TabIndex = 10;
             this.btnAnnuler.Text = "Annuler modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -269,14 +275,6 @@
             // 
             this.soinBindingSource.DataMember = "Soin";
             this.soinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(766, 420);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
-            this.checkedListBox1.TabIndex = 12;
             // 
             // soinTableAdapter
             // 
@@ -312,20 +310,28 @@
             this.assistantSoinBindingSource2.DataMember = "AssistantSoin_Assistant_NoAssistant_fk";
             this.assistantSoinBindingSource2.DataSource = this.assistantBindingSource;
             // 
+            // assistantSoinDescriptionBindingSource1
+            // 
+            this.assistantSoinDescriptionBindingSource1.DataMember = "AssistantSoin_Assistant_NoAssistant_fk2";
+            this.assistantSoinDescriptionBindingSource1.DataSource = this.assistantBindingSource;
+            // 
+            // assistantSoinDescriptionTableAdapter
+            // 
+            this.assistantSoinDescriptionTableAdapter.ClearBeforeFill = true;
+            // 
             // assistantSoinDataGridView
             // 
+            this.assistantSoinDataGridView.AllowUserToAddRows = false;
             this.assistantSoinDataGridView.AutoGenerateColumns = false;
             this.assistantSoinDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assistantSoinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.assistantSoinDataGridView.DataSource = this.assistantSoinBindingSource1;
-            this.assistantSoinDataGridView.Location = new System.Drawing.Point(591, 70);
-            this.assistantSoinDataGridView.MultiSelect = false;
+            this.assistantSoinDataGridView.Location = new System.Drawing.Point(566, 71);
             this.assistantSoinDataGridView.Name = "assistantSoinDataGridView";
             this.assistantSoinDataGridView.ReadOnly = true;
-            this.assistantSoinDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.assistantSoinDataGridView.Size = new System.Drawing.Size(141, 330);
+            this.assistantSoinDataGridView.Size = new System.Drawing.Size(179, 329);
             this.assistantSoinDataGridView.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn9
@@ -338,6 +344,7 @@
             // 
             // dataGridViewTextBoxColumn10
             // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "NoSoin";
             this.dataGridViewTextBoxColumn10.HeaderText = "NoSoin";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
@@ -347,10 +354,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 460);
+            this.ClientSize = new System.Drawing.Size(894, 458);
             this.Controls.Add(this.assistantSoinDataGridView);
             this.Controls.Add(this.listSoin);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSupprimerSoin);
             this.Controls.Add(this.btnAjouterSoin);
@@ -373,7 +379,6 @@
             this.Controls.SetChildIndex(this.btnAjouterSoin, 0);
             this.Controls.SetChildIndex(this.btnSupprimerSoin, 0);
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
-            this.Controls.SetChildIndex(this.checkedListBox1, 0);
             this.Controls.SetChildIndex(this.listSoin, 0);
             this.Controls.SetChildIndex(this.assistantSoinDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource)).EndInit();
@@ -386,6 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.noEtDescriptionSoinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -410,16 +416,10 @@
         private System.Windows.Forms.Button btnSupprimerAssistant;
         private System.Windows.Forms.Button btnAjouterSoin;
         private System.Windows.Forms.Button btnSupprimerSoin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.BindingSource assistantSoinBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinTableAdapter assistantSoinTableAdapter;
         private System.Windows.Forms.BindingSource assistanSoinDescriptionBindingSource;
         private System.Windows.Forms.Button btnAnnuler;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.BindingSource soinBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter soinTableAdapter;
         private System.Windows.Forms.ComboBox listSoin;
@@ -428,8 +428,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.BindingSource assistantSoinBindingSource1;
         private System.Windows.Forms.BindingSource assistantSoinBindingSource2;
+        private System.Windows.Forms.BindingSource assistantSoinDescriptionBindingSource1;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinDescriptionTableAdapter assistantSoinDescriptionTableAdapter;
         private System.Windows.Forms.DataGridView assistantSoinDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }
