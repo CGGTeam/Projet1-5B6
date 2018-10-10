@@ -105,6 +105,7 @@
             // 
             this.assistantDataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.assistantDataGridView.AllowUserToAddRows = false;
+            this.assistantDataGridView.AllowUserToDeleteRows = false;
             this.assistantDataGridView.AllowUserToOrderColumns = true;
             this.assistantDataGridView.AutoGenerateColumns = false;
             this.assistantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -322,6 +323,7 @@
             // assistantSoinDataGridView
             // 
             this.assistantSoinDataGridView.AllowUserToAddRows = false;
+            this.assistantSoinDataGridView.AllowUserToDeleteRows = false;
             this.assistantSoinDataGridView.AutoGenerateColumns = false;
             this.assistantSoinDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assistantSoinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
