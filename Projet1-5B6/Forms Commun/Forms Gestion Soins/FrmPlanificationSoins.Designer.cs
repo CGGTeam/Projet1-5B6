@@ -118,6 +118,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dgPlanifSoin.Location = new System.Drawing.Point(12, 152);
             this.dgPlanifSoin.Name = "dgPlanifSoin";
             this.dgPlanifSoin.RowTemplate.Height = 28;
+            this.dgPlanifSoin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPlanifSoin.Size = new System.Drawing.Size(950, 304);
             this.dgPlanifSoin.TabIndex = 1;
             // 

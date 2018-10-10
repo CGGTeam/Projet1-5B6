@@ -74,7 +74,8 @@ namespace Projet1_5B6.Forms_Commun
 
         private bool ControleNonVide(Control ctrl)
         {
-            return ctrl.Text.Trim() != "";
+            return true;
+            //return ctrl.Text.Trim() != "";
         }
     }
 }

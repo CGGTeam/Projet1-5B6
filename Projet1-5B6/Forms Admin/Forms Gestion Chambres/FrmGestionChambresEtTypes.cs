@@ -25,7 +25,6 @@ namespace Projet1_5B6.Forms_Admin
             this.chambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre' table. You can move, or remove it, as needed.
             this.typeChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
-
         }
 
         private int TrouverNoTypeChambre()
@@ -100,7 +99,9 @@ namespace Projet1_5B6.Forms_Admin
             Validate();
             chambreBindingSource.EndEdit();
             typeChambreBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+
+            chambreTableAdapter.Update(bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre);
+            typeChambreTableAdapter.Update(bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

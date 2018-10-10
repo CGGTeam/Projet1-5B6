@@ -46,6 +46,7 @@
             this.btnSauvegarder = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.typeSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeSoinTableAdapter();
+            this.ttpSupprimer = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSoins)).BeginInit();
@@ -171,6 +172,7 @@
             // 
             // btnSupprimer
             // 
+            this.btnSupprimer.Enabled = false;
             this.btnSupprimer.Location = new System.Drawing.Point(384, 344);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(213, 32);
@@ -215,7 +217,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgSoins);
             this.Name = "FrmGestionSoins";
-            this.Text = "Gestion des soins";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmGestionSoins_Load);
             this.Controls.SetChildIndex(this.dgSoins, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -251,5 +253,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.ToolTip ttpSupprimer;
     }
 }

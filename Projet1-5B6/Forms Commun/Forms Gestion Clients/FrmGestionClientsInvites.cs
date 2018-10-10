@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters;
 using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun
@@ -48,22 +49,91 @@ namespace Projet1_5B6.Forms_Commun
         private void btnClientSuivant_Click(object sender, EventArgs e)
         {
             clientBindingSource.MoveNext();
+            ClientEstSupprimable((DataRowView)clientBindingSource.Current);
         }
-        
+
         private void btnClientPrecedent_Click(object sender, EventArgs e)
         {
             clientBindingSource.MovePrevious();
+            ClientEstSupprimable((DataRowView)clientBindingSource.Current);
         }
 
         private void btnSupprimerCli_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(clientBindingSource, EstSupprimable);
+            ADOUtils.SupprimerSelection(clientBindingSource, ClientEstSupprimable);
         }
 
-        private bool EstSupprimable(DataRowView selection)
+        private bool ClientEstSupprimable(DataRowView selection)
         {
-            //TODO:unstubify
-            return true;
+            bool peutEtreSupprime = true;
+            string texteTooltip = "Le client sélectionné ne peut pas être supprimé car:";
+            ttpSupprimer.SetToolTip(btnSupprimerCli, "");
+
+            int noClientSelectionne = (int)selection["NoClient"];
+
+            if (inviteDataGridView.Rows.Count > 0)
+            {
+                texteTooltip += "\n\t- Il a des invités associés";
+                peutEtreSupprime = false;
+            }
+
+            ReservationChambreTableAdapter reservationTableAdapter = new ReservationChambreTableAdapter();
+            reservationTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambre);
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambreDataTable reservationTable =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambre;
+
+            if (reservationTable.Any(reservation => reservation.NoClient == noClientSelectionne))
+            {
+                texteTooltip += "\n\t- Il a réservé au moins une chambre";
+                peutEtreSupprime = false;
+            }
+
+            PlanifSoinTableAdapter planifSoinTableAdapter = new PlanifSoinTableAdapter();
+            planifSoinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinDataTable planifSoinTable =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin;
+
+            if (planifSoinTable.Any(reservation => reservation.NoPersonne == noClientSelectionne))
+            {
+                texteTooltip += "\n\t- Il a au moins un soin de planifié";
+                peutEtreSupprime = false;
+            }
+
+            if (peutEtreSupprime)
+            {
+                ttpSupprimer.Show(texteTooltip, btnSupprimerCli, 3000);
+                btnSupprimerCli.Enabled = false;
+            }
+
+            return peutEtreSupprime;
+        }
+
+        private bool InviteEstSupprimable(DataRowView selection)
+        {
+            bool peutEtreSupprime = true;
+            string texteTooltip = "Le client sélectionné ne peut pas être supprimé car:";
+            //ttpSupprimer.SetToolTip(, "");
+
+            int noClientSelectionne = (int)selection["NoClient"];
+
+            PlanifSoinTableAdapter planifSoinTableAdapter = new PlanifSoinTableAdapter();
+            planifSoinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinDataTable planifSoinTable =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin;
+
+            if (planifSoinTable.Any(reservation => reservation.NoPersonne == noClientSelectionne))
+            {
+                texteTooltip += "\n\t- Il a au moins un soin de planifié";
+                peutEtreSupprime = false;
+            }
+
+            //if (peutEtreSupprime)
+            //{
+            //    ttpSupprimer.Show(texteTooltip, btnSupprimerCli, 3000);
+            //    btnSupprimerCli.Enabled = false;
+            //}
+
+            return peutEtreSupprime;
         }
 
         private void inviteDataGridView_UserAddedRow(object sender, DataGridViewRowEventArgs e)
