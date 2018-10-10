@@ -19,6 +19,7 @@ namespace Projet1_5B6
                 selection.Delete();
                 return true;
             }
+            return false;
         }
     }
 }
