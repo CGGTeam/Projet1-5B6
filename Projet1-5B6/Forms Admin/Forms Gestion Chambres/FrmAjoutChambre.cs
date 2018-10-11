@@ -14,10 +14,20 @@ namespace Projet1_5B6.Forms_Admin
     {
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow nouvelleChambre;
 
-        public FrmAjoutChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow nouvelleChambre)
+        public FrmAjoutChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow nouvelleChambre, bool modifMode = false)
         {
             InitializeComponent();
             this.nouvelleChambre = nouvelleChambre;
+
+            if (modifMode)
+            {
+                tbDecoration.Text = nouvelleChambre.Decoration;
+                tbEmplacement.Text = nouvelleChambre.Emplacement;
+                cboTypeChambre.SelectedValue = nouvelleChambre.NoTypeChambre;
+
+                Text = "Modification d'une chambre";
+                lblEntete.Text = "Modifer chambre";
+            }
         }
 
         private void FrmAjoutChambre_Load(object sender, EventArgs e)

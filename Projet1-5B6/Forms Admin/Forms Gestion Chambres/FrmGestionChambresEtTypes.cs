@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters;
 using Projet1_5B6.Forms_Commun;
 using Projet1_5B6.Models;
 
@@ -25,6 +26,55 @@ namespace Projet1_5B6.Forms_Admin
             this.chambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre' table. You can move, or remove it, as needed.
             this.typeChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
+
+            chambreBindingSource.CurrentChanged += VerifierSiChambreEstReservee;
+            typeChambreBindingSource.CurrentChanged += VerifierSiTypeADesChambres;
+        }
+
+        private void VerifierSiTypeADesChambres(object sender, EventArgs e)
+        {
+            if (typeChambreBindingSource.Current == null)
+            {
+                btnSupprimerChambre.Enabled = false;
+                return;
+            }
+
+            int noTypeSelec = (int) ((DataRowView) typeChambreBindingSource.Current)["NoTypeChambre"];
+                
+            if (bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.Any(chambre => chambre.NoTypeChambre == noTypeSelec))
+            {
+                btnSupprimerType.Enabled = false;
+                ttpChambre.Show("Ce type de chambre ne peut pas être supprimé car:\n\t- Il existe des chambres de ce type", btnSupprimerChambre, 3000);
+            }
+            else
+            {
+                btnSupprimerType.Enabled = true;
+            }
+        }
+
+        private void VerifierSiChambreEstReservee(object sender, EventArgs e)
+        {
+            if (chambreBindingSource.Current == null)
+            {
+                btnSupprimerChambre.Enabled = false;
+                return;
+            }
+
+            ReservationChambreTableAdapter reservationChambreTableAdapter = new ReservationChambreTableAdapter();
+            reservationChambreTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambre);
+
+            int idChambreSelection = (int) ((DataRowView)chambreBindingSource.Current)["NoChambre"];
+
+            if (bD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambre.Any(reservation =>
+                reservation.NoChambre == idChambreSelection))
+            {
+                btnSupprimerChambre.Enabled = false;
+                ttpChambre.Show("Cette chambre ne peut pas être supprimée car:\n\t- Elle est réservée par un client", btnSupprimerChambre, 3000);
+            }
+            else
+            {
+                btnSupprimerChambre.Enabled = true;
+            }
         }
 
         private int TrouverNoTypeChambre()
@@ -119,6 +169,37 @@ namespace Projet1_5B6.Forms_Admin
         private bool ChambreEstSupprimable(DataRowView obj)
         {
             return true;
+        }
+
+        private void btnSupprimerType_Click(object sender, EventArgs e)
+        {
+            ADOUtils.SupprimerSelection(typeChambreBindingSource, type => true);
+        }
+
+        private void btnModifierType_Click(object sender, EventArgs e)
+        {
+            int noTypeSelec = (int)((DataRowView)typeChambreBindingSource.Current)["NoTypeChambre"];
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow rowSelec =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre.FindByNoTypeChambre(noTypeSelec);
+
+            FrmAjoutTypeChambre frmAjout = new FrmAjoutTypeChambre(rowSelec, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+        }
+
+        private void btnModifierChambre_Click(object sender, EventArgs e)
+        {
+            int noChambreSelec = (int)((DataRowView)chambreBindingSource.Current)["NoChambre"];
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow rowSelec =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.FindByNoChambre(noChambreSelec);
+
+            FrmAjoutChambre frmAjout = new FrmAjoutChambre(rowSelec, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
         }
     }
 }

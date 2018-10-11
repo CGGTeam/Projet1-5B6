@@ -14,12 +14,23 @@ namespace Projet1_5B6.Forms_Admin
     {
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre;
 
-        public FrmAjoutTypeChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre)
+        public FrmAjoutTypeChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre, bool modifMode = false)
         {
             InitializeComponent();
             this.nouveauTypeChambre = nouveauTypeChambre;
 
             tbNoType.Text = nouveauTypeChambre.NoTypeChambre.ToString();
+
+            if (modifMode)
+            {
+                tbDescription.Text = nouveauTypeChambre.Description;
+                tbPrixBas.Text = nouveauTypeChambre.PrixBas.ToString();
+                tbPrixHaut.Text = nouveauTypeChambre.PrixHaut.ToString();
+                tbPrixMoyen.Text = nouveauTypeChambre.PrixMoyen.ToString();
+
+                Text = "Modification d'un type de chambre";
+                lblEntete.Text = "Modifer type chambre";
+            }
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)
