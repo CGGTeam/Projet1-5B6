@@ -105,6 +105,7 @@
             // 
             this.assistantDataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.assistantDataGridView.AllowUserToAddRows = false;
+            this.assistantDataGridView.AllowUserToDeleteRows = false;
             this.assistantDataGridView.AllowUserToOrderColumns = true;
             this.assistantDataGridView.AutoGenerateColumns = false;
             this.assistantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -322,16 +323,17 @@
             // assistantSoinDataGridView
             // 
             this.assistantSoinDataGridView.AllowUserToAddRows = false;
+            this.assistantSoinDataGridView.AllowUserToDeleteRows = false;
             this.assistantSoinDataGridView.AutoGenerateColumns = false;
             this.assistantSoinDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assistantSoinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.assistantSoinDataGridView.DataSource = this.assistantSoinBindingSource1;
-            this.assistantSoinDataGridView.Location = new System.Drawing.Point(566, 71);
+            this.assistantSoinDataGridView.Location = new System.Drawing.Point(566, 70);
             this.assistantSoinDataGridView.Name = "assistantSoinDataGridView";
             this.assistantSoinDataGridView.ReadOnly = true;
-            this.assistantSoinDataGridView.Size = new System.Drawing.Size(179, 329);
+            this.assistantSoinDataGridView.Size = new System.Drawing.Size(179, 330);
             this.assistantSoinDataGridView.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn9
@@ -354,7 +356,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 458);
+            this.ClientSize = new System.Drawing.Size(916, 469);
             this.Controls.Add(this.assistantSoinDataGridView);
             this.Controls.Add(this.listSoin);
             this.Controls.Add(this.btnAnnuler);
@@ -430,13 +432,13 @@
         private System.Windows.Forms.BindingSource assistantSoinBindingSource2;
         private System.Windows.Forms.BindingSource assistantSoinDescriptionBindingSource1;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinDescriptionTableAdapter assistantSoinDescriptionTableAdapter;
-        private System.Windows.Forms.DataGridView assistantSoinDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridView assistantSoinDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }

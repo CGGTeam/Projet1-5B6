@@ -38,11 +38,13 @@
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblFeed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationChambreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationChambreDataGridView)).BeginInit();
@@ -83,6 +85,9 @@
             // 
             // reservationChambreDataGridView
             // 
+            this.reservationChambreDataGridView.AllowUserToAddRows = false;
+            this.reservationChambreDataGridView.AllowUserToDeleteRows = false;
+            this.reservationChambreDataGridView.AllowUserToOrderColumns = true;
             this.reservationChambreDataGridView.AutoGenerateColumns = false;
             this.reservationChambreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reservationChambreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -174,11 +179,20 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // lblFeed
+            // 
+            this.lblFeed.AutoSize = true;
+            this.lblFeed.Location = new System.Drawing.Point(336, 366);
+            this.lblFeed.Name = "lblFeed";
+            this.lblFeed.Size = new System.Drawing.Size(0, 13);
+            this.lblFeed.TabIndex = 6;
+            // 
             // FrmSupprimerReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 450);
+            this.Controls.Add(this.lblFeed);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
@@ -211,5 +225,7 @@
         private System.Windows.Forms.Button btnConfirmer;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblFeed;
     }
 }

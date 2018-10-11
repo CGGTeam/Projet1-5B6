@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.noEtEmplacementChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
-            this.noEtEmplacementChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtEmplacementChambreTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
-            this.rapportChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noEtEmplacementChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtEmplacementChambreTableAdapter();
             this.rapportChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.RapportChambreTableAdapter();
+            this.noEtEmplacementChambreComboBox = new System.Windows.Forms.ComboBox();
+            this.rapportChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rapportChambreDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.noEtEmplacementChambreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rapportChambreBindingSource)).BeginInit();
@@ -68,17 +69,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "chambre :";
             // 
-            // listBox1
-            // 
-            this.listBox1.DataSource = this.noEtEmplacementChambreBindingSource;
-            this.listBox1.DisplayMember = "NoEtEmplacement";
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(74, 61);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(148, 30);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.ValueMember = "NoChambre";
-            // 
             // noEtEmplacementChambreBindingSource
             // 
             this.noEtEmplacementChambreBindingSource.DataMember = "NoEtEmplacementChambre";
@@ -88,10 +78,6 @@
             // 
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet.DataSetName = "BD5B6TP1_ConstantinBrassardLaheyDataSet";
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // noEtEmplacementChambreTableAdapter
-            // 
-            this.noEtEmplacementChambreTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -113,29 +99,49 @@
             this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
-            // rapportChambreBindingSource
+            // noEtEmplacementChambreTableAdapter
             // 
-            this.rapportChambreBindingSource.DataMember = "RapportChambre";
-            this.rapportChambreBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            this.noEtEmplacementChambreTableAdapter.ClearBeforeFill = true;
             // 
             // rapportChambreTableAdapter
             // 
             this.rapportChambreTableAdapter.ClearBeforeFill = true;
             // 
+            // noEtEmplacementChambreComboBox
+            // 
+            this.noEtEmplacementChambreComboBox.DataSource = this.noEtEmplacementChambreBindingSource;
+            this.noEtEmplacementChambreComboBox.DisplayMember = "NoEtEmplacement";
+            this.noEtEmplacementChambreComboBox.FormattingEnabled = true;
+            this.noEtEmplacementChambreComboBox.Location = new System.Drawing.Point(74, 69);
+            this.noEtEmplacementChambreComboBox.Name = "noEtEmplacementChambreComboBox";
+            this.noEtEmplacementChambreComboBox.Size = new System.Drawing.Size(300, 21);
+            this.noEtEmplacementChambreComboBox.TabIndex = 4;
+            this.noEtEmplacementChambreComboBox.ValueMember = "NoChambre";
+            // 
+            // rapportChambreBindingSource
+            // 
+            this.rapportChambreBindingSource.DataMember = "ReservationChambre_Chambre_NoChambre_fk4";
+            this.rapportChambreBindingSource.DataSource = this.noEtEmplacementChambreBindingSource;
+            // 
             // rapportChambreDataGridView
             // 
+            this.rapportChambreDataGridView.AllowUserToAddRows = false;
+            this.rapportChambreDataGridView.AllowUserToDeleteRows = false;
+            this.rapportChambreDataGridView.AllowUserToOrderColumns = true;
             this.rapportChambreDataGridView.AutoGenerateColumns = false;
             this.rapportChambreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rapportChambreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
             this.rapportChambreDataGridView.DataSource = this.rapportChambreBindingSource;
-            this.rapportChambreDataGridView.Location = new System.Drawing.Point(17, 97);
+            this.rapportChambreDataGridView.Location = new System.Drawing.Point(12, 96);
             this.rapportChambreDataGridView.Name = "rapportChambreDataGridView";
-            this.rapportChambreDataGridView.Size = new System.Drawing.Size(637, 312);
-            this.rapportChambreDataGridView.TabIndex = 3;
+            this.rapportChambreDataGridView.ReadOnly = true;
+            this.rapportChambreDataGridView.Size = new System.Drawing.Size(608, 350);
+            this.rapportChambreDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -150,28 +156,37 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "DateArrivee";
             this.dataGridViewTextBoxColumn2.HeaderText = "DateArrivee";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 130;
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "DateDepart";
             this.dataGridViewTextBoxColumn3.HeaderText = "DateDepart";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 130;
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NbPersonnes";
             this.dataGridViewTextBoxColumn4.HeaderText = "NbPersonnes";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NoChambre";
+            this.dataGridViewTextBoxColumn5.HeaderText = "NoChambre";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // FrmReservChambres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(632, 458);
             this.Controls.Add(this.rapportChambreDataGridView);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.noEtEmplacementChambreComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmReservChambres";
@@ -179,7 +194,7 @@
             this.Load += new System.EventHandler(this.FrmReservChambres_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.listBox1, 0);
+            this.Controls.SetChildIndex(this.noEtEmplacementChambreComboBox, 0);
             this.Controls.SetChildIndex(this.rapportChambreDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.noEtEmplacementChambreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
@@ -194,17 +209,18 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
         private BD5B6TP1_ConstantinBrassardLaheyDataSet bD5B6TP1_ConstantinBrassardLaheyDataSet;
         private System.Windows.Forms.BindingSource noEtEmplacementChambreBindingSource;
-        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtEmplacementChambreTableAdapter noEtEmplacementChambreTableAdapter;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource rapportChambreBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtEmplacementChambreTableAdapter noEtEmplacementChambreTableAdapter;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.RapportChambreTableAdapter rapportChambreTableAdapter;
+        private System.Windows.Forms.ComboBox noEtEmplacementChambreComboBox;
+        private System.Windows.Forms.BindingSource rapportChambreBindingSource;
         private System.Windows.Forms.DataGridView rapportChambreDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }

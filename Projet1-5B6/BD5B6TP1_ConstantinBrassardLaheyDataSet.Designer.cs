@@ -114,10 +114,6 @@ namespace Projet1_5B6 {
         
         private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk2;
         
-        private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk3;
-        
-        private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk4;
-        
         private global::System.Data.DataRelation relationAssistantSoin_Assistant_NoAssistant_fk2;
         
         private global::System.Data.DataRelation relationAssistantSoin_Assistant_NoAssistant_fk3;
@@ -127,6 +123,10 @@ namespace Projet1_5B6 {
         private global::System.Data.DataRelation relationAssistantSoin_Soin_NoSoin_fk4;
         
         private global::System.Data.DataRelation relationAssistantSoin_Soin_NoSoin_fk1;
+        
+        private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk3;
+        
+        private global::System.Data.DataRelation relationReservationChambre_Chambre_NoChambre_fk4;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -781,13 +781,13 @@ namespace Projet1_5B6 {
             this.relationInvite_Client_NoCliet_fk2 = this.Relations["Invite_Client_NoCliet_fk2"];
             this.relationReservationChambre_Client_NoCliet_fk2 = this.Relations["ReservationChambre_Client_NoCliet_fk2"];
             this.relationReservationChambre_Chambre_NoChambre_fk2 = this.Relations["ReservationChambre_Chambre_NoChambre_fk2"];
-            this.relationReservationChambre_Chambre_NoChambre_fk3 = this.Relations["ReservationChambre_Chambre_NoChambre_fk3"];
-            this.relationReservationChambre_Chambre_NoChambre_fk4 = this.Relations["ReservationChambre_Chambre_NoChambre_fk4"];
             this.relationAssistantSoin_Assistant_NoAssistant_fk2 = this.Relations["AssistantSoin_Assistant_NoAssistant_fk2"];
             this.relationAssistantSoin_Assistant_NoAssistant_fk3 = this.Relations["AssistantSoin_Assistant_NoAssistant_fk3"];
             this.relationAssistantSoin_Soin_NoSoin_fk3 = this.Relations["AssistantSoin_Soin_NoSoin_fk3"];
             this.relationAssistantSoin_Soin_NoSoin_fk4 = this.Relations["AssistantSoin_Soin_NoSoin_fk4"];
             this.relationAssistantSoin_Soin_NoSoin_fk1 = this.Relations["AssistantSoin_Soin_NoSoin_fk1"];
+            this.relationReservationChambre_Chambre_NoChambre_fk3 = this.Relations["ReservationChambre_Chambre_NoChambre_fk3"];
+            this.relationReservationChambre_Chambre_NoChambre_fk4 = this.Relations["ReservationChambre_Chambre_NoChambre_fk4"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -934,14 +934,6 @@ namespace Projet1_5B6 {
                         this.tableNoEtEmplacementChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
                         this.tableReservationChambre.NoChambreColumn}, false);
             this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk2);
-            this.relationReservationChambre_Chambre_NoChambre_fk3 = new global::System.Data.DataRelation("ReservationChambre_Chambre_NoChambre_fk3", new global::System.Data.DataColumn[] {
-                        this.tableChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRapportChambre.NoChambreColumn}, false);
-            this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk3);
-            this.relationReservationChambre_Chambre_NoChambre_fk4 = new global::System.Data.DataRelation("ReservationChambre_Chambre_NoChambre_fk4", new global::System.Data.DataColumn[] {
-                        this.tableNoEtEmplacementChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRapportChambre.NoChambreColumn}, false);
-            this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk4);
             this.relationAssistantSoin_Assistant_NoAssistant_fk2 = new global::System.Data.DataRelation("AssistantSoin_Assistant_NoAssistant_fk2", new global::System.Data.DataColumn[] {
                         this.tableAssistant.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tableAssistantSoinDescription.NoAssistantColumn}, false);
@@ -962,6 +954,14 @@ namespace Projet1_5B6 {
                         this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
                         this.tableAssistanSoinDescription.NoSoinColumn}, false);
             this.Relations.Add(this.relationAssistantSoin_Soin_NoSoin_fk1);
+            this.relationReservationChambre_Chambre_NoChambre_fk3 = new global::System.Data.DataRelation("ReservationChambre_Chambre_NoChambre_fk3", new global::System.Data.DataColumn[] {
+                        this.tableRapportChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
+                        this.tableChambre.NoChambreColumn}, false);
+            this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk3);
+            this.relationReservationChambre_Chambre_NoChambre_fk4 = new global::System.Data.DataRelation("ReservationChambre_Chambre_NoChambre_fk4", new global::System.Data.DataColumn[] {
+                        this.tableNoEtEmplacementChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRapportChambre.NoChambreColumn}, false);
+            this.Relations.Add(this.relationReservationChambre_Chambre_NoChambre_fk4);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1934,13 +1934,16 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ChambreRow AddChambreRow(int NoChambre, string Emplacement, string Decoration, TypeChambreRow parentTypeChambreRowByChambre_TypeChambre_NoTypeChambre_fk) {
+            public ChambreRow AddChambreRow(RapportChambreRow parentRapportChambreRowByReservationChambre_Chambre_NoChambre_fk3, string Emplacement, string Decoration, TypeChambreRow parentTypeChambreRowByChambre_TypeChambre_NoTypeChambre_fk) {
                 ChambreRow rowChambreRow = ((ChambreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        NoChambre,
+                        null,
                         Emplacement,
                         Decoration,
                         null};
+                if ((parentRapportChambreRowByReservationChambre_Chambre_NoChambre_fk3 != null)) {
+                    columnValuesArray[0] = parentRapportChambreRowByReservationChambre_Chambre_NoChambre_fk3[4];
+                }
                 if ((parentTypeChambreRowByChambre_TypeChambre_NoTypeChambre_fk != null)) {
                     columnValuesArray[3] = parentTypeChambreRowByChambre_TypeChambre_NoTypeChambre_fk[0];
                 }
@@ -7320,7 +7323,7 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RapportChambreRow AddRapportChambreRow(string NomClient, System.DateTime DateArrivee, System.DateTime DateDepart, int NbPersonnes, ChambreRow parentChambreRowByReservationChambre_Chambre_NoChambre_fk3) {
+            public RapportChambreRow AddRapportChambreRow(string NomClient, System.DateTime DateArrivee, System.DateTime DateDepart, int NbPersonnes, NoEtEmplacementChambreRow parentNoEtEmplacementChambreRowByReservationChambre_Chambre_NoChambre_fk4) {
                 RapportChambreRow rowRapportChambreRow = ((RapportChambreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NomClient,
@@ -7328,8 +7331,8 @@ namespace Projet1_5B6 {
                         DateDepart,
                         NbPersonnes,
                         null};
-                if ((parentChambreRowByReservationChambre_Chambre_NoChambre_fk3 != null)) {
-                    columnValuesArray[4] = parentChambreRowByReservationChambre_Chambre_NoChambre_fk3[0];
+                if ((parentNoEtEmplacementChambreRowByReservationChambre_Chambre_NoChambre_fk4 != null)) {
+                    columnValuesArray[4] = parentNoEtEmplacementChambreRowByReservationChambre_Chambre_NoChambre_fk4[0];
                 }
                 rowRapportChambreRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRapportChambreRow);
@@ -8094,6 +8097,17 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RapportChambreRow RapportChambreRow {
+                get {
+                    return ((RapportChambreRow)(this.GetParentRow(this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk3"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDecorationNull() {
                 return this.IsNull(this.tableChambre.DecorationColumn);
             }
@@ -8112,17 +8126,6 @@ namespace Projet1_5B6 {
                 }
                 else {
                     return ((ReservationChambreRow[])(base.GetChildRows(this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RapportChambreRow[] GetRapportChambreRows() {
-                if ((this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk3"] == null)) {
-                    return new RapportChambreRow[0];
-                }
-                else {
-                    return ((RapportChambreRow[])(base.GetChildRows(this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk3"])));
                 }
             }
         }
@@ -9869,17 +9872,6 @@ namespace Projet1_5B6 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ChambreRow ChambreRow {
-                get {
-                    return ((ChambreRow)(this.GetParentRow(this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk3"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk3"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NoEtEmplacementChambreRow NoEtEmplacementChambreRow {
                 get {
                     return ((NoEtEmplacementChambreRow)(this.GetParentRow(this.Table.ParentRelations["ReservationChambre_Chambre_NoChambre_fk4"])));
@@ -9899,6 +9891,17 @@ namespace Projet1_5B6 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNomClientNull() {
                 this[this.tableRapportChambre.NomClientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ChambreRow[] GetChambreRows() {
+                if ((this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk3"] == null)) {
+                    return new ChambreRow[0];
+                }
+                else {
+                    return ((ChambreRow[])(base.GetChildRows(this.Table.ChildRelations["ReservationChambre_Chambre_NoChambre_fk3"])));
+                }
             }
         }
         
@@ -17465,15 +17468,6 @@ FROM            Chambre INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._utilisateurTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._utilisateurTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._reservationChambreTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ReservationChambre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -17498,6 +17492,15 @@ FROM            Chambre INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._assistantSoinTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._utilisateurTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._utilisateurTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -17591,14 +17594,6 @@ FROM            Chambre INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._utilisateurTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._utilisateurTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._reservationChambreTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ReservationChambre.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -17623,6 +17618,14 @@ FROM            Chambre INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._utilisateurTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._utilisateurTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -17633,6 +17636,14 @@ FROM            Chambre INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(BD5B6TP1_ConstantinBrassardLaheyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._utilisateurTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._utilisateurTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._assistantSoinTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.AssistantSoin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -17654,14 +17665,6 @@ FROM            Chambre INNER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._reservationChambreTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._utilisateurTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Utilisateur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._utilisateurTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

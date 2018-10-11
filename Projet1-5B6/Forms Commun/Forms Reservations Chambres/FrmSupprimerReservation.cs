@@ -39,11 +39,18 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
 
         private bool EstSupprimable(DataRowView selection)
         {
-            if(selection == null)
-                return false;
-            if ((DateTime)selection["DateArrivee"] >= DateTime.Now)
-                return false;
-            return true;
+            Boolean EstSupprimable = true;
+            if (selection == null)
+            {
+                lblFeed.Text = "Aucune réservation sélectionnée!";
+                EstSupprimable= false;
+            }
+            if (DateTime.Compare((DateTime)selection["DateArrivee"], DateTime.Now) < 0)
+            {
+                lblFeed.Text = "Impossible de supprimer une réservation antérieure ou courante!";
+                EstSupprimable= false;
+            }
+            return EstSupprimable;
         }
         private void btnConfirmer_Click(object sender, EventArgs e)
         {

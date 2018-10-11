@@ -64,12 +64,24 @@ namespace Projet1_5B6.Forms_Admin
 
         private void btnSupprimerAssistant_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(assistantBindingSource, EstSupprimable);
+            if(ADOUtils.SupprimerSelection(assistantBindingSource, EstSupprimable))
+            {
+               foreach(DataRowView row in assistantSoinBindingSource)
+                {
+                    try
+                    {
+                        if ((int)row[0] == Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value))
+                            row.Delete();
+                    }
+                    catch (Exception exep) { };
+                }
+            }
         }
         private bool EstSupprimable(DataRowView selection)
         {
-            //TODO: On ne peut supprimer un assistant s’il a des planifications de soins lui sont assignées
-            return true;
+            int noAssistant = (int)selection[0];
+            int noSoin = -1;
+            return CheckSoinsPlanif(noAssistant, noSoin);
         }
 
         private void btnModifierAssistant_Click(object sender, EventArgs e)
@@ -96,24 +108,38 @@ namespace Projet1_5B6.Forms_Admin
         {
             ADOUtils.SupprimerSelection(assistantSoinBindingSource, EstSupprimableSoin);
         }
-        private bool EstSupprimableSoin(DataRowView selection)
+        private Boolean CheckSoinsPlanif(int noAssistant, int noSoin)
         {
-            var noSoin = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[1].Value);
-            var noAssistant = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value);
-
             //connection a la BD
             string maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
             SqlConnection maConnexion = new SqlConnection(maChaineConnexion);
             maConnexion.Open();
 
             //requete SQL
-            string maRequeteSQL = "SELECT * FROM PlanifSoin WHERE NoAssistant = @NoAssistant AND NoSoin = @NoSoin";
-            SqlParameter paramNoAssistant = new SqlParameter("@NoAssistant", noAssistant);
-            SqlParameter paramNoSoin = new SqlParameter("@NoSoin", noSoin);
+            string maRequeteSQL = "";
+            SqlCommand maCommande;
+            if (noSoin == -1)
+            {
+                maRequeteSQL = "SELECT * FROM PlanifSoin WHERE NoAssistant = @NoAssistant";
 
-            SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
-            maCommande.Parameters.Add(paramNoAssistant);
-            maCommande.Parameters.Add(paramNoSoin);
+                SqlParameter paramNoAssistant = new SqlParameter("@NoAssistant", noAssistant);
+
+
+                maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                maCommande.Parameters.Add(paramNoAssistant);
+            }
+            else
+            {
+                maRequeteSQL = "SELECT * FROM PlanifSoin WHERE NoAssistant = @NoAssistant AND NoSoin = @NoSoin";
+
+                SqlParameter paramNoAssistant = new SqlParameter("@NoAssistant", noAssistant);
+                SqlParameter paramNoSoin = new SqlParameter("@NoSoin", noSoin);
+
+
+                maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                maCommande.Parameters.Add(paramNoAssistant);
+                maCommande.Parameters.Add(paramNoSoin);
+            }
 
             SqlDataReader monReader = maCommande.ExecuteReader();
             if (monReader.HasRows)
@@ -124,6 +150,14 @@ namespace Projet1_5B6.Forms_Admin
             }
             maConnexion.Close();
             return true;
+        }
+        private bool EstSupprimableSoin(DataRowView selection)
+        {
+            var noSoin = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[1].Value);
+            var noAssistant = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value);
+
+            
+            return CheckSoinsPlanif( noAssistant,  noSoin);
         }
         private void btnAjouterSoin_Click(object sender, EventArgs e)
         {

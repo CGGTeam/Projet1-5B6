@@ -52,14 +52,17 @@
             this.numericNbPersonne = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
-            this.btnAnnuler = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSupprimer = new System.Windows.Forms.Button();
+            this.reservationChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationChambreTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ReservationChambreTableAdapter();
+            this.lblFeed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomClientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNbPersonne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationChambreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listeClients
@@ -128,6 +131,9 @@
             // 
             // chambreEtPrixDataGridView
             // 
+            this.chambreEtPrixDataGridView.AllowUserToAddRows = false;
+            this.chambreEtPrixDataGridView.AllowUserToDeleteRows = false;
+            this.chambreEtPrixDataGridView.AllowUserToOrderColumns = true;
             this.chambreEtPrixDataGridView.AutoGenerateColumns = false;
             this.chambreEtPrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chambreEtPrixDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -201,9 +207,11 @@
             // dateDebut
             // 
             this.dateDebut.Location = new System.Drawing.Point(109, 302);
+            this.dateDebut.MinDate = new System.DateTime(2018, 10, 10, 0, 0, 0, 0);
             this.dateDebut.Name = "dateDebut";
             this.dateDebut.Size = new System.Drawing.Size(200, 20);
             this.dateDebut.TabIndex = 4;
+            this.dateDebut.Leave += new System.EventHandler(this.UpdateDatePicker);
             // 
             // label3
             // 
@@ -218,6 +226,7 @@
             // dateFin
             // 
             this.dateFin.Location = new System.Drawing.Point(337, 302);
+            this.dateFin.MinDate = new System.DateTime(2018, 10, 10, 0, 0, 0, 0);
             this.dateFin.Name = "dateFin";
             this.dateFin.Size = new System.Drawing.Size(200, 20);
             this.dateFin.TabIndex = 6;
@@ -274,15 +283,6 @@
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
             // 
-            // btnAnnuler
-            // 
-            this.btnAnnuler.Location = new System.Drawing.Point(213, 380);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(154, 32);
-            this.btnAnnuler.TabIndex = 11;
-            this.btnAnnuler.Text = "Annuler la réservation";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -303,14 +303,31 @@
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
+            // reservationChambreBindingSource
+            // 
+            this.reservationChambreBindingSource.DataMember = "ReservationChambre";
+            this.reservationChambreBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // reservationChambreTableAdapter
+            // 
+            this.reservationChambreTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblFeed
+            // 
+            this.lblFeed.AutoSize = true;
+            this.lblFeed.Location = new System.Drawing.Point(190, 380);
+            this.lblFeed.Name = "lblFeed";
+            this.lblFeed.Size = new System.Drawing.Size(0, 13);
+            this.lblFeed.TabIndex = 14;
+            // 
             // FrmReservationChambres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 444);
+            this.ClientSize = new System.Drawing.Size(867, 444);
+            this.Controls.Add(this.lblFeed);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numericNbPersonne);
@@ -336,14 +353,15 @@
             this.Controls.SetChildIndex(this.numericNbPersonne, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.btnConfirmer, 0);
-            this.Controls.SetChildIndex(this.btnAnnuler, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.btnSupprimer, 0);
+            this.Controls.SetChildIndex(this.lblFeed, 0);
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomClientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreEtPrixDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNbPersonne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationChambreBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,8 +392,10 @@
         private System.Windows.Forms.NumericUpDown numericNbPersonne;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnConfirmer;
-        private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.BindingSource reservationChambreBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ReservationChambreTableAdapter reservationChambreTableAdapter;
+        private System.Windows.Forms.Label lblFeed;
     }
 }
