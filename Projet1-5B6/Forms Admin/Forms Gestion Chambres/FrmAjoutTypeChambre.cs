@@ -13,6 +13,7 @@ namespace Projet1_5B6.Forms_Admin
     public partial class FrmAjoutTypeChambre : Form
     {
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre;
+        private Control[] controlesAValider;
 
         public FrmAjoutTypeChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre, bool modifMode = false)
         {
@@ -56,6 +57,20 @@ namespace Projet1_5B6.Forms_Admin
             tbPrixBas.Validating += Validation.ValiderPrix(errorProvider);
             tbPrixMoyen.Validating += Validation.ValiderPrix(errorProvider);
             tbDescription.Validating += Validation.ValiderDescriptionTypeChambre(errorProvider);
+
+            controlesAValider = new Control[]
+            {
+                tbDescription,
+                tbNoType,
+                tbPrixBas,
+                tbPrixHaut,
+                tbPrixMoyen,
+            };
+        }
+
+        private void Valider(object sender, EventArgs e)
+        {
+            btnConfirmer.Enabled = controlesAValider.All(ctrl => ctrl.Text.Trim() != "");
         }
     }
 }

@@ -109,6 +109,7 @@
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(207, 26);
             this.tbDescription.TabIndex = 4;
+            this.tbDescription.TextChanged += new System.EventHandler(this.Valider);
             // 
             // tbPrixHaut
             // 
@@ -116,6 +117,7 @@
             this.tbPrixHaut.Name = "tbPrixHaut";
             this.tbPrixHaut.Size = new System.Drawing.Size(207, 26);
             this.tbPrixHaut.TabIndex = 6;
+            this.tbPrixHaut.TextChanged += new System.EventHandler(this.Valider);
             // 
             // tbPrixBas
             // 
@@ -123,6 +125,7 @@
             this.tbPrixBas.Name = "tbPrixBas";
             this.tbPrixBas.Size = new System.Drawing.Size(207, 26);
             this.tbPrixBas.TabIndex = 8;
+            this.tbPrixBas.TextChanged += new System.EventHandler(this.Valider);
             // 
             // tbPrixMoyen
             // 
@@ -130,6 +133,7 @@
             this.tbPrixMoyen.Name = "tbPrixMoyen";
             this.tbPrixMoyen.Size = new System.Drawing.Size(207, 26);
             this.tbPrixMoyen.TabIndex = 10;
+            this.tbPrixMoyen.TextChanged += new System.EventHandler(this.Valider);
             // 
             // lblEntete
             // 
@@ -143,6 +147,7 @@
             // 
             // btnConfirmer
             // 
+            this.btnConfirmer.Enabled = false;
             this.btnConfirmer.Location = new System.Drawing.Point(121, 268);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(167, 41);

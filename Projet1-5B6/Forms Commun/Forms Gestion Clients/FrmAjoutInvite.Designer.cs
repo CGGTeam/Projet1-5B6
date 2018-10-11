@@ -40,7 +40,7 @@
             this.tbNoInvite = new System.Windows.Forms.TextBox();
             this.tbNom = new System.Windows.Forms.TextBox();
             this.tbNoClient = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEntent = new System.Windows.Forms.Label();
             this.tbPrenom = new System.Windows.Forms.TextBox();
             this.btnConfirmer = new System.Windows.Forms.Button();
             noInviteLabel = new System.Windows.Forms.Label();
@@ -136,6 +136,7 @@
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(142, 26);
             this.tbNom.TabIndex = 4;
+            this.tbNom.TextChanged += new System.EventHandler(this.tbNom_TextChanged);
             // 
             // tbNoClient
             // 
@@ -146,15 +147,15 @@
             this.tbNoClient.Size = new System.Drawing.Size(142, 26);
             this.tbNoClient.TabIndex = 8;
             // 
-            // label1
+            // lblEntent
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 55);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Ajout Invite";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEntent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntent.Location = new System.Drawing.Point(18, 9);
+            this.lblEntent.Name = "lblEntent";
+            this.lblEntent.Size = new System.Drawing.Size(225, 55);
+            this.lblEntent.TabIndex = 9;
+            this.lblEntent.Text = "Ajout Invite";
+            this.lblEntent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbPrenom
             // 
@@ -163,9 +164,11 @@
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(142, 26);
             this.tbPrenom.TabIndex = 6;
+            this.tbPrenom.TextChanged += new System.EventHandler(this.tbPrenom_TextChanged);
             // 
             // btnConfirmer
             // 
+            this.btnConfirmer.Enabled = false;
             this.btnConfirmer.Location = new System.Drawing.Point(62, 204);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(153, 43);
@@ -180,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 259);
             this.Controls.Add(this.btnConfirmer);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEntent);
             this.Controls.Add(noInviteLabel);
             this.Controls.Add(this.tbNoInvite);
             this.Controls.Add(nomLabel);
@@ -190,7 +193,7 @@
             this.Controls.Add(noClientLabel);
             this.Controls.Add(this.tbNoClient);
             this.Name = "FrmAjoutInvite";
-            this.Text = "FrmAjoutInvite";
+            this.Text = "Ajout invite";
             this.Load += new System.EventHandler(this.FrmAjoutInvite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).EndInit();
@@ -208,7 +211,7 @@
         private System.Windows.Forms.TextBox tbNoInvite;
         private System.Windows.Forms.TextBox tbNom;
         private System.Windows.Forms.TextBox tbNoClient;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEntent;
         private System.Windows.Forms.TextBox tbPrenom;
         private System.Windows.Forms.Button btnConfirmer;
     }

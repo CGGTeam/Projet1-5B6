@@ -135,6 +135,7 @@
             this.tbEmplacement.Name = "tbEmplacement";
             this.tbEmplacement.Size = new System.Drawing.Size(199, 26);
             this.tbEmplacement.TabIndex = 4;
+            this.tbEmplacement.TextChanged += new System.EventHandler(this.Valider);
             // 
             // tbDecoration
             // 
@@ -142,6 +143,7 @@
             this.tbDecoration.Name = "tbDecoration";
             this.tbDecoration.Size = new System.Drawing.Size(199, 26);
             this.tbDecoration.TabIndex = 6;
+            this.tbDecoration.Validated += new System.EventHandler(this.Valider);
             // 
             // lblEntete
             // 
@@ -156,6 +158,7 @@
             // 
             // btnConfirmer
             // 
+            this.btnConfirmer.Enabled = false;
             this.btnConfirmer.Location = new System.Drawing.Point(104, 231);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(198, 38);
@@ -175,6 +178,7 @@
             this.cboTypeChambre.Size = new System.Drawing.Size(199, 28);
             this.cboTypeChambre.TabIndex = 11;
             this.cboTypeChambre.ValueMember = "NoTypeChambre";
+            this.cboTypeChambre.SelectionChangeCommitted += new System.EventHandler(this.Valider);
             // 
             // typeChambreBindingSource1
             // 

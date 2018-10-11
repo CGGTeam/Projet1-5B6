@@ -14,6 +14,7 @@ namespace Projet1_5B6.Forms_Admin
     {
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow nouvelleChambre;
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreDataTable dataTable;
+        private Control[] controlesAValider;
 
         public FrmAjoutChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow nouvelleChambre, BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreDataTable dataTable, bool modifMode = false)
         {
@@ -45,12 +46,48 @@ namespace Projet1_5B6.Forms_Admin
             tbNoChambre.Text = nouvelleChambre.NoChambre.ToString();
             cboTypeChambre.SelectedValue = nouvelleChambre.NoTypeChambre;
 
-            tbDecoration.Validating += Validation.ValiderNonVide(errorProvider);
-            tbEmplacement.Validating += Validation.ValiderNonVide(errorProvider);
+            tbDecoration.Validating += DecorationNonVide;
+            tbEmplacement.Validating += EmplacementNonVide;
+
+            controlesAValider = new Control[]
+            {
+                tbDecoration,
+                tbEmplacement,
+                cboTypeChambre
+            };
+        }
+
+        private void EmplacementNonVide(object sender, CancelEventArgs e)
+        {
+            errorProvider.SetError(tbEmplacement, "");
+
+            if (tbEmplacement.Text == "")
+            {
+                e.Cancel = true;
+                errorProvider.SetError(tbEmplacement, "Ce champs doit être rempli");
+            }
+        }
+
+        private void Valider(object sender, EventArgs e)
+        {
+            btnConfirmer.Enabled = controlesAValider.All(ctrl => ctrl.Text.Trim() != "");
+        }
+
+        private void DecorationNonVide(object sender, CancelEventArgs e)
+        {
+            errorProvider.SetError(tbDecoration, "");
+
+            if (tbDecoration.Text == "")
+            {
+                e.Cancel = true;
+                errorProvider.SetError(tbDecoration, "Ce champs doit être rempli");
+            }
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
+            Validate();
+
             nouvelleChambre.Decoration = tbDecoration.Text;
             nouvelleChambre.Emplacement = tbEmplacement.Text;
             nouvelleChambre.NoTypeChambre = (int)cboTypeChambre.SelectedValue;
