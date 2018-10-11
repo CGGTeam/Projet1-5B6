@@ -19,11 +19,18 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         private readonly PlanifSoinTableAdapter planifSoinTableAdapter;
         private readonly AssistantTableAdapter assistantTableAdapter;
         private readonly bool modifMode;
+        private readonly DateTime ancienneDateHeure;
+        private readonly int ancienNoPersonne;
+        private readonly int ancienNoAssistant;
 
         public FrmPlanifierSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin, bool modifMode = false)
         {
             InitializeComponent();
             this.planifSoin = planifSoin;
+
+            ancienneDateHeure = this.planifSoin.DateHeure;
+            ancienNoPersonne = this.planifSoin.NoPersonne;
+            ancienNoAssistant = this.planifSoin.NoAssistant;
 
             this.planifSoinTableAdapter = new PlanifSoinTableAdapter();
             this.assistantSoinTableAdapter = new AssistantSoinTableAdapter();
@@ -120,10 +127,17 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             IEnumerable<BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow> soinsPlanifiesAssistant =
                 bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.Where(rangee => rangee.NoAssistant == idAssistant);
 
+            if (idAssistant == ancienNoAssistant)
+            {
+                return true;
+            }
+
             foreach (BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow soinPlanifie in soinsPlanifiesAssistant)
             {
                 DateTime dateHeure = soinPlanifie.DateHeure;
-                if (Validation.DateTimesOverlap(heure, dateHeure))
+                if (Validation.DateTimesOverlap(heure, dateHeure) &&
+                    ancienNoAssistant != idAssistant &&
+                    !Validation.DateTimesOverlap(ancienneDateHeure, heure))
                 {
                     return false;
                     
@@ -141,7 +155,9 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             foreach (BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow soinPlanifie in soinsPlanifiesPersonne)
             {
                 DateTime dateHeure = soinPlanifie.DateHeure;
-                if (Validation.DateTimesOverlap(heure, dateHeure))
+                if (Validation.DateTimesOverlap(heure, dateHeure) && 
+                    ancienNoPersonne != idPersonne && 
+                    !Validation.DateTimesOverlap(ancienneDateHeure, heure))
                 {
                     return false;
                 }
