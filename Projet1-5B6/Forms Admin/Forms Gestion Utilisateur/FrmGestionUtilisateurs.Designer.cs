@@ -38,13 +38,14 @@
             this.utilisateurTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.UtilisateurTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.utilisateurDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.typeUtilisateurTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeUtilisateurTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnModifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
@@ -78,9 +79,9 @@
             this.btnSupprimer.Location = new System.Drawing.Point(292, 376);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(176, 31);
+            this.btnSupprimer.Size = new System.Drawing.Size(83, 31);
             this.btnSupprimer.TabIndex = 8;
-            this.btnSupprimer.Text = "Supprimer utilisateur";
+            this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
@@ -91,7 +92,7 @@
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(176, 31);
             this.btnAjouter.TabIndex = 7;
-            this.btnAjouter.Text = "Ajouter utilisateur";
+            this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
@@ -111,6 +112,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AssistantSoinTableAdapter = null;
             this.tableAdapterManager.AssistantTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChambreTableAdapter = null;
@@ -129,6 +131,9 @@
             // 
             // utilisateurDataGridView
             // 
+            this.utilisateurDataGridView.AllowUserToAddRows = false;
+            this.utilisateurDataGridView.AllowUserToDeleteRows = false;
+            this.utilisateurDataGridView.AllowUserToOrderColumns = true;
             this.utilisateurDataGridView.AutoGenerateColumns = false;
             this.utilisateurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.utilisateurDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -138,9 +143,17 @@
             this.dataGridViewTextBoxColumn4});
             this.utilisateurDataGridView.DataSource = this.utilisateurBindingSource;
             this.utilisateurDataGridView.Location = new System.Drawing.Point(12, 58);
+            this.utilisateurDataGridView.MultiSelect = false;
             this.utilisateurDataGridView.Name = "utilisateurDataGridView";
+            this.utilisateurDataGridView.ReadOnly = true;
+            this.utilisateurDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.utilisateurDataGridView.Size = new System.Drawing.Size(555, 301);
             this.utilisateurDataGridView.TabIndex = 11;
+            // 
+            // typeUtilisateurBindingSource
+            // 
+            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
+            this.typeUtilisateurBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
             // label1
             // 
@@ -152,11 +165,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Gestion des utilisateurs";
             // 
-            // typeUtilisateurBindingSource
-            // 
-            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
-            this.typeUtilisateurBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
             // typeUtilisateurTableAdapter
             // 
             this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
@@ -164,7 +172,7 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoUtilisateur";
-            this.dataGridViewTextBoxColumn1.HeaderText = "NoUtilisateur";
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 70;
@@ -173,14 +181,16 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nom";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nom";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nom d\'utilisateur";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "MotDePasse";
-            this.dataGridViewTextBoxColumn3.HeaderText = "MotDePasse";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Mot de passe";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
@@ -188,17 +198,31 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NoTypeUtilisateur";
             this.dataGridViewTextBoxColumn4.DataSource = this.typeUtilisateurBindingSource;
             this.dataGridViewTextBoxColumn4.DisplayMember = "Identifiaction";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NoTypeUtilisateur";
+            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Type d\'utilisateur";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.ValueMember = "NoTypeUtilisateur";
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(380, 376);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(88, 31);
+            this.btnModifier.TabIndex = 13;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // FrmGestionUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 461);
+            this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.utilisateurDataGridView);
             this.Controls.Add(this.btnAnnuler);
@@ -214,6 +238,7 @@
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
             this.Controls.SetChildIndex(this.utilisateurDataGridView, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.btnModifier, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
@@ -241,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button btnModifier;
     }
 }
