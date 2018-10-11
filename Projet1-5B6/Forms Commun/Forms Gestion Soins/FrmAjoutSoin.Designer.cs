@@ -170,6 +170,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AssistantSoinTableAdapter = null;
             this.tableAdapterManager.AssistantTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChambreTableAdapter = null;
@@ -190,6 +191,7 @@
             // 
             this.cmbTypeSoin.DataSource = this.typeSoinBindingSource;
             this.cmbTypeSoin.DisplayMember = "Description";
+            this.cmbTypeSoin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeSoin.FormattingEnabled = true;
             this.cmbTypeSoin.Location = new System.Drawing.Point(150, 156);
             this.cmbTypeSoin.Name = "cmbTypeSoin";
