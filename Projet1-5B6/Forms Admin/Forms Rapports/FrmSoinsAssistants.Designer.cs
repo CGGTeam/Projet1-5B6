@@ -30,16 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
-            this.noEtNomsAssistantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.noEtNomsAssistantsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
-            this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
+            this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
+            this.assistantTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantTableAdapter();
+            this.rapportSoinsAssistantTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.RapportSoinsAssistantTableAdapter();
+            this.noEtNomsAssistantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noEtNomsAssistantsTableAdapter1 = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
+            this.noEtNomsAssistantsComboBox = new System.Windows.Forms.ComboBox();
+            this.rapportSoinsAssistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rapportSoinsAssistantDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.noEtNomsClientsInvitesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsAssistantsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rapportSoinsAssistantBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rapportSoinsAssistantDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noEtNomsClientsInvitesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,17 +65,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Rapport des soins journaliers des assistants";
             // 
-            // listBox1
-            // 
-            this.listBox1.DataSource = this.noEtNomsAssistantsBindingSource;
-            this.listBox1.DisplayMember = "NoEtNom";
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(98, 70);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 30);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.ValueMember = "NoAssistant";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -72,45 +74,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Assistant :";
             // 
-            // bD5B6TP1_ConstantinBrassardLaheyDataSet
+            // dateTimePicker
             // 
-            this.bD5B6TP1_ConstantinBrassardLaheyDataSet.DataSetName = "BD5B6TP1_ConstantinBrassardLaheyDataSet";
-            this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // noEtNomsAssistantsBindingSource
-            // 
-            this.noEtNomsAssistantsBindingSource.DataMember = "NoEtNomsAssistants";
-            this.noEtNomsAssistantsBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // noEtNomsAssistantsTableAdapter
-            // 
-            this.noEtNomsAssistantsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AssistantSoinTableAdapter = null;
-            this.tableAdapterManager.AssistantTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChambreTableAdapter = null;
-            this.tableAdapterManager.ClientTableAdapter = null;
-            this.tableAdapterManager.InviteTableAdapter = null;
-            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
-            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = this.noEtNomsAssistantsTableAdapter;
-            this.tableAdapterManager.PlanifSoinTableAdapter = null;
-            this.tableAdapterManager.ReservationChambreTableAdapter = null;
-            this.tableAdapterManager.SoinTableAdapter = null;
-            this.tableAdapterManager.TypeChambreTableAdapter = null;
-            this.tableAdapterManager.TypeSoinTableAdapter = null;
-            this.tableAdapterManager.TypeUtilisateurTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtilisateurTableAdapter = null;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(98, 106);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker.Location = new System.Drawing.Point(98, 106);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.TabIndex = 4;
+            this.dateTimePicker.Value = new System.DateTime(2018, 1, 11, 12, 47, 0, 0);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.onDatepickerChange);
             // 
             // label3
             // 
@@ -121,26 +92,161 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Date :";
             // 
+            // bD5B6TP1_ConstantinBrassardLaheyDataSet
+            // 
+            this.bD5B6TP1_ConstantinBrassardLaheyDataSet.DataSetName = "BD5B6TP1_ConstantinBrassardLaheyDataSet";
+            this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AssistantSoinTableAdapter = null;
+            this.tableAdapterManager.AssistantTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChambreTableAdapter = null;
+            this.tableAdapterManager.ClientTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.InviteTableAdapter = null;
+            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
+            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = null;
+            this.tableAdapterManager.PlanifSoinTableAdapter = null;
+            this.tableAdapterManager.ReservationChambreTableAdapter = null;
+            this.tableAdapterManager.SoinTableAdapter = null;
+            this.tableAdapterManager.TypeChambreTableAdapter = null;
+            this.tableAdapterManager.TypeSoinTableAdapter = null;
+            this.tableAdapterManager.TypeUtilisateurTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtilisateurTableAdapter = null;
+            // 
+            // assistantTableAdapter
+            // 
+            this.assistantTableAdapter.ClearBeforeFill = true;
+            // 
+            // rapportSoinsAssistantTableAdapter
+            // 
+            this.rapportSoinsAssistantTableAdapter.ClearBeforeFill = true;
+            // 
+            // noEtNomsAssistantsBindingSource
+            // 
+            this.noEtNomsAssistantsBindingSource.DataMember = "NoEtNomsAssistants";
+            this.noEtNomsAssistantsBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // noEtNomsAssistantsTableAdapter1
+            // 
+            this.noEtNomsAssistantsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // noEtNomsAssistantsComboBox
+            // 
+            this.noEtNomsAssistantsComboBox.DataSource = this.noEtNomsAssistantsBindingSource;
+            this.noEtNomsAssistantsComboBox.DisplayMember = "NoEtNom";
+            this.noEtNomsAssistantsComboBox.FormattingEnabled = true;
+            this.noEtNomsAssistantsComboBox.Location = new System.Drawing.Point(83, 77);
+            this.noEtNomsAssistantsComboBox.Name = "noEtNomsAssistantsComboBox";
+            this.noEtNomsAssistantsComboBox.Size = new System.Drawing.Size(300, 21);
+            this.noEtNomsAssistantsComboBox.TabIndex = 6;
+            this.noEtNomsAssistantsComboBox.ValueMember = "NoAssistant";
+            // 
+            // rapportSoinsAssistantBindingSource
+            // 
+            this.rapportSoinsAssistantBindingSource.DataMember = "PlanifSoin_Assistant_NoAssistant_fk3";
+            this.rapportSoinsAssistantBindingSource.DataSource = this.noEtNomsAssistantsBindingSource;
+            // 
+            // rapportSoinsAssistantDataGridView
+            // 
+            this.rapportSoinsAssistantDataGridView.AllowUserToAddRows = false;
+            this.rapportSoinsAssistantDataGridView.AllowUserToDeleteRows = false;
+            this.rapportSoinsAssistantDataGridView.AllowUserToOrderColumns = true;
+            this.rapportSoinsAssistantDataGridView.AutoGenerateColumns = false;
+            this.rapportSoinsAssistantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rapportSoinsAssistantDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.rapportSoinsAssistantDataGridView.DataSource = this.rapportSoinsAssistantBindingSource;
+            this.rapportSoinsAssistantDataGridView.Location = new System.Drawing.Point(18, 132);
+            this.rapportSoinsAssistantDataGridView.Name = "rapportSoinsAssistantDataGridView";
+            this.rapportSoinsAssistantDataGridView.ReadOnly = true;
+            this.rapportSoinsAssistantDataGridView.Size = new System.Drawing.Size(594, 293);
+            this.rapportSoinsAssistantDataGridView.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DateHeure";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DateHeure";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NoPersonne";
+            this.dataGridViewTextBoxColumn3.DataSource = this.noEtNomsClientsInvitesBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "NoEtNom";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nom de la personne";
+            this.dataGridViewTextBoxColumn3.MaxDropDownItems = 1;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "NoClient";
+            // 
+            // noEtNomsClientsInvitesBindingSource
+            // 
+            this.noEtNomsClientsInvitesBindingSource.DataMember = "NoEtNomsClientsInvites";
+            this.noEtNomsClientsInvitesBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NoAssistant";
+            this.dataGridViewTextBoxColumn4.DataSource = this.noEtNomsAssistantsBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "NoEtNom";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nom de l\'assistant";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "NoAssistant";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // noEtNomsClientsInvitesTableAdapter
+            // 
+            this.noEtNomsClientsInvitesTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmSoinsAssistants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(715, 450);
+            this.Controls.Add(this.rapportSoinsAssistantDataGridView);
+            this.Controls.Add(this.noEtNomsAssistantsComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Name = "FrmSoinsAssistants";
             this.Text = "Rapport des soins journaliers des assistants";
             this.Load += new System.EventHandler(this.FrmSoinsAssistants_Load);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.listBox1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.dateTimePicker, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.noEtNomsAssistantsComboBox, 0);
+            this.Controls.SetChildIndex(this.rapportSoinsAssistantDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsAssistantsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rapportSoinsAssistantBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rapportSoinsAssistantDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noEtNomsClientsInvitesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,13 +255,37 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
         private BD5B6TP1_ConstantinBrassardLaheyDataSet bD5B6TP1_ConstantinBrassardLaheyDataSet;
-        private System.Windows.Forms.BindingSource noEtNomsAssistantsBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter noEtNomsAssistantsTableAdapter;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label3;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantTableAdapter assistantTableAdapter;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.RapportSoinsAssistantTableAdapter rapportSoinsAssistantTableAdapter;
+        private System.Windows.Forms.BindingSource noEtNomsAssistantsBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter noEtNomsAssistantsTableAdapter1;
+        private System.Windows.Forms.BindingNavigator noEtNomsAssistantsBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton noEtNomsAssistantsBindingNavigatorSaveItem;
+        private System.Windows.Forms.ComboBox noEtNomsAssistantsComboBox;
+        private System.Windows.Forms.BindingSource rapportSoinsAssistantBindingSource;
+        private System.Windows.Forms.DataGridView rapportSoinsAssistantDataGridView;
+        private System.Windows.Forms.BindingSource noEtNomsClientsInvitesBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter noEtNomsClientsInvitesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
     }
 }

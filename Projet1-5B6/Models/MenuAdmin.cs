@@ -99,7 +99,8 @@ namespace Projet1_5B6.Models
 
         private void RappSoinsAssist(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            FindForm()?.Hide();
+            new FrmSoinsAssistants(this).Show();
         }
 
         private void InitializeComponent()

@@ -881,31 +881,6 @@ ORDER BY NoClient</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SoinsPersonnesTableAdapter" GeneratorDataComponentClassName="SoinsPersonnesTableAdapter" Name="SoinsPersonnes" UserDataComponentName="SoinsPersonnesTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Soin.Description, PlanifSoin.DateHeure, Soin_1.Prix, Assistant.Prenom + Assistant.Nom AS [Nom assistant]
-FROM            Soin INNER JOIN
-                         PlanifSoin ON Soin.NoSoin = PlanifSoin.NoSoin INNER JOIN
-                         Soin AS Soin_1 ON PlanifSoin.NoSoin = Soin_1.NoSoin INNER JOIN
-                         AssistantSoin ON Soin.NoSoin = AssistantSoin.NoSoin AND Soin_1.NoSoin = AssistantSoin.NoSoin INNER JOIN
-                         Assistant ON PlanifSoin.NoAssistant = Assistant.NoAssistant AND AssistantSoin.NoAssistant = Assistant.NoAssistant
-</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
-              <Mapping SourceColumn="DateHeure" DataSetColumn="DateHeure" />
-              <Mapping SourceColumn="Prix" DataSetColumn="Prix" />
-              <Mapping SourceColumn="Nom assistant" DataSetColumn="Nom assistant" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NoEtEmplacementChambreTableAdapter" GeneratorDataComponentClassName="NoEtEmplacementChambreTableAdapter" Name="NoEtEmplacementChambre" UserDataComponentName="NoEtEmplacementChambreTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectName="BD5B6TP1_ConstantinBrassardLahey.dbo.Chambre" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -962,6 +937,73 @@ INNER JOIN Soin on AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
               <Mapping SourceColumn="NoAssistant" DataSetColumn="NoAssistant" />
               <Mapping SourceColumn="NoSoin" DataSetColumn="NoSoin" />
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RapportSoinsPersonnesTableAdapter" GeneratorDataComponentClassName="RapportSoinsPersonnesTableAdapter" Name="RapportSoinsPersonnes" UserDataComponentName="RapportSoinsPersonnesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PlanifSoin.NoPersonne, Soin.Description, PlanifSoin.DateHeure, Soin.Prix, Assistant.Nom + '[, ]' + Assistant.Prenom AS [Nom Assistant]
+FROM            PlanifSoin INNER JOIN
+                         Soin ON PlanifSoin.NoSoin = Soin.NoSoin INNER JOIN
+                         Assistant ON PlanifSoin.NoAssistant = Assistant.NoAssistant</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NoPersonne" DataSetColumn="NoPersonne" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DateHeure" DataSetColumn="DateHeure" />
+              <Mapping SourceColumn="Prix" DataSetColumn="Prix" />
+              <Mapping SourceColumn="Nom Assistant" DataSetColumn="Nom Assistant" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SumPrixSoinsTableAdapter" GeneratorDataComponentClassName="SumPrixSoinsTableAdapter" Name="SumPrixSoins" UserDataComponentName="SumPrixSoinsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectName="BD5B6TP1_ConstantinBrassardLahey.dbo.PlanifSoin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PlanifSoin.NoPersonne, SUM(Soin.Prix) AS Expr1
+FROM            Soin INNER JOIN
+                         PlanifSoin ON Soin.NoSoin = PlanifSoin.NoSoin
+GROUP BY PlanifSoin.NoPersonne </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="NoPersonne" DataSetColumn="NoPersonne" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RapportSoinsAssistantTableAdapter" GeneratorDataComponentClassName="RapportSoinsAssistantTableAdapter" Name="RapportSoinsAssistant" UserDataComponentName="RapportSoinsAssistantTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD5B6TP1_ConstantinBrassardLaheyConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Soin.Description, PlanifSoin.DateHeure, PlanifSoin.NoPersonne, PlanifSoin.NoAssistant
+FROM            PlanifSoin 
+INNER JOIN  Soin ON PlanifSoin.NoSoin = Soin.NoSoin
+WHERE CONVERT(DATE,PlanifSoin.DateHeure) = CONVERT(DATE,@date)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="date" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@date" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DateHeure" DataSetColumn="DateHeure" />
+              <Mapping SourceColumn="NoPersonne" DataSetColumn="NoPersonne" />
+              <Mapping SourceColumn="NoAssistant" DataSetColumn="NoAssistant" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1295,28 +1337,6 @@ INNER JOIN Soin on AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SoinsPersonnes" msprop:Generator_TableClassName="SoinsPersonnesDataTable" msprop:Generator_TableVarName="tableSoinsPersonnes" msprop:Generator_RowChangedName="SoinsPersonnesRowChanged" msprop:Generator_TablePropName="SoinsPersonnes" msprop:Generator_RowDeletingName="SoinsPersonnesRowDeleting" msprop:Generator_RowChangingName="SoinsPersonnesRowChanging" msprop:Generator_RowEvHandlerName="SoinsPersonnesRowChangeEventHandler" msprop:Generator_RowDeletedName="SoinsPersonnesRowDeleted" msprop:Generator_RowClassName="SoinsPersonnesRow" msprop:Generator_UserTableName="SoinsPersonnes" msprop:Generator_RowEvArgName="SoinsPersonnesRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="75" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DateHeure" msprop:Generator_ColumnVarNameInTable="columnDateHeure" msprop:Generator_ColumnPropNameInRow="DateHeure" msprop:Generator_ColumnPropNameInTable="DateHeureColumn" msprop:Generator_UserColumnName="DateHeure" type="xs:dateTime" />
-              <xs:element name="Prix" msprop:Generator_ColumnVarNameInTable="columnPrix" msprop:Generator_ColumnPropNameInRow="Prix" msprop:Generator_ColumnPropNameInTable="PrixColumn" msprop:Generator_UserColumnName="Prix" type="xs:decimal" />
-              <xs:element name="Nom_x0020_assistant" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNom_assistant" msprop:Generator_ColumnPropNameInRow="Nom_assistant" msprop:Generator_ColumnPropNameInTable="Nom_assistantColumn" msprop:Generator_UserColumnName="Nom assistant" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="NoEtEmplacementChambre" msprop:Generator_TableClassName="NoEtEmplacementChambreDataTable" msprop:Generator_TableVarName="tableNoEtEmplacementChambre" msprop:Generator_TablePropName="NoEtEmplacementChambre" msprop:Generator_RowDeletingName="NoEtEmplacementChambreRowDeleting" msprop:Generator_RowChangingName="NoEtEmplacementChambreRowChanging" msprop:Generator_RowEvHandlerName="NoEtEmplacementChambreRowChangeEventHandler" msprop:Generator_RowDeletedName="NoEtEmplacementChambreRowDeleted" msprop:Generator_UserTableName="NoEtEmplacementChambre" msprop:Generator_RowChangedName="NoEtEmplacementChambreRowChanged" msprop:Generator_RowEvArgName="NoEtEmplacementChambreRowChangeEvent" msprop:Generator_RowClassName="NoEtEmplacementChambreRow">
           <xs:complexType>
             <xs:sequence>
@@ -1374,6 +1394,53 @@ INNER JOIN Soin on AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RapportSoinsPersonnes" msprop:Generator_TableClassName="RapportSoinsPersonnesDataTable" msprop:Generator_TableVarName="tableRapportSoinsPersonnes" msprop:Generator_RowChangedName="RapportSoinsPersonnesRowChanged" msprop:Generator_TablePropName="RapportSoinsPersonnes" msprop:Generator_RowDeletingName="RapportSoinsPersonnesRowDeleting" msprop:Generator_RowChangingName="RapportSoinsPersonnesRowChanging" msprop:Generator_RowEvHandlerName="RapportSoinsPersonnesRowChangeEventHandler" msprop:Generator_RowDeletedName="RapportSoinsPersonnesRowDeleted" msprop:Generator_RowClassName="RapportSoinsPersonnesRow" msprop:Generator_UserTableName="RapportSoinsPersonnes" msprop:Generator_RowEvArgName="RapportSoinsPersonnesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NoPersonne" msprop:Generator_ColumnVarNameInTable="columnNoPersonne" msprop:Generator_ColumnPropNameInRow="NoPersonne" msprop:Generator_ColumnPropNameInTable="NoPersonneColumn" msprop:Generator_UserColumnName="NoPersonne" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateHeure" msprop:Generator_ColumnVarNameInTable="columnDateHeure" msprop:Generator_ColumnPropNameInRow="DateHeure" msprop:Generator_ColumnPropNameInTable="DateHeureColumn" msprop:Generator_UserColumnName="DateHeure" type="xs:dateTime" />
+              <xs:element name="Prix" msprop:Generator_ColumnVarNameInTable="columnPrix" msprop:Generator_ColumnPropNameInRow="Prix" msprop:Generator_ColumnPropNameInTable="PrixColumn" msprop:Generator_UserColumnName="Prix" type="xs:decimal" />
+              <xs:element name="Nom_x0020_Assistant" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNom_Assistant" msprop:Generator_ColumnPropNameInRow="Nom_Assistant" msprop:Generator_ColumnPropNameInTable="Nom_AssistantColumn" msprop:Generator_UserColumnName="Nom Assistant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="54" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SumPrixSoins" msprop:Generator_TableClassName="SumPrixSoinsDataTable" msprop:Generator_TableVarName="tableSumPrixSoins" msprop:Generator_RowChangedName="SumPrixSoinsRowChanged" msprop:Generator_TablePropName="SumPrixSoins" msprop:Generator_RowDeletingName="SumPrixSoinsRowDeleting" msprop:Generator_RowChangingName="SumPrixSoinsRowChanging" msprop:Generator_RowEvHandlerName="SumPrixSoinsRowChangeEventHandler" msprop:Generator_RowDeletedName="SumPrixSoinsRowDeleted" msprop:Generator_RowClassName="SumPrixSoinsRow" msprop:Generator_UserTableName="SumPrixSoins" msprop:Generator_RowEvArgName="SumPrixSoinsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NoPersonne" msprop:Generator_ColumnVarNameInTable="columnNoPersonne" msprop:Generator_ColumnPropNameInRow="NoPersonne" msprop:Generator_ColumnPropNameInTable="NoPersonneColumn" msprop:Generator_UserColumnName="NoPersonne" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RapportSoinsAssistant" msprop:Generator_TableClassName="RapportSoinsAssistantDataTable" msprop:Generator_TableVarName="tableRapportSoinsAssistant" msprop:Generator_TablePropName="RapportSoinsAssistant" msprop:Generator_RowDeletingName="RapportSoinsAssistantRowDeleting" msprop:Generator_RowChangingName="RapportSoinsAssistantRowChanging" msprop:Generator_RowEvHandlerName="RapportSoinsAssistantRowChangeEventHandler" msprop:Generator_RowDeletedName="RapportSoinsAssistantRowDeleted" msprop:Generator_UserTableName="RapportSoinsAssistant" msprop:Generator_RowChangedName="RapportSoinsAssistantRowChanged" msprop:Generator_RowEvArgName="RapportSoinsAssistantRowChangeEvent" msprop:Generator_RowClassName="RapportSoinsAssistantRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateHeure" msprop:Generator_ColumnVarNameInTable="columnDateHeure" msprop:Generator_ColumnPropNameInRow="DateHeure" msprop:Generator_ColumnPropNameInTable="DateHeureColumn" msprop:Generator_UserColumnName="DateHeure" type="xs:dateTime" />
+              <xs:element name="NoPersonne" msprop:Generator_ColumnVarNameInTable="columnNoPersonne" msprop:Generator_ColumnPropNameInRow="NoPersonne" msprop:Generator_ColumnPropNameInTable="NoPersonneColumn" msprop:Generator_UserColumnName="NoPersonne" type="xs:int" />
+              <xs:element name="NoAssistant" msprop:Generator_ColumnVarNameInTable="columnNoAssistant" msprop:Generator_ColumnPropNameInRow="NoAssistant" msprop:Generator_ColumnPropNameInTable="NoAssistantColumn" msprop:Generator_UserColumnName="NoAssistant" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1458,6 +1525,12 @@ INNER JOIN Soin on AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
       <xs:field xpath="mstns:NoAssistant" />
       <xs:field xpath="mstns:NoSoin" />
     </xs:unique>
+    <xs:unique name="RapportSoinsAssistant_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RapportSoinsAssistant" />
+      <xs:field xpath="mstns:DateHeure" />
+      <xs:field xpath="mstns:NoPersonne" />
+      <xs:field xpath="mstns:NoAssistant" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -1488,9 +1561,13 @@ INNER JOIN Soin on AssistantSoin.NoSoin = Soin.NoSoin</CommandText>
       <msdata:Relationship name="AssistantSoin_Assistant_NoAssistant_fk3" msdata:parent="NoEtNomsAssistants" msdata:child="AssistantSoinDescription" msdata:parentkey="NoAssistant" msdata:childkey="NoAssistant" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Assistant_NoAssistant_fk3" msprop:Generator_ParentPropName="NoEtNomsAssistantsRow" msprop:Generator_RelationVarName="relationAssistantSoin_Assistant_NoAssistant_fk3" msprop:Generator_UserParentTable="NoEtNomsAssistants" />
       <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk3" msdata:parent="Soin" msdata:child="AssistantSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk3" msprop:Generator_ParentPropName="SoinRow" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk3" msprop:Generator_UserParentTable="Soin" />
       <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk4" msdata:parent="NoEtDescriptionSoin" msdata:child="AssistantSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistantSoinDescription" msprop:Generator_ChildPropName="GetAssistantSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk4" msprop:Generator_ParentPropName="NoEtDescriptionSoinRow" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk4" msprop:Generator_UserParentTable="NoEtDescriptionSoin" />
-      <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk1" msdata:parent="Soin" msdata:child="AssistanSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistanSoinDescription" msprop:Generator_ChildPropName="GetAssistanSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk1" msprop:Generator_ParentPropName="SoinRow" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk1" msprop:Generator_UserParentTable="Soin" />
       <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk3" msdata:parent="RapportChambre" msdata:child="Chambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="Chambre" msprop:Generator_ChildPropName="GetChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk3" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk3" msprop:Generator_UserParentTable="RapportChambre" msprop:Generator_ParentPropName="RapportChambreRow" />
       <msdata:Relationship name="ReservationChambre_Chambre_NoChambre_fk4" msdata:parent="NoEtEmplacementChambre" msdata:child="RapportChambre" msdata:parentkey="NoChambre" msdata:childkey="NoChambre" msprop:Generator_UserChildTable="RapportChambre" msprop:Generator_ChildPropName="GetRapportChambreRows" msprop:Generator_UserRelationName="ReservationChambre_Chambre_NoChambre_fk4" msprop:Generator_ParentPropName="NoEtEmplacementChambreRow" msprop:Generator_RelationVarName="relationReservationChambre_Chambre_NoChambre_fk4" msprop:Generator_UserParentTable="NoEtEmplacementChambre" />
+      <msdata:Relationship name="AssistantSoin_Soin_NoSoin_fk1" msdata:parent="Soin" msdata:child="AssistanSoinDescription" msdata:parentkey="NoSoin" msdata:childkey="NoSoin" msprop:Generator_UserChildTable="AssistanSoinDescription" msprop:Generator_ChildPropName="GetAssistanSoinDescriptionRows" msprop:Generator_UserRelationName="AssistantSoin_Soin_NoSoin_fk1" msprop:Generator_ParentPropName="SoinRow" msprop:Generator_RelationVarName="relationAssistantSoin_Soin_NoSoin_fk1" msprop:Generator_UserParentTable="Soin" />
+      <msdata:Relationship name="RapportSoinsPersonnes_NoEtNomsClientsInvites" msdata:parent="NoEtNomsClientsInvites" msdata:child="RapportSoinsPersonnes" msdata:parentkey="NoClient" msdata:childkey="NoPersonne" msprop:Generator_UserChildTable="RapportSoinsPersonnes" msprop:Generator_ChildPropName="GetRapportSoinsPersonnesRows" msprop:Generator_UserRelationName="RapportSoinsPersonnes_NoEtNomsClientsInvites" msprop:Generator_RelationVarName="relationRapportSoinsPersonnes_NoEtNomsClientsInvites" msprop:Generator_UserParentTable="NoEtNomsClientsInvites" msprop:Generator_ParentPropName="NoEtNomsClientsInvitesRow" />
+      <msdata:Relationship name="SumPrixSoins_NoEtNomsClientsInvites" msdata:parent="NoEtNomsClientsInvites" msdata:child="SumPrixSoins" msdata:parentkey="NoClient" msdata:childkey="NoPersonne" msprop:Generator_UserChildTable="SumPrixSoins" msprop:Generator_ChildPropName="GetSumPrixSoinsRows" msprop:Generator_UserRelationName="SumPrixSoins_NoEtNomsClientsInvites" msprop:Generator_RelationVarName="relationSumPrixSoins_NoEtNomsClientsInvites" msprop:Generator_UserParentTable="NoEtNomsClientsInvites" msprop:Generator_ParentPropName="NoEtNomsClientsInvitesRow" />
+      <msdata:Relationship name="PlanifSoin_Assistant_NoAssistant_fk2" msdata:parent="Assistant" msdata:child="RapportSoinsAssistant" msdata:parentkey="NoAssistant" msdata:childkey="NoAssistant" msprop:Generator_UserChildTable="RapportSoinsAssistant" msprop:Generator_ChildPropName="GetRapportSoinsAssistantRows" msprop:Generator_UserRelationName="PlanifSoin_Assistant_NoAssistant_fk2" msprop:Generator_ParentPropName="AssistantRow" msprop:Generator_RelationVarName="relationPlanifSoin_Assistant_NoAssistant_fk2" msprop:Generator_UserParentTable="Assistant" />
+      <msdata:Relationship name="PlanifSoin_Assistant_NoAssistant_fk3" msdata:parent="NoEtNomsAssistants" msdata:child="RapportSoinsAssistant" msdata:parentkey="NoAssistant" msdata:childkey="NoAssistant" msprop:Generator_UserChildTable="RapportSoinsAssistant" msprop:Generator_ChildPropName="GetRapportSoinsAssistantRows" msprop:Generator_UserRelationName="PlanifSoin_Assistant_NoAssistant_fk3" msprop:Generator_ParentPropName="NoEtNomsAssistantsRow" msprop:Generator_RelationVarName="relationPlanifSoin_Assistant_NoAssistant_fk3" msprop:Generator_UserParentTable="NoEtNomsAssistants" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

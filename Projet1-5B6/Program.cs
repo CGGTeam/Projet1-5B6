@@ -50,7 +50,6 @@ namespace Projet1_5B6
             PlanifSoinTableAdapter planifSoinTableAdapter = new PlanifSoinTableAdapter();
             ReservationChambreTableAdapter reservationChambreTableAdapter = new ReservationChambreTableAdapter();
             TypeChambreTableAdapter typeChambreTableAdapter = new TypeChambreTableAdapter();
-            SoinsPersonnesTableAdapter soinsPersonnesTableAdapter = new SoinsPersonnesTableAdapter();
             TypeSoinTableAdapter typeSoinTableAdapter = new TypeSoinTableAdapter();
             TypeUtilisateurTableAdapter typeUtilisateurTableAdapter = new TypeUtilisateurTableAdapter();
             UtilisateurTableAdapter utilisateurTableAdapter = new UtilisateurTableAdapter();
@@ -68,7 +67,6 @@ namespace Projet1_5B6
             typeChambreTableAdapter.Fill(dataset.TypeChambre);
             typeSoinTableAdapter.Fill(dataset.TypeSoin);
             typeUtilisateurTableAdapter.Fill(dataset.TypeUtilisateur);
-            soinsPersonnesTableAdapter.Fill(dataset.SoinsPersonnes);
             utilisateurTableAdapter.Fill(dataset.Utilisateur);
 
             foreach (DataTable table in dataset.Tables)

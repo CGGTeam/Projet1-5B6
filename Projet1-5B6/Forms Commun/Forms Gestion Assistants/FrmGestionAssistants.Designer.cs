@@ -63,8 +63,8 @@
             this.assistantSoinDescriptionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.assistantSoinDescriptionTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.AssistantSoinDescriptionTableAdapter();
             this.assistantSoinDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinDescriptionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
@@ -336,14 +336,6 @@
             this.assistantSoinDataGridView.Size = new System.Drawing.Size(179, 330);
             this.assistantSoinDataGridView.TabIndex = 13;
             // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NoAssistant";
-            this.dataGridViewTextBoxColumn9.HeaderText = "NoAssistant";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -351,6 +343,14 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "NoSoin";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NoAssistant";
+            this.dataGridViewTextBoxColumn9.HeaderText = "NoAssistant";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
             // 
             // FrmGestionAssistants
             // 

@@ -20,8 +20,10 @@ namespace Projet1_5B6.Forms_Admin.Fomrs_Rapports
 
         private void FrmSoinsClients_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.SoinsPersonnes' table. You can move, or remove it, as needed.
-            this.soinsPersonnesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SoinsPersonnes);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.SumPrixSoins' table. You can move, or remove it, as needed.
+            this.sumPrixSoinsTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.SumPrixSoins);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportSoinsPersonnes' table. You can move, or remove it, as needed.
+            this.rapportSoinsPersonnesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportSoinsPersonnes);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites' table. You can move, or remove it, as needed.
             this.noEtNomsClientsInvitesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites);
 
