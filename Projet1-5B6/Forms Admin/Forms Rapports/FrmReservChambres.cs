@@ -20,10 +20,11 @@ namespace Projet1_5B6.Forms_Admin.Fomrs_Rapports
 
         private void FrmReservChambres_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportChambre' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre' table. You can move, or remove it, as needed.
             this.rapportChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportChambre);
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtEmplacementChambre' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre' table. You can move, or remove it, as needed.
             this.noEtEmplacementChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtEmplacementChambre);
+
 
         }
     }
