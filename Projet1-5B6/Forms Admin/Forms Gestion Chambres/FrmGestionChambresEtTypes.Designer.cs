@@ -160,6 +160,8 @@
             // 
             // chambreDataGridView
             // 
+            this.chambreDataGridView.AllowUserToAddRows = false;
+            this.chambreDataGridView.AllowUserToDeleteRows = false;
             this.chambreDataGridView.AutoGenerateColumns = false;
             this.chambreDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.chambreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -232,6 +234,7 @@
             this.btnSupprimerChambre.TabIndex = 8;
             this.btnSupprimerChambre.Text = "Supprimer chambre";
             this.btnSupprimerChambre.UseVisualStyleBackColor = true;
+            this.btnSupprimerChambre.Click += new System.EventHandler(this.btnSupprimerChambre_Click);
             // 
             // btnAjouterChambre
             // 
