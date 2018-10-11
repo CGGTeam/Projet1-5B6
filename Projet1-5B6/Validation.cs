@@ -120,5 +120,13 @@ namespace Projet1_5B6
                 }
             };
         }
+
+        public static bool DateTimesOverlap(DateTime date1, DateTime date2)
+        {
+            long minTicks = -TimeSpan.TicksPerHour;
+            long maxTicks = TimeSpan.TicksPerHour;
+            long diffTicks = (date1 - date2).Ticks;
+            return diffTicks > minTicks && diffTicks < maxTicks;
+        }
     }
 }

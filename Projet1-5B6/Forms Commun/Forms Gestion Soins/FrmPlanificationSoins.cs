@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using Projet1_5B6.Forms_Admin;
 using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
@@ -63,6 +64,22 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             planifSoinBindingSource.ResetBindings(false);
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            DateTime dateHeureSelec = (DateTime)((DataRowView)planifSoinBindingSource.Current)["DateHeure"];
+            int noAssistantSelec = (int)((DataRowView)planifSoinBindingSource.Current)["NoAssistant"];
+            int noPersonneSelec = (int)((DataRowView)planifSoinBindingSource.Current)["NoPersonne"];
+
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow rowSelec =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.FindByNoPersonneNoAssistantDateHeure(noPersonneSelec, noAssistantSelec, dateHeureSelec);
+
+            FrmPlanifierSoin frmAjout = new FrmPlanifierSoin(rowSelec, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
         }
     }
 }

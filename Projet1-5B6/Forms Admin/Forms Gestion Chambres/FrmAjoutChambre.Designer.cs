@@ -39,7 +39,7 @@
             this.tbNoChambre = new System.Windows.Forms.TextBox();
             this.tbEmplacement = new System.Windows.Forms.TextBox();
             this.tbDecoration = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEntete = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.cboTypeChambre = new System.Windows.Forms.ComboBox();
             this.typeChambreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -150,16 +150,15 @@
             this.tbDecoration.Size = new System.Drawing.Size(134, 20);
             this.tbDecoration.TabIndex = 6;
             // 
-            // label1
+            // lblEntete
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 47);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Ajout d`une chambre";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEntete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntete.Location = new System.Drawing.Point(38, 9);
+            this.lblEntete.Name = "lblEntete";
+            this.lblEntete.Size = new System.Drawing.Size(345, 73);
+            this.lblEntete.TabIndex = 9;
+            this.lblEntete.Text = "Ajout d`une chambre";
+            this.lblEntete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnConfirmer
             // 
@@ -176,6 +175,7 @@
             // 
             this.cboTypeChambre.DataSource = this.typeChambreBindingSource1;
             this.cboTypeChambre.DisplayMember = "Description";
+            this.cboTypeChambre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTypeChambre.FormattingEnabled = true;
             this.cboTypeChambre.Location = new System.Drawing.Point(123, 118);
             this.cboTypeChambre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -210,7 +210,7 @@
             this.ClientSize = new System.Drawing.Size(290, 183);
             this.Controls.Add(this.cboTypeChambre);
             this.Controls.Add(this.btnConfirmer);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEntete);
             this.Controls.Add(noChambreLabel);
             this.Controls.Add(this.tbNoChambre);
             this.Controls.Add(emplacementLabel);
@@ -239,7 +239,7 @@
         private System.Windows.Forms.TextBox tbNoChambre;
         private System.Windows.Forms.TextBox tbEmplacement;
         private System.Windows.Forms.TextBox tbDecoration;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEntete;
         private System.Windows.Forms.Button btnConfirmer;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeChambreTableAdapter typeChambreTableAdapter;
         private System.Windows.Forms.ComboBox cboTypeChambre;

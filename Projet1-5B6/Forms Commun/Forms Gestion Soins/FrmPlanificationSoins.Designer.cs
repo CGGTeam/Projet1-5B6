@@ -52,6 +52,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnSauvegarder = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planifSoinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanifSoin)).BeginInit();
@@ -198,7 +199,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(98, 479);
+            this.btnAjouter.Location = new System.Drawing.Point(17, 479);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(268, 41);
             this.btnAjouter.TabIndex = 3;
@@ -208,17 +209,17 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(509, 479);
+            this.btnSupprimer.Location = new System.Drawing.Point(694, 479);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(268, 41);
             this.btnSupprimer.TabIndex = 4;
-            this.btnSupprimer.Text = "Supprimer le soin sélectionné";
+            this.btnSupprimer.Text = "Supprimer le rendez-vous";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(98, 541);
+            this.btnSauvegarder.Location = new System.Drawing.Point(17, 541);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(268, 41);
             this.btnSauvegarder.TabIndex = 5;
@@ -228,7 +229,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(509, 541);
+            this.btnAnnuler.Location = new System.Drawing.Point(694, 541);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(268, 41);
             this.btnAnnuler.TabIndex = 6;
@@ -236,11 +237,22 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(357, 479);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(268, 41);
+            this.btnModifier.TabIndex = 7;
+            this.btnModifier.Text = "Modifier le rendez-vous";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
             // FrmPlanificationSoins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 606);
+            this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
             this.Controls.Add(this.btnSupprimer);
@@ -256,6 +268,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.Controls.SetChildIndex(this.btnSupprimer, 0);
             this.Controls.SetChildIndex(this.btnSauvegarder, 0);
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
+            this.Controls.SetChildIndex(this.btnModifier, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planifSoinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanifSoin)).EndInit();
@@ -291,5 +304,6 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private CalendarColumn colDateHeure;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button btnModifier;
     }
 }

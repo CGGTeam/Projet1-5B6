@@ -129,6 +129,12 @@
     <Compile Include="Forms Commun\Forms Gestion Clients\FrmAjoutInvite.Designer.cs">
       <DependentUpon>FrmAjoutInvite.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.Designer.cs">
+      <DependentUpon>FrmPlanifierSoin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,12 +188,6 @@
     </Compile>
     <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.Designer.cs">
       <DependentUpon>FrmPlanificationSoins.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.Designer.cs">
-      <DependentUpon>FrmPlanifierSoin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Prepose\FrmAccueilPrepose.cs">
       <SubType>Form</SubType>
@@ -251,6 +251,9 @@
     <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmAjoutInvite.resx">
       <DependentUpon>FrmAjoutInvite.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.resx">
+      <DependentUpon>FrmPlanifierSoin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Reservations Chambres\FrmReservationChambres.resx">
       <DependentUpon>FrmReservationChambres.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,9 +280,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmPlanificationSoins.resx">
       <DependentUpon>FrmPlanificationSoins.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\Forms Gestion Soins\FrmPlanifierSoin.resx">
-      <DependentUpon>FrmPlanifierSoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Prepose\FrmAccueilPrepose.resx">
       <DependentUpon>FrmAccueilPrepose.cs</DependentUpon>
