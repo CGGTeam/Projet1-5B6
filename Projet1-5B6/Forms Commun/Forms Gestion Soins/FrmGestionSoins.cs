@@ -44,6 +44,7 @@ namespace Projet1_5B6.Forms_Commun
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin.AddSoinRow(nouveauSoin);
             soinBindingSource.MoveLast();
+            BaseFormGestion.estSavegarder = false;
         }
 
         private int TrouverNoSoin()
@@ -65,11 +66,13 @@ namespace Projet1_5B6.Forms_Commun
             Validate();
             soinBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(soinBindingSource, EstSupprimable);
+            if(ADOUtils.SupprimerSelection(soinBindingSource, EstSupprimable))
+                BaseFormGestion.estSavegarder = false;
         }
 
         private bool EstSupprimable(DataRowView selection)
@@ -115,6 +118,7 @@ namespace Projet1_5B6.Forms_Commun
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             soinBindingSource.ResetBindings(false);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
@@ -129,6 +133,7 @@ namespace Projet1_5B6.Forms_Commun
             DialogResult resultat = frmAjout.ShowDialog();
 
             if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+            else BaseFormGestion.estSavegarder = false; 
         }
     }
 }

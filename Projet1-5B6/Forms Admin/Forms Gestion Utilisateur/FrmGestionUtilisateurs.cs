@@ -61,11 +61,13 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
             Validate();
             utilisateurBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(utilisateurBindingSource, EstSupprimable);
+            if(ADOUtils.SupprimerSelection(utilisateurBindingSource, EstSupprimable))
+                BaseFormGestion.estSavegarder = false;
         }
 
         private bool EstSupprimable(DataRowView selection)
@@ -82,6 +84,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             utilisateurBindingSource.ResetBindings(false);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -97,12 +100,14 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.AddUtilisateurRow(nouveauUtilisateur);
             utilisateurBindingSource.MoveLast();
+            BaseFormGestion.estSavegarder = false;
         }
 
         private void btnAnnuler_Click_1(object sender, EventArgs e)
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             utilisateurBindingSource.ResetBindings(false);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
@@ -114,6 +119,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
             DialogResult resultat = frmAjout.ShowDialog();
 
             if (resultat == DialogResult.Cancel) return;
+            else BaseFormGestion.estSavegarder = false;
         }
     }
 }

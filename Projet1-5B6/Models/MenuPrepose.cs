@@ -30,8 +30,21 @@ namespace Projet1_5B6.Models
 
         private void Deconnecter(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            Deconnexion?.Invoke(this, null);
+            if (!BaseFormGestion.estSavegarder)
+            {
+                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?", "Fermeture", MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
+                if (result == DialogResult.Yes)
+                {
+                    FindForm()?.Hide();
+                    Deconnexion?.Invoke(this, null);
+                }
+            }
+            else
+            {
+                FindForm()?.Hide();
+                Deconnexion?.Invoke(this, null);
+            }
         }
 
         private void ReservationChambres(object sender, EventArgs e)

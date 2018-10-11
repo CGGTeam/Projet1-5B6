@@ -68,6 +68,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
                             row.Delete();
                         }
                     }
+                    BaseFormGestion.estSavegarder = false;
                 }
             }
         }
@@ -91,6 +92,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant.AddAssistantRow(nouveauAssistant);
             assistantBindingSource.MoveLast();
+            BaseFormGestion.estSavegarder = false;
         }
         private Boolean CheckSoinsPlanif(int noAssistant, int noSoin)
         {
@@ -145,6 +147,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
             DialogResult resultat = frmAjout.ShowDialog();
 
             if (resultat == DialogResult.Cancel) return;
+            else BaseFormGestion.estSavegarder = false;
         }
 
         private void btnAjouterSoin_Click(object sender, EventArgs e)
@@ -168,11 +171,13 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
             assistantSoinBindingSource.MoveLast();
             assistantBindingSource.EndEdit();
             assistantSoinBindingSource.EndEdit();
+            BaseFormGestion.estSavegarder = false;
         }
 
         private void btnSupprimerSoin_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(assistantSoinBindingSource, EstSupprimableSoin);
+            if(ADOUtils.SupprimerSelection(assistantSoinBindingSource, EstSupprimableSoin))
+                BaseFormGestion.estSavegarder = false;
         }
         private bool EstSupprimableSoin(DataRowView selection)
         {
@@ -191,6 +196,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             assistantSoinBindingSource.ResetBindings(false);
             assistantBindingSource.ResetBindings(false);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnConfrimer_Click(object sender, EventArgs e)
@@ -201,7 +207,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
 
             assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void enableButton(object sender, EventArgs e)
