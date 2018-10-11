@@ -32,7 +32,8 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(planifSoinBindingSource, EstSupprimable);
+            if(ADOUtils.SupprimerSelection(planifSoinBindingSource, EstSupprimable))
+                BaseFormGestion.estSavegarder = false;
         }
 
         private bool EstSupprimable(DataRowView planifSoin)
@@ -51,6 +52,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.AddPlanifSoinRow(nouveauSoinPlanifie);
             planifSoinBindingSource.MoveLast();
+            BaseFormGestion.estSavegarder = false;
         }
 
         private void btnSauvegarder_Click(object sender, EventArgs e)
@@ -58,12 +60,14 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             Validate();
             planifSoinBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             planifSoinBindingSource.ResetBindings(false);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
@@ -80,6 +84,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             DialogResult resultat = frmAjout.ShowDialog();
 
             if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+            else BaseFormGestion.estSavegarder = false;
         }
     }
 }

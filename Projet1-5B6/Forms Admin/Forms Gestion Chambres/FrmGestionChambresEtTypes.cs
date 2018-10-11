@@ -105,6 +105,7 @@ namespace Projet1_5B6.Forms_Admin
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre.AddTypeChambreRow(nouveauType);
             typeChambreBindingSource.MoveLast();
+            BaseFormGestion.estSavegarder = false;
         }
 
         private void btnAjouterChambre_Click(object sender, EventArgs e)
@@ -127,6 +128,7 @@ namespace Projet1_5B6.Forms_Admin
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.AddChambreRow(nouvelleChambre);
             chambreBindingSource.MoveLast();
+            BaseFormGestion.estSavegarder = false;
         }
 
         private int TrouverNoChambre()
@@ -152,6 +154,7 @@ namespace Projet1_5B6.Forms_Admin
 
             chambreTableAdapter.Update(bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre);
             typeChambreTableAdapter.Update(bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
@@ -159,11 +162,13 @@ namespace Projet1_5B6.Forms_Admin
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             chambreBindingSource.ResetBindings(false);
             typeChambreBindingSource.ResetBindings(false);
+            BaseFormGestion.estSavegarder = true;
         }
 
         private void btnSupprimerChambre_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(chambreBindingSource, ChambreEstSupprimable);
+            if(ADOUtils.SupprimerSelection(chambreBindingSource, ChambreEstSupprimable))
+                BaseFormGestion.estSavegarder = false;
         }
 
         private bool ChambreEstSupprimable(DataRowView obj)
@@ -173,7 +178,8 @@ namespace Projet1_5B6.Forms_Admin
 
         private void btnSupprimerType_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(typeChambreBindingSource, type => true);
+            if(ADOUtils.SupprimerSelection(typeChambreBindingSource, type => true))
+                BaseFormGestion.estSavegarder = true;
         }
 
         private void btnModifierType_Click(object sender, EventArgs e)
@@ -187,6 +193,7 @@ namespace Projet1_5B6.Forms_Admin
             DialogResult resultat = frmAjout.ShowDialog();
 
             if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+            else BaseFormGestion.estSavegarder = true;
         }
 
         private void btnModifierChambre_Click(object sender, EventArgs e)
@@ -200,6 +207,7 @@ namespace Projet1_5B6.Forms_Admin
             DialogResult resultat = frmAjout.ShowDialog();
 
             if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+            else BaseFormGestion.estSavegarder = true;
         }
     }
 }
