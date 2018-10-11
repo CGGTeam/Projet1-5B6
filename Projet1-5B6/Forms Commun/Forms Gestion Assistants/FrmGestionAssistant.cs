@@ -34,12 +34,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
             this.assistantTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant);
 
             assistantSoinDataGridView.RowHeadersVisible = false;
-        }
-
-
-        private void assistantSoinDescriptionListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            btnSupprimerSoin.Enabled = true;
         }
         private int TrouverNoAssistant()
         {
@@ -207,6 +202,12 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
             assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
 
+        }
+
+        private void enableButton(object sender, EventArgs e)
+        {
+            if(listSoin.SelectedIndex > -1)
+                btnSupprimerSoin.Enabled = true;
         }
     }
 }

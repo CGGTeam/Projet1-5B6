@@ -31,7 +31,6 @@ namespace Projet1_5B6.Models
         private void Deconnecter(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmConnexion().Show();
             Deconnexion?.Invoke(this, null);
         }
 
