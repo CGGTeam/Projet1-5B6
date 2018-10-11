@@ -14,15 +14,14 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
     public partial class FrmAddAssistant : Form
     {
         BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow user;
-        DataRowView selection;
-        Boolean pourModifier = false;
+        bool pourModifier = false;
         private readonly Control[] controlesAValider;
         
-        public FrmAddAssistant(BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow user)
+        public FrmAddAssistant(BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow user, bool pourModifier = false)
         {
             InitializeComponent();
             this.user = user;
-
+            this.pourModifier = pourModifier;
             controlesAValider = new Control[]
             {
                 tbNom,
@@ -30,38 +29,20 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
                 tbSpecialite,
             };
         }
-
-        public FrmAddAssistant(BindingSource bindingSource)
-        {
-
-            pourModifier = true;
-
-            InitializeComponent();
-
-            this.Text = "Modifier un assistant";
-            lblTitre.Text = "Modifier un assistant";
-            btnConfirmer.Text = "Confirmer la modification";
-
-            DataRowView selection = (DataRowView)bindingSource.Current;
-            this.selection = selection;
-
-            controlesAValider = new Control[]
-           {
-                tbNom,
-                tbPrenom,
-                tbSpecialite,
-           };
-        }
-
         private void FrmAddAssistant_Load(object sender, EventArgs e)
         {
             if (pourModifier)
             {
-                tbNoAssistant.Text = selection[0].ToString();
-                tbPrenom.Text = (string)selection[1];
-                tbNom.Text = (string)selection[2];
-                tbSpecialite.Text = (string)selection[3];
-                tbRemarques.Text = (string)selection[4];
+                this.Text = "Modifier un assistant";
+                lblTitre.Text = "Modifier un assistant";
+                btnConfirmer.Text = "Confirmer la modification";
+
+                tbNoAssistant.Text = user.NoAssistant.ToString();
+                tbPrenom.Text = (string)user.Prenom;
+                tbNom.Text = (string)user.Nom;
+                tbSpecialite.Text = (string)user.Specialites;
+                tbRemarques.Text = (string)user.Remarques;
+                btnConfirmer.Enabled = true;
             }
             else
             {
@@ -81,26 +62,15 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            if (pourModifier)
-            {
-                selection[2] = tbNom.Text;
-                selection[1] = tbPrenom.Text;
-                selection[3] = tbSpecialite.Text;
-                selection[4] = tbRemarques.Text;
 
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            else
-            {
-                user.Nom = tbNom.Text;
-                user.Prenom = tbPrenom.Text;
-                user.Specialites = tbSpecialite.Text;
-                user.Remarques = tbRemarques.Text;
+            user.Nom = tbNom.Text;
+            user.Prenom = tbPrenom.Text;
+            user.Specialites = tbSpecialite.Text;
+            user.Remarques = tbRemarques.Text;
 
-                DialogResult = DialogResult.OK;
-                Close();
-            }
+            DialogResult = DialogResult.OK;
+            Close();
+
         }
     }
 }

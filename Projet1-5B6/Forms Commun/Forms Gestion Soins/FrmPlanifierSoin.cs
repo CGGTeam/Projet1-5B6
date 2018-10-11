@@ -83,7 +83,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            planifSoin.NoSoin = (int)cboSoin.SelectedValue;
+           planifSoin.NoSoin = (int)cboSoin.SelectedValue;
             planifSoin.NoAssistant = (int)cboAssistant.SelectedValue;
             planifSoin.NoPersonne = (int)cboPatient.SelectedValue;
             planifSoin.DateHeure = dtpDateHeure.Value;

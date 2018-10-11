@@ -49,7 +49,7 @@ namespace Projet1_5B6.Forms_Admin
         }
         private void btnModifier_Click(object sender, EventArgs e)
         {           
-            FrmAddAssistant frmAjout = new FrmAddAssistant(assistantBindingSource);
+            FrmAddAssistant frmAjout = new FrmAddAssistant(null);
 
             DialogResult resultat = frmAjout.ShowDialog();
 
