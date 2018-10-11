@@ -3,6 +3,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters;
+using Projet1_5B6.Forms_Commun.Forms_Gestion_Soins;
 using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun
@@ -114,6 +115,20 @@ namespace Projet1_5B6.Forms_Commun
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             soinBindingSource.ResetBindings(false);
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            int noSoinSelec = (int)((DataRowView)soinBindingSource.Current)["NoSoin"];
+
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.SoinRow rowSelec =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin.FindByNoSoin(noSoinSelec);
+
+            FrmAjoutSoin frmAjout = new FrmAjoutSoin(rowSelec, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
         }
     }
 }

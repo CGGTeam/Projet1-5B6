@@ -9,8 +9,9 @@ namespace Projet1_5B6.Forms_Commun
     {
         private readonly Control[] controlesAValider;
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client;
+        private readonly bool modifMode;
 
-        public FrmAjoutClient(BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client)
+        public FrmAjoutClient(BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client, bool modifMode = false)
         {
             controlesAValider = new Control[]
             {
@@ -23,6 +24,8 @@ namespace Projet1_5B6.Forms_Commun
             };
             InitializeComponent();
             this.client = client;
+
+            this.modifMode = modifMode;
         }
 
         private void btnAjout_Click(object sender, EventArgs e)
@@ -66,6 +69,19 @@ namespace Projet1_5B6.Forms_Commun
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
             tbNoClient.Text = client.NoClient.ToString();
+
+            if (modifMode)
+            {
+                tbPrenom.Text = client.Prenom;
+                tbNom.Text = client.Nom;
+                tbAdresse.Text = client.Adresse;
+                tbCodePostal.Text = client.CodePostal;
+                tbPays.Text = client.Pays;
+                tbVille.Text = client.Ville;
+
+                lblEntete.Text = "Modifier client";
+                Text = "Modification d'un client";
+            }
         }
 
         private void ValiderFormulaireRempli(object sender, EventArgs e)

@@ -41,7 +41,7 @@
             this.tbPays = new System.Windows.Forms.TextBox();
             this.tbAdresse = new System.Windows.Forms.TextBox();
             this.tbCodePostal = new System.Windows.Forms.TextBox();
-            this.lblTitreAjout = new System.Windows.Forms.Label();
+            this.lblEntete = new System.Windows.Forms.Label();
             this.btnAjout = new System.Windows.Forms.Button();
             this.bD5B6TP1_ConstantinBrassardLaheyDataSet = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSet();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -155,15 +155,15 @@
             this.tbCodePostal.TabIndex = 11;
             this.tbCodePostal.TextChanged += new System.EventHandler(this.ValiderFormulaireRempli);
             // 
-            // lblTitreAjout
+            // lblEntete
             // 
-            this.lblTitreAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreAjout.Location = new System.Drawing.Point(12, 9);
-            this.lblTitreAjout.Name = "lblTitreAjout";
-            this.lblTitreAjout.Size = new System.Drawing.Size(339, 71);
-            this.lblTitreAjout.TabIndex = 12;
-            this.lblTitreAjout.Text = "Ajouter Client";
-            this.lblTitreAjout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEntete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntete.Location = new System.Drawing.Point(12, 9);
+            this.lblEntete.Name = "lblEntete";
+            this.lblEntete.Size = new System.Drawing.Size(339, 71);
+            this.lblEntete.TabIndex = 12;
+            this.lblEntete.Text = "Ajouter Client";
+            this.lblEntete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAjout
             // 
@@ -235,7 +235,7 @@
             this.Controls.Add(this.tbNoClient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAjout);
-            this.Controls.Add(this.lblTitreAjout);
+            this.Controls.Add(this.lblEntete);
             this.Controls.Add(this.tbCodePostal);
             this.Controls.Add(this.tbAdresse);
             this.Controls.Add(this.tbPays);
@@ -272,7 +272,7 @@
         private System.Windows.Forms.TextBox tbPays;
         private System.Windows.Forms.TextBox tbAdresse;
         private System.Windows.Forms.TextBox tbCodePostal;
-        private System.Windows.Forms.Label lblTitreAjout;
+        private System.Windows.Forms.Label lblEntete;
         private System.Windows.Forms.Button btnAjout;
         private BD5B6TP1_ConstantinBrassardLaheyDataSet bD5B6TP1_ConstantinBrassardLaheyDataSet;
         private System.Windows.Forms.BindingSource clientBindingSource;

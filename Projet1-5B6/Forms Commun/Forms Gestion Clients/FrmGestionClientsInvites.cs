@@ -260,5 +260,33 @@ namespace Projet1_5B6.Forms_Commun
             inviteBindingSource.MoveLast();
             VerifierNbInvites();
         }
+
+        private void btnModifierClient_Click(object sender, EventArgs e)
+        {
+            int noClientSelec = (int)((DataRowView)clientBindingSource.Current)["NoClient"];
+
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow rowSelec =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.Client.FindByNoClient(noClientSelec);
+
+            FrmAjoutClient frmAjout = new FrmAjoutClient(rowSelec, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            int noInviteSelec = (int)((DataRowView)inviteBindingSource.Current)["NoInvite"];
+
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.InviteRow rowSelec =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.Invite.FindByNoInvite(noInviteSelec);
+
+            FrmAjoutInvite frmAjout = new FrmAjoutInvite(rowSelec, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) rowSelec.CancelEdit();
+        }
     }
 }

@@ -13,11 +13,14 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Clients
     public partial class FrmAjoutInvite : Form
     {
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.InviteRow nouvelInvite;
+        private readonly bool modeModif;
 
-        public FrmAjoutInvite(BD5B6TP1_ConstantinBrassardLaheyDataSet.InviteRow nouvelInvite)
+        public FrmAjoutInvite(BD5B6TP1_ConstantinBrassardLaheyDataSet.InviteRow nouvelInvite, bool modeModif = false)
         {
             InitializeComponent();
             this.nouvelInvite = nouvelInvite;
+
+            this.modeModif = modeModif;
         }
 
         private void inviteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -26,6 +29,11 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Clients
             this.inviteBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
 
+            if (modeModif)
+            {
+                tbPrenom.Text = nouvelInvite.Prenom;
+                tbNom.Text = nouvelInvite.Nom;
+            }
         }
 
         private void FrmAjoutInvite_Load(object sender, EventArgs e)

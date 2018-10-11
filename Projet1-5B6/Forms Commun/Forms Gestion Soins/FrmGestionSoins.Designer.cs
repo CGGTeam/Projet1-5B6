@@ -47,6 +47,7 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.typeSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeSoinTableAdapter();
             this.ttpSupprimer = new System.Windows.Forms.ToolTip(this.components);
+            this.btnModifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSoins)).BeginInit();
@@ -162,7 +163,7 @@
             // 
             // btnAjouterSoin
             // 
-            this.btnAjouterSoin.Location = new System.Drawing.Point(141, 344);
+            this.btnAjouterSoin.Location = new System.Drawing.Point(17, 344);
             this.btnAjouterSoin.Name = "btnAjouterSoin";
             this.btnAjouterSoin.Size = new System.Drawing.Size(213, 32);
             this.btnAjouterSoin.TabIndex = 3;
@@ -173,7 +174,7 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Enabled = false;
-            this.btnSupprimer.Location = new System.Drawing.Point(384, 344);
+            this.btnSupprimer.Location = new System.Drawing.Point(479, 344);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(213, 32);
             this.btnSupprimer.TabIndex = 4;
@@ -183,7 +184,7 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(141, 396);
+            this.btnSauvegarder.Location = new System.Drawing.Point(17, 396);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(213, 32);
             this.btnSauvegarder.TabIndex = 5;
@@ -193,7 +194,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(384, 396);
+            this.btnAnnuler.Location = new System.Drawing.Point(479, 396);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(213, 32);
             this.btnAnnuler.TabIndex = 6;
@@ -205,11 +206,22 @@
             // 
             this.typeSoinTableAdapter.ClearBeforeFill = true;
             // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(249, 344);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(213, 32);
+            this.btnModifier.TabIndex = 7;
+            this.btnModifier.Text = "Modifier soin";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
             // FrmGestionSoins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 450);
+            this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
             this.Controls.Add(this.btnSupprimer);
@@ -225,6 +237,7 @@
             this.Controls.SetChildIndex(this.btnSupprimer, 0);
             this.Controls.SetChildIndex(this.btnSauvegarder, 0);
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
+            this.Controls.SetChildIndex(this.btnModifier, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSoins)).EndInit();
@@ -254,5 +267,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.ToolTip ttpSupprimer;
+        private System.Windows.Forms.Button btnModifier;
     }
 }
