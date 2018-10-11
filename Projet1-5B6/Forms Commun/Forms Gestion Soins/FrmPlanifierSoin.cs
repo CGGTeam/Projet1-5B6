@@ -138,18 +138,19 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
 
         private void cboAssistant_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //IEnumerable<BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoinRow> soinsOffertsAssistant =
-            //    bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.Where(rangee => rangee.NoAssistant == (int)cboAssistant.SelectedValue);
-            //IEnumerable<BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoinRow> noDescSoinsOfferts =
-            //    bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin.Where(noEtDescSoin => soinsOffertsAssistant.Any(soinOff => soinOff.NoSoin == noEtDescSoin.NoSoin));
+            IEnumerable<BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoinRow> soinsOffertsAssistant =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.Where(rangee => rangee.NoAssistant == (int)cboAssistant.SelectedValue);
+            IEnumerable<BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoinRow> noDescSoinsOfferts =
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin.Where(noEtDescSoin => soinsOffertsAssistant.Any(soinOff => soinOff.NoSoin == noEtDescSoin.NoSoin));
 
-            //int selectionAvant = (int)cboSoin.SelectedValue;
-            //if ()
-        }
+            object selectionAvant = cboSoin.SelectedValue;
+            cboSoin.DataSource =
+                new BindingList<BD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoinRow>(noDescSoinsOfferts.ToList());
 
-        private void cboSoin_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            //TODO:Ajuster assistants disponibles
+            if (cboSoin.SelectedValue != selectionAvant)
+            {
+                ttpModifSoinsDispos.Show("Le soin sélectionné a été changé", cboSoin, 3000);
+            }
         }
     }
 }

@@ -33,21 +33,22 @@
             this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noEtNomsClientsInvitesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
+            this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
+            this.noEtNomsAssistantsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
             this.cboPatient = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.noEtNomsAssistantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.noEtNomsAssistantsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
             this.cboAssistant = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDateHeure = new System.Windows.Forms.DateTimePicker();
             this.noEtDescriptionSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
             this.cboSoin = new System.Windows.Forms.ComboBox();
             this.lblEntete = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ttpModifSoinsDispos = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsClientsInvitesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsAssistantsBindingSource)).BeginInit();
@@ -88,6 +89,14 @@
             this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
+            // noEtDescriptionSoinTableAdapter
+            // 
+            this.noEtDescriptionSoinTableAdapter.ClearBeforeFill = true;
+            // 
+            // noEtNomsAssistantsTableAdapter
+            // 
+            this.noEtNomsAssistantsTableAdapter.ClearBeforeFill = true;
+            // 
             // cboPatient
             // 
             this.cboPatient.DataSource = this.noEtNomsClientsInvitesBindingSource;
@@ -114,10 +123,6 @@
             // 
             this.noEtNomsAssistantsBindingSource.DataMember = "NoEtNomsAssistants";
             this.noEtNomsAssistantsBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // noEtNomsAssistantsTableAdapter
-            // 
-            this.noEtNomsAssistantsTableAdapter.ClearBeforeFill = true;
             // 
             // cboAssistant
             // 
@@ -174,10 +179,6 @@
             this.noEtDescriptionSoinBindingSource.DataMember = "NoEtDescriptionSoin";
             this.noEtDescriptionSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
-            // noEtDescriptionSoinTableAdapter
-            // 
-            this.noEtDescriptionSoinTableAdapter.ClearBeforeFill = true;
-            // 
             // cboSoin
             // 
             this.cboSoin.DataSource = this.noEtDescriptionSoinBindingSource;
@@ -189,7 +190,6 @@
             this.cboSoin.Size = new System.Drawing.Size(300, 28);
             this.cboSoin.TabIndex = 7;
             this.cboSoin.ValueMember = "NoSoin";
-            this.cboSoin.SelectionChangeCommitted += new System.EventHandler(this.cboSoin_SelectionChangeCommitted);
             // 
             // lblEntete
             // 
@@ -264,5 +264,6 @@
         private System.Windows.Forms.Label lblEntete;
         private System.Windows.Forms.Button btnConfirmer;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ToolTip ttpModifSoinsDispos;
     }
 }
