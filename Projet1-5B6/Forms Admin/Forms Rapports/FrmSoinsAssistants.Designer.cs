@@ -42,12 +42,12 @@
             this.noEtNomsAssistantsComboBox = new System.Windows.Forms.ComboBox();
             this.rapportSoinsAssistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rapportSoinsAssistantDataGridView = new System.Windows.Forms.DataGridView();
-            this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.noEtNomsClientsInvitesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.noEtNomsClientsInvitesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsAssistantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rapportSoinsAssistantBindingSource)).BeginInit();
@@ -169,15 +169,6 @@
             this.rapportSoinsAssistantDataGridView.Size = new System.Drawing.Size(594, 293);
             this.rapportSoinsAssistantDataGridView.TabIndex = 7;
             // 
-            // noEtNomsClientsInvitesBindingSource
-            // 
-            this.noEtNomsClientsInvitesBindingSource.DataMember = "NoEtNomsClientsInvites";
-            this.noEtNomsClientsInvitesBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // noEtNomsClientsInvitesTableAdapter
-            // 
-            this.noEtNomsClientsInvitesTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Description";
@@ -208,6 +199,11 @@
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "NoClient";
             // 
+            // noEtNomsClientsInvitesBindingSource
+            // 
+            this.noEtNomsClientsInvitesBindingSource.DataMember = "NoEtNomsClientsInvites";
+            this.noEtNomsClientsInvitesBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -222,11 +218,15 @@
             this.dataGridViewTextBoxColumn4.ValueMember = "NoAssistant";
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
+            // noEtNomsClientsInvitesTableAdapter
+            // 
+            this.noEtNomsClientsInvitesTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmSoinsAssistants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(715, 450);
             this.Controls.Add(this.rapportSoinsAssistantDataGridView);
             this.Controls.Add(this.noEtNomsAssistantsComboBox);
             this.Controls.Add(this.label3);
