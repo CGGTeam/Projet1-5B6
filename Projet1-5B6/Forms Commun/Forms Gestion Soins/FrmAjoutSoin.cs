@@ -9,8 +9,9 @@ namespace Projet1_5B6.Forms_Commun
     {
         private BD5B6TP1_ConstantinBrassardLaheyDataSet.SoinRow soin;
         private readonly Control[] controlesAValider;
+        private readonly bool modifMode;
 
-        public FrmAjoutSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.SoinRow soin)
+        public FrmAjoutSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.SoinRow soin, bool modifMode = false)
         {
             InitializeComponent();
             this.soin = soin;
@@ -21,6 +22,8 @@ namespace Projet1_5B6.Forms_Commun
                 tbPrix,
                 cmbTypeSoin,
             };
+
+            this.modifMode = modifMode;
         }
 
         private void FrmAjoutSoin_Load(object sender, EventArgs e)
@@ -31,6 +34,16 @@ namespace Projet1_5B6.Forms_Commun
             tbDuree.Text = "60";
             tbDescription.Validating += Validation.ValiderDescriptionSoin(errorProvider);
             tbPrix.Validating += Validation.ValiderPrix(errorProvider);
+
+            if (modifMode)
+            {
+                tbDescription.Text = soin.Description;
+                tbPrix.Text = soin.Prix.ToString();
+                cmbTypeSoin.SelectedValue = soin.NoTypeSoin;
+
+                lblEntete.Text = "Modifier Soin";
+                Text = "Modifier un soin";
+            }
         }
 
         private void ValiderFormulaire(object sender, EventArgs e)
