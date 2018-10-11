@@ -257,6 +257,7 @@
             this.listSoin.Size = new System.Drawing.Size(130, 21);
             this.listSoin.TabIndex = 15;
             this.listSoin.ValueMember = "NoSoin";
+            this.listSoin.SelectedIndexChanged += new System.EventHandler(this.enableButton);
             // 
             // noEtDescriptionSoinBindingSource
             // 
@@ -301,11 +302,13 @@
             this.assistantSoinDataGridView.AllowUserToAddRows = false;
             this.assistantSoinDataGridView.AllowUserToDeleteRows = false;
             this.assistantSoinDataGridView.AllowUserToOrderColumns = true;
+            this.assistantSoinDataGridView.AllowUserToResizeRows = false;
             this.assistantSoinDataGridView.AutoGenerateColumns = false;
             this.assistantSoinDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.assistantSoinDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.assistantSoinDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.assistantSoinDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assistantSoinDataGridView.ColumnHeadersVisible = false;
             this.assistantSoinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
