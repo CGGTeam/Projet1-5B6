@@ -31,26 +31,30 @@ namespace Projet1_5B6.Models
         private void Deconnecter(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmConnexion().Show();
+            new FrmConnexion().ShowDialog();
             Deconnexion?.Invoke(this, null);
+            FindForm()?.Close();
         }
 
         private void ReservationChambres(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmReservationChambres(this).Show();
+            new FrmReservationChambres(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void PlanifSoins(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmPlanificationSoins(this).Show();
+            new FrmPlanificationSoins(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void GestionClientsInvites(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionClientsInvites(this).Show();
+            new FrmGestionClientsInvites(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void InitializeComponent()

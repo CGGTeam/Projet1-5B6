@@ -29,6 +29,15 @@ namespace Projet1_5B6
 
             Hide();
             Connexion?.Invoke(this, utilisateur);
+            if (WillShow)
+            {
+                WillShow = false;
+                Show();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private bool EstUtilisateurValide()
@@ -64,5 +73,12 @@ namespace Projet1_5B6
         }
 
         public event EventHandler<Utilisateur> Connexion;
+
+        public void Deconnexion()
+        {
+            this.WillShow = true;
+        }
+
+        public bool WillShow { get; set; }
     }
 }

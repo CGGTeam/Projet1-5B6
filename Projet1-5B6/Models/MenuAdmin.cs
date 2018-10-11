@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,30 +38,35 @@ namespace Projet1_5B6.Models
         private void GestionUtilisateurs(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionUtilisateurs(this).Show();
+            new FrmGestionUtilisateurs(this).ShowDialog();
+            FindForm()?.Close();
         }
         private void GestionAssistants(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionAssistant(this).Show();
+            new FrmGestionAssistant(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void GestionClientInvites(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionClientsInvites(this).Show();
+            new FrmGestionClientsInvites(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void GestionSoins(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionSoins(this).Show();
+            new FrmGestionSoins(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void GestionChambres(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionChambresEtTypes(this).Show();
+            new FrmGestionChambresEtTypes(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void Quitter(object sender, EventArgs e)
@@ -71,37 +77,42 @@ namespace Projet1_5B6.Models
         private void Deconnecter(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmConnexion().Show();
             Deconnexion?.Invoke(this, null);
+            FindForm()?.Close();
         }
 
         private void PlanificationSoins(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmPlanificationSoins(this).Show();
+            new FrmPlanificationSoins(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void ReservationChambre(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmReservationChambres(this).Show();
+            new FrmReservationChambres(this).ShowDialog();
+            FindForm()?.Close();
         }
         private void RappSoinsClients(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmSoinsClients(this).Show();
+            new FrmSoinsClients(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void RappReservChambres(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmReservChambres(this).Show();
+            new FrmReservChambres(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void RappSoinsAssist(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmSoinsAssistants(this).Show();
+            new FrmSoinsAssistants(this).ShowDialog();
+            FindForm()?.Close();
         }
 
         private void InitializeComponent()
