@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Projet1_5B6.Forms_Admin;
+﻿using Projet1_5B6.Forms_Admin;
 using Projet1_5B6.Forms_Prepose;
 using Projet1_5B6.Models;
+using System;
+using System.Windows.Forms;
 
 namespace Projet1_5B6
 {
@@ -14,11 +10,15 @@ namespace Projet1_5B6
     {
         public static Utilisateur utilisateurConnecte;
         private MenuUtilisateur menuUtilisateur;
+        private readonly FrmConnexion frmConnexion;
+
+        public GestionForms()
+        {
+            frmConnexion = new FrmConnexion();
+        }
 
         public void Demarrer()
         {
-            FrmConnexion frmConnexion = new FrmConnexion();
-
             frmConnexion.Connexion += GestionConnexion;
 
             Application.Run(frmConnexion);
@@ -33,26 +33,18 @@ namespace Projet1_5B6
 
             if (utilisateurConnecte.EstAdmin)
             {
-                new FrmAccueilAdmin(menuUtilisateur).Show();
+                new FrmAccueilAdmin(menuUtilisateur).ShowDialog();
             }
             else
             {
-                new FrmAccueilPrepose(menuUtilisateur).Show();
+                new FrmAccueilPrepose(menuUtilisateur).ShowDialog();
             }
         }
 
         private void GestionDeconnexion(object sender, EventArgs e)
         {
-            utilisateurConnecte = null;
-            menuUtilisateur = null;
-
-            FrmConnexion frmConnexion = new FrmConnexion();
-
-            frmConnexion.Connexion += GestionConnexion;
-
-            frmConnexion.Show();
+            this.frmConnexion.Deconnexion();
         }
-
 
         private MenuUtilisateur DeterminerMenuUtilisateur()
         {

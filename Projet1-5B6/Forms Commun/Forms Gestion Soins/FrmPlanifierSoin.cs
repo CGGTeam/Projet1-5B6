@@ -16,26 +16,33 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
     {
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin;
         private readonly AssistantSoinTableAdapter assistantSoinTableAdapter;
-        private readonly PlanifSoinTableAdapter planifSoinTableAdapter;
-        private readonly AssistantTableAdapter assistantTableAdapter;
         private readonly bool modifMode;
         private readonly DateTime ancienneDateHeure;
         private readonly int ancienNoPersonne;
         private readonly int ancienNoAssistant;
 
-        public FrmPlanifierSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin, bool modifMode = false)
+        public FrmPlanifierSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin, BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinDataTable dataTable, bool modifMode = false)
         {
             InitializeComponent();
             this.planifSoin = planifSoin;
 
-            ancienneDateHeure = this.planifSoin.DateHeure;
-            ancienNoPersonne = this.planifSoin.NoPersonne;
-            ancienNoAssistant = this.planifSoin.NoAssistant;
+           
 
-            this.planifSoinTableAdapter = new PlanifSoinTableAdapter();
             this.assistantSoinTableAdapter = new AssistantSoinTableAdapter();
 
             this.modifMode = modifMode;
+
+            if (modifMode)
+            {
+                ancienneDateHeure = this.planifSoin.DateHeure;
+                ancienNoPersonne = this.planifSoin.NoPersonne;
+                ancienNoAssistant = this.planifSoin.NoAssistant;
+            }
+
+            foreach (DataRow planifSoinRow in dataTable)
+            {
+                bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.ImportRow(planifSoinRow);
+            }
         }
 
         private void FrmPlanifierSoin_Load(object sender, EventArgs e)
@@ -47,7 +54,6 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites' table. You can move, or remove it, as needed.
             this.noEtNomsClientsInvitesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites);
 
-            this.planifSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
             this.assistantSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
 
             dtpDateHeure.Validating += Validation.ValiderDateHeureReservation(errorProvider);

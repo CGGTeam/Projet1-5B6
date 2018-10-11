@@ -44,7 +44,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var nouveauSoinPlanifie = bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.NewPlanifSoinRow();
-            FrmPlanifierSoin frmAjout = new FrmPlanifierSoin(nouveauSoinPlanifie);
+            FrmPlanifierSoin frmAjout = new FrmPlanifierSoin(nouveauSoinPlanifie, bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
 
             DialogResult resultat = frmAjout.ShowDialog();
 
@@ -79,7 +79,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow rowSelec =
                 bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin.FindByNoPersonneNoAssistantDateHeure(noPersonneSelec, noAssistantSelec, dateHeureSelec);
 
-            FrmPlanifierSoin frmAjout = new FrmPlanifierSoin(rowSelec, true);
+            FrmPlanifierSoin frmAjout = new FrmPlanifierSoin(rowSelec, bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin, true);
 
             DialogResult resultat = frmAjout.ShowDialog();
 

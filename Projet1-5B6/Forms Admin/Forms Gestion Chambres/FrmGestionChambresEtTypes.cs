@@ -116,7 +116,7 @@ namespace Projet1_5B6.Forms_Admin
             nouvelleChambre.NoChambre = TrouverNoChambre();
             nouvelleChambre.NoTypeChambre = (int)typeChambreSelectionnee["NoTypeChambre"];
 
-            FrmAjoutChambre frmAjout = new FrmAjoutChambre(nouvelleChambre);
+            FrmAjoutChambre frmAjout = new FrmAjoutChambre(nouvelleChambre, bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
 
             DialogResult resultat = frmAjout.ShowDialog();
 
@@ -202,7 +202,7 @@ namespace Projet1_5B6.Forms_Admin
             BD5B6TP1_ConstantinBrassardLaheyDataSet.ChambreRow rowSelec =
                 bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre.FindByNoChambre(noChambreSelec);
 
-            FrmAjoutChambre frmAjout = new FrmAjoutChambre(rowSelec, true);
+            FrmAjoutChambre frmAjout = new FrmAjoutChambre(rowSelec, bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre, true);
 
             DialogResult resultat = frmAjout.ShowDialog();
 
