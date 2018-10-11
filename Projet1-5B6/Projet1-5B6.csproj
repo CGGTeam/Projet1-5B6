@@ -117,6 +117,12 @@
     <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.Designer.cs">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistant.Designer.cs">
+      <DependentUpon>FrmGestionAssistant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Commun\Forms Gestion Clients\FrmAjoutInvite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,12 +152,6 @@
     </Compile>
     <Compile Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.Designer.cs">
       <DependentUpon>FrmAddAssistant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.Designer.cs">
-      <DependentUpon>FrmGestionAssistants.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Commun\Forms Gestion Clients\FrmAjoutClient.cs">
       <SubType>Form</SubType>
@@ -239,6 +239,9 @@
     <EmbeddedResource Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.resx">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistant.resx">
+      <DependentUpon>FrmGestionAssistant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmAjoutInvite.resx">
       <DependentUpon>FrmAjoutInvite.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmAddAssistant.resx">
       <DependentUpon>FrmAddAssistant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistants.resx">
-      <DependentUpon>FrmGestionAssistants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmAjoutClient.resx">
       <DependentUpon>FrmAjoutClient.cs</DependentUpon>

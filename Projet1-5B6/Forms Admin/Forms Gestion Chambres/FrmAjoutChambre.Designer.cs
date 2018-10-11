@@ -60,36 +60,40 @@
             // noChambreLabel
             // 
             noChambreLabel.AutoSize = true;
-            noChambreLabel.Location = new System.Drawing.Point(38, 88);
+            noChambreLabel.Location = new System.Drawing.Point(25, 57);
+            noChambreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             noChambreLabel.Name = "noChambreLabel";
-            noChambreLabel.Size = new System.Drawing.Size(102, 20);
+            noChambreLabel.Size = new System.Drawing.Size(69, 13);
             noChambreLabel.TabIndex = 1;
             noChambreLabel.Text = "No Chambre:";
             // 
             // emplacementLabel
             // 
             emplacementLabel.AutoSize = true;
-            emplacementLabel.Location = new System.Drawing.Point(38, 120);
+            emplacementLabel.Location = new System.Drawing.Point(25, 78);
+            emplacementLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             emplacementLabel.Name = "emplacementLabel";
-            emplacementLabel.Size = new System.Drawing.Size(111, 20);
+            emplacementLabel.Size = new System.Drawing.Size(74, 13);
             emplacementLabel.TabIndex = 3;
             emplacementLabel.Text = "Emplacement:";
             // 
             // decorationLabel
             // 
             decorationLabel.AutoSize = true;
-            decorationLabel.Location = new System.Drawing.Point(38, 152);
+            decorationLabel.Location = new System.Drawing.Point(25, 99);
+            decorationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             decorationLabel.Name = "decorationLabel";
-            decorationLabel.Size = new System.Drawing.Size(91, 20);
+            decorationLabel.Size = new System.Drawing.Size(62, 13);
             decorationLabel.TabIndex = 5;
             decorationLabel.Text = "Decoration:";
             // 
             // noTypeChambreLabel
             // 
             noTypeChambreLabel.AutoSize = true;
-            noTypeChambreLabel.Location = new System.Drawing.Point(38, 184);
+            noTypeChambreLabel.Location = new System.Drawing.Point(25, 120);
+            noTypeChambreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             noTypeChambreLabel.Name = "noTypeChambreLabel";
-            noTypeChambreLabel.Size = new System.Drawing.Size(140, 20);
+            noTypeChambreLabel.Size = new System.Drawing.Size(96, 13);
             noTypeChambreLabel.TabIndex = 7;
             noTypeChambreLabel.Text = "No Type Chambre:";
             // 
@@ -123,24 +127,27 @@
             // 
             // tbNoChambre
             // 
-            this.tbNoChambre.Location = new System.Drawing.Point(184, 85);
+            this.tbNoChambre.Location = new System.Drawing.Point(123, 55);
+            this.tbNoChambre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNoChambre.Name = "tbNoChambre";
             this.tbNoChambre.ReadOnly = true;
-            this.tbNoChambre.Size = new System.Drawing.Size(199, 26);
+            this.tbNoChambre.Size = new System.Drawing.Size(134, 20);
             this.tbNoChambre.TabIndex = 2;
             // 
             // tbEmplacement
             // 
-            this.tbEmplacement.Location = new System.Drawing.Point(184, 117);
+            this.tbEmplacement.Location = new System.Drawing.Point(123, 76);
+            this.tbEmplacement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmplacement.Name = "tbEmplacement";
-            this.tbEmplacement.Size = new System.Drawing.Size(199, 26);
+            this.tbEmplacement.Size = new System.Drawing.Size(134, 20);
             this.tbEmplacement.TabIndex = 4;
             // 
             // tbDecoration
             // 
-            this.tbDecoration.Location = new System.Drawing.Point(184, 149);
+            this.tbDecoration.Location = new System.Drawing.Point(123, 97);
+            this.tbDecoration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDecoration.Name = "tbDecoration";
-            this.tbDecoration.Size = new System.Drawing.Size(199, 26);
+            this.tbDecoration.Size = new System.Drawing.Size(134, 20);
             this.tbDecoration.TabIndex = 6;
             // 
             // lblEntete
@@ -155,9 +162,10 @@
             // 
             // btnConfirmer
             // 
-            this.btnConfirmer.Location = new System.Drawing.Point(103, 231);
+            this.btnConfirmer.Location = new System.Drawing.Point(69, 150);
+            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(198, 39);
+            this.btnConfirmer.Size = new System.Drawing.Size(132, 25);
             this.btnConfirmer.TabIndex = 10;
             this.btnConfirmer.Text = "Confirmer l\'ajout";
             this.btnConfirmer.UseVisualStyleBackColor = true;
@@ -169,9 +177,10 @@
             this.cboTypeChambre.DisplayMember = "Description";
             this.cboTypeChambre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTypeChambre.FormattingEnabled = true;
-            this.cboTypeChambre.Location = new System.Drawing.Point(184, 181);
+            this.cboTypeChambre.Location = new System.Drawing.Point(123, 118);
+            this.cboTypeChambre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboTypeChambre.Name = "cboTypeChambre";
-            this.cboTypeChambre.Size = new System.Drawing.Size(199, 28);
+            this.cboTypeChambre.Size = new System.Drawing.Size(134, 21);
             this.cboTypeChambre.TabIndex = 11;
             this.cboTypeChambre.ValueMember = "NoTypeChambre";
             // 
@@ -196,9 +205,9 @@
             // 
             // FrmAjoutChambre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 282);
+            this.ClientSize = new System.Drawing.Size(290, 183);
             this.Controls.Add(this.cboTypeChambre);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblEntete);
@@ -209,6 +218,7 @@
             this.Controls.Add(decorationLabel);
             this.Controls.Add(this.tbDecoration);
             this.Controls.Add(noTypeChambreLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAjoutChambre";
             this.Text = "Ajout d\'une chambre";
             this.Load += new System.EventHandler(this.FrmAjoutChambre_Load);

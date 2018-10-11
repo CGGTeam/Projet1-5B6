@@ -1,4 +1,5 @@
 ﻿using Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants;
+using Projet1_5B6.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,28 +10,77 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projet1_5B6.Models;
 
-namespace Projet1_5B6.Forms_Admin
+namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
 {
-    public partial class FrmGestionAssistants : BaseFormGestion
+    public partial class FrmGestionAssistant : BaseFormGestion
     {
-        public FrmGestionAssistants(MenuUtilisateur menu) : base(menu)
+        public FrmGestionAssistant(MenuUtilisateur menu) : base(menu)
         {
             InitializeComponent();
         }
 
-        private void FrmGestionAssistants_Load(object sender, EventArgs e)
+        private void FrmGestionAssistant_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants' table. You can move, or remove it, as needed.
+            this.noEtNomsAssistantsTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin' table. You can move, or remove it, as needed.
             this.noEtDescriptionSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin);
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin' table. You can move, or remove it, as needed.
-            this.soinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin);
+            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoinDescription' table. You can move, or remove it, as needed.
+            this.assistantSoinDescriptionTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoinDescription);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin' table. You can move, or remove it, as needed.
             this.assistantSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant' table. You can move, or remove it, as needed.
             this.assistantTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant);
 
+            assistantSoinDataGridView.RowHeadersVisible = false;
+        }
+
+
+        private void assistantSoinDescriptionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private int TrouverNoAssistant()
+        {
+            int plusGrandId = 0;
+
+            foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant.Rows)
+            {
+                int id = Convert.ToInt32(rangee["NoAssistant"]);
+                if (id > plusGrandId)
+                    plusGrandId = id;
+            }
+
+            return plusGrandId + 1;
+        }
+        private void btnSupprimerAssistant_Click(object sender, EventArgs e)
+        {
+            DataRowView selection = (DataRowView)assistantBindingSource.Current;
+            if (EstSupprimable(selection))
+            {
+                var confirmResult = MessageBox.Show("Êtes-vous sure de vouloir supprimer cet élément?",
+                                    "Confirmation",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Warning);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    selection.Delete();
+                    foreach (DataRowView row in assistantSoinBindingSource)
+                    {
+                        if ((int)row[0] == (int)((DataRowView)assistantBindingSource.Current)[0])
+                        {
+                            row.Delete();
+                        }
+                    }
+                }
+            }
+        }
+        private bool EstSupprimable(DataRowView selection)
+        {
+            int noAssistant = (int)selection[0];
+            int noSoin = -1;
+            return CheckSoinsPlanif(noAssistant, noSoin);
         }
 
         private void btnAjouterAssistant_Click(object sender, EventArgs e)
@@ -46,67 +96,6 @@ namespace Projet1_5B6.Forms_Admin
 
             bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant.AddAssistantRow(nouveauAssistant);
             assistantBindingSource.MoveLast();
-        }
-        private int TrouverNoAssistant()
-        {
-            int plusGrandId = 0;
-
-            foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant.Rows)
-            {
-                int id = Convert.ToInt32(rangee["NoAssistant"]);
-                if (id > plusGrandId)
-                    plusGrandId = id;
-            }
-
-            return plusGrandId + 1;
-        }
-
-
-        private void btnSupprimerAssistant_Click(object sender, EventArgs e)
-        {
-            if(ADOUtils.SupprimerSelection(assistantBindingSource, EstSupprimable))
-            {
-               foreach(DataRowView row in assistantSoinBindingSource)
-                {
-                    try
-                    {
-                        if ((int)row[0] == Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value))
-                            row.Delete();
-                    }
-                    catch (Exception exep) { };
-                }
-            }
-        }
-        private bool EstSupprimable(DataRowView selection)
-        {
-            int noAssistant = (int)selection[0];
-            int noSoin = -1;
-            return CheckSoinsPlanif(noAssistant, noSoin);
-        }
-
-        private void btnModifierAssistant_Click(object sender, EventArgs e)
-        {
-            Validate();
-            assistantBindingSource.EndEdit();
-            assistantSoinBindingSource.EndEdit();
-
-            assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-            assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-        }
-
-        private void btnAnnuler_Click(object sender, EventArgs e)
-        {
-            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
-            assistantBindingSource.ResetBindings(false);
-            assistantSoinBindingSource.ResetBindings(false);
-
-            assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-            assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-        }
-
-        private void btnSupprimerSoin_Click(object sender, EventArgs e)
-        {
-            ADOUtils.SupprimerSelection(assistantSoinBindingSource, EstSupprimableSoin);
         }
         private Boolean CheckSoinsPlanif(int noAssistant, int noSoin)
         {
@@ -151,14 +140,18 @@ namespace Projet1_5B6.Forms_Admin
             maConnexion.Close();
             return true;
         }
-        private bool EstSupprimableSoin(DataRowView selection)
-        {
-            var noSoin = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[1].Value);
-            var noAssistant = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value);
 
-            
-            return CheckSoinsPlanif( noAssistant,  noSoin);
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            int noAssistantSelectionne = (int)((DataRowView)assistantBindingSource.Current)["NoAssistant"];
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow rowModifier = bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant.FindByNoAssistant(noAssistantSelectionne);
+            FrmAddAssistant frmAjout = new FrmAddAssistant(rowModifier, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) return;
         }
+
         private void btnAjouterSoin_Click(object sender, EventArgs e)
         {
             var nouveauSoinsAssistant = bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.NewAssistantSoinRow();
@@ -174,13 +167,45 @@ namespace Projet1_5B6.Forms_Admin
                     return;
                 }
             }
-            catch (Exception exep) { };
+            catch (Exception) { };
+
             bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin.AddAssistantSoinRow(nouveauSoinsAssistant);
             assistantSoinBindingSource.MoveLast();
+            assistantBindingSource.EndEdit();
+            assistantSoinBindingSource.EndEdit();
         }
 
-        private void assistantSoinDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnSupprimerSoin_Click(object sender, EventArgs e)
         {
+            ADOUtils.SupprimerSelection(assistantSoinBindingSource, EstSupprimableSoin);
+        }
+        private bool EstSupprimableSoin(DataRowView selection)
+        {
+            try
+            {
+                var noSoin = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[1].Value);
+                var noAssistant = Convert.ToInt32(assistantSoinDataGridView.CurrentRow.Cells[0].Value);
+                return CheckSoinsPlanif(noAssistant, noSoin);
+            }
+            catch (Exception) { return false; }
+
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
+            assistantSoinBindingSource.ResetBindings(false);
+            assistantBindingSource.ResetBindings(false);
+        }
+
+        private void btnConfrimer_Click(object sender, EventArgs e)
+        {
+            Validate();
+            assistantSoinBindingSource.EndEdit();
+            assistantBindingSource.EndEdit();
+
+            assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
 
         }
     }

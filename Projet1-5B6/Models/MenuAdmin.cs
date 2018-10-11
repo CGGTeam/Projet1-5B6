@@ -8,6 +8,7 @@ using Projet1_5B6.Forms_Admin;
 using Projet1_5B6.Forms_Admin.Fomrs_Rapports;
 using Projet1_5B6.Forms_Admin.ReservationChambres;
 using Projet1_5B6.Forms_Commun;
+using Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants;
 using Projet1_5B6.Forms_Commun.Forms_Gestion_Soins;
 using Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur;
 
@@ -41,7 +42,7 @@ namespace Projet1_5B6.Models
         private void GestionAssistants(object sender, EventArgs e)
         {
             FindForm()?.Hide();
-            new FrmGestionAssistants(this).Show();
+            new FrmGestionAssistant(this).Show();
         }
 
         private void GestionClientInvites(object sender, EventArgs e)

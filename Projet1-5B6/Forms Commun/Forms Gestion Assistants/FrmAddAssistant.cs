@@ -14,13 +14,14 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
     public partial class FrmAddAssistant : Form
     {
         BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow user;
+        bool pourModifier = false;
         private readonly Control[] controlesAValider;
         
-        public FrmAddAssistant(BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow user)
+        public FrmAddAssistant(BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantRow user, bool pourModifier = false)
         {
             InitializeComponent();
             this.user = user;
-
+            this.pourModifier = pourModifier;
             controlesAValider = new Control[]
             {
                 tbNom,
@@ -30,7 +31,23 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
         }
         private void FrmAddAssistant_Load(object sender, EventArgs e)
         {
-            tbNoAssistant.Text = user.NoAssistant.ToString();
+            if (pourModifier)
+            {
+                this.Text = "Modifier un assistant";
+                lblTitre.Text = "Modifier un assistant";
+                btnConfirmer.Text = "Confirmer la modification";
+
+                tbNoAssistant.Text = user.NoAssistant.ToString();
+                tbPrenom.Text = (string)user.Prenom;
+                tbNom.Text = (string)user.Nom;
+                tbSpecialite.Text = (string)user.Specialites;
+                tbRemarques.Text = (string)user.Remarques;
+                btnConfirmer.Enabled = true;
+            }
+            else
+            {
+                tbNoAssistant.Text = user.NoAssistant.ToString();
+            }
         }
         private void ValiderFormulaire(object sender, KeyEventArgs e)
         {
@@ -45,6 +62,7 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
+
             user.Nom = tbNom.Text;
             user.Prenom = tbPrenom.Text;
             user.Specialites = tbSpecialite.Text;
@@ -52,6 +70,7 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
 
             DialogResult = DialogResult.OK;
             Close();
+
         }
     }
 }
