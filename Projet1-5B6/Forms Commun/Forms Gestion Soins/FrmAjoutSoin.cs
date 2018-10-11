@@ -10,6 +10,7 @@ namespace Projet1_5B6.Forms_Commun
         private BD5B6TP1_ConstantinBrassardLaheyDataSet.SoinRow soin;
         private readonly Control[] controlesAValider;
         private readonly bool modifMode;
+        private readonly string ancienneDescription;
 
         public FrmAjoutSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.SoinRow soin, bool modifMode = false)
         {
@@ -24,6 +25,11 @@ namespace Projet1_5B6.Forms_Commun
             };
 
             this.modifMode = modifMode;
+            if (modifMode)
+            {
+                ancienneDescription = soin.Description;
+                btnConfirmer.Text = "Confirmer les modifications";
+            }
         }
 
         private void FrmAjoutSoin_Load(object sender, EventArgs e)
@@ -32,7 +38,7 @@ namespace Projet1_5B6.Forms_Commun
             this.typeSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeSoin);
             tbNoSoin.Text = soin.NoSoin.ToString();
             tbDuree.Text = "60";
-            tbDescription.Validating += Validation.ValiderDescriptionSoin(errorProvider);
+            tbDescription.Validating += Validation.ValiderDescriptionSoin(errorProvider, ancienneDescription);
             tbPrix.Validating += Validation.ValiderPrix(errorProvider);
 
             if (modifMode)

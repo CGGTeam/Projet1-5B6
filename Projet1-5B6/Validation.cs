@@ -60,7 +60,7 @@ namespace Projet1_5B6
             };
         }
 
-        public static CancelEventHandler ValiderDescriptionSoin(ErrorProvider errorProvider)
+        public static CancelEventHandler ValiderDescriptionSoin(ErrorProvider errorProvider, string exceptionDesc)
         {
             return (sender, e) =>
             {
@@ -73,7 +73,7 @@ namespace Projet1_5B6
 
                 foreach (DataRow rangee in dataSet.Soin.Rows)
                 {
-                    if (controle.Text == (string) rangee["Description"])
+                    if (controle.Text == (string) rangee["Description"] && exceptionDesc != (string) rangee["Description"])
                     {
                         e.Cancel = true;
                         errorProvider.SetError(controle, "Il existe déjà un soin ayant cette description");

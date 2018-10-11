@@ -33,6 +33,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Clients
             {
                 tbPrenom.Text = nouvelInvite.Prenom;
                 tbNom.Text = nouvelInvite.Nom;
+                btnConfirmer.Text = "Confirmer les modifications";
             }
         }
 
