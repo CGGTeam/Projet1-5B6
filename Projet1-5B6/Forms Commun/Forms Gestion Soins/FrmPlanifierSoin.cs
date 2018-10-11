@@ -18,14 +18,17 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         private readonly AssistantSoinTableAdapter assistantSoinTableAdapter;
         private readonly PlanifSoinTableAdapter planifSoinTableAdapter;
         private readonly AssistantTableAdapter assistantTableAdapter;
+        private readonly bool modifMode;
 
-        public FrmPlanifierSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin)
+        public FrmPlanifierSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin, bool modifMode = false)
         {
             InitializeComponent();
             this.planifSoin = planifSoin;
 
             this.planifSoinTableAdapter = new PlanifSoinTableAdapter();
             this.assistantSoinTableAdapter = new AssistantSoinTableAdapter();
+
+            this.modifMode = modifMode;
         }
 
         private void FrmPlanifierSoin_Load(object sender, EventArgs e)
@@ -43,6 +46,17 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             dtpDateHeure.Validating += Validation.ValiderDateHeureReservation(errorProvider);
             dtpDateHeure.Validating += ValiderDisponibilites;
             dtpDateHeure.Value = DateTime.Now;
+
+            if (modifMode)
+            {
+                cboAssistant.SelectedValue = planifSoin.NoAssistant;
+                cboPatient.SelectedValue = planifSoin.NoPersonne;
+                cboSoin.SelectedValue = planifSoin.NoSoin;
+                dtpDateHeure.Value = planifSoin.DateHeure;
+
+                Text = "Modification d'un rendez-vous";
+                lblEntete.Text = "Modifer planification soin";
+            }
         }
 
         private void ValiderDisponibilites(object sender, CancelEventArgs e)
