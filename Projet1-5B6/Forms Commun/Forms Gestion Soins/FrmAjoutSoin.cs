@@ -28,6 +28,7 @@ namespace Projet1_5B6.Forms_Commun
             if (modifMode)
             {
                 ancienneDescription = soin.Description;
+                btnConfirmer.Text = "Confirmer les modifications";
             }
         }
 

@@ -63,6 +63,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
 
                 Text = "Modification d'un rendez-vous";
                 lblEntete.Text = "Modifer planification soin";
+                btnConfirmer.Text = "Confirmer les modifications";
             }
         }
 

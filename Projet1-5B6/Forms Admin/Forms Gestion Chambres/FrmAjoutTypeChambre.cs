@@ -30,6 +30,7 @@ namespace Projet1_5B6.Forms_Admin
 
                 Text = "Modification d'un type de chambre";
                 lblEntete.Text = "Modifer type chambre";
+                btnConfirmer.Text = "Confirmer les modifications";
             }
         }
 

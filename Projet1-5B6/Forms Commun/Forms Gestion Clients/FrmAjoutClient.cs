@@ -81,6 +81,7 @@ namespace Projet1_5B6.Forms_Commun
 
                 lblEntete.Text = "Modifier client";
                 Text = "Modification d'un client";
+                btnAjout.Text = "Confirmer les modifications";
             }
         }
 
