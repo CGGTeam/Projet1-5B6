@@ -65,6 +65,7 @@ namespace Projet1_5B6.Forms_Commun
         {
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
+            tbNoClient.Text = client.NoClient.ToString();
         }
 
         private void ValiderFormulaireRempli(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace Projet1_5B6.Forms_Commun
         private bool ControleNonVide(Control ctrl)
         {
             return true;
-            //return ctrl.Text.Trim() != "";
+            return ctrl.Text.Trim() != "";
         }
     }
 }

@@ -47,6 +47,8 @@
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ClientTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
+            this.tbNoClient = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(94, 86);
+            this.lblNom.Location = new System.Drawing.Point(13, 115);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(46, 20);
             this.lblNom.TabIndex = 0;
@@ -62,7 +64,7 @@
             // 
             // tbNom
             // 
-            this.tbNom.Location = new System.Drawing.Point(240, 83);
+            this.tbNom.Location = new System.Drawing.Point(159, 112);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(197, 26);
             this.tbNom.TabIndex = 1;
@@ -71,7 +73,7 @@
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(94, 118);
+            this.lblPrenom.Location = new System.Drawing.Point(13, 147);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(64, 20);
             this.lblPrenom.TabIndex = 2;
@@ -80,7 +82,7 @@
             // lblVille
             // 
             this.lblVille.AutoSize = true;
-            this.lblVille.Location = new System.Drawing.Point(94, 150);
+            this.lblVille.Location = new System.Drawing.Point(13, 179);
             this.lblVille.Name = "lblVille";
             this.lblVille.Size = new System.Drawing.Size(38, 20);
             this.lblVille.TabIndex = 3;
@@ -89,7 +91,7 @@
             // lblAdresse
             // 
             this.lblAdresse.AutoSize = true;
-            this.lblAdresse.Location = new System.Drawing.Point(94, 217);
+            this.lblAdresse.Location = new System.Drawing.Point(13, 246);
             this.lblAdresse.Name = "lblAdresse";
             this.lblAdresse.Size = new System.Drawing.Size(72, 20);
             this.lblAdresse.TabIndex = 4;
@@ -98,7 +100,7 @@
             // lblCodePostal
             // 
             this.lblCodePostal.AutoSize = true;
-            this.lblCodePostal.Location = new System.Drawing.Point(94, 249);
+            this.lblCodePostal.Location = new System.Drawing.Point(13, 278);
             this.lblCodePostal.Name = "lblCodePostal";
             this.lblCodePostal.Size = new System.Drawing.Size(99, 20);
             this.lblCodePostal.TabIndex = 5;
@@ -107,7 +109,7 @@
             // lblPays
             // 
             this.lblPays.AutoSize = true;
-            this.lblPays.Location = new System.Drawing.Point(94, 182);
+            this.lblPays.Location = new System.Drawing.Point(13, 211);
             this.lblPays.Name = "lblPays";
             this.lblPays.Size = new System.Drawing.Size(51, 20);
             this.lblPays.TabIndex = 6;
@@ -115,7 +117,7 @@
             // 
             // tbPrenom
             // 
-            this.tbPrenom.Location = new System.Drawing.Point(240, 115);
+            this.tbPrenom.Location = new System.Drawing.Point(159, 144);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(197, 26);
             this.tbPrenom.TabIndex = 7;
@@ -123,7 +125,7 @@
             // 
             // tbVille
             // 
-            this.tbVille.Location = new System.Drawing.Point(240, 147);
+            this.tbVille.Location = new System.Drawing.Point(159, 176);
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(197, 26);
             this.tbVille.TabIndex = 8;
@@ -131,7 +133,7 @@
             // 
             // tbPays
             // 
-            this.tbPays.Location = new System.Drawing.Point(240, 179);
+            this.tbPays.Location = new System.Drawing.Point(159, 208);
             this.tbPays.Name = "tbPays";
             this.tbPays.Size = new System.Drawing.Size(197, 26);
             this.tbPays.TabIndex = 9;
@@ -139,7 +141,7 @@
             // 
             // tbAdresse
             // 
-            this.tbAdresse.Location = new System.Drawing.Point(240, 211);
+            this.tbAdresse.Location = new System.Drawing.Point(159, 240);
             this.tbAdresse.Name = "tbAdresse";
             this.tbAdresse.Size = new System.Drawing.Size(197, 26);
             this.tbAdresse.TabIndex = 10;
@@ -147,7 +149,7 @@
             // 
             // tbCodePostal
             // 
-            this.tbCodePostal.Location = new System.Drawing.Point(240, 243);
+            this.tbCodePostal.Location = new System.Drawing.Point(159, 272);
             this.tbCodePostal.Name = "tbCodePostal";
             this.tbCodePostal.Size = new System.Drawing.Size(197, 26);
             this.tbCodePostal.TabIndex = 11;
@@ -156,7 +158,7 @@
             // lblTitreAjout
             // 
             this.lblTitreAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreAjout.Location = new System.Drawing.Point(93, 9);
+            this.lblTitreAjout.Location = new System.Drawing.Point(12, 9);
             this.lblTitreAjout.Name = "lblTitreAjout";
             this.lblTitreAjout.Size = new System.Drawing.Size(339, 71);
             this.lblTitreAjout.TabIndex = 12;
@@ -167,7 +169,7 @@
             // 
             this.btnAjout.Enabled = false;
             this.btnAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAjout.Location = new System.Drawing.Point(176, 302);
+            this.btnAjout.Location = new System.Drawing.Point(95, 331);
             this.btnAjout.Name = "btnAjout";
             this.btnAjout.Size = new System.Drawing.Size(175, 33);
             this.btnAjout.TabIndex = 13;
@@ -197,6 +199,8 @@
             this.tableAdapterManager.ChambreTableAdapter = null;
             this.tableAdapterManager.ClientTableAdapter = this.clientTableAdapter;
             this.tableAdapterManager.InviteTableAdapter = null;
+            this.tableAdapterManager.NoEtDescriptionSoinTableAdapter = null;
+            this.tableAdapterManager.NoEtNomsAssistantsTableAdapter = null;
             this.tableAdapterManager.PlanifSoinTableAdapter = null;
             this.tableAdapterManager.ReservationChambreTableAdapter = null;
             this.tableAdapterManager.SoinTableAdapter = null;
@@ -206,11 +210,30 @@
             this.tableAdapterManager.UpdateOrder = Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
+            // tbNoClient
+            // 
+            this.tbNoClient.Location = new System.Drawing.Point(159, 83);
+            this.tbNoClient.Name = "tbNoClient";
+            this.tbNoClient.ReadOnly = true;
+            this.tbNoClient.Size = new System.Drawing.Size(197, 26);
+            this.tbNoClient.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "No Client:";
+            // 
             // FrmAjoutClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 386);
+            this.ClientSize = new System.Drawing.Size(370, 410);
+            this.Controls.Add(this.tbNoClient);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAjout);
             this.Controls.Add(this.lblTitreAjout);
             this.Controls.Add(this.tbCodePostal);
@@ -255,5 +278,7 @@
         private System.Windows.Forms.BindingSource clientBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.ClientTableAdapter clientTableAdapter;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox tbNoClient;
+        private System.Windows.Forms.Label label1;
     }
 }

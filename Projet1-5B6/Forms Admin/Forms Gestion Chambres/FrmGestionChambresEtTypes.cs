@@ -110,5 +110,15 @@ namespace Projet1_5B6.Forms_Admin
             chambreBindingSource.ResetBindings(false);
             typeChambreBindingSource.ResetBindings(false);
         }
+
+        private void btnSupprimerChambre_Click(object sender, EventArgs e)
+        {
+            ADOUtils.SupprimerSelection(chambreBindingSource, ChambreEstSupprimable);
+        }
+
+        private bool ChambreEstSupprimable(DataRowView obj)
+        {
+            return true;
+        }
     }
 }

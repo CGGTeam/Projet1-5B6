@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters;
+using Projet1_5B6.Forms_Commun.Forms_Gestion_Clients;
 using Projet1_5B6.Models;
 
 namespace Projet1_5B6.Forms_Commun
@@ -24,11 +25,34 @@ namespace Projet1_5B6.Forms_Commun
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
 
+            if (clientBindingSource.Current != null)
+            {
+                btnSupprimerCli.Enabled = ClientEstSupprimable((DataRowView)clientBindingSource.Current);
+            }
+            else
+            {
+                btnSupprimerCli.Enabled = false;
+            }
+
+            if (inviteBindingSource.Current != null)
+            {
+                btnSupprimerInvite.Enabled = InviteEstSupprimable((DataRowView)inviteBindingSource.Current);
+            }
+            else
+            {
+                btnSupprimerInvite.Enabled = false;
+            }
+
+            clientBindingSource.CurrentChanged += OnChangeCurrentClient;
+            inviteBindingSource.CurrentChanged += OnChangeCurrentInvite;
         }
 
         private void btnAjoutCli_Click(object sender, EventArgs e)
         {
             var nouveauClient = bD5B6TP1_ConstantinBrassardLaheyDataSet.Client.NewClientRow();
+
+            nouveauClient.NoClient = DeterminerNoNouveauClient();
+
             FrmAjoutClient frmAjout = new FrmAjoutClient(nouveauClient);
 
             DialogResult resultat = frmAjout.ShowDialog();
@@ -39,6 +63,21 @@ namespace Projet1_5B6.Forms_Commun
             clientBindingSource.MoveLast();
         }
 
+        private int DeterminerNoNouveauClient()
+        {
+            int plusGrandId = 0;
+
+            foreach (BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Client)
+            {
+                if (rangee.NoClient > plusGrandId)
+                {
+                    plusGrandId = rangee.NoClient;
+                }
+            }
+
+            return plusGrandId + 10;
+        }
+
         private void btnSauvegarder_Click(object sender, EventArgs e)
         {
             Validate();
@@ -46,16 +85,25 @@ namespace Projet1_5B6.Forms_Commun
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
         }
 
-        private void btnClientSuivant_Click(object sender, EventArgs e)
+        private void OnChangeCurrentClient(object sender, EventArgs e)
         {
-            clientBindingSource.MoveNext();
-            ClientEstSupprimable((DataRowView)clientBindingSource.Current);
+            if (clientBindingSource.Current == null)
+            {
+                btnSupprimerInvite.Enabled = false;
+                return;
+            }
+            btnSupprimerCli.Enabled = ClientEstSupprimable((DataRowView)clientBindingSource.Current);
         }
 
-        private void btnClientPrecedent_Click(object sender, EventArgs e)
+        private void OnChangeCurrentInvite(object sender, EventArgs e)
         {
-            clientBindingSource.MovePrevious();
-            ClientEstSupprimable((DataRowView)clientBindingSource.Current);
+            if (inviteBindingSource.Count == 0) return;
+            if (inviteBindingSource.Current == null)
+            {
+                btnSupprimerInvite.Enabled = false;
+                return;
+            }
+            btnSupprimerInvite.Enabled = InviteEstSupprimable((DataRowView)inviteBindingSource.Current);
         }
 
         private void btnSupprimerCli_Click(object sender, EventArgs e)
@@ -71,7 +119,8 @@ namespace Projet1_5B6.Forms_Commun
 
             int noClientSelectionne = (int)selection["NoClient"];
 
-            if (inviteDataGridView.Rows.Count > 0)
+
+            if (bD5B6TP1_ConstantinBrassardLaheyDataSet.Invite.Any(invite => invite.NoClient == noClientSelectionne))
             {
                 texteTooltip += "\n\t- Il a des invités associés";
                 peutEtreSupprime = false;
@@ -99,10 +148,9 @@ namespace Projet1_5B6.Forms_Commun
                 peutEtreSupprime = false;
             }
 
-            if (peutEtreSupprime)
+            if (!peutEtreSupprime)
             {
                 ttpSupprimer.Show(texteTooltip, btnSupprimerCli, 3000);
-                btnSupprimerCli.Enabled = false;
             }
 
             return peutEtreSupprime;
@@ -111,8 +159,8 @@ namespace Projet1_5B6.Forms_Commun
         private bool InviteEstSupprimable(DataRowView selection)
         {
             bool peutEtreSupprime = true;
-            string texteTooltip = "Le client sélectionné ne peut pas être supprimé car:";
-            //ttpSupprimer.SetToolTip(, "");
+            string texteTooltip = "L'invité sélectionné ne peut pas être supprimé car:";
+            ttpSupprimer.SetToolTip(btnSupprimerInvite, "");
 
             int noClientSelectionne = (int)selection["NoClient"];
 
@@ -127,22 +175,12 @@ namespace Projet1_5B6.Forms_Commun
                 peutEtreSupprime = false;
             }
 
-            //if (peutEtreSupprime)
-            //{
-            //    ttpSupprimer.Show(texteTooltip, btnSupprimerCli, 3000);
-            //    btnSupprimerCli.Enabled = false;
-            //}
+            if (!peutEtreSupprime)
+            {
+                ttpSupprimer.Show(texteTooltip, btnSupprimerInvite, 3000);
+            }
 
             return peutEtreSupprime;
-        }
-
-        private void inviteDataGridView_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            int noInvite = DeterminerNoNouvelInvite();
-
-            ((DataRowView) inviteBindingSource.Current)["NoInvite"] = noInvite;
-
-            VerifierNbInvites();
         }
 
         private int DeterminerNoNouvelInvite()
@@ -189,39 +227,38 @@ namespace Projet1_5B6.Forms_Commun
         private void VerifierNbInvites()
         {
             bool nbInvitesEnDessousDeLimite = inviteBindingSource.List.Count < 9;
-            inviteBindingSource.AllowNew = nbInvitesEnDessousDeLimite;
-        }
-
-        private void inviteDataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            VerifierNbInvites();
-        }
-
-        private void inviteDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            var cellule = inviteDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-            if (cellule.Value.ToString().Trim() == "")
-            {
-                e.Cancel = true;
-                cellule.ErrorText = "Cette cellule doit être remplie";
-            }
-        }
-
-        private void inviteDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            e.Cancel = InviteAUnSoinPlanifie();
-        }
-
-        private bool InviteAUnSoinPlanifie()
-        {
-            return false;
+            btnAjouterInvite.Enabled = nbInvitesEnDessousDeLimite;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             clientBindingSource.ResetBindings(false);
+        }
+
+        private void btnSupprimerInvite_Click(object sender, EventArgs e)
+        {
+            ADOUtils.SupprimerSelection(inviteBindingSource, InviteEstSupprimable);
+            VerifierNbInvites();
+            ClientEstSupprimable((DataRowView)clientBindingSource.Current);
+        }
+
+        private void btnAjouterInvite_Click(object sender, EventArgs e)
+        {
+            var nouvelInvite = bD5B6TP1_ConstantinBrassardLaheyDataSet.Invite.NewInviteRow();
+
+            nouvelInvite.NoInvite = DeterminerNoNouvelInvite();
+            nouvelInvite.NoClient = (int)((DataRowView)clientBindingSource.Current)["NoClient"];
+
+            FrmAjoutInvite frmAjout = new FrmAjoutInvite(nouvelInvite);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) return;
+
+            bD5B6TP1_ConstantinBrassardLaheyDataSet.Invite.AddInviteRow(nouvelInvite);
+            inviteBindingSource.MoveLast();
+            VerifierNbInvites();
         }
     }
 }
