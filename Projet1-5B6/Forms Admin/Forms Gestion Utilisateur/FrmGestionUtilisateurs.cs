@@ -87,7 +87,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             var nouveauUtilisateur = bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.NewUtilisateurRow();
-            FrmAjoutUtilisateur frmAjout = new FrmAjoutUtilisateur(nouveauUtilisateur, utilisateurBindingSource);
+            FrmAjoutUtilisateur frmAjout = new FrmAjoutUtilisateur(nouveauUtilisateur);
 
             nouveauUtilisateur.NoUtilisateur = TrouverNoUtilisateur();
 
@@ -103,6 +103,17 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             utilisateurBindingSource.ResetBindings(false);
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            int noUtilisateurtSelectionne = (int)((DataRowView)utilisateurBindingSource.Current)["NoUtilisateur"];
+            BD5B6TP1_ConstantinBrassardLaheyDataSet.UtilisateurRow rowModifier = bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur.FindByNoUtilisateur(noUtilisateurtSelectionne);
+            FrmAjoutUtilisateur frmAjout = new FrmAjoutUtilisateur(rowModifier, true);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) return;
         }
     }
 }

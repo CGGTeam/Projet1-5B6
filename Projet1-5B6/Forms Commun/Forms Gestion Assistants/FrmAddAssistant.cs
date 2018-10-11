@@ -33,8 +33,8 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
         {
             if (pourModifier)
             {
-                this.Text = "Modifier un assistant";
-                lblTitre.Text = "Modifier un assistant";
+                this.Text = "Modification d'un assistant";
+                lblTitre.Text = "Modification d'un assistant";
                 btnConfirmer.Text = "Confirmer la modification";
 
                 tbNoAssistant.Text = user.NoAssistant.ToString();
@@ -42,6 +42,7 @@ namespace Projet1_5B6.Forms_Admin.Forms_Gestion_Assistants
                 tbNom.Text = (string)user.Nom;
                 tbSpecialite.Text = (string)user.Specialites;
                 tbRemarques.Text = (string)user.Remarques;
+
                 btnConfirmer.Enabled = true;
             }
             else
