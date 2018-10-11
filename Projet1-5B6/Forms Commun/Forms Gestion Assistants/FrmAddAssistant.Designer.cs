@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblErrorProvider = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbNoAssistant = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -132,15 +132,15 @@
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
             // 
-            // label5
+            // lblTitre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 25);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Ajout d\'un assistant";
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(15, 9);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(219, 25);
+            this.lblTitre.TabIndex = 15;
+            this.lblTitre.Text = "Ajout d\'un assistant";
             // 
             // label6
             // 
@@ -166,7 +166,7 @@
             this.ClientSize = new System.Drawing.Size(247, 235);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbNoAssistant);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblErrorProvider);
             this.Controls.Add(this.label4);
@@ -197,7 +197,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblErrorProvider;
         private System.Windows.Forms.Button btnConfirmer;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbNoAssistant;
     }

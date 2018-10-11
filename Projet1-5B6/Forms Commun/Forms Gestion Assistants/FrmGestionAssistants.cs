@@ -47,6 +47,18 @@ namespace Projet1_5B6.Forms_Admin
             bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant.AddAssistantRow(nouveauAssistant);
             assistantBindingSource.MoveLast();
         }
+        private void btnModifier_Click(object sender, EventArgs e)
+        {           
+            FrmAddAssistant frmAjout = new FrmAddAssistant(assistantBindingSource);
+
+            DialogResult resultat = frmAjout.ShowDialog();
+
+            if (resultat == DialogResult.Cancel) return;
+
+            this.assistantTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant);
+            assistantDataGridView.Update();
+
+        }
         private int TrouverNoAssistant()
         {
             int plusGrandId = 0;
@@ -179,7 +191,7 @@ namespace Projet1_5B6.Forms_Admin
             assistantSoinBindingSource.MoveLast();
         }
 
-        private void assistantSoinDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAnnuler_Click_1(object sender, EventArgs e)
         {
 
         }

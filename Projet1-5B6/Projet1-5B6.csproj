@@ -117,6 +117,12 @@
     <Compile Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.Designer.cs">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistant.Designer.cs">
+      <DependentUpon>FrmGestionAssistant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Commun\Forms Gestion Clients\FrmAjoutInvite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Admin\Forms Gestion Utilisateur\FrmGestionUtilisateurs.resx">
       <DependentUpon>FrmGestionUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Commun\Forms Gestion Assistants\FrmGestionAssistant.resx">
+      <DependentUpon>FrmGestionAssistant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Commun\Forms Gestion Clients\FrmAjoutInvite.resx">
       <DependentUpon>FrmAjoutInvite.cs</DependentUpon>
