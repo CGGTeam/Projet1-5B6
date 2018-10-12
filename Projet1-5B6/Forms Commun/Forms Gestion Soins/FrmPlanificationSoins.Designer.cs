@@ -38,13 +38,9 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
             this.noEtNomsAssistantsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
             this.dgPlanifSoin = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtNomsAssistantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colDateHeure = new Projet1_5B6.WinForms_ext.CalendarColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtDescriptionSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noEtNomsClientsInvitesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +49,10 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.btnSauvegarder = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colDateHeure = new Projet1_5B6.WinForms_ext.CalendarColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planifSoinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanifSoin)).BeginInit();
@@ -124,34 +124,10 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dgPlanifSoin.Size = new System.Drawing.Size(950, 304);
             this.dgPlanifSoin.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoPersonne";
-            this.dataGridViewTextBoxColumn1.DataSource = this.noEtNomsClientsInvitesBindingSource;
-            this.dataGridViewTextBoxColumn1.DisplayMember = "NoEtNom";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Client/Invité";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn1.ValueMember = "NoClient";
-            // 
             // noEtNomsClientsInvitesBindingSource
             // 
             this.noEtNomsClientsInvitesBindingSource.DataMember = "NoEtNomsClientsInvites";
             this.noEtNomsClientsInvitesBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NoAssistant";
-            this.dataGridViewTextBoxColumn2.DataSource = this.noEtNomsAssistantsBindingSource;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "NoEtNom";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Assistant";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "NoAssistant";
             // 
             // noEtNomsAssistantsBindingSource
             // 
@@ -162,25 +138,6 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             // 
             this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource.Position = 0;
-            // 
-            // colDateHeure
-            // 
-            this.colDateHeure.DataPropertyName = "DateHeure";
-            this.colDateHeure.HeaderText = "Date et heure";
-            this.colDateHeure.Name = "colDateHeure";
-            this.colDateHeure.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NoSoin";
-            this.dataGridViewTextBoxColumn4.DataSource = this.noEtDescriptionSoinBindingSource;
-            this.dataGridViewTextBoxColumn4.DisplayMember = "NoEtDescription";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Soin prodigué";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn4.ValueMember = "NoSoin";
             // 
             // noEtDescriptionSoinBindingSource
             // 
@@ -252,6 +209,52 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoPersonne";
+            this.dataGridViewTextBoxColumn1.DataSource = this.noEtNomsClientsInvitesBindingSource;
+            this.dataGridViewTextBoxColumn1.DisplayMember = "NoEtNom";
+            this.dataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Client/Invité";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn1.ValueMember = "NoClient";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NoAssistant";
+            this.dataGridViewTextBoxColumn2.DataSource = this.noEtNomsAssistantsBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "NoEtNom";
+            this.dataGridViewTextBoxColumn2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Assistant";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "NoAssistant";
+            // 
+            // colDateHeure
+            // 
+            this.colDateHeure.DataPropertyName = "DateHeure";
+            this.colDateHeure.HeaderText = "Date et heure";
+            this.colDateHeure.Name = "colDateHeure";
+            this.colDateHeure.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NoSoin";
+            this.dataGridViewTextBoxColumn4.DataSource = this.noEtDescriptionSoinBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "NoEtDescription";
+            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Soin prodigué";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "NoSoin";
+            // 
             // FrmPlanificationSoins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -305,10 +308,10 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnSauvegarder;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private CalendarColumn colDateHeure;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button btnModifier;
     }
 }
