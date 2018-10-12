@@ -7,12 +7,16 @@ namespace Projet1_5B6.Forms_Commun
 {
     public partial class FrmAjoutClient : Form
     {
-        private readonly Control[] controlesAValider;
+        private Control[] controlesAValider;
         private readonly BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client;
-        private readonly bool modifMode;
+        private readonly  bool modifMode;
 
         public FrmAjoutClient(BD5B6TP1_ConstantinBrassardLaheyDataSet.ClientRow client, bool modifMode = false)
         {
+            
+            InitializeComponent();
+            this.client = client;
+
             controlesAValider = new Control[]
             {
                 tbPrenom,
@@ -22,8 +26,6 @@ namespace Projet1_5B6.Forms_Commun
                 tbPays,
                 tbVille,
             };
-            InitializeComponent();
-            this.client = client;
 
             this.modifMode = modifMode;
         }
@@ -35,7 +37,6 @@ namespace Projet1_5B6.Forms_Commun
             client.Adresse = tbAdresse.Text;
             client.CodePostal = tbCodePostal.Text;
             client.DateInscription = DateTime.Today;
-            client.NoClient = TrouverNoClient();
             client.Nom = tbNom.Text;
             client.Pays = tbPays.Text;
             client.Prenom = tbPrenom.Text;
@@ -43,20 +44,6 @@ namespace Projet1_5B6.Forms_Commun
 
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private int TrouverNoClient()
-        {
-            int plusGrandId = 0;
-
-            foreach (DataRow rangee in bD5B6TP1_ConstantinBrassardLaheyDataSet.Client.Rows)
-            {
-                int id = Convert.ToInt32(rangee["NoClient"]);
-                if (id > plusGrandId)
-                    plusGrandId = id;
-            }
-
-            return plusGrandId + 10;
         }
 
         private bool Valider()
@@ -92,7 +79,6 @@ namespace Projet1_5B6.Forms_Commun
 
         private bool ControleNonVide(Control ctrl)
         {
-            return true;
             return ctrl.Text.Trim() != "";
         }
     }
