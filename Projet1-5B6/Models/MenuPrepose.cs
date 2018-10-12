@@ -32,22 +32,20 @@ namespace Projet1_5B6.Models
         {
             if (!BaseFormGestion.estSavegarder)
             {
-                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?", "Fermeture", MessageBoxButtons.YesNo,
+                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?", "Fermeture déconnexion", MessageBoxButtons.YesNo,
                      MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
                 if (result == DialogResult.Yes)
                 {
+                    BaseFormGestion.estDeconnexion = true;
                     FindForm()?.Hide();
-                    new FrmConnexion().ShowDialog();
                     Deconnexion?.Invoke(this, null);
-                    FindForm()?.Close();
                 }
             }
             else
             {
+                BaseFormGestion.estDeconnexion = true;
                 FindForm()?.Hide();
-                new FrmConnexion().ShowDialog();
                 Deconnexion?.Invoke(this, null);
-                FindForm()?.Close();
             }
         }
 
