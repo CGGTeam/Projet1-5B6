@@ -14,6 +14,8 @@ namespace Projet1_5B6
     {
         public static bool estSavegarder = true;
         public static bool estDeconnexion = false;
+        public static bool aAccepte = false;
+
         public BaseFormGestion()
         {
             InitializeComponent();
@@ -29,12 +31,15 @@ namespace Projet1_5B6
 
         private void confirmationClosing(object sender, FormClosingEventArgs e)
         {
+            if (aAccepte) return;
+
             if (estSavegarder==false && estDeconnexion == false)
             {
                 DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?","lol", MessageBoxButtons.YesNo,
                      MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
                 if (result == DialogResult.Yes)
                 {
+                    aAccepte = true;
                 }
                 else
                 {
