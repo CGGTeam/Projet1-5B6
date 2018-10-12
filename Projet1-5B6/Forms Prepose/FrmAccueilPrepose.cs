@@ -17,5 +17,14 @@ namespace Projet1_5B6.Forms_Prepose
         {
             InitializeComponent();
         }
+
+        private void FrmAccueilPrepose_Load(object sender, EventArgs e)
+        {
+            String strAcceuil = "";
+            strAcceuil = "Bonjour " + GestionForms.utilisateurConnecte.NomUtilisateur + "!";
+            strAcceuil += "\n\nVous pouvez sélectionner un \nitem dans le menu supérieur! ";
+            strAcceuil += "\n\nBonne journée!";
+            lblAcceuil.Text = strAcceuil;
+        }
     }
 }
