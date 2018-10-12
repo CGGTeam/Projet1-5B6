@@ -103,6 +103,7 @@
             this.dgSoins.DataSource = this.soinBindingSource;
             this.dgSoins.Location = new System.Drawing.Point(12, 96);
             this.dgSoins.Name = "dgSoins";
+            this.dgSoins.ReadOnly = true;
             this.dgSoins.RowTemplate.Height = 28;
             this.dgSoins.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSoins.Size = new System.Drawing.Size(680, 233);
@@ -121,6 +122,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
             this.dataGridViewTextBoxColumn2.HeaderText = "Description";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -136,6 +138,7 @@
             this.dataGridViewTextBoxColumn4.DisplayMember = "Description";
             this.dataGridViewTextBoxColumn4.HeaderText = "Type Soin";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.ValueMember = "NoTypeSoin";
@@ -150,6 +153,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Prix";
             this.dataGridViewTextBoxColumn5.HeaderText = "Prix";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // label1
             // 

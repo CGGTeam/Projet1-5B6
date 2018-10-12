@@ -113,6 +113,7 @@
             this.typeChambreDataGridView.DataSource = this.typeChambreBindingSource;
             this.typeChambreDataGridView.Location = new System.Drawing.Point(12, 111);
             this.typeChambreDataGridView.Name = "typeChambreDataGridView";
+            this.typeChambreDataGridView.ReadOnly = true;
             this.typeChambreDataGridView.RowTemplate.Height = 28;
             this.typeChambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.typeChambreDataGridView.Size = new System.Drawing.Size(684, 236);
@@ -133,24 +134,28 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
             this.dataGridViewTextBoxColumn2.HeaderText = "Description";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PrixHaut";
             this.dataGridViewTextBoxColumn3.HeaderText = "Prix Haute Saison";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "PrixBas";
             this.dataGridViewTextBoxColumn4.HeaderText = "Prix Basse Saison";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "PrixMoyen";
             this.dataGridViewTextBoxColumn5.HeaderText = "Prix Moyen";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // chambreBindingSource
             // 
@@ -176,6 +181,7 @@
             this.chambreDataGridView.DataSource = this.chambreBindingSource;
             this.chambreDataGridView.Location = new System.Drawing.Point(717, 111);
             this.chambreDataGridView.Name = "chambreDataGridView";
+            this.chambreDataGridView.ReadOnly = true;
             this.chambreDataGridView.RowTemplate.Height = 28;
             this.chambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chambreDataGridView.Size = new System.Drawing.Size(533, 236);

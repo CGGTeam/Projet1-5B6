@@ -118,6 +118,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dgPlanifSoin.DataSource = this.planifSoinBindingSource;
             this.dgPlanifSoin.Location = new System.Drawing.Point(12, 152);
             this.dgPlanifSoin.Name = "dgPlanifSoin";
+            this.dgPlanifSoin.ReadOnly = true;
             this.dgPlanifSoin.RowTemplate.Height = 28;
             this.dgPlanifSoin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPlanifSoin.Size = new System.Drawing.Size(950, 304);
@@ -130,6 +131,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dataGridViewTextBoxColumn1.DisplayMember = "NoEtNom";
             this.dataGridViewTextBoxColumn1.HeaderText = "Client/Invité";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn1.ValueMember = "NoClient";
@@ -146,6 +148,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dataGridViewTextBoxColumn2.DisplayMember = "NoEtNom";
             this.dataGridViewTextBoxColumn2.HeaderText = "Assistant";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "NoAssistant";
@@ -165,6 +168,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.colDateHeure.DataPropertyName = "DateHeure";
             this.colDateHeure.HeaderText = "Date et heure";
             this.colDateHeure.Name = "colDateHeure";
+            this.colDateHeure.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -173,6 +177,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dataGridViewTextBoxColumn4.DisplayMember = "NoEtDescription";
             this.dataGridViewTextBoxColumn4.HeaderText = "Soin prodigué";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.ValueMember = "NoSoin";
