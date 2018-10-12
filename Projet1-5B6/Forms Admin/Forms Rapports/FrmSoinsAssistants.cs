@@ -27,6 +27,8 @@ namespace Projet1_5B6.Forms_Admin.Fomrs_Rapports
             this.noEtNomsAssistantsTableAdapter1.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsAssistants);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportSoinsAssistant' table. You can move, or remove it, as needed.
             this.rapportSoinsAssistantTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportSoinsAssistant, dateTimePicker.Value.ToString());
+
+            rapportSoinsAssistantDataGridView.RowHeadersVisible = false;
         }
 
         private void noEtNomsAssistantsBindingNavigatorSaveItem_Click(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Projet1_5B6.Forms_Admin.Fomrs_Rapports
             this.rapportSoinsPersonnesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.RapportSoinsPersonnes);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites' table. You can move, or remove it, as needed.
             this.noEtNomsClientsInvitesTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomsClientsInvites);
-
+            rapportSoinsPersonnesDataGridView.RowHeadersVisible = false;
         }
     }
 }

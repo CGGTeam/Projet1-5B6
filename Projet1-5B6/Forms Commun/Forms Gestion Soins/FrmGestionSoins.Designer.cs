@@ -35,7 +35,12 @@
             this.soinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SoinTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.dgSoins = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.typeSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAjouterSoin = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -44,11 +49,6 @@
             this.typeSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeSoinTableAdapter();
             this.ttpSupprimer = new System.Windows.Forms.ToolTip(this.components);
             this.btnModifier = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSoins)).BeginInit();
@@ -102,34 +102,80 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgSoins.DataSource = this.soinBindingSource;
-            this.dgSoins.Location = new System.Drawing.Point(12, 96);
+            this.dgSoins.Location = new System.Drawing.Point(8, 62);
+            this.dgSoins.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgSoins.Name = "dgSoins";
             this.dgSoins.ReadOnly = true;
+            this.dgSoins.RowHeadersVisible = false;
             this.dgSoins.RowTemplate.Height = 28;
             this.dgSoins.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSoins.Size = new System.Drawing.Size(680, 233);
+            this.dgSoins.Size = new System.Drawing.Size(453, 151);
             this.dgSoins.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoSoin";
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Duree";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Duree";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NoTypeSoin";
+            this.dataGridViewTextBoxColumn4.DataSource = this.typeSoinBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "Description";
+            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Type Soin";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "NoTypeSoin";
             // 
             // typeSoinBindingSource
             // 
             this.typeSoinBindingSource.DataMember = "TypeSoin";
             this.typeSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Prix";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Prix";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(8, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(680, 60);
+            this.label1.Size = new System.Drawing.Size(453, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Gestion des soins";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAjouterSoin
             // 
-            this.btnAjouterSoin.Location = new System.Drawing.Point(17, 344);
+            this.btnAjouterSoin.Location = new System.Drawing.Point(11, 224);
+            this.btnAjouterSoin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAjouterSoin.Name = "btnAjouterSoin";
-            this.btnAjouterSoin.Size = new System.Drawing.Size(213, 32);
+            this.btnAjouterSoin.Size = new System.Drawing.Size(142, 21);
             this.btnAjouterSoin.TabIndex = 3;
             this.btnAjouterSoin.Text = "Ajouter soin";
             this.btnAjouterSoin.UseVisualStyleBackColor = true;
@@ -138,9 +184,10 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Enabled = false;
-            this.btnSupprimer.Location = new System.Drawing.Point(479, 344);
+            this.btnSupprimer.Location = new System.Drawing.Point(319, 224);
+            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(213, 32);
+            this.btnSupprimer.Size = new System.Drawing.Size(142, 21);
             this.btnSupprimer.TabIndex = 4;
             this.btnSupprimer.Text = "Supprimer soin";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -148,9 +195,10 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(17, 396);
+            this.btnSauvegarder.Location = new System.Drawing.Point(11, 257);
+            this.btnSauvegarder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(213, 32);
+            this.btnSauvegarder.Size = new System.Drawing.Size(142, 21);
             this.btnSauvegarder.TabIndex = 5;
             this.btnSauvegarder.Text = "Sauvegarder modifications";
             this.btnSauvegarder.UseVisualStyleBackColor = true;
@@ -158,9 +206,10 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(479, 396);
+            this.btnAnnuler.Location = new System.Drawing.Point(319, 257);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(213, 32);
+            this.btnAnnuler.Size = new System.Drawing.Size(142, 21);
             this.btnAnnuler.TabIndex = 6;
             this.btnAnnuler.Text = "Annuler modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -172,9 +221,10 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(249, 344);
+            this.btnModifier.Location = new System.Drawing.Point(166, 224);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(213, 32);
+            this.btnModifier.Size = new System.Drawing.Size(142, 21);
             this.btnModifier.TabIndex = 7;
             this.btnModifier.Text = "Modifier soin";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -227,9 +277,9 @@
             // 
             // FrmGestionSoins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 450);
+            this.ClientSize = new System.Drawing.Size(469, 292);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
@@ -237,6 +287,7 @@
             this.Controls.Add(this.btnAjouterSoin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgSoins);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FrmGestionSoins";
             this.Text = " ";
             this.Load += new System.EventHandler(this.FrmGestionSoins_Load);

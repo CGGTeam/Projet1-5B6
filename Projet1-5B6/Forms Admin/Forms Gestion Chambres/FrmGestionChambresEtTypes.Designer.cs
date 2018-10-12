@@ -114,12 +114,14 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.typeChambreDataGridView.DataSource = this.typeChambreBindingSource;
-            this.typeChambreDataGridView.Location = new System.Drawing.Point(12, 111);
+            this.typeChambreDataGridView.Location = new System.Drawing.Point(8, 72);
+            this.typeChambreDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.typeChambreDataGridView.Name = "typeChambreDataGridView";
             this.typeChambreDataGridView.ReadOnly = true;
+            this.typeChambreDataGridView.RowHeadersVisible = false;
             this.typeChambreDataGridView.RowTemplate.Height = 28;
             this.typeChambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.typeChambreDataGridView.Size = new System.Drawing.Size(684, 236);
+            this.typeChambreDataGridView.Size = new System.Drawing.Size(456, 153);
             this.typeChambreDataGridView.TabIndex = 1;
             // 
             // chambreBindingSource
@@ -144,12 +146,14 @@
             this.dataGridViewTextBoxColumn8,
             this.NoTypeChambre});
             this.chambreDataGridView.DataSource = this.chambreBindingSource;
-            this.chambreDataGridView.Location = new System.Drawing.Point(717, 111);
+            this.chambreDataGridView.Location = new System.Drawing.Point(478, 72);
+            this.chambreDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chambreDataGridView.Name = "chambreDataGridView";
             this.chambreDataGridView.ReadOnly = true;
+            this.chambreDataGridView.RowHeadersVisible = false;
             this.chambreDataGridView.RowTemplate.Height = 28;
             this.chambreDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.chambreDataGridView.Size = new System.Drawing.Size(533, 236);
+            this.chambreDataGridView.Size = new System.Drawing.Size(355, 153);
             this.chambreDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn6
@@ -188,9 +192,10 @@
             // btnSupprimerType
             // 
             this.btnSupprimerType.Enabled = false;
-            this.btnSupprimerType.Location = new System.Drawing.Point(501, 380);
+            this.btnSupprimerType.Location = new System.Drawing.Point(334, 247);
+            this.btnSupprimerType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupprimerType.Name = "btnSupprimerType";
-            this.btnSupprimerType.Size = new System.Drawing.Size(195, 32);
+            this.btnSupprimerType.Size = new System.Drawing.Size(130, 21);
             this.btnSupprimerType.TabIndex = 6;
             this.btnSupprimerType.Text = "Supprimer type chambre";
             this.btnSupprimerType.UseVisualStyleBackColor = true;
@@ -198,9 +203,10 @@
             // 
             // btnAjouterType
             // 
-            this.btnAjouterType.Location = new System.Drawing.Point(17, 380);
+            this.btnAjouterType.Location = new System.Drawing.Point(11, 247);
+            this.btnAjouterType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAjouterType.Name = "btnAjouterType";
-            this.btnAjouterType.Size = new System.Drawing.Size(194, 32);
+            this.btnAjouterType.Size = new System.Drawing.Size(129, 21);
             this.btnAjouterType.TabIndex = 5;
             this.btnAjouterType.Text = "Ajouter type chambre";
             this.btnAjouterType.UseVisualStyleBackColor = true;
@@ -209,9 +215,10 @@
             // btnSupprimerChambre
             // 
             this.btnSupprimerChambre.Enabled = false;
-            this.btnSupprimerChambre.Location = new System.Drawing.Point(1094, 380);
+            this.btnSupprimerChambre.Location = new System.Drawing.Point(729, 247);
+            this.btnSupprimerChambre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupprimerChambre.Name = "btnSupprimerChambre";
-            this.btnSupprimerChambre.Size = new System.Drawing.Size(168, 32);
+            this.btnSupprimerChambre.Size = new System.Drawing.Size(112, 21);
             this.btnSupprimerChambre.TabIndex = 8;
             this.btnSupprimerChambre.Text = "Supprimer chambre";
             this.btnSupprimerChambre.UseVisualStyleBackColor = true;
@@ -219,9 +226,10 @@
             // 
             // btnAjouterChambre
             // 
-            this.btnAjouterChambre.Location = new System.Drawing.Point(717, 380);
+            this.btnAjouterChambre.Location = new System.Drawing.Point(478, 247);
+            this.btnAjouterChambre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAjouterChambre.Name = "btnAjouterChambre";
-            this.btnAjouterChambre.Size = new System.Drawing.Size(168, 32);
+            this.btnAjouterChambre.Size = new System.Drawing.Size(112, 21);
             this.btnAjouterChambre.TabIndex = 7;
             this.btnAjouterChambre.Text = "Ajouter chambre";
             this.btnAjouterChambre.UseVisualStyleBackColor = true;
@@ -229,9 +237,10 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(660, 446);
+            this.btnAnnuler.Location = new System.Drawing.Point(440, 290);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(213, 32);
+            this.btnAnnuler.Size = new System.Drawing.Size(142, 21);
             this.btnAnnuler.TabIndex = 10;
             this.btnAnnuler.Text = "Annuler modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -239,9 +248,10 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(417, 446);
+            this.btnSauvegarder.Location = new System.Drawing.Point(278, 290);
+            this.btnSauvegarder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(213, 32);
+            this.btnSauvegarder.Size = new System.Drawing.Size(142, 21);
             this.btnSauvegarder.TabIndex = 9;
             this.btnSauvegarder.Text = "Sauvegarder modifications";
             this.btnSauvegarder.UseVisualStyleBackColor = true;
@@ -250,9 +260,10 @@
             // lblEnteteTypeChambre
             // 
             this.lblEnteteTypeChambre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnteteTypeChambre.Location = new System.Drawing.Point(12, 33);
+            this.lblEnteteTypeChambre.Location = new System.Drawing.Point(8, 21);
+            this.lblEnteteTypeChambre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEnteteTypeChambre.Name = "lblEnteteTypeChambre";
-            this.lblEnteteTypeChambre.Size = new System.Drawing.Size(684, 75);
+            this.lblEnteteTypeChambre.Size = new System.Drawing.Size(456, 49);
             this.lblEnteteTypeChambre.TabIndex = 11;
             this.lblEnteteTypeChambre.Text = "Types de chambres";
             this.lblEnteteTypeChambre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -260,18 +271,20 @@
             // lblEnteteTypeDeChambre
             // 
             this.lblEnteteTypeDeChambre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnteteTypeDeChambre.Location = new System.Drawing.Point(717, 33);
+            this.lblEnteteTypeDeChambre.Location = new System.Drawing.Point(478, 21);
+            this.lblEnteteTypeDeChambre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEnteteTypeDeChambre.Name = "lblEnteteTypeDeChambre";
-            this.lblEnteteTypeDeChambre.Size = new System.Drawing.Size(533, 75);
+            this.lblEnteteTypeDeChambre.Size = new System.Drawing.Size(355, 49);
             this.lblEnteteTypeDeChambre.TabIndex = 12;
             this.lblEnteteTypeDeChambre.Text = "Chambres du type sélectionné";
             this.lblEnteteTypeDeChambre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnModifierType
             // 
-            this.btnModifierType.Location = new System.Drawing.Point(264, 380);
+            this.btnModifierType.Location = new System.Drawing.Point(176, 247);
+            this.btnModifierType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifierType.Name = "btnModifierType";
-            this.btnModifierType.Size = new System.Drawing.Size(188, 32);
+            this.btnModifierType.Size = new System.Drawing.Size(125, 21);
             this.btnModifierType.TabIndex = 13;
             this.btnModifierType.Text = "Modifier type chambre";
             this.btnModifierType.UseVisualStyleBackColor = true;
@@ -279,9 +292,10 @@
             // 
             // btnModifierChambre
             // 
-            this.btnModifierChambre.Location = new System.Drawing.Point(907, 380);
+            this.btnModifierChambre.Location = new System.Drawing.Point(605, 247);
+            this.btnModifierChambre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifierChambre.Name = "btnModifierChambre";
-            this.btnModifierChambre.Size = new System.Drawing.Size(168, 32);
+            this.btnModifierChambre.Size = new System.Drawing.Size(112, 21);
             this.btnModifierChambre.TabIndex = 14;
             this.btnModifierChambre.Text = "Modifier chambre";
             this.btnModifierChambre.UseVisualStyleBackColor = true;
@@ -336,9 +350,9 @@
             // 
             // FrmGestionChambresEtTypes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 549);
+            this.ClientSize = new System.Drawing.Size(879, 357);
             this.Controls.Add(this.btnModifierChambre);
             this.Controls.Add(this.btnModifierType);
             this.Controls.Add(this.lblEnteteTypeDeChambre);
@@ -351,6 +365,7 @@
             this.Controls.Add(this.btnAjouterType);
             this.Controls.Add(this.chambreDataGridView);
             this.Controls.Add(this.typeChambreDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FrmGestionChambresEtTypes";
             this.Text = "GestionChambresEtTypes";
             this.Load += new System.EventHandler(this.GestionChambresEtTypes_Load);

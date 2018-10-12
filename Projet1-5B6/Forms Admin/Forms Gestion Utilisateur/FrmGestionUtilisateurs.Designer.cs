@@ -38,13 +38,13 @@
             this.utilisateurTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.UtilisateurTableAdapter();
             this.tableAdapterManager = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TableAdapterManager();
             this.utilisateurDataGridView = new System.Windows.Forms.DataGridView();
-            this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.typeUtilisateurTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeUtilisateurTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.typeUtilisateurTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.TypeUtilisateurTableAdapter();
             this.btnModifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
@@ -146,28 +146,10 @@
             this.utilisateurDataGridView.MultiSelect = false;
             this.utilisateurDataGridView.Name = "utilisateurDataGridView";
             this.utilisateurDataGridView.ReadOnly = true;
+            this.utilisateurDataGridView.RowHeadersVisible = false;
             this.utilisateurDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.utilisateurDataGridView.Size = new System.Drawing.Size(555, 301);
             this.utilisateurDataGridView.TabIndex = 11;
-            // 
-            // typeUtilisateurBindingSource
-            // 
-            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
-            this.typeUtilisateurBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(152, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 25);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Gestion des utilisateurs";
-            // 
-            // typeUtilisateurTableAdapter
-            // 
-            this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -206,6 +188,25 @@
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.ValueMember = "NoTypeUtilisateur";
             this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // typeUtilisateurBindingSource
+            // 
+            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
+            this.typeUtilisateurBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(152, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Gestion des utilisateurs";
+            // 
+            // typeUtilisateurTableAdapter
+            // 
+            this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
             // 
             // btnModifier
             // 

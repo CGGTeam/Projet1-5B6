@@ -155,6 +155,7 @@
             this.chambreEtPrixDataGridView.MultiSelect = false;
             this.chambreEtPrixDataGridView.Name = "chambreEtPrixDataGridView";
             this.chambreEtPrixDataGridView.ReadOnly = true;
+            this.chambreEtPrixDataGridView.RowHeadersVisible = false;
             this.chambreEtPrixDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chambreEtPrixDataGridView.Size = new System.Drawing.Size(964, 268);
             this.chambreEtPrixDataGridView.TabIndex = 2;

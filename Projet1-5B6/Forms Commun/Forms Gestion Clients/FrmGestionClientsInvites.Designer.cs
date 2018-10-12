@@ -123,7 +123,7 @@
             // 
             this.btnSupprimerCli.Enabled = false;
             this.btnSupprimerCli.Location = new System.Drawing.Point(414, 253);
-            this.btnSupprimerCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupprimerCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprimerCli.Name = "btnSupprimerCli";
             this.btnSupprimerCli.Size = new System.Drawing.Size(136, 26);
             this.btnSupprimerCli.TabIndex = 21;
@@ -134,7 +134,7 @@
             // btnAjoutCli
             // 
             this.btnAjoutCli.Location = new System.Drawing.Point(5, 253);
-            this.btnAjoutCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutCli.Name = "btnAjoutCli";
             this.btnAjoutCli.Size = new System.Drawing.Size(136, 26);
             this.btnAjoutCli.TabIndex = 22;
@@ -161,9 +161,10 @@
             this.dataGridViewTextBoxColumn4});
             this.inviteDataGridView.DataSource = this.inviteBindingSource;
             this.inviteDataGridView.Location = new System.Drawing.Point(5, 15);
-            this.inviteDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inviteDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.inviteDataGridView.Name = "inviteDataGridView";
             this.inviteDataGridView.ReadOnly = true;
+            this.inviteDataGridView.RowHeadersVisible = false;
             this.inviteDataGridView.RowTemplate.Height = 28;
             this.inviteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inviteDataGridView.Size = new System.Drawing.Size(379, 231);
@@ -181,18 +182,21 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nom";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nom";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Prenom";
             this.dataGridViewTextBoxColumn3.HeaderText = "Prenom";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NoClient";
             this.dataGridViewTextBoxColumn4.HeaderText = "No client";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // label1
@@ -209,7 +213,7 @@
             // btnSauvegarder
             // 
             this.btnSauvegarder.Location = new System.Drawing.Point(295, 382);
-            this.btnSauvegarder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSauvegarder.Margin = new System.Windows.Forms.Padding(2);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(184, 46);
             this.btnSauvegarder.TabIndex = 25;
@@ -220,7 +224,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Location = new System.Drawing.Point(483, 382);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(184, 46);
             this.btnAnnuler.TabIndex = 26;
@@ -246,9 +250,10 @@
             this.dataGridViewTextBoxColumn12});
             this.clientDataGridView.DataSource = this.clientBindingSource;
             this.clientDataGridView.Location = new System.Drawing.Point(5, 15);
-            this.clientDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.clientDataGridView.Name = "clientDataGridView";
             this.clientDataGridView.ReadOnly = true;
+            this.clientDataGridView.RowHeadersVisible = false;
             this.clientDataGridView.RowTemplate.Height = 28;
             this.clientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientDataGridView.Size = new System.Drawing.Size(545, 231);
@@ -313,7 +318,7 @@
             // btnAjouterInvite
             // 
             this.btnAjouterInvite.Location = new System.Drawing.Point(5, 253);
-            this.btnAjouterInvite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjouterInvite.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterInvite.Name = "btnAjouterInvite";
             this.btnAjouterInvite.Size = new System.Drawing.Size(98, 26);
             this.btnAjouterInvite.TabIndex = 27;
@@ -324,7 +329,7 @@
             // btnSupprimerInvite
             // 
             this.btnSupprimerInvite.Location = new System.Drawing.Point(288, 253);
-            this.btnSupprimerInvite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupprimerInvite.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprimerInvite.Name = "btnSupprimerInvite";
             this.btnSupprimerInvite.Size = new System.Drawing.Size(96, 26);
             this.btnSupprimerInvite.TabIndex = 28;
@@ -335,7 +340,7 @@
             // btnModifierClient
             // 
             this.btnModifierClient.Location = new System.Drawing.Point(215, 253);
-            this.btnModifierClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifierClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifierClient.Name = "btnModifierClient";
             this.btnModifierClient.Size = new System.Drawing.Size(136, 26);
             this.btnModifierClient.TabIndex = 29;
@@ -346,7 +351,7 @@
             // btnModifier
             // 
             this.btnModifier.Location = new System.Drawing.Point(145, 253);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(98, 26);
             this.btnModifier.TabIndex = 30;
@@ -389,7 +394,7 @@
             this.Controls.Add(this.btnSauvegarder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitreClient);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "FrmGestionClientsInvites";
             this.Text = "Gestion des clients et des invités";
             this.Load += new System.EventHandler(this.FormClientsInvites_Load);
