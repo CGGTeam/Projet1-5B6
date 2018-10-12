@@ -60,11 +60,15 @@
             this.btnSupprimerInvite = new System.Windows.Forms.Button();
             this.btnModifierClient = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bD5B6TP1_ConstantinBrassardLaheyDataSet
@@ -106,20 +110,22 @@
             // 
             // lblTitreClient
             // 
-            this.lblTitreClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreClient.Location = new System.Drawing.Point(12, 40);
+            this.lblTitreClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreClient.Location = new System.Drawing.Point(32, 39);
+            this.lblTitreClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitreClient.Name = "lblTitreClient";
-            this.lblTitreClient.Size = new System.Drawing.Size(770, 76);
+            this.lblTitreClient.Size = new System.Drawing.Size(513, 21);
             this.lblTitreClient.TabIndex = 17;
-            this.lblTitreClient.Text = "Client";
+            this.lblTitreClient.Text = "Liste des clients";
             this.lblTitreClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSupprimerCli
             // 
             this.btnSupprimerCli.Enabled = false;
-            this.btnSupprimerCli.Location = new System.Drawing.Point(614, 466);
+            this.btnSupprimerCli.Location = new System.Drawing.Point(414, 253);
+            this.btnSupprimerCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupprimerCli.Name = "btnSupprimerCli";
-            this.btnSupprimerCli.Size = new System.Drawing.Size(146, 40);
+            this.btnSupprimerCli.Size = new System.Drawing.Size(136, 26);
             this.btnSupprimerCli.TabIndex = 21;
             this.btnSupprimerCli.Text = "Supprimer Client";
             this.btnSupprimerCli.UseVisualStyleBackColor = true;
@@ -127,9 +133,10 @@
             // 
             // btnAjoutCli
             // 
-            this.btnAjoutCli.Location = new System.Drawing.Point(29, 466);
+            this.btnAjoutCli.Location = new System.Drawing.Point(5, 253);
+            this.btnAjoutCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAjoutCli.Name = "btnAjoutCli";
-            this.btnAjoutCli.Size = new System.Drawing.Size(146, 40);
+            this.btnAjoutCli.Size = new System.Drawing.Size(136, 26);
             this.btnAjoutCli.TabIndex = 22;
             this.btnAjoutCli.Text = "Nouveau Client";
             this.btnAjoutCli.UseVisualStyleBackColor = true;
@@ -153,12 +160,13 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.inviteDataGridView.DataSource = this.inviteBindingSource;
-            this.inviteDataGridView.Location = new System.Drawing.Point(788, 121);
+            this.inviteDataGridView.Location = new System.Drawing.Point(5, 15);
+            this.inviteDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.inviteDataGridView.Name = "inviteDataGridView";
             this.inviteDataGridView.ReadOnly = true;
             this.inviteDataGridView.RowTemplate.Height = 28;
             this.inviteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inviteDataGridView.Size = new System.Drawing.Size(653, 311);
+            this.inviteDataGridView.Size = new System.Drawing.Size(379, 231);
             this.inviteDataGridView.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn1
@@ -190,18 +198,20 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(788, 42);
+            this.label1.Location = new System.Drawing.Point(525, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(653, 76);
+            this.label1.Size = new System.Drawing.Size(435, 49);
             this.label1.TabIndex = 23;
             this.label1.Text = "Invités du client";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(535, 543);
+            this.btnSauvegarder.Location = new System.Drawing.Point(295, 382);
+            this.btnSauvegarder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(180, 54);
+            this.btnSauvegarder.Size = new System.Drawing.Size(184, 46);
             this.btnSauvegarder.TabIndex = 25;
             this.btnSauvegarder.Text = "Sauvegarder";
             this.btnSauvegarder.UseVisualStyleBackColor = true;
@@ -209,9 +219,10 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(808, 543);
+            this.btnAnnuler.Location = new System.Drawing.Point(483, 382);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(180, 54);
+            this.btnAnnuler.Size = new System.Drawing.Size(184, 46);
             this.btnAnnuler.TabIndex = 26;
             this.btnAnnuler.Text = "Annuler Modifications";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -234,12 +245,13 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.clientDataGridView.DataSource = this.clientBindingSource;
-            this.clientDataGridView.Location = new System.Drawing.Point(12, 119);
+            this.clientDataGridView.Location = new System.Drawing.Point(5, 15);
+            this.clientDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clientDataGridView.Name = "clientDataGridView";
             this.clientDataGridView.ReadOnly = true;
             this.clientDataGridView.RowTemplate.Height = 28;
             this.clientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientDataGridView.Size = new System.Drawing.Size(770, 313);
+            this.clientDataGridView.Size = new System.Drawing.Size(545, 231);
             this.clientDataGridView.TabIndex = 26;
             // 
             // dataGridViewTextBoxColumn5
@@ -300,9 +312,10 @@
             // 
             // btnAjouterInvite
             // 
-            this.btnAjouterInvite.Location = new System.Drawing.Point(808, 466);
+            this.btnAjouterInvite.Location = new System.Drawing.Point(5, 253);
+            this.btnAjouterInvite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAjouterInvite.Name = "btnAjouterInvite";
-            this.btnAjouterInvite.Size = new System.Drawing.Size(147, 40);
+            this.btnAjouterInvite.Size = new System.Drawing.Size(98, 26);
             this.btnAjouterInvite.TabIndex = 27;
             this.btnAjouterInvite.Text = "Ajouter Invité";
             this.btnAjouterInvite.UseVisualStyleBackColor = true;
@@ -310,9 +323,10 @@
             // 
             // btnSupprimerInvite
             // 
-            this.btnSupprimerInvite.Location = new System.Drawing.Point(1281, 466);
+            this.btnSupprimerInvite.Location = new System.Drawing.Point(288, 253);
+            this.btnSupprimerInvite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupprimerInvite.Name = "btnSupprimerInvite";
-            this.btnSupprimerInvite.Size = new System.Drawing.Size(144, 40);
+            this.btnSupprimerInvite.Size = new System.Drawing.Size(96, 26);
             this.btnSupprimerInvite.TabIndex = 28;
             this.btnSupprimerInvite.Text = "Supprimer invité";
             this.btnSupprimerInvite.UseVisualStyleBackColor = true;
@@ -320,9 +334,10 @@
             // 
             // btnModifierClient
             // 
-            this.btnModifierClient.Location = new System.Drawing.Point(342, 466);
+            this.btnModifierClient.Location = new System.Drawing.Point(215, 253);
+            this.btnModifierClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifierClient.Name = "btnModifierClient";
-            this.btnModifierClient.Size = new System.Drawing.Size(146, 40);
+            this.btnModifierClient.Size = new System.Drawing.Size(136, 26);
             this.btnModifierClient.TabIndex = 29;
             this.btnModifierClient.Text = "Modifier Client";
             this.btnModifierClient.UseVisualStyleBackColor = true;
@@ -330,51 +345,67 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(1053, 466);
+            this.btnModifier.Location = new System.Drawing.Point(145, 253);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(147, 40);
+            this.btnModifier.Size = new System.Drawing.Size(98, 26);
             this.btnModifier.TabIndex = 30;
             this.btnModifier.Text = "Modifier Inviter";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAjoutCli);
+            this.groupBox1.Controls.Add(this.btnModifierClient);
+            this.groupBox1.Controls.Add(this.btnSupprimerCli);
+            this.groupBox1.Controls.Add(this.clientDataGridView);
+            this.groupBox1.Location = new System.Drawing.Point(0, 63);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(558, 299);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAjouterInvite);
+            this.groupBox2.Controls.Add(this.btnModifier);
+            this.groupBox2.Controls.Add(this.btnSupprimerInvite);
+            this.groupBox2.Controls.Add(this.inviteDataGridView);
+            this.groupBox2.Location = new System.Drawing.Point(564, 63);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(389, 299);
+            this.groupBox2.TabIndex = 32;
+            this.groupBox2.TabStop = false;
+            // 
             // FrmGestionClientsInvites
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1447, 631);
-            this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.btnModifierClient);
-            this.Controls.Add(this.btnSupprimerInvite);
-            this.Controls.Add(this.btnAjouterInvite);
-            this.Controls.Add(this.clientDataGridView);
+            this.ClientSize = new System.Drawing.Size(965, 439);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.inviteDataGridView);
-            this.Controls.Add(this.btnAjoutCli);
-            this.Controls.Add(this.btnSupprimerCli);
             this.Controls.Add(this.lblTitreClient);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FrmGestionClientsInvites";
             this.Text = "Gestion des clients et des invités";
             this.Load += new System.EventHandler(this.FormClientsInvites_Load);
             this.Controls.SetChildIndex(this.lblTitreClient, 0);
-            this.Controls.SetChildIndex(this.btnSupprimerCli, 0);
-            this.Controls.SetChildIndex(this.btnAjoutCli, 0);
-            this.Controls.SetChildIndex(this.inviteDataGridView, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnSauvegarder, 0);
             this.Controls.SetChildIndex(this.btnAnnuler, 0);
-            this.Controls.SetChildIndex(this.clientDataGridView, 0);
-            this.Controls.SetChildIndex(this.btnAjouterInvite, 0);
-            this.Controls.SetChildIndex(this.btnSupprimerInvite, 0);
-            this.Controls.SetChildIndex(this.btnModifierClient, 0);
-            this.Controls.SetChildIndex(this.btnModifier, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inviteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +444,7 @@
         private System.Windows.Forms.Button btnSupprimerInvite;
         private System.Windows.Forms.Button btnModifierClient;
         private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
