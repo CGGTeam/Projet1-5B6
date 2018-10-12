@@ -198,7 +198,7 @@
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(563, 546);
+            this.btnSauvegarder.Location = new System.Drawing.Point(535, 543);
             this.btnSauvegarder.Name = "btnSauvegarder";
             this.btnSauvegarder.Size = new System.Drawing.Size(180, 54);
             this.btnSauvegarder.TabIndex = 25;
@@ -208,7 +208,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(836, 546);
+            this.btnAnnuler.Location = new System.Drawing.Point(808, 543);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(180, 54);
             this.btnAnnuler.TabIndex = 26;

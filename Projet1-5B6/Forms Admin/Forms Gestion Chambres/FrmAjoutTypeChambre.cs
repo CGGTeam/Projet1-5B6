@@ -18,6 +18,16 @@ namespace Projet1_5B6.Forms_Admin
         public FrmAjoutTypeChambre(BD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambreRow nouveauTypeChambre, bool modifMode = false)
         {
             InitializeComponent();
+
+            controlesAValider = new Control[]
+            {
+                tbDescription,
+                tbNoType,
+                tbPrixBas,
+                tbPrixHaut,
+                tbPrixMoyen,
+            };
+
             this.nouveauTypeChambre = nouveauTypeChambre;
 
             tbNoType.Text = nouveauTypeChambre.NoTypeChambre.ToString();
@@ -57,15 +67,6 @@ namespace Projet1_5B6.Forms_Admin
             tbPrixBas.Validating += Validation.ValiderPrix(errorProvider);
             tbPrixMoyen.Validating += Validation.ValiderPrix(errorProvider);
             tbDescription.Validating += Validation.ValiderDescriptionTypeChambre(errorProvider);
-
-            controlesAValider = new Control[]
-            {
-                tbDescription,
-                tbNoType,
-                tbPrixBas,
-                tbPrixHaut,
-                tbPrixMoyen,
-            };
         }
 
         private void Valider(object sender, EventArgs e)

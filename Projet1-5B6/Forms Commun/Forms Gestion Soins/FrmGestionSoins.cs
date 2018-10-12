@@ -23,6 +23,8 @@ namespace Projet1_5B6.Forms_Commun
             this.soinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin);
 
             soinBindingSource.CurrentChanged += VerifierSiSupprimable;
+
+            soinTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoSoin", "le soin");
         }
 
         private void VerifierSiSupprimable(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace Projet1_5B6.Forms_Commun
             soinBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             BaseFormGestion.estSavegarder = true;
+            soinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.Soin);
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
@@ -77,6 +80,8 @@ namespace Projet1_5B6.Forms_Commun
 
         private bool EstSupprimable(DataRowView selection)
         {
+            if (soinBindingSource.Current == null) return false;
+
             BD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoinDataTable assistantSoinTable =
                 bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin;
             int idSoinSelectionne = (int)((DataRowView)soinBindingSource.Current)["NoSoin"];

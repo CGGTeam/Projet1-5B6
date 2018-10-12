@@ -28,6 +28,7 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomClients' table. You can move, or remove it, as needed.
             this.noEtNomClientsTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtNomClients);
 
+            reservationChambreTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("No Reservation", "la reservation du client");
         }
 
         private void btnConfirmer_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
                 Validate();
                 reservationChambreBindingSource.EndEdit();
                 reservationChambreTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+                reservationChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.ReservationChambre);
                 lblFeed.Text = "La réservation a été éffectuée avec succès!";
             }
             catch (Exception) { lblFeed.Text = "Une erreure est survenue lors de la réservation!"; }

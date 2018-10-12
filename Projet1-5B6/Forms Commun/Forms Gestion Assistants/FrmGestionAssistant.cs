@@ -35,6 +35,9 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
 
             assistantSoinDataGridView.RowHeadersVisible = false;
             btnSupprimerSoin.Enabled = true;
+
+            assistantSoinTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoAssistant", "l'assitant-soin");
+            assistantTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoAssistant", "l'assistant.e");
         }
         private int TrouverNoAssistant()
         {
@@ -208,6 +211,8 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Assistants
             assistantSoinTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             assistantTableAdapter.Update(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             BaseFormGestion.estSavegarder = true;
+            assistantSoinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.AssistantSoin);
+            assistantTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.Assistant);
         }
 
         private void enableButton(object sender, EventArgs e)

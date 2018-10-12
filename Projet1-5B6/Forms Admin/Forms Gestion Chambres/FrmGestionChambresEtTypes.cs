@@ -29,6 +29,9 @@ namespace Projet1_5B6.Forms_Admin
 
             chambreBindingSource.CurrentChanged += VerifierSiChambreEstReservee;
             typeChambreBindingSource.CurrentChanged += VerifierSiTypeADesChambres;
+
+            chambreTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoChambre", "chambre");
+            typeChambreTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoTypeChambre", "type chambre");
         }
 
         private void VerifierSiTypeADesChambres(object sender, EventArgs e)
@@ -155,6 +158,9 @@ namespace Projet1_5B6.Forms_Admin
             chambreTableAdapter.Update(bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre);
             typeChambreTableAdapter.Update(bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
             BaseFormGestion.estSavegarder = true;
+
+            chambreTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre);
+            typeChambreTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeChambre);
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

@@ -28,6 +28,8 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.noEtDescriptionSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtDescriptionSoin);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin' table. You can move, or remove it, as needed.
             this.planifSoinTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
+
+            planifSoinTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("DateHeure", "le rendezvous cédulé le");
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             planifSoinBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             BaseFormGestion.estSavegarder = true;
+            planifSoinTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoin);
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

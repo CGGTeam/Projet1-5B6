@@ -21,6 +21,13 @@ namespace Projet1_5B6.Forms_Admin
             InitializeComponent();
             this.nouvelleChambre = nouvelleChambre;
 
+            controlesAValider = new Control[]
+            {
+                tbDecoration,
+                tbEmplacement,
+                cboTypeChambre
+            };
+
             this.dataTable = dataTable;
 
             if (modifMode)
@@ -32,7 +39,6 @@ namespace Projet1_5B6.Forms_Admin
                 Text = "Modification d'une chambre";
                 lblEntete.Text = "Modifer chambre";
                 btnConfirmer.Text = "Confirmer modification";
-
             }
         }
 
@@ -48,13 +54,6 @@ namespace Projet1_5B6.Forms_Admin
 
             tbDecoration.Validating += DecorationNonVide;
             tbEmplacement.Validating += EmplacementNonVide;
-
-            controlesAValider = new Control[]
-            {
-                tbDecoration,
-                tbEmplacement,
-                cboTypeChambre
-            };
         }
 
         private void EmplacementNonVide(object sender, CancelEventArgs e)

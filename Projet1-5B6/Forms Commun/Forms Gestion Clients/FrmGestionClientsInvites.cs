@@ -22,29 +22,16 @@ namespace Projet1_5B6.Forms_Commun
             this.inviteTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Invite);
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
-            // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Client' table. You can move, or remove it, as needed.
-            this.clientTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
 
-            if (clientBindingSource.Current != null)
-            {
-                btnSupprimerCli.Enabled = ClientEstSupprimable((DataRowView)clientBindingSource.Current);
-            }
-            else
-            {
-                btnSupprimerCli.Enabled = false;
-            }
+            btnSupprimerCli.Enabled = clientBindingSource.Current != null && ClientEstSupprimable((DataRowView)clientBindingSource.Current);
 
-            if (inviteBindingSource.Current != null)
-            {
-                btnSupprimerInvite.Enabled = InviteEstSupprimable((DataRowView)inviteBindingSource.Current);
-            }
-            else
-            {
-                btnSupprimerInvite.Enabled = false;
-            }
+            btnSupprimerInvite.Enabled = inviteBindingSource.Current != null && InviteEstSupprimable((DataRowView)inviteBindingSource.Current);
 
             clientBindingSource.CurrentChanged += OnChangeCurrentClient;
             inviteBindingSource.CurrentChanged += OnChangeCurrentInvite;
+
+            clientTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoClient", "le client");
+            inviteTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoInvite", "l'invité.e");
         }
 
         private void btnAjoutCli_Click(object sender, EventArgs e)
@@ -83,8 +70,11 @@ namespace Projet1_5B6.Forms_Commun
         {
             Validate();
             clientBindingSource.EndEdit();
+            inviteBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             BaseFormGestion.estSavegarder = true;
+            clientTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.Client);
+            inviteTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.Invite);
         }
 
         private void OnChangeCurrentClient(object sender, EventArgs e)

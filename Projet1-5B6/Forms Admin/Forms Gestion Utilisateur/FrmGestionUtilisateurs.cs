@@ -18,14 +18,6 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
             InitializeComponent();
         }
 
-        private void utilisateurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.utilisateurBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
-
-        }
-
         private void FrmGestionUtilisateurs_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.TypeUtilisateur' table. You can move, or remove it, as needed.
@@ -41,6 +33,8 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
                     row.DefaultCellStyle.BackColor = Color.LightGray;
                 }
             }
+
+            utilisateurTableAdapter.Adapter.RowUpdated += GestionConflits.GenererGestionConflit("NoUtilisateur", "l'utilisateur");
         }
         private int TrouverNoUtilisateur()
         {
@@ -62,6 +56,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
             utilisateurBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
             BaseFormGestion.estSavegarder = true;
+            utilisateurTableAdapter.Fill(bD5B6TP1_ConstantinBrassardLaheyDataSet.Utilisateur);
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
