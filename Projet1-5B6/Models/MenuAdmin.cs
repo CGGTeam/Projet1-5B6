@@ -240,7 +240,7 @@ namespace Projet1_5B6.Models
             // 
             this.itGestAssistants.Name = "itGestAssistants";
             this.itGestAssistants.Size = new System.Drawing.Size(269, 30);
-            this.itGestAssistants.Text = "Gestion Assistants";
+            this.itGestAssistants.Text = "Gestion assistants";
             this.itGestAssistants.Click += GestionAssistants;
             // 
             // itGestChambres
@@ -261,7 +261,7 @@ namespace Projet1_5B6.Models
             // 
             this.itVisualiserRapp.Name = "itVisualiserRapp";
             this.itVisualiserRapp.Size = new System.Drawing.Size(269, 30);
-            this.itVisualiserRapp.Text = "Visualiser Rapports";
+            this.itVisualiserRapp.Text = "Visualiser rapports";
             this.itVisualiserRapp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
             {
                 this.itRappSoinsClients,
