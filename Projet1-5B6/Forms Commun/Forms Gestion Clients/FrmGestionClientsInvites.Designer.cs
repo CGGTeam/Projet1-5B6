@@ -155,6 +155,7 @@
             this.inviteDataGridView.DataSource = this.inviteBindingSource;
             this.inviteDataGridView.Location = new System.Drawing.Point(788, 121);
             this.inviteDataGridView.Name = "inviteDataGridView";
+            this.inviteDataGridView.ReadOnly = true;
             this.inviteDataGridView.RowTemplate.Height = 28;
             this.inviteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inviteDataGridView.Size = new System.Drawing.Size(653, 311);
@@ -235,6 +236,7 @@
             this.clientDataGridView.DataSource = this.clientBindingSource;
             this.clientDataGridView.Location = new System.Drawing.Point(12, 119);
             this.clientDataGridView.Name = "clientDataGridView";
+            this.clientDataGridView.ReadOnly = true;
             this.clientDataGridView.RowTemplate.Height = 28;
             this.clientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientDataGridView.Size = new System.Drawing.Size(770, 313);
@@ -252,36 +254,42 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Nom";
             this.dataGridViewTextBoxColumn6.HeaderText = "Nom";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Prenom";
             this.dataGridViewTextBoxColumn7.HeaderText = "Prenom";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Ville";
             this.dataGridViewTextBoxColumn8.HeaderText = "Ville";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Pays";
             this.dataGridViewTextBoxColumn9.HeaderText = "Pays";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Adresse";
             this.dataGridViewTextBoxColumn10.HeaderText = "Adresse";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "CodePostal";
             this.dataGridViewTextBoxColumn11.HeaderText = "Code postal";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 

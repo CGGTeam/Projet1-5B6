@@ -167,7 +167,7 @@
             // 
             // dtpDateHeure
             // 
-            this.dtpDateHeure.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            this.dtpDateHeure.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtpDateHeure.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateHeure.Location = new System.Drawing.Point(148, 170);
             this.dtpDateHeure.Name = "dtpDateHeure";
