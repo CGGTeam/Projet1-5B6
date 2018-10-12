@@ -200,6 +200,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NoPersonne";
             this.dataGridViewTextBoxColumn3.DataSource = this.noEtNomsClientsInvitesBindingSource;
             this.dataGridViewTextBoxColumn3.DisplayMember = "NoEtNom";
+            this.dataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn3.HeaderText = "Nom de la personne";
             this.dataGridViewTextBoxColumn3.MaxDropDownItems = 1;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";

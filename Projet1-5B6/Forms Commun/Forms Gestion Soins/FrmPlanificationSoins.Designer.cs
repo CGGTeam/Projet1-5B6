@@ -38,9 +38,13 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
             this.noEtNomsAssistantsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
             this.dgPlanifSoin = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtNomsAssistantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colDateHeure = new Projet1_5B6.WinForms_ext.CalendarColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtDescriptionSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noEtNomsClientsInvitesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsClientsInvitesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.btnSauvegarder = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colDateHeure = new Projet1_5B6.WinForms_ext.CalendarColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planifSoinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanifSoin)).BeginInit();
@@ -116,98 +116,15 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.colDateHeure,
             this.dataGridViewTextBoxColumn4});
             this.dgPlanifSoin.DataSource = this.planifSoinBindingSource;
-            this.dgPlanifSoin.Location = new System.Drawing.Point(12, 152);
+            this.dgPlanifSoin.Location = new System.Drawing.Point(8, 99);
+            this.dgPlanifSoin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgPlanifSoin.Name = "dgPlanifSoin";
             this.dgPlanifSoin.ReadOnly = true;
+            this.dgPlanifSoin.RowHeadersVisible = false;
             this.dgPlanifSoin.RowTemplate.Height = 28;
             this.dgPlanifSoin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPlanifSoin.Size = new System.Drawing.Size(950, 304);
+            this.dgPlanifSoin.Size = new System.Drawing.Size(633, 198);
             this.dgPlanifSoin.TabIndex = 1;
-            // 
-            // noEtNomsClientsInvitesBindingSource
-            // 
-            this.noEtNomsClientsInvitesBindingSource.DataMember = "NoEtNomsClientsInvites";
-            this.noEtNomsClientsInvitesBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // noEtNomsAssistantsBindingSource
-            // 
-            this.noEtNomsAssistantsBindingSource.DataMember = "NoEtNomsAssistants";
-            this.noEtNomsAssistantsBindingSource.DataSource = this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource;
-            // 
-            // bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource
-            // 
-            this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource.Position = 0;
-            // 
-            // noEtDescriptionSoinBindingSource
-            // 
-            this.noEtDescriptionSoinBindingSource.DataMember = "NoEtDescriptionSoin";
-            this.noEtDescriptionSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
-            // 
-            // noEtNomsClientsInvitesTableAdapter
-            // 
-            this.noEtNomsClientsInvitesTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(950, 116);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Planification des soins";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAjouter
-            // 
-            this.btnAjouter.Location = new System.Drawing.Point(17, 479);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(268, 41);
-            this.btnAjouter.TabIndex = 3;
-            this.btnAjouter.Text = "Planifier un soin";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.Location = new System.Drawing.Point(694, 479);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(268, 41);
-            this.btnSupprimer.TabIndex = 4;
-            this.btnSupprimer.Text = "Supprimer le rendez-vous";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
-            // btnSauvegarder
-            // 
-            this.btnSauvegarder.Location = new System.Drawing.Point(17, 541);
-            this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(268, 41);
-            this.btnSauvegarder.TabIndex = 5;
-            this.btnSauvegarder.Text = "Sauvegarder les changements";
-            this.btnSauvegarder.UseVisualStyleBackColor = true;
-            this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
-            // 
-            // btnAnnuler
-            // 
-            this.btnAnnuler.Location = new System.Drawing.Point(694, 541);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(268, 41);
-            this.btnAnnuler.TabIndex = 6;
-            this.btnAnnuler.Text = "Annuler les changements";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
-            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Location = new System.Drawing.Point(357, 479);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(268, 41);
-            this.btnModifier.TabIndex = 7;
-            this.btnModifier.Text = "Modifier le rendez-vous";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -222,6 +139,11 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn1.ValueMember = "NoClient";
             // 
+            // noEtNomsClientsInvitesBindingSource
+            // 
+            this.noEtNomsClientsInvitesBindingSource.DataMember = "NoEtNomsClientsInvites";
+            this.noEtNomsClientsInvitesBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "NoAssistant";
@@ -234,6 +156,16 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "NoAssistant";
+            // 
+            // noEtNomsAssistantsBindingSource
+            // 
+            this.noEtNomsAssistantsBindingSource.DataMember = "NoEtNomsAssistants";
+            this.noEtNomsAssistantsBindingSource.DataSource = this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource;
+            // 
+            // bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource
+            // 
+            this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            this.bD5B6TP1ConstantinBrassardLaheyDataSetBindingSource.Position = 0;
             // 
             // colDateHeure
             // 
@@ -255,11 +187,87 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.ValueMember = "NoSoin";
             // 
+            // noEtDescriptionSoinBindingSource
+            // 
+            this.noEtDescriptionSoinBindingSource.DataMember = "NoEtDescriptionSoin";
+            this.noEtDescriptionSoinBindingSource.DataSource = this.bD5B6TP1_ConstantinBrassardLaheyDataSet;
+            // 
+            // noEtNomsClientsInvitesTableAdapter
+            // 
+            this.noEtNomsClientsInvitesTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(633, 75);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Planification des soins";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(11, 311);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(179, 27);
+            this.btnAjouter.TabIndex = 3;
+            this.btnAjouter.Text = "Planifier un soin";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(463, 311);
+            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(179, 27);
+            this.btnSupprimer.TabIndex = 4;
+            this.btnSupprimer.Text = "Supprimer le rendez-vous";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnSauvegarder
+            // 
+            this.btnSauvegarder.Location = new System.Drawing.Point(11, 352);
+            this.btnSauvegarder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSauvegarder.Name = "btnSauvegarder";
+            this.btnSauvegarder.Size = new System.Drawing.Size(179, 27);
+            this.btnSauvegarder.TabIndex = 5;
+            this.btnSauvegarder.Text = "Sauvegarder les changements";
+            this.btnSauvegarder.UseVisualStyleBackColor = true;
+            this.btnSauvegarder.Click += new System.EventHandler(this.btnSauvegarder_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Location = new System.Drawing.Point(463, 352);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(179, 27);
+            this.btnAnnuler.TabIndex = 6;
+            this.btnAnnuler.Text = "Annuler les changements";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(238, 311);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(179, 27);
+            this.btnModifier.TabIndex = 7;
+            this.btnModifier.Text = "Modifier le rendez-vous";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
             // FrmPlanificationSoins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 606);
+            this.ClientSize = new System.Drawing.Size(649, 394);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnSauvegarder);
@@ -267,6 +275,7 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgPlanifSoin);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FrmPlanificationSoins";
             this.Text = "Planifier des soins";
             this.Load += new System.EventHandler(this.FrmPlanificationSoins_Load);

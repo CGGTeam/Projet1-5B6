@@ -25,7 +25,7 @@ namespace Projet1_5B6.Forms_Admin.Fomrs_Rapports
             // TODO: This line of code loads data into the 'bD5B6TP1_ConstantinBrassardLaheyDataSet.Chambre' table. You can move, or remove it, as needed.
             this.noEtEmplacementChambreTableAdapter.Fill(this.bD5B6TP1_ConstantinBrassardLaheyDataSet.NoEtEmplacementChambre);
 
-
+            rapportChambreDataGridView.RowHeadersVisible = false;
         }
     }
 }

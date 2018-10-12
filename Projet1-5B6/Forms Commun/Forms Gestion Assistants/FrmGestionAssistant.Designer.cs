@@ -58,13 +58,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.noEtDescriptionSoinTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtDescriptionSoinTableAdapter();
             this.assistantSoinDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noEtDescriptionSoinBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.noEtNomsAssistantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noEtNomsAssistantsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.NoEtNomsAssistantsTableAdapter();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnConfrimer = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).BeginInit();
@@ -142,6 +142,7 @@
             this.assistantDataGridView.MultiSelect = false;
             this.assistantDataGridView.Name = "assistantDataGridView";
             this.assistantDataGridView.ReadOnly = true;
+            this.assistantDataGridView.RowHeadersVisible = false;
             this.assistantDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.assistantDataGridView.Size = new System.Drawing.Size(550, 305);
             this.assistantDataGridView.TabIndex = 3;
@@ -323,6 +324,28 @@
             this.assistantSoinDataGridView.Size = new System.Drawing.Size(135, 273);
             this.assistantSoinDataGridView.TabIndex = 20;
             // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NoAssistant";
+            this.dataGridViewTextBoxColumn6.HeaderText = "NoAssistant";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "NoSoin";
+            this.dataGridViewTextBoxColumn7.DataSource = this.noEtDescriptionSoinBindingSource1;
+            this.dataGridViewTextBoxColumn7.DisplayMember = "NoEtDescription";
+            this.dataGridViewTextBoxColumn7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn7.HeaderText = "";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn7.ValueMember = "NoSoin";
+            // 
             // noEtDescriptionSoinBindingSource1
             // 
             this.noEtDescriptionSoinBindingSource1.DataMember = "NoEtDescriptionSoin";
@@ -356,28 +379,6 @@
             this.btnConfrimer.Text = "Sauvegarder modifications";
             this.btnConfrimer.UseVisualStyleBackColor = true;
             this.btnConfrimer.Click += new System.EventHandler(this.btnConfrimer_Click);
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NoAssistant";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NoAssistant";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "NoSoin";
-            this.dataGridViewTextBoxColumn7.DataSource = this.noEtDescriptionSoinBindingSource1;
-            this.dataGridViewTextBoxColumn7.DisplayMember = "NoEtDescription";
-            this.dataGridViewTextBoxColumn7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn7.HeaderText = "";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn7.ValueMember = "NoSoin";
             // 
             // FrmGestionAssistant
             // 
