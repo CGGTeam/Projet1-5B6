@@ -20,17 +20,24 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
         private readonly DateTime ancienneDateHeure;
         private readonly int ancienNoPersonne;
         private readonly int ancienNoAssistant;
+        private Control[] controlesAValider;
 
         public FrmPlanifierSoin(BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinRow planifSoin, BD5B6TP1_ConstantinBrassardLaheyDataSet.PlanifSoinDataTable dataTable, bool modifMode = false)
         {
             InitializeComponent();
             this.planifSoin = planifSoin;
 
-           
-
             this.assistantSoinTableAdapter = new AssistantSoinTableAdapter();
 
             this.modifMode = modifMode;
+
+            controlesAValider = new Control[]
+            {
+                dtpDateHeure,
+                cboAssistant,
+                cboPatient,
+                cboSoin,
+            };
 
             if (modifMode)
             {
@@ -188,6 +195,11 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Soins
             {
                 ttpModifSoinsDispos.Show("Le soin sélectionné a été changé", cboSoin, 3000);
             }
+        }
+
+        private void Valider()
+        {
+            btnConfirmer.Enabled = controlesAValider.All(ctrl => ctrl.Text.Trim() != "");
         }
     }
 }
