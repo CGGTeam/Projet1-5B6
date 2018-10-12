@@ -34,7 +34,8 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            ADOUtils.SupprimerSelection(reservationChambreBindingSource, EstSupprimable);
+            if(ADOUtils.SupprimerSelection(reservationChambreBindingSource, EstSupprimable))
+                BaseFormGestion.estSavegarder = false;
         }
 
         private bool EstSupprimable(DataRowView selection)
@@ -57,6 +58,7 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
             Validate();
             reservationChambreBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(this.bD5B6TP1_ConstantinBrassardLaheyDataSet);
+            BaseFormGestion.estSavegarder = true;
             Close();
         }
 
@@ -64,7 +66,7 @@ namespace Projet1_5B6.Forms_Admin.ReservationChambres
         {
             bD5B6TP1_ConstantinBrassardLaheyDataSet.RejectChanges();
             reservationChambreBindingSource.ResetBindings(false);
-            Close();
+            BaseFormGestion.estSavegarder = true;
         }
     }
 }
