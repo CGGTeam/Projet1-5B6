@@ -37,96 +37,138 @@ namespace Projet1_5B6.Models
         }
         private void GestionUtilisateurs(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmGestionUtilisateurs(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmGestionUtilisateurs(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
+
         }
         private void GestionAssistants(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmGestionAssistant(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmGestionAssistant(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void GestionClientInvites(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmGestionClientsInvites(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmGestionClientsInvites(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void GestionSoins(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmGestionSoins(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmGestionSoins(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void GestionChambres(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmGestionChambresEtTypes(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmGestionChambresEtTypes(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
-
         private void Quitter(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (demandeFermer())
+            {
+                Application.Exit();
+            }
+        }
+        private bool demandeFermer()
+        {
+            if (!BaseFormGestion.estSavegarder)
+            {
+                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?", "Fermeture déconnexion", MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
+                if (result == DialogResult.Yes)
+                {
+                    BaseFormGestion.estSavegarder = true;
+                    BaseFormGestion.estDeconnexion = true;
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                BaseFormGestion.estSavegarder = true;
+                BaseFormGestion.estDeconnexion = true;
+                return true;
+            }
         }
 
         private void Deconnecter(object sender, EventArgs e)
         {
-            if (!BaseFormGestion.estSavegarder)
-            {
-                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?", "Fermeture", MessageBoxButtons.YesNo,
-                     MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
-                if (result == DialogResult.Yes)
-                {
-                    FindForm()?.Hide();
-                    Deconnexion?.Invoke(this, null);
-                    FindForm()?.Close();
-                }
-            }
-            else
+            if(demandeFermer())
             {
                 FindForm()?.Hide();
                 Deconnexion?.Invoke(this, null);
-                FindForm()?.Close();
             }
         }
 
         private void PlanificationSoins(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmPlanificationSoins(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmPlanificationSoins(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void ReservationChambre(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmReservationChambres(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmReservationChambres(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
         private void RappSoinsClients(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmSoinsClients(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmSoinsClients(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void RappReservChambres(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmReservChambres(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmReservChambres(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void RappSoinsAssist(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmSoinsAssistants(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmSoinsAssistants(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void InitializeComponent()

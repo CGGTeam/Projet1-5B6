@@ -64,27 +64,25 @@ namespace Projet1_5B6.Forms_Commun.Forms_Gestion_Utilisateur
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            if(tbNom.Text != user.Nom) { 
-                //connection a la BD
-                string maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
-                SqlConnection maConnexion = new SqlConnection(maChaineConnexion);
-                maConnexion.Open();
+            string maChaineConnexion = "Data Source=sqlinfo.cgodin.qc.ca;Initial Catalog=BD5B6TP1_ConstantinBrassardLahey;User ID=5B6Constantin;Password=Password1";
+            SqlConnection maConnexion = new SqlConnection(maChaineConnexion);
+            maConnexion.Open();
 
-                //requete SQL
-                string maRequeteSQL = "SELECT * FROM Utilisateur WHERE Nom = @NomUtilisateur";
-                SqlParameter paramNom = new SqlParameter("@NomUtilisateur", tbNom.Text);
+            //requete SQL
+            string maRequeteSQL = "SELECT * FROM Utilisateur WHERE Nom = @NomUtilisateur";
+            SqlParameter paramNom = new SqlParameter("@NomUtilisateur", tbNom.Text);
 
-                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
-                maCommande.Parameters.Add(paramNom);
+            SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+            maCommande.Parameters.Add(paramNom);
 
-                SqlDataReader monReader = maCommande.ExecuteReader();
-                if (monReader.HasRows)
-                {
-                    MessageBox.Show("Vous devez utiliser un nom unique!");
-                    return;
-                }
-                maConnexion.Close();
+            SqlDataReader monReader = maCommande.ExecuteReader();
+            if (monReader.HasRows)
+            {
+                MessageBox.Show("Vous devez utiliser un nom unique!");
+                return;
             }
+            maConnexion.Close();
+
             user.Nom = tbNom.Text;
             user.MotDePasse = tbMotDePasse.Text;
             user.NoTypeUtilisateur = (int)listTypeUtilisateur.SelectedValue;

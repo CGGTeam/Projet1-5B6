@@ -48,7 +48,7 @@
             this.tbPrenom.Location = new System.Drawing.Point(97, 72);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(124, 20);
-            this.tbPrenom.TabIndex = 0;
+            this.tbPrenom.TabIndex = 1;
             this.tbPrenom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ValiderFormulaire);
             // 
             // tbRemarques
@@ -56,7 +56,7 @@
             this.tbRemarques.Location = new System.Drawing.Point(97, 150);
             this.tbRemarques.Name = "tbRemarques";
             this.tbRemarques.Size = new System.Drawing.Size(124, 20);
-            this.tbRemarques.TabIndex = 2;
+            this.tbRemarques.TabIndex = 4;
             // 
             // tbSpecialite
             // 
@@ -71,7 +71,7 @@
             this.tbNom.Location = new System.Drawing.Point(97, 98);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(124, 20);
-            this.tbNom.TabIndex = 4;
+            this.tbNom.TabIndex = 2;
             this.tbNom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ValiderFormulaire);
             // 
             // label1
@@ -117,7 +117,7 @@
             this.lblErrorProvider.Location = new System.Drawing.Point(17, 184);
             this.lblErrorProvider.Name = "lblErrorProvider";
             this.lblErrorProvider.Size = new System.Drawing.Size(192, 13);
-            this.lblErrorProvider.TabIndex = 9;
+            this.lblErrorProvider.TabIndex = 1;
             this.lblErrorProvider.Text = "Les champs avec un * sont obligatoires";
             // 
             // btnConfirmer
@@ -127,7 +127,7 @@
             this.btnConfirmer.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(229, 25);
-            this.btnConfirmer.TabIndex = 14;
+            this.btnConfirmer.TabIndex = 5;
             this.btnConfirmer.Text = "Confirmer l\'ajout";
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
@@ -139,7 +139,7 @@
             this.lblTitre.Location = new System.Drawing.Point(15, 9);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(219, 25);
-            this.lblTitre.TabIndex = 15;
+            this.lblTitre.TabIndex = 6;
             this.lblTitre.Text = "Ajout d\'un assistant";
             // 
             // label6
