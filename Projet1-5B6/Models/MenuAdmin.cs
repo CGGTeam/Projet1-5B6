@@ -84,27 +84,6 @@ namespace Projet1_5B6.Models
                 BaseFormGestion.estDeconnexion = false;
             }
         }
-        public static void QuitterStatic()
-        {
-            if (!BaseFormGestion.estSavegarder)
-            {
-                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?", "Fermeture déconnexion", MessageBoxButtons.YesNo,
-                     MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
-                if (result == DialogResult.Yes)
-                {
-                    BaseFormGestion.estSavegarder = true;
-                    BaseFormGestion.estDeconnexion = true;
-                    Application.Exit();
-                }
-            }
-            else
-            {
-                BaseFormGestion.estSavegarder = true;
-                BaseFormGestion.estDeconnexion = true;
-                Application.Exit();
-            }
-        }
-
         private void Quitter(object sender, EventArgs e)
         {
             if (demandeFermer())

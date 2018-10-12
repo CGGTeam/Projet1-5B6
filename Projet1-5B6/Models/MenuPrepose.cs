@@ -22,13 +22,22 @@ namespace Projet1_5B6.Models
         {
             InitializeComponent();
         }
-
+        private void Deconnecter(object sender, EventArgs e)
+        {
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                Deconnexion?.Invoke(this, null);
+            }
+        }
         private void Quitter(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (demandeFermer())
+            {
+                Application.Exit();
+            }
         }
-
-        private void Deconnecter(object sender, EventArgs e)
+        private bool demandeFermer()
         {
             if (!BaseFormGestion.estSavegarder)
             {
@@ -36,38 +45,48 @@ namespace Projet1_5B6.Models
                      MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
                 if (result == DialogResult.Yes)
                 {
+                    BaseFormGestion.estSavegarder = true;
                     BaseFormGestion.estDeconnexion = true;
-                    FindForm()?.Hide();
-                    Deconnexion?.Invoke(this, null);
+                    return true;
                 }
+                return false;
             }
             else
             {
+                BaseFormGestion.estSavegarder = true;
                 BaseFormGestion.estDeconnexion = true;
-                FindForm()?.Hide();
-                Deconnexion?.Invoke(this, null);
+                return true;
             }
         }
 
         private void ReservationChambres(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmReservationChambres(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmReservationChambres(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void PlanifSoins(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmPlanificationSoins(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmPlanificationSoins(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void GestionClientsInvites(object sender, EventArgs e)
         {
-            FindForm()?.Hide();
-            new FrmGestionClientsInvites(this).ShowDialog();
-            FindForm()?.Close();
+            if (demandeFermer())
+            {
+                FindForm()?.Hide();
+                new FrmGestionClientsInvites(this).ShowDialog();
+                BaseFormGestion.estDeconnexion = false;
+            }
         }
 
         private void InitializeComponent()

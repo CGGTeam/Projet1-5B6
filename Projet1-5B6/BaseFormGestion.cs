@@ -31,7 +31,7 @@ namespace Projet1_5B6
         {
             if (estSavegarder==false && estDeconnexion == false)
             {
-                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?",e.CloseReason.ToString(), MessageBoxButtons.YesNo,
+                DialogResult result = MessageBox.Show("Vous êtes sur le point de quitter sans avoir sauvegarder! \n Êtes-vous sûr de vouloir quitter?","lol", MessageBoxButtons.YesNo,
                      MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign);
                 if (result == DialogResult.Yes)
                 {
