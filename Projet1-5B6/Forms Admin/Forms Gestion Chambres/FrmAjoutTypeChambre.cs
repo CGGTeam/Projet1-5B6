@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,6 +73,55 @@ namespace Projet1_5B6.Forms_Admin
         private void Valider(object sender, EventArgs e)
         {
             btnConfirmer.Enabled = controlesAValider.All(ctrl => ctrl.Text.Trim() != "");
+        }
+
+        private void ValiderPrix(object sender, CancelEventArgs e)
+        {
+            TextBox tbValide = (TextBox)sender;
+            errorProvider.SetError(tbValide, "");
+
+            try
+            {
+                double prix = Convert.ToDouble(tbValide.Text);
+
+                if (prix < 0)
+                {
+                    errorProvider.SetError(tbValide, "Prix doit être positif");
+                    e.Cancel = true;
+                }
+                else
+                {
+                    if (!ValiderPrixRelatifs(tbValide))
+                    {
+                        e.Cancel = true;
+                        errorProvider.SetError(tbValide, "Prix invalides: le prix bas doit être inférieur ou égal au prix moyen" +
+                                                         " et le prix moyen inférieur ou égal au prix haut");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                errorProvider.SetError(tbValide, "doit être un contrôle valide");
+                e.Cancel = true;
+            }
+        }
+
+        private bool ValiderPrixRelatifs(TextBox sender)
+        {
+            try
+            {
+                double prixBas = tbPrixBas.Text.Trim() == "" ? double.MinValue : Convert.ToDouble(tbPrixBas.Text);
+                double prixHaut = tbPrixHaut.Text.Trim() == "" ? double.MaxValue : Convert.ToDouble(tbPrixHaut.Text);
+                double prixMilieu = tbPrixMoyen.Text.Trim() == ""
+                    ? (prixBas + prixHaut) / 2
+                    : Convert.ToDouble(tbPrixMoyen.Text);
+
+                return prixBas <= prixMilieu && prixMilieu <= prixHaut;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

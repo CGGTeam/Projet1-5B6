@@ -118,6 +118,7 @@
             this.tbPrixHaut.Size = new System.Drawing.Size(207, 26);
             this.tbPrixHaut.TabIndex = 6;
             this.tbPrixHaut.TextChanged += new System.EventHandler(this.Valider);
+            this.tbPrixHaut.Validating += new System.ComponentModel.CancelEventHandler(this.ValiderPrix);
             // 
             // tbPrixBas
             // 
@@ -126,6 +127,7 @@
             this.tbPrixBas.Size = new System.Drawing.Size(207, 26);
             this.tbPrixBas.TabIndex = 8;
             this.tbPrixBas.TextChanged += new System.EventHandler(this.Valider);
+            this.tbPrixBas.Validating += new System.ComponentModel.CancelEventHandler(this.ValiderPrix);
             // 
             // tbPrixMoyen
             // 
@@ -134,6 +136,7 @@
             this.tbPrixMoyen.Size = new System.Drawing.Size(207, 26);
             this.tbPrixMoyen.TabIndex = 10;
             this.tbPrixMoyen.TextChanged += new System.EventHandler(this.Valider);
+            this.tbPrixMoyen.Validating += new System.ComponentModel.CancelEventHandler(this.ValiderPrix);
             // 
             // lblEntete
             // 

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label expr1Label;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.noEtNomsClientsInvitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,14 +41,14 @@
             this.rapportSoinsPersonnesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rapportSoinsPersonnesTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.RapportSoinsPersonnesTableAdapter();
             this.rapportSoinsPersonnesDataGridView = new System.Windows.Forms.DataGridView();
+            this.sumPrixSoinsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sumPrixSoinsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SumPrixSoinsTableAdapter();
+            this.expr1TextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumPrixSoinsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sumPrixSoinsTableAdapter = new Projet1_5B6.BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SumPrixSoinsTableAdapter();
-            this.expr1TextBox = new System.Windows.Forms.TextBox();
             expr1Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.noEtNomsClientsInvitesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD5B6TP1_ConstantinBrassardLaheyDataSet)).BeginInit();
@@ -59,9 +60,10 @@
             // expr1Label
             // 
             expr1Label.AutoSize = true;
-            expr1Label.Location = new System.Drawing.Point(17, 474);
+            expr1Label.Location = new System.Drawing.Point(26, 729);
+            expr1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             expr1Label.Name = "expr1Label";
-            expr1Label.Size = new System.Drawing.Size(97, 13);
+            expr1Label.Size = new System.Drawing.Size(144, 20);
             expr1Label.TabIndex = 5;
             expr1Label.Text = "Prix total des soins:";
             // 
@@ -69,18 +71,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(18, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(546, 25);
+            this.label1.Size = new System.Drawing.Size(777, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Rapport des soins offerts aux clients et aux invités";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 75);
+            this.label2.Location = new System.Drawing.Point(26, 115);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Clients / Invités :";
             // 
@@ -123,9 +127,10 @@
             this.noEtNomsClientsInvitesComboBox.DataSource = this.noEtNomsClientsInvitesBindingSource;
             this.noEtNomsClientsInvitesComboBox.DisplayMember = "NoEtNom";
             this.noEtNomsClientsInvitesComboBox.FormattingEnabled = true;
-            this.noEtNomsClientsInvitesComboBox.Location = new System.Drawing.Point(109, 72);
+            this.noEtNomsClientsInvitesComboBox.Location = new System.Drawing.Point(164, 111);
+            this.noEtNomsClientsInvitesComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noEtNomsClientsInvitesComboBox.Name = "noEtNomsClientsInvitesComboBox";
-            this.noEtNomsClientsInvitesComboBox.Size = new System.Drawing.Size(300, 21);
+            this.noEtNomsClientsInvitesComboBox.Size = new System.Drawing.Size(448, 28);
             this.noEtNomsClientsInvitesComboBox.TabIndex = 4;
             this.noEtNomsClientsInvitesComboBox.ValueMember = "NoClient";
             // 
@@ -152,15 +157,38 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.rapportSoinsPersonnesDataGridView.DataSource = this.rapportSoinsPersonnesBindingSource;
-            this.rapportSoinsPersonnesDataGridView.Location = new System.Drawing.Point(17, 99);
+            this.rapportSoinsPersonnesDataGridView.Location = new System.Drawing.Point(26, 152);
+            this.rapportSoinsPersonnesDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rapportSoinsPersonnesDataGridView.Name = "rapportSoinsPersonnesDataGridView";
             this.rapportSoinsPersonnesDataGridView.ReadOnly = true;
-            this.rapportSoinsPersonnesDataGridView.Size = new System.Drawing.Size(687, 358);
+            this.rapportSoinsPersonnesDataGridView.Size = new System.Drawing.Size(1030, 551);
             this.rapportSoinsPersonnesDataGridView.TabIndex = 4;
+            // 
+            // sumPrixSoinsBindingSource
+            // 
+            this.sumPrixSoinsBindingSource.DataMember = "SumPrixSoins_NoEtNomsClientsInvites";
+            this.sumPrixSoinsBindingSource.DataSource = this.noEtNomsClientsInvitesBindingSource;
+            // 
+            // sumPrixSoinsTableAdapter
+            // 
+            this.sumPrixSoinsTableAdapter.ClearBeforeFill = true;
+            // 
+            // expr1TextBox
+            // 
+            this.expr1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sumPrixSoinsBindingSource, "Expr1", true));
+            this.expr1TextBox.Location = new System.Drawing.Point(180, 725);
+            this.expr1TextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.expr1TextBox.Name = "expr1TextBox";
+            this.expr1TextBox.ReadOnly = true;
+            this.expr1TextBox.Size = new System.Drawing.Size(176, 26);
+            this.expr1TextBox.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "NoPersonne";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "NoPersonne";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -196,35 +224,18 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // sumPrixSoinsBindingSource
-            // 
-            this.sumPrixSoinsBindingSource.DataMember = "SumPrixSoins_NoEtNomsClientsInvites";
-            this.sumPrixSoinsBindingSource.DataSource = this.noEtNomsClientsInvitesBindingSource;
-            // 
-            // sumPrixSoinsTableAdapter
-            // 
-            this.sumPrixSoinsTableAdapter.ClearBeforeFill = true;
-            // 
-            // expr1TextBox
-            // 
-            this.expr1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sumPrixSoinsBindingSource, "Expr1", true));
-            this.expr1TextBox.Location = new System.Drawing.Point(120, 471);
-            this.expr1TextBox.Name = "expr1TextBox";
-            this.expr1TextBox.ReadOnly = true;
-            this.expr1TextBox.Size = new System.Drawing.Size(119, 20);
-            this.expr1TextBox.TabIndex = 6;
-            // 
             // FrmSoinsClients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 523);
+            this.ClientSize = new System.Drawing.Size(1086, 805);
             this.Controls.Add(expr1Label);
             this.Controls.Add(this.expr1TextBox);
             this.Controls.Add(this.rapportSoinsPersonnesDataGridView);
             this.Controls.Add(this.noEtNomsClientsInvitesComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmSoinsClients";
             this.Text = "Rapport des soins offerts aux clients et aux invités";
             this.Load += new System.EventHandler(this.FrmSoinsClients_Load);
@@ -256,13 +267,13 @@
         private System.Windows.Forms.BindingSource rapportSoinsPersonnesBindingSource;
         private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.RapportSoinsPersonnesTableAdapter rapportSoinsPersonnesTableAdapter;
         private System.Windows.Forms.DataGridView rapportSoinsPersonnesDataGridView;
+        private System.Windows.Forms.BindingSource sumPrixSoinsBindingSource;
+        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SumPrixSoinsTableAdapter sumPrixSoinsTableAdapter;
+        private System.Windows.Forms.TextBox expr1TextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.BindingSource sumPrixSoinsBindingSource;
-        private BD5B6TP1_ConstantinBrassardLaheyDataSetTableAdapters.SumPrixSoinsTableAdapter sumPrixSoinsTableAdapter;
-        private System.Windows.Forms.TextBox expr1TextBox;
     }
 }
